@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+<!-- HERENCIA A PRODUCT TEMPLATE -->
+        <record model="ir.ui.view" id="product_template_complemento_cp_form">
+            <field name="name">product.template.cfdi.40</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product_unspsc.product_template_unspsc"/>
+            <field name="arch" type="xml">
+                <field name="unspsc_code_id" position="after">
+                    <field name="clave_stcc_id" 
+                                   options="{'no_create_edit': True,'no_create': True}" />
+                    <field name="tipo_embalaje_id" />
+                    <field name="hazardous_material" />
+                    <field name="hazardous_key_product_id" attrs="{'required':[('hazardous_material','=','Si')],'readonly':[('hazardous_material','=','No')]}"  options="{'no_create': True, 'no_create_edit': True}"/>
+                    <field name="force_hazardous_pac" />
+                </field>
+            </field>
+        </record>
+
+
+    <record model="ir.ui.view" id="product_normal_dimensions_form_view">
+      <field name="name">product_normal_form_view</field>
+      <field name="model">product.product</field>
+      <field name="inherit_id" ref="product.product_normal_form_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//group[@name='inventory']" position="inside">
+          <group name="dimensions" string="Dimensiones">
+            <label for="product_length" string="Largo"/>
+            <div class="o_row">
+                <field name="product_length" /> cm
+            </div>
+            <label for="product_height" string="Ancho"/>
+            <div class="o_row">
+                <field name="product_height" /> cm
+            </div>
+            <label for="product_width" string="Alto"/>
+            <div class="o_row">
+                <field name="product_width" /> cm
+            </div>
+            <field name="dimensiones_plg" />
+          </group>
+        </xpath>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="product_template_dimensions_only_form_view">
+      <field name="name">product_template_form_view</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_only_form_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//group[@name='inventory']" position="inside">
+          <group string="Dimensiones" name="dimensions"
+                attrs="{'invisible': [('product_variant_count', '&gt;', 1)]}">
+            <label for="product_length" string="Largo"/>
+            <div class="o_row">
+                <field name="product_length" /> cm
+            </div>
+            <label for="product_height" string="Ancho"/>
+            <div class="o_row">
+                <field name="product_height" /> cm
+            </div>
+            <label for="product_width" string="Alto"/>
+            <div class="o_row">
+                <field name="product_width" /> cm
+            </div>
+            <field name="dimensiones_plg" />
+          </group>
+        </xpath>
+      </field>
+    </record>
+
+</data>
+</odoo>

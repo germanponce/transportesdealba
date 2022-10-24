@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xmlns:cartaporte="http://www.sat.gob.mx/CartaPorte" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd http://www.sat.gob.mx/CartaPorte http://www.sat.gob.mx/sitio_internet/cfd/CartaPorte/CartaPorte.xsd" Version="4.0" Folio="110586" Fecha="2021-06-21T12:27:56" Sello="NhY61xvr7mHtK/yYVedlWJ98lVhpqtm6qwmMBlUd4IKdN0imb+lQOS4WqqGbK2e6iG1VJZ2w1QA31Ek//qM8XmEwkBboUF7xIanm1rJpn9cPDdDc7e7ufz8xdSjNXARzI6TpdV1NJcQiEhm4ViM+WL05vRp8O9A9l+d81JV+vL2Zo0K3i76Z+JFFw8gdSzriKWAonu3IjU3xzsgGI2VfqKHBYXkzIEUVtSiGAys/Q9zmsQX+GUU1xq8CIPEnJSPO9jUKoShtk72ahvu6zAGoE1WRH3zZpaHqLPNmi2THriuUE75q51H3n8X5fL4XRTCIT8AsS61W47pW2CF9WFLIEQ==" NoCertificado="00001000000407771714" Certificado="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" SubTotal="0" Moneda="XXX" Total="0" TipoDeComprobante="T" LugarExpedicion="50071" xmlns:cfdi="http://www.sat.gob.mx/cfd/3">
+  <cfdi:Emisor Rfc="EKU9003173C9" Nombre="Carta Porte" RegimenFiscal="601"/>
+  <cfdi:Receptor Rfc="EKU9003173C9" Nombre="receptor, S.A. DE C.V." UsoCFDI="S01"/>
+  <cfdi:Conceptos>
+    <cfdi:Concepto ClaveProdServ="78101802" NoIdentificacion="01" Cantidad="1.00" ClaveUnidad="E48" Unidad="SERVICIO" Descripcion="FLETE" ValorUnitario="0.00" Importe="0.00">
+      <cfdi:InformacionAduanera NumeroPedimento="21  47  3807  8003832"/>
+    </cfdi:Concepto>
+  </cfdi:Conceptos>
+  <cfdi:Complemento>
+    <cartaporte:CartaPorte Version="1.0" TranspInternac="No">
+      <cartaporte:Ubicaciones>
+        <cartaporte:Ubicacion TipoEstacion="01">
+          <cartaporte:Origen NumEstacion="EA458" IDOrigen="OR123456" NombreEstacion="testnombre"  NombreRemitente="Testename" RFCRemitente="URE180429TM6" FechaHoraSalida="2021-05-14T20:45:59"  />
+        <cartaporte:Domicilio Calle="JESUS VALDES SANCHEZ" Localidad="23" NumeroExterior="728" Colonia="0347" Municipio="004" Estado="COA" Pais="MEX" CodigoPostal="25350" />
+        </cartaporte:Ubicacion>
+        <cartaporte:Ubicacion TipoEstacion="01">
+          <cartaporte:Destino IDDestino="DE123455" NumEstacion="EA447" NombreEstacion="Amado Nervo" RFCDestinatario="EKU9003173C9" FechaHoraProgLlegada="2021-05-14T20:46:59" />
+         <cartaporte:Domicilio Calle="calle" CodigoPostal="99056" Colonia="002" Estado="ZAC" Localidad="0002" Municipio="000005" NumeroExterior="211" Pais="ARG" Referencia="casa blanca"/>
+        </cartaporte:Ubicacion>
+        <cartaporte:Ubicacion TipoEstacion="01">
+          <cartaporte:Destino IDDestino="DE123456" NumEstacion="EA448" NombreEstacion="General Mariano Escobedo" RFCDestinatario="EKU9003173C9" FechaHoraProgLlegada="2021-05-14T20:46:59" />
+          <cartaporte:Domicilio Calle="calle" CodigoPostal="99056" Colonia="002" Estado="ZAC" Localidad="0002" Municipio="000005" NumeroExterior="211" Pais="ARG" Referencia="casa blanca"/>
+        </cartaporte:Ubicacion>
+      </cartaporte:Ubicaciones>
+      <cartaporte:Mercancias NumTotalMercancias="1" PesoBrutoTotal="1.000" UnidadPeso="XNG">
+        <cartaporte:Mercancia BienesTransp="12164501" Descripcion="COSAS DE LA VIDA" Cantidad="1" ClaveUnidad="XNG" PesoEnKg="1.000" ValorMercancia="1.001" Moneda="MXN">
+          <cartaporte:CantidadTransporta Cantidad="1.1" IDOrigen="OR123456" IDDestino="DE123455" />
+        <cartaporte:CantidadTransporta Cantidad="1.1" IDOrigen="OR123456" IDDestino="DE123456" />
+        </cartaporte:Mercancia>
+        <cartaporte:TransporteAereo PermSCT="TPAF01" NumPermisoSCT="Demo" NombreAseg="DEMO" NumPolizaSeguro="DEMO" MatriculaAeronave="ABC-132" NumeroGuia="a1234567890a" LugarContrato="2" CodigoTransportista="CA001" NumRegIdTribTranspor="SSF1103037F1" NumRegIdTribEmbarc="SSF1103037F1" ResidenciaFiscalEmbarc="MEX" ResidenciaFiscalTranspor="MEX" NombreEmbarcador="pablo"/>
+      </cartaporte:Mercancias>
+      <cartaporte:FiguraTransporte CveTransporte="01">
+      </cartaporte:FiguraTransporte>
+    </cartaporte:CartaPorte>
+  </cfdi:Complemento>
+</cfdi:Comprobante>

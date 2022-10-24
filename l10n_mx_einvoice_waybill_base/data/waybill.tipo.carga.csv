@@ -1,0 +1,7 @@
+id,code,name,start_date
+waybill_tipo_carga_00,CGS,Carga General Suelta,2021-06-01
+waybill_tipo_carga_01,CGC,Carga General Contenerizada,2021-06-02
+waybill_tipo_carga_02,GMN,Gran Mineral,2021-06-03
+waybill_tipo_carga_03,GAG,Granel Agricola,2021-06-04
+waybill_tipo_carga_04,OFL,Otros Fluidos,2021-06-05
+waybill_tipo_carga_05,PYD,Petroleo y Derivados,2021-06-06

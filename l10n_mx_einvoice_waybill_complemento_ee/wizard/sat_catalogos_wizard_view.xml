@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <record id="SAT_CatalogosWizard_form" model="ir.ui.view">
+            <field name="name">sat.catalogos.wizard</field>
+            <field name="model">sat.catalogos.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Catalogos del SAT para CFDI 4.0">
+                    <p class="oe_grey">
+                        Este asistente le permite visualizar los catálogos requeridos 
+                        para emitir el CFDI 4.0
+                    </p>
+                    <group>
+                        <field name="catalogo" />
+                    </group>
+                    <footer>
+                        <button string="Abrir Catálogo" name="open_catalog" type="object" 
+                                default_focus="1" class="btn-primary"/>
+                        <button string="Cerrar" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+
+        <record id="SAT_CatalogosWizard_action" model="ir.actions.act_window">
+            <field name="name">Ver Catalogos SAT</field>
+            <field name="res_model">sat.catalogos.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+  
+        
+        <menuitem id="catalogos_sat_menu" name="Catálogos SAT" 
+                  parent="account.menu_finance_configuration" sequence="99" 
+                  groups="account.group_account_manager" />
+        
+        <menuitem id="SAT_CatalogosWizard_menu" 
+                  name="Ver Catálogos SAT" 
+                  parent="catalogos_sat_menu" sequence="10"
+                  action="SAT_CatalogosWizard_action"/>
+
+    </data>
+    
+</odoo>

@@ -1,0 +1,116 @@
+<odoo>
+
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- REPORT & TEMPLATE -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->    
+
+    <report
+        id="reporte_orden_servicio"
+        model="wobin.orden.servicio"
+        string="Reporte Ordenes de Servicio"
+        name="wobin_control_fletes.reporte_orden_servicio"
+        file="wobin_control_fletes.orden_servicio_formato"
+        report_type="qweb-pdf" />
+
+
+    <template id="reporte_orden_servicio">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">                
+                    <!--Estilo de hoja-->
+                    <div class="page" style="margin-left:15px; margin-right:15px;">
+                        
+                        <!--Título-->
+                        <h4 class="text-center p-1 font-weight-bold"><span t-field="doc.name"/></h4>
+
+                        <!--Labels de Cabecera-->
+                        <table class="table table-bordered" style="font-size: 12px; padding: 2px; margin-top: 25px; width: 100%">
+                            <tbody>
+                                <tr>
+                                    <td class="table-secondary font-weight-bold">Proveedor</td>
+                                    <td><span t-field="doc.partner_id.name"/></td>
+
+                                    <td class="table-secondary font-weight-bold">Tarifas</td>
+                                    <td><span t-field="doc.tarifas"/></td> 
+
+                                    <td class="table-secondary font-weight-bold">Precio Producto</td>
+                                    <td><span t-field="doc.precio_producto"/></td>
+                                </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                  
+                            </tbody>
+                        </table>                        
+
+                        <!--Tabla de Control de Ords. Servicio-->
+                        <table class="table table-condensed table-bordered" style="font-size: 10px; margin-top: 35px;">
+                            <tr>
+                                <th class="table-secondary">Movimiento Origen</th>
+                                <th class="table-secondary">Fecha Carga</th>
+                                <th class="table-secondary">Producto</th>
+                                <th class="table-secondary">Ton. Origen</th>
+                                <th class="table-secondary">Movimiento Destino</th>
+                                <th class="table-secondary">Fecha Entrega</th>
+                                <th class="table-secondary">Producto</th>
+                                <th class="table-secondary">Ton. Efectivamente Entregados</th> 
+                                <th class="table-secondary">Folio Ticket</th> 
+                                <th class="table-secondary">Identificador de Viaje</th> 
+                                <th class="table-secondary">Operador</th>                             
+                                <th class="table-secondary">Placas</th>
+                            </tr>                             
+                            <tr t-foreach='doc.pickings_ids' t-as='line'>
+                                <td><span t-field="line.transferencia_origen_id.name"/></td>
+                                <td><span t-field="line.fecha_carga_origen" t-options='{"widget": "date"}'/></td>                                
+                                <td><span t-field="line.producto_id.name"/></td>
+                                <td><span t-field="line.toneladas_origen"/></td>
+                                <td><span t-field="line.transferencia_destino_id.name"/></td>                                
+                                <td><span t-field="line.fecha_descarga_destino" t-options='{"widget": "date"}'/></td>                                
+                                <td><span t-field="line.producto_destino_id.name"/></td>                                
+                                <td><span t-field="line.toneladas_ef_entregados"/></td>
+                                <td><span t-field="line.folio_peso_tk_tr_dest"/></td>
+                                <td><span t-field="line.operador"/></td>
+                                <td><span t-field="line.placas"/></td>                                
+                            </tr>  
+                            <tr>
+                                <td colspan="4" class="text-right"><span t-esc="sum(line.toneladas_origen for line in doc.pickings_ids)"/></td>
+                                <td colspan="4" class="text-right"><span t-esc="sum(line.toneladas_ef_entregados for line in doc.pickings_ids)"/></td>
+                                <td colspan="4" class="text-right"></td>
+                            </tr>
+
+
+                        </table>  
+
+                        <!--Tabla de Operaciones Control de Ords. Servicio-->
+                        <table class="table table-condensed table-bordered" style="font-size: 10px; margin-top: 35px;">
+                            <tr>                                
+                                <th class="table-secondary">Diferencia Merma</th>                                
+                                <th class="table-secondary">Tolerancia Sistema</th>
+                                <th class="table-secondary">Tolerancia Ajustada</th>
+                                <th class="table-secondary">Tolerancia Autorizada</th>
+                                <th class="table-secondary">Tolerancia Excedida</th>
+                                <th class="table-secondary">Subtotal antes Descuento</th>
+                                <th class="table-secondary">Descuento por Tolerancia Excedida</th>
+                                <th class="table-secondary">Importe</th>
+                                <th class="table-secondary">IVA</th>
+                                <th class="table-secondary">Retención</th>
+                                <th class="table-secondary">Total</th>
+                            </tr> 
+                            <tr>
+                                <td><span t-field="doc.dif_merma_excedente"/></td>
+                                <td><span t-field="doc.tolerancia"/></td>
+                                <td><span t-field="doc.tolerancia_ajustada"/></td>
+                                <td><span t-field="doc.tolerancia_autorizada"/></td>
+                                <td><span t-field="doc.tolerancia_excedida"/></td>
+                                <td><span t-field="doc.subtotal_antes_desc"/></td>
+                                <td><span t-field="doc.desc_tolerancia_exced"/></td>
+                                <td><span t-field="doc.importe"/></td>
+                                <td><span t-field="doc.iva"/></td>
+                                <td><span t-field="doc.retencion"/></td>
+                                <td><span t-field="doc.total"/></td>  
+                            </tr>                                                     
+                        </table> 
+
+                    </div><!--Fin Estilo de hoja-->
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,10 @@
+id,code,name,start_date
+waybill_contenedor_maritimo_00,CM001,Contenedores refrigerados de 20FT,2021-06-01
+waybill_contenedor_maritimo_01,CM002,Contenedores refrigerados de 40FT,2021-06-01
+waybill_contenedor_maritimo_02,CM003,Contenedores estandar de 8FT,2021-06-01
+waybill_contenedor_maritimo_03,CM004,Contenedores estandar de 10FT,2021-06-01
+waybill_contenedor_maritimo_04,CM005,Contenedores estandar de 20FT,2021-06-01
+waybill_contenedor_maritimo_05,CM006,Contenedores estandar de 40FT,2021-06-01
+waybill_contenedor_maritimo_06,CM007,Contenedores Open Side,2021-06-01
+waybill_contenedor_maritimo_07,CM008,Contenedor Isotanque,2021-06-01
+waybill_contenedor_maritimo_08,CM009,Contenedor flat racks,2021-06-01

@@ -1,0 +1,2459 @@
+id,code,state_sat_code/id,name
+township_sat_00,001,base.state_mx_ags,Aguascalientes
+township_sat_01,001,base.state_mx_bc,Ensenada
+township_sat_02,001,base.state_mx_bcs,Comondú
+township_sat_03,001,base.state_mx_camp,Calkiní
+township_sat_04,001,base.state_mx_coah,Abasolo
+township_sat_05,001,base.state_mx_col,Armería
+township_sat_06,001,base.state_mx_chih,Ahumada
+township_sat_07,001,base.state_mx_chis,Acacoyagua
+township_sat_08,001,base.state_mx_dgo,Canatlán
+township_sat_09,001,base.state_mx_gro,Acapulco de Juárez
+township_sat_10,001,base.state_mx_gto,Abasolo
+township_sat_11,001,base.state_mx_hgo,Acatlán
+township_sat_12,001,base.state_mx_jal,Acatic
+township_sat_13,001,base.state_mx_mex,Acambay de Ruíz Castañeda
+township_sat_14,001,base.state_mx_mich,Acuitzio
+township_sat_15,001,base.state_mx_mor,Amacuzac
+township_sat_16,001,base.state_mx_nay,Acaponeta
+township_sat_17,001,base.state_mx_nl,Abasolo
+township_sat_18,001,base.state_mx_oax,Abejones
+township_sat_19,001,base.state_mx_pue,Acajete
+township_sat_20,001,base.state_mx_qro,Amealco de Bonfil
+township_sat_21,001,base.state_mx_qro,Cozumel
+township_sat_22,001,base.state_mx_sin,Ahome
+township_sat_23,001,base.state_mx_slp,Ahualulco
+township_sat_24,001,base.state_mx_son,Aconchi
+township_sat_25,001,base.state_mx_tab,Balancán
+township_sat_26,001,base.state_mx_tamps,Abasolo
+township_sat_27,001,base.state_mx_tlax,Amaxac de Guerrero
+township_sat_28,001,base.state_mx_ver,Acajete
+township_sat_29,001,base.state_mx_yuc,Abalá
+township_sat_30,001,base.state_mx_yuc,Apozol
+township_sat_31,002,base.state_mx_ags,Asientos
+township_sat_32,002,base.state_mx_bc,Mexicali
+township_sat_33,002,base.state_mx_bcs,Mulegé
+township_sat_34,002,base.state_mx_camp,Campeche
+township_sat_35,002,base.state_mx_coah,Acuña
+township_sat_36,002,base.state_mx_col,Colima
+township_sat_37,002,base.state_mx_chih,Aldama
+township_sat_38,002,base.state_mx_chis,Acala
+township_sat_39,002,base.state_mx_df,Azcapotzalco
+township_sat_40,002,base.state_mx_dgo,Canelas
+township_sat_41,002,base.state_mx_gro,Ahuacuotzingo
+township_sat_42,002,base.state_mx_gto,Acámbaro
+township_sat_43,002,base.state_mx_hgo,Acaxochitlán
+township_sat_44,002,base.state_mx_jal,Acatlán de Juárez
+township_sat_45,002,base.state_mx_mex,Acolman
+township_sat_46,002,base.state_mx_mich,Aguililla
+township_sat_47,002,base.state_mx_mor,Atlatlahucan
+township_sat_48,002,base.state_mx_nay,Ahuacatlán
+township_sat_49,002,base.state_mx_nl,Agualeguas
+township_sat_50,002,base.state_mx_oax,Acatlán de Pérez Figueroa
+township_sat_51,002,base.state_mx_pue,Acateno
+township_sat_52,002,base.state_mx_qro,Pinal de Amoles
+township_sat_53,002,base.state_mx_q_roo,Felipe Carrillo Puerto
+township_sat_54,002,base.state_mx_sin,Angostura
+township_sat_55,002,base.state_mx_slp,Alaquines
+township_sat_56,002,base.state_mx_son,Agua Prieta
+township_sat_57,002,base.state_mx_tab,Cárdenas
+township_sat_58,002,base.state_mx_tamps,Aldama
+township_sat_59,002,base.state_mx_tlax,Apetatitlán de Antonio Carvajal
+township_sat_60,002,base.state_mx_ver,Acatlán
+township_sat_61,002,base.state_mx_yuc,Acanceh
+township_sat_62,002,base.state_mx_zac,Apulco
+township_sat_63,003,base.state_mx_ags,Calvillo
+township_sat_64,003,base.state_mx_bc,Tecate
+township_sat_65,003,base.state_mx_bcs,La Paz
+township_sat_66,003,base.state_mx_camp,Carmen
+township_sat_67,003,base.state_mx_coah,Allende
+township_sat_68,003,base.state_mx_col,Comala
+township_sat_69,003,base.state_mx_chih,Allende
+township_sat_70,003,base.state_mx_chis,Acapetahua
+township_sat_71,003,base.state_mx_df,Coyoacán
+township_sat_72,003,base.state_mx_dgo,Coneto de Comonfort
+township_sat_73,003,base.state_mx_gro,Ajuchitlán del Progreso
+township_sat_74,003,base.state_mx_gto,San Miguel de Allende
+township_sat_75,003,base.state_mx_hgo,Actopan
+township_sat_76,003,base.state_mx_jal,Ahualulco de Mercado
+township_sat_77,003,base.state_mx_mex,Aculco
+township_sat_78,003,base.state_mx_mich,Álvaro Obregón
+township_sat_79,003,base.state_mx_mor,Axochiapan
+township_sat_80,003,base.state_mx_nay,Amatlán de Cañas
+township_sat_81,003,base.state_mx_nl,Los Aldamas
+township_sat_82,003,base.state_mx_oax,Asunción Cacalotepec
+township_sat_83,003,base.state_mx_pue,Acatlán
+township_sat_84,003,base.state_mx_qro,Arroyo Seco
+township_sat_85,003,base.state_mx_q_roo,Isla Mujeres
+township_sat_86,003,base.state_mx_sin,Badiraguato
+township_sat_87,003,base.state_mx_slp,Aquismón
+township_sat_88,003,base.state_mx_son,Alamos
+township_sat_89,003,base.state_mx_tab,Centla
+township_sat_90,003,base.state_mx_tamps,Altamira
+township_sat_91,003,base.state_mx_tlax,Atlangatepec
+township_sat_92,003,base.state_mx_ver,Acayucan
+township_sat_93,003,base.state_mx_yuc,Akil
+township_sat_94,003,base.state_mx_zac,Atolinga
+township_sat_95,004,base.state_mx_ags,Cosío
+township_sat_96,004,base.state_mx_bc,Tijuana
+township_sat_97,004,base.state_mx_camp,Champotón
+township_sat_98,004,base.state_mx_coah,Arteaga
+township_sat_99,004,base.state_mx_col,Coquimatlán
+township_sat_100,004,base.state_mx_chih,Aquiles Serdán
+township_sat_101,004,base.state_mx_chis,Altamirano
+township_sat_102,004,base.state_mx_df,Cuajimalpa de Morelos
+township_sat_103,004,base.state_mx_dgo,Cuencamé
+township_sat_104,004,base.state_mx_gro,Alcozauca de Guerrero
+township_sat_105,004,base.state_mx_gto,Apaseo el Alto
+township_sat_106,004,base.state_mx_hgo,Agua Blanca de Iturbide
+township_sat_107,004,base.state_mx_jal,Amacueca
+township_sat_108,004,base.state_mx_mex,Almoloya de Alquisiras
+township_sat_109,004,base.state_mx_mich,Angamacutiro
+township_sat_110,004,base.state_mx_mor,Ayala
+township_sat_111,004,base.state_mx_nay,Compostela
+township_sat_112,004,base.state_mx_nl,Allende
+township_sat_113,004,base.state_mx_oax,Asunción Cuyotepeji
+township_sat_114,004,base.state_mx_pue,Acatzingo
+township_sat_115,004,base.state_mx_qro,Cadereyta de Montes
+township_sat_116,004,base.state_mx_q_roo,Othón P. Blanco
+township_sat_117,004,base.state_mx_sin,Concordia
+township_sat_118,004,base.state_mx_slp,Armadillo de los Infante
+township_sat_119,004,base.state_mx_son,Altar
+township_sat_120,004,base.state_mx_tab,Centro
+township_sat_121,004,base.state_mx_tamps,Antiguo Morelos
+township_sat_122,004,base.state_mx_tlax,Atltzayanca
+township_sat_123,004,base.state_mx_ver,Actopan
+township_sat_124,004,base.state_mx_yuc,Baca
+township_sat_125,004,base.state_mx_zac,Benito Juárez
+township_sat_126,005,base.state_mx_ags,Jesús María
+township_sat_127,005,base.state_mx_bc,Playas de Rosarito
+township_sat_128,005,base.state_mx_camp,Hecelchakán
+township_sat_129,005,base.state_mx_coah,Candela
+township_sat_130,005,base.state_mx_col,Cuauhtémoc
+township_sat_131,005,base.state_mx_chih,Ascensión
+township_sat_132,005,base.state_mx_chis,Amatán
+township_sat_133,005,base.state_mx_df,Gustavo A. Madero
+township_sat_134,005,base.state_mx_dgo,Durango
+township_sat_135,005,base.state_mx_gro,Alpoyeca
+township_sat_136,005,base.state_mx_gto,Apaseo el Grande
+township_sat_137,005,base.state_mx_hgo,Ajacuba
+township_sat_138,005,base.state_mx_jal,Amatitán
+township_sat_139,005,base.state_mx_mex,Almoloya de Juárez
+township_sat_140,005,base.state_mx_mich,Angangueo
+township_sat_141,005,base.state_mx_mor,Coatlán del Río
+township_sat_142,005,base.state_mx_nay,Huajicori
+township_sat_143,005,base.state_mx_nl,Anáhuac
+township_sat_144,005,base.state_mx_oax,Asunción Ixtaltepec
+township_sat_145,005,base.state_mx_pue,Acteopan
+township_sat_146,005,base.state_mx_qro,Colón
+township_sat_147,005,base.state_mx_q_roo,Benito Juárez
+township_sat_148,005,base.state_mx_sin,Cosalá
+township_sat_149,005,base.state_mx_slp,Cárdenas
+township_sat_150,005,base.state_mx_son,Arivechi
+township_sat_151,005,base.state_mx_tab,Comalcalco
+township_sat_152,005,base.state_mx_tamps,Burgos
+township_sat_153,005,base.state_mx_tlax,Apizaco
+township_sat_154,005,base.state_mx_ver,Acula
+township_sat_155,005,base.state_mx_yuc,Bokobá
+township_sat_156,005,base.state_mx_zac,Calera
+township_sat_157,006,base.state_mx_ags,Pabellón de Arteaga
+township_sat_158,006,base.state_mx_camp,Hopelchén
+township_sat_159,006,base.state_mx_coah,Castaños
+township_sat_160,006,base.state_mx_col,Ixtlahuacán
+township_sat_161,006,base.state_mx_chih,Bachíniva
+township_sat_162,006,base.state_mx_chis,Amatenango de la Frontera
+township_sat_163,006,base.state_mx_df,Iztacalco
+township_sat_164,006,base.state_mx_dgo,General Simón Bolívar
+township_sat_165,006,base.state_mx_gro,Apaxtla
+township_sat_166,006,base.state_mx_gto,Atarjea
+township_sat_167,006,base.state_mx_hgo,Alfajayucan
+township_sat_168,006,base.state_mx_jal,Ameca
+township_sat_169,006,base.state_mx_mex,Almoloya del Río
+township_sat_170,006,base.state_mx_mich,Apatzingán
+township_sat_171,006,base.state_mx_mor,Cuautla
+township_sat_172,006,base.state_mx_nay,Ixtlán del Río
+township_sat_173,006,base.state_mx_nl,Apodaca
+township_sat_174,006,base.state_mx_oax,Asunción Nochixtlán
+township_sat_175,006,base.state_mx_pue,Ahuacatlán
+township_sat_176,006,base.state_mx_qro,Corregidora
+township_sat_177,006,base.state_mx_q_roo,José María Morelos
+township_sat_178,006,base.state_mx_sin,Culiacán
+township_sat_179,006,base.state_mx_slp,Catorce
+township_sat_180,006,base.state_mx_son,Arizpe
+township_sat_181,006,base.state_mx_tab,Cunduacán
+township_sat_182,006,base.state_mx_tamps,Bustamante
+township_sat_183,006,base.state_mx_tlax,Calpulalpan
+township_sat_184,006,base.state_mx_ver,Acultzingo
+township_sat_185,006,base.state_mx_yuc,Buctzotz
+township_sat_186,006,base.state_mx_zac,Cañitas de Felipe Pescador
+township_sat_187,007,base.state_mx_ags,Rincón de Romos
+township_sat_188,007,base.state_mx_camp,Palizada
+township_sat_189,007,base.state_mx_coah,Cuatro Ciénegas
+township_sat_190,007,base.state_mx_col,Manzanillo
+township_sat_191,007,base.state_mx_chih,Balleza
+township_sat_192,007,base.state_mx_chis,Amatenango del Valle
+township_sat_193,007,base.state_mx_df,Iztapalapa
+township_sat_194,007,base.state_mx_dgo,Gómez Palacio
+township_sat_195,007,base.state_mx_gro,Arcelia
+township_sat_196,007,base.state_mx_gto,Celaya
+township_sat_197,007,base.state_mx_hgo,Almoloya
+township_sat_198,007,base.state_mx_jal,San Juanito de Escobedo
+township_sat_199,007,base.state_mx_mex,Amanalco
+township_sat_200,007,base.state_mx_mich,Aporo
+township_sat_201,007,base.state_mx_mor,Cuernavaca
+township_sat_202,007,base.state_mx_nay,Jala
+township_sat_203,007,base.state_mx_nl,Aramberri
+township_sat_204,007,base.state_mx_oax,Asunción Ocotlán
+township_sat_205,007,base.state_mx_pue,Ahuatlán
+township_sat_206,007,base.state_mx_qro,Ezequiel Montes
+township_sat_207,007,base.state_mx_q_roo,Lázaro Cárdenas
+township_sat_208,007,base.state_mx_sin,Choix
+township_sat_209,007,base.state_mx_slp,Cedral
+township_sat_210,007,base.state_mx_son,Atil
+township_sat_211,007,base.state_mx_tab,Emiliano Zapata
+township_sat_212,007,base.state_mx_tamps,Camargo
+township_sat_213,007,base.state_mx_tlax,El Carmen Tequexquitla
+township_sat_214,007,base.state_mx_ver,Camarón de Tejeda
+township_sat_215,007,base.state_mx_yuc,Cacalchén
+township_sat_216,007,base.state_mx_zac,Concepción del Oro
+township_sat_217,008,base.state_mx_ags,San José de Gracia
+township_sat_218,008,base.state_mx_bcs,Los Cabos
+township_sat_219,008,base.state_mx_camp,Tenabo
+township_sat_220,008,base.state_mx_coah,Escobedo
+township_sat_221,008,base.state_mx_col,Minatitlán
+township_sat_222,008,base.state_mx_chih,Batopilas
+township_sat_223,008,base.state_mx_chis,Angel Albino Corzo
+township_sat_224,008,base.state_mx_df,La Magdalena Contreras
+township_sat_225,008,base.state_mx_dgo,Guadalupe Victoria
+township_sat_226,008,base.state_mx_gro,Atenango del Río
+township_sat_227,008,base.state_mx_gto,Manuel Doblado
+township_sat_228,008,base.state_mx_hgo,Apan
+township_sat_229,008,base.state_mx_jal,Arandas
+township_sat_230,008,base.state_mx_mex,Amatepec
+township_sat_231,008,base.state_mx_mich,Aquila
+township_sat_232,008,base.state_mx_mor,Emiliano Zapata
+township_sat_233,008,base.state_mx_nay,Xalisco
+township_sat_234,008,base.state_mx_nl,Bustamante
+township_sat_235,008,base.state_mx_oax,Asunción Tlacolulita
+township_sat_236,008,base.state_mx_pue,Ahuazotepec
+township_sat_237,008,base.state_mx_qro,Huimilpan
+township_sat_238,008,base.state_mx_q_roo,Solidaridad
+township_sat_239,008,base.state_mx_sin,Elota
+township_sat_240,008,base.state_mx_slp,Cerritos
+township_sat_241,008,base.state_mx_son,Bacadéhuachi
+township_sat_242,008,base.state_mx_tab,Huimanguillo
+township_sat_243,008,base.state_mx_tamps,Casas
+township_sat_244,008,base.state_mx_tlax,Cuapiaxtla
+township_sat_245,008,base.state_mx_ver,Alpatláhuac
+township_sat_246,008,base.state_mx_yuc,Calotmul
+township_sat_247,008,base.state_mx_zac,Cuauhtémoc
+township_sat_248,009,base.state_mx_ags,Tepezalá
+township_sat_249,009,base.state_mx_bcs,Loreto
+township_sat_250,009,base.state_mx_camp,Escárcega
+township_sat_251,009,base.state_mx_coah,Francisco I. Madero
+township_sat_252,009,base.state_mx_col,Tecomán
+township_sat_253,009,base.state_mx_chih,Bocoyna
+township_sat_254,009,base.state_mx_chis,Arriaga
+township_sat_255,009,base.state_mx_df,Milpa Alta
+township_sat_256,009,base.state_mx_dgo,Guanaceví
+township_sat_257,009,base.state_mx_gro,Atlamajalcingo del Monte
+township_sat_258,009,base.state_mx_gto,Comonfort
+township_sat_259,009,base.state_mx_hgo,El Arenal
+township_sat_260,009,base.state_mx_jal,El Arenal
+township_sat_261,009,base.state_mx_mex,Amecameca
+township_sat_262,009,base.state_mx_mich,Ario
+township_sat_263,009,base.state_mx_mor,Huitzilac
+township_sat_264,009,base.state_mx_nay,Del Nayar
+township_sat_265,009,base.state_mx_nl,Cadereyta Jiménez
+township_sat_266,009,base.state_mx_oax,Ayotzintepec
+township_sat_267,009,base.state_mx_pue,Ahuehuetitla
+township_sat_268,009,base.state_mx_qro,Jalpan de Serra
+township_sat_269,009,base.state_mx_q_roo,Tulum
+township_sat_270,009,base.state_mx_sin,Escuinapa
+township_sat_271,009,base.state_mx_slp,Cerro de San Pedro
+township_sat_272,009,base.state_mx_son,Bacanora
+township_sat_273,009,base.state_mx_tab,Jalapa
+township_sat_274,009,base.state_mx_tamps,Ciudad Madero
+township_sat_275,009,base.state_mx_tlax,Cuaxomulco
+township_sat_276,009,base.state_mx_ver,Alto Lucero de Gutiérrez Barrios
+township_sat_277,009,base.state_mx_yuc,Cansahcab
+township_sat_278,009,base.state_mx_zac,Chalchihuites
+township_sat_279,010,base.state_mx_ags,El Llano
+township_sat_280,010,base.state_mx_camp,Calakmul
+township_sat_281,010,base.state_mx_coah,Frontera
+township_sat_282,010,base.state_mx_col,Villa de Álvarez
+township_sat_283,010,base.state_mx_chih,Buenaventura
+township_sat_284,010,base.state_mx_chis,Bejucal de Ocampo
+township_sat_285,010,base.state_mx_df,Álvaro Obregón
+township_sat_286,010,base.state_mx_dgo,Hidalgo
+township_sat_287,010,base.state_mx_gro,Atlixtac
+township_sat_288,010,base.state_mx_gto,Coroneo
+township_sat_289,010,base.state_mx_hgo,Atitalaquia
+township_sat_290,010,base.state_mx_jal,Atemajac de Brizuela
+township_sat_291,010,base.state_mx_mex,Apaxco
+township_sat_292,010,base.state_mx_mich,Arteaga
+township_sat_293,010,base.state_mx_mor,Jantetelco
+township_sat_294,010,base.state_mx_nay,Rosamorada
+township_sat_295,010,base.state_mx_nl,El Carmen
+township_sat_296,010,base.state_mx_oax,El Barrio de la Soledad
+township_sat_297,010,base.state_mx_pue,Ajalpan
+township_sat_298,010,base.state_mx_qro,Landa de Matamoros
+township_sat_299,010,base.state_mx_q_roo,Bacalar
+township_sat_300,010,base.state_mx_sin,El Fuerte
+township_sat_301,010,base.state_mx_slp,Ciudad del Maíz
+township_sat_302,010,base.state_mx_son,Bacerac
+township_sat_303,010,base.state_mx_tab,Jalpa de Méndez
+township_sat_304,010,base.state_mx_tamps,Cruillas
+township_sat_305,010,base.state_mx_tlax,Chiautempan
+township_sat_306,010,base.state_mx_ver,Altotonga
+township_sat_307,010,base.state_mx_yuc,Cantamayec
+township_sat_308,010,base.state_mx_zac,Fresnillo
+township_sat_309,011,base.state_mx_ags,San Francisco de los Romo
+township_sat_310,011,base.state_mx_camp,Candelaria
+township_sat_311,011,base.state_mx_coah,General Cepeda
+township_sat_312,011,base.state_mx_chih,Camargo
+township_sat_313,011,base.state_mx_chis,Bella Vista
+township_sat_314,011,base.state_mx_df,Tláhuac
+township_sat_315,011,base.state_mx_dgo,Indé
+township_sat_316,011,base.state_mx_gro,Atoyac de Álvarez
+township_sat_317,011,base.state_mx_gto,Cortazar
+township_sat_318,011,base.state_mx_hgo,Atlapexco
+township_sat_319,011,base.state_mx_jal,Atengo
+township_sat_320,011,base.state_mx_mex,Atenco
+township_sat_321,011,base.state_mx_mich,Briseñas
+township_sat_322,011,base.state_mx_mor,Jiutepec
+township_sat_323,011,base.state_mx_nay,Ruíz
+township_sat_324,011,base.state_mx_nl,Cerralvo
+township_sat_325,011,base.state_mx_oax,Calihualá
+township_sat_326,011,base.state_mx_pue,Albino Zertuche
+township_sat_327,011,base.state_mx_qro,El Marqués
+township_sat_328,011,base.state_mx_q_roo,Puerto Morelos
+township_sat_329,011,base.state_mx_sin,Guasave
+township_sat_330,011,base.state_mx_slp,Ciudad Fernández
+township_sat_331,011,base.state_mx_son,Bacoachi
+township_sat_332,011,base.state_mx_tab,Jonuta
+township_sat_333,011,base.state_mx_tamps,Gómez Farías
+township_sat_334,011,base.state_mx_tlax,Muñoz de Domingo Arenas
+township_sat_335,011,base.state_mx_ver,Alvarado
+township_sat_336,011,base.state_mx_yuc,Celestún
+township_sat_337,011,base.state_mx_zac,Trinidad García de la Cadena
+township_sat_338,012,base.state_mx_coah,Guerrero
+township_sat_339,012,base.state_mx_chih,Carichí
+township_sat_340,012,base.state_mx_chis,Berriozábal
+township_sat_341,012,base.state_mx_df,Tlalpan
+township_sat_342,012,base.state_mx_dgo,Lerdo
+township_sat_343,012,base.state_mx_gro,Ayutla de los Libres
+township_sat_344,012,base.state_mx_gto,Cuerámaro
+township_sat_345,012,base.state_mx_hgo,Atotonilco el Grande
+township_sat_346,012,base.state_mx_jal,Atenguillo
+township_sat_347,012,base.state_mx_mex,Atizapán
+township_sat_348,012,base.state_mx_mich,Buenavista
+township_sat_349,012,base.state_mx_mor,Jojutla
+township_sat_350,012,base.state_mx_nay,San Blas
+township_sat_351,012,base.state_mx_nl,Ciénega de Flores
+township_sat_352,012,base.state_mx_oax,Candelaria Loxicha
+township_sat_353,012,base.state_mx_pue,Aljojuca
+township_sat_354,012,base.state_mx_qro,Pedro Escobedo
+township_sat_355,012,base.state_mx_sin,Mazatlán
+township_sat_356,012,base.state_mx_slp,Tancanhuitz
+township_sat_357,012,base.state_mx_son,Bácum
+township_sat_358,012,base.state_mx_tab,Macuspana
+township_sat_359,012,base.state_mx_tamps,González
+township_sat_360,012,base.state_mx_tlax,Españita
+township_sat_361,012,base.state_mx_ver,Amatitlán
+township_sat_362,012,base.state_mx_yuc,Cenotillo
+township_sat_363,012,base.state_mx_zac,Genaro Codina
+township_sat_364,013,base.state_mx_coah,Hidalgo
+township_sat_365,013,base.state_mx_chih,Casas Grandes
+township_sat_366,013,base.state_mx_chis,Bochil
+township_sat_367,013,base.state_mx_df,Xochimilco
+township_sat_368,013,base.state_mx_dgo,Mapimí
+township_sat_369,013,base.state_mx_gro,Azoyú
+township_sat_370,013,base.state_mx_gto,Doctor Mora
+township_sat_371,013,base.state_mx_hgo,Atotonilco de Tula
+township_sat_372,013,base.state_mx_jal,Atotonilco el Alto
+township_sat_373,013,base.state_mx_mex,Atizapán de Zaragoza
+township_sat_374,013,base.state_mx_mich,Carácuaro
+township_sat_375,013,base.state_mx_mor,Jonacatepec
+township_sat_376,013,base.state_mx_nay,San Pedro Lagunillas
+township_sat_377,013,base.state_mx_nl,China
+township_sat_378,013,base.state_mx_oax,Ciénega de Zimatlán
+township_sat_379,013,base.state_mx_pue,Altepexi
+township_sat_380,013,base.state_mx_qro,Peñamiller
+township_sat_381,013,base.state_mx_sin,Mocorito
+township_sat_382,013,base.state_mx_slp,Ciudad Valles
+township_sat_383,013,base.state_mx_son,Banámichi
+township_sat_384,013,base.state_mx_tab,Nacajuca
+township_sat_385,013,base.state_mx_tamps,Güémez
+township_sat_386,013,base.state_mx_tlax,Huamantla
+township_sat_387,013,base.state_mx_ver,Naranjos Amatlán
+township_sat_388,013,base.state_mx_yuc,Conkal
+township_sat_389,013,base.state_mx_zac,General Enrique Estrada
+township_sat_390,014,base.state_mx_coah,Jiménez
+township_sat_391,014,base.state_mx_chih,Coronado
+township_sat_392,014,base.state_mx_chis,El Bosque
+township_sat_393,014,base.state_mx_df,Benito Juárez
+township_sat_394,014,base.state_mx_dgo,Mezquital
+township_sat_395,014,base.state_mx_gro,Benito Juárez
+township_sat_396,014,base.state_mx_gto,Dolores Hidalgo Cuna de la Independencia Nacional
+township_sat_397,014,base.state_mx_hgo,Calnali
+township_sat_398,014,base.state_mx_jal,Atoyac
+township_sat_399,014,base.state_mx_mex,Atlacomulco
+township_sat_400,014,base.state_mx_mich,Coahuayana
+township_sat_401,014,base.state_mx_mor,Mazatepec
+township_sat_402,014,base.state_mx_nay,Santa María del Oro
+township_sat_403,014,base.state_mx_nl,Doctor Arroyo
+township_sat_404,014,base.state_mx_oax,Ciudad Ixtepec
+township_sat_405,014,base.state_mx_pue,Amixtlán
+township_sat_406,014,base.state_mx_qro,Querétaro
+township_sat_407,014,base.state_mx_sin,Rosario
+township_sat_408,014,base.state_mx_slp,Coxcatlán
+township_sat_409,014,base.state_mx_son,Baviácora
+township_sat_410,014,base.state_mx_tab,Paraíso
+township_sat_411,014,base.state_mx_tamps,Guerrero
+township_sat_412,014,base.state_mx_tlax,Hueyotlipan
+township_sat_413,014,base.state_mx_ver,Amatlán de los Reyes
+township_sat_414,014,base.state_mx_yuc,Cuncunul
+township_sat_415,014,base.state_mx_zac,General Francisco R. Murguía
+township_sat_416,015,base.state_mx_coah,Juárez
+township_sat_417,015,base.state_mx_chih,Coyame del Sotol
+township_sat_418,015,base.state_mx_chis,Cacahoatán
+township_sat_419,015,base.state_mx_df,Cuauhtémoc
+township_sat_420,015,base.state_mx_dgo,Nazas
+township_sat_421,015,base.state_mx_gro,Buenavista de Cuéllar
+township_sat_422,015,base.state_mx_gto,Guanajuato
+township_sat_423,015,base.state_mx_hgo,Cardonal
+township_sat_424,015,base.state_mx_jal,Autlán de Navarro
+township_sat_425,015,base.state_mx_mex,Atlautla
+township_sat_426,015,base.state_mx_mich,Coalcomán de Vázquez Pallares
+township_sat_427,015,base.state_mx_mor,Miacatlán
+township_sat_428,015,base.state_mx_nay,Santiago Ixcuintla
+township_sat_429,015,base.state_mx_nl,Doctor Coss
+township_sat_430,015,base.state_mx_oax,Coatecas Altas
+township_sat_431,015,base.state_mx_pue,Amozoc
+township_sat_432,015,base.state_mx_qro,San Joaquín
+township_sat_433,015,base.state_mx_sin,Salvador Alvarado
+township_sat_434,015,base.state_mx_slp,Charcas
+township_sat_435,015,base.state_mx_son,Bavispe
+township_sat_436,015,base.state_mx_tab,Tacotalpa
+township_sat_437,015,base.state_mx_tamps,Gustavo Díaz Ordaz
+township_sat_438,015,base.state_mx_tlax,Ixtacuixtla de Mariano Matamoros
+township_sat_439,015,base.state_mx_ver,Angel R. Cabada
+township_sat_440,015,base.state_mx_yuc,Cuzamá
+township_sat_441,015,base.state_mx_zac,El Plateado de Joaquín Amaro
+township_sat_442,016,base.state_mx_coah,Lamadrid
+township_sat_443,016,base.state_mx_chih,La Cruz
+township_sat_444,016,base.state_mx_chis,Catazajá
+township_sat_445,016,base.state_mx_df,Miguel Hidalgo
+township_sat_446,016,base.state_mx_dgo,Nombre de Dios
+township_sat_447,016,base.state_mx_gro,Coahuayutla de José María Izazaga
+township_sat_448,016,base.state_mx_gto,Huanímaro
+township_sat_449,016,base.state_mx_hgo,Cuautepec de Hinojosa
+township_sat_450,016,base.state_mx_jal,Ayotlán
+township_sat_451,016,base.state_mx_mex,Axapusco
+township_sat_452,016,base.state_mx_mich,Coeneo
+township_sat_453,016,base.state_mx_mor,Ocuituco
+township_sat_454,016,base.state_mx_nay,Tecuala
+township_sat_455,016,base.state_mx_nl,Doctor González
+township_sat_456,016,base.state_mx_oax,Coicoyán de las Flores
+township_sat_457,016,base.state_mx_pue,Aquixtla
+township_sat_458,016,base.state_mx_qro,San Juan del Río
+township_sat_459,016,base.state_mx_sin,San Ignacio
+township_sat_460,016,base.state_mx_slp,Ebano
+township_sat_461,016,base.state_mx_son,Benjamín Hill
+township_sat_462,016,base.state_mx_tab,Teapa
+township_sat_463,016,base.state_mx_tamps,Hidalgo
+township_sat_464,016,base.state_mx_tlax,Ixtenco
+township_sat_465,016,base.state_mx_ver,La Antigua
+township_sat_466,016,base.state_mx_yuc,Chacsinkín
+township_sat_467,016,base.state_mx_zac,General Pánfilo Natera
+township_sat_468,017,base.state_mx_coah,Matamoros
+township_sat_469,017,base.state_mx_chih,Cuauhtémoc
+township_sat_470,017,base.state_mx_chis,Cintalapa
+township_sat_471,017,base.state_mx_df,Venustiano Carranza
+township_sat_472,017,base.state_mx_dgo,Ocampo
+township_sat_473,017,base.state_mx_gro,Cocula
+township_sat_474,017,base.state_mx_gto,Irapuato
+township_sat_475,017,base.state_mx_hgo,Chapantongo
+township_sat_476,017,base.state_mx_jal,Ayutla
+township_sat_477,017,base.state_mx_mex,Ayapango
+township_sat_478,017,base.state_mx_mich,Contepec
+township_sat_479,017,base.state_mx_mor,Puente de Ixtla
+township_sat_480,017,base.state_mx_nay,Tepic
+township_sat_481,017,base.state_mx_nl,Galeana
+township_sat_482,017,base.state_mx_oax,La Compañía
+township_sat_483,017,base.state_mx_pue,Atempan
+township_sat_484,017,base.state_mx_qro,Tequisquiapan
+township_sat_485,017,base.state_mx_sin,Sinaloa
+township_sat_486,017,base.state_mx_slp,Guadalcázar
+township_sat_487,017,base.state_mx_son,Caborca
+township_sat_488,017,base.state_mx_tab,Tenosique
+township_sat_489,017,base.state_mx_tamps,Jaumave
+township_sat_490,017,base.state_mx_tlax,Mazatecochco de José María Morelos
+township_sat_491,017,base.state_mx_ver,Apazapan
+township_sat_492,017,base.state_mx_yuc,Chankom
+township_sat_493,017,base.state_mx_zac,Guadalupe
+township_sat_494,018,base.state_mx_coah,Monclova
+township_sat_495,018,base.state_mx_chih,Cusihuiriachi
+township_sat_496,018,base.state_mx_chis,Coapilla
+township_sat_497,018,base.state_mx_dgo,El Oro
+township_sat_498,018,base.state_mx_gro,Copala
+township_sat_499,018,base.state_mx_gto,Jaral del Progreso
+township_sat_500,018,base.state_mx_hgo,Chapulhuacán
+township_sat_501,018,base.state_mx_jal,La Barca
+township_sat_502,018,base.state_mx_mex,Calimaya
+township_sat_503,018,base.state_mx_mich,Copándaro
+township_sat_504,018,base.state_mx_mor,Temixco
+township_sat_505,018,base.state_mx_nay,Tuxpan
+township_sat_506,018,base.state_mx_nl,García
+township_sat_507,018,base.state_mx_oax,Concepción Buenavista
+township_sat_508,018,base.state_mx_pue,Atexcal
+township_sat_509,018,base.state_mx_qro,Tolimán
+township_sat_510,018,base.state_mx_sin,Navolato
+township_sat_511,018,base.state_mx_slp,Huehuetlán
+township_sat_512,018,base.state_mx_son,Cajeme
+township_sat_513,018,base.state_mx_tamps,Jiménez
+township_sat_514,018,base.state_mx_tlax,Contla de Juan Cuamatzi
+township_sat_515,018,base.state_mx_ver,Aquila
+township_sat_516,018,base.state_mx_yuc,Chapab
+township_sat_517,018,base.state_mx_zac,Huanusco
+township_sat_518,019,base.state_mx_coah,Morelos
+township_sat_519,019,base.state_mx_chih,Chihuahua
+township_sat_520,019,base.state_mx_chis,Comitán de Domínguez
+township_sat_521,019,base.state_mx_dgo,Otáez
+township_sat_522,019,base.state_mx_gro,Copalillo
+township_sat_523,019,base.state_mx_gto,Jerécuaro
+township_sat_524,019,base.state_mx_hgo,Chilcuautla
+township_sat_525,019,base.state_mx_jal,Bolaños
+township_sat_526,019,base.state_mx_mex,Capulhuac
+township_sat_527,019,base.state_mx_mich,Cotija
+township_sat_528,019,base.state_mx_mor,Tepalcingo
+township_sat_529,019,base.state_mx_nay,La Yesca
+township_sat_530,019,base.state_mx_nl,San Pedro Garza García
+township_sat_531,019,base.state_mx_oax,Concepción Pápalo
+township_sat_532,019,base.state_mx_pue,Atlixco
+township_sat_533,019,base.state_mx_slp,Lagunillas
+township_sat_534,019,base.state_mx_son,Cananea
+township_sat_535,019,base.state_mx_tamps,Llera
+township_sat_536,019,base.state_mx_tlax,Tepetitla de Lardizábal
+township_sat_537,019,base.state_mx_ver,Astacinga
+township_sat_538,019,base.state_mx_yuc,Chemax
+township_sat_539,019,base.state_mx_zac,Jalpa
+township_sat_540,020,base.state_mx_coah,Múzquiz
+township_sat_541,020,base.state_mx_chih,Chínipas
+township_sat_542,020,base.state_mx_chis,La Concordia
+township_sat_543,020,base.state_mx_dgo,Pánuco de Coronado
+township_sat_544,020,base.state_mx_gro,Copanatoyac
+township_sat_545,020,base.state_mx_gto,León
+township_sat_546,020,base.state_mx_hgo,Eloxochitlán
+township_sat_547,020,base.state_mx_jal,Cabo Corrientes
+township_sat_548,020,base.state_mx_mex,Coacalco de Berriozábal
+township_sat_549,020,base.state_mx_mich,Cuitzeo
+township_sat_550,020,base.state_mx_mor,Tepoztlán
+township_sat_551,020,base.state_mx_nay,Bahía de Banderas
+township_sat_552,020,base.state_mx_nl,General Bravo
+township_sat_553,020,base.state_mx_oax,Constancia del Rosario
+township_sat_554,020,base.state_mx_pue,Atoyatempan
+township_sat_555,020,base.state_mx_slp,Matehuala
+township_sat_556,020,base.state_mx_son,Carbó
+township_sat_557,020,base.state_mx_tamps,Mainero
+township_sat_558,020,base.state_mx_tlax,Sanctórum de Lázaro Cárdenas
+township_sat_559,020,base.state_mx_ver,Atlahuilco
+township_sat_560,020,base.state_mx_yuc,Chicxulub Pueblo
+township_sat_561,020,base.state_mx_zac,Jerez
+township_sat_562,021,base.state_mx_coah,Nadadores
+township_sat_563,021,base.state_mx_chih,Delicias
+township_sat_564,021,base.state_mx_chis,Copainalá
+township_sat_565,021,base.state_mx_dgo,Peñón Blanco
+township_sat_566,021,base.state_mx_gro,Coyuca de Benítez
+township_sat_567,021,base.state_mx_gto,Moroleón
+township_sat_568,021,base.state_mx_hgo,Emiliano Zapata
+township_sat_569,021,base.state_mx_jal,Casimiro Castillo
+township_sat_570,021,base.state_mx_mex,Coatepec Harinas
+township_sat_571,021,base.state_mx_mich,Charapan
+township_sat_572,021,base.state_mx_mor,Tetecala
+township_sat_573,021,base.state_mx_nl,General Escobedo
+township_sat_574,021,base.state_mx_oax,Cosolapa
+township_sat_575,021,base.state_mx_pue,Atzala
+township_sat_576,021,base.state_mx_slp,Mexquitic de Carmona
+township_sat_577,021,base.state_mx_son,La Colorada
+township_sat_578,021,base.state_mx_tamps,El Mante
+township_sat_579,021,base.state_mx_tlax,Nanacamilpa de Mariano Arista
+township_sat_580,021,base.state_mx_ver,Atoyac
+township_sat_581,021,base.state_mx_yuc,Chichimilá
+township_sat_582,021,base.state_mx_zac,Jiménez del Teul
+township_sat_583,022,base.state_mx_coah,Nava
+township_sat_584,022,base.state_mx_chih,Dr. Belisario Domínguez
+township_sat_585,022,base.state_mx_chis,Chalchihuitán
+township_sat_586,022,base.state_mx_dgo,Poanas
+township_sat_587,022,base.state_mx_gro,Coyuca de Catalán
+township_sat_588,022,base.state_mx_gto,Ocampo
+township_sat_589,022,base.state_mx_hgo,Epazoyucan
+township_sat_590,022,base.state_mx_jal,Cihuatlán
+township_sat_591,022,base.state_mx_mex,Cocotitlán
+township_sat_592,022,base.state_mx_mich,Charo
+township_sat_593,022,base.state_mx_mor,Tetela del Volcán
+township_sat_594,022,base.state_mx_nl,General Terán
+township_sat_595,022,base.state_mx_oax,Cosoltepec
+township_sat_596,022,base.state_mx_pue,Atzitzihuacán
+township_sat_597,022,base.state_mx_slp,Moctezuma
+township_sat_598,022,base.state_mx_son,Cucurpe
+township_sat_599,022,base.state_mx_tamps,Matamoros
+township_sat_600,022,base.state_mx_tlax,Acuamanala de Miguel Hidalgo
+township_sat_601,022,base.state_mx_ver,Atzacan
+township_sat_602,022,base.state_mx_yuc,Chikindzonot
+township_sat_603,022,base.state_mx_zac,Juan Aldama
+township_sat_604,023,base.state_mx_coah,Ocampo
+township_sat_605,023,base.state_mx_chih,Galeana
+township_sat_606,023,base.state_mx_chis,Chamula
+township_sat_607,023,base.state_mx_dgo,Pueblo Nuevo
+township_sat_608,023,base.state_mx_gro,Cuajinicuilapa
+township_sat_609,023,base.state_mx_gto,Pénjamo
+township_sat_610,023,base.state_mx_hgo,Francisco I. Madero
+township_sat_611,023,base.state_mx_jal,Zapotlán el Grande
+township_sat_612,023,base.state_mx_mex,Coyotepec
+township_sat_613,023,base.state_mx_mich,Chavinda
+township_sat_614,023,base.state_mx_mor,Tlalnepantla
+township_sat_615,023,base.state_mx_nl,General Treviño
+township_sat_616,023,base.state_mx_oax,Cuilápam de Guerrero
+township_sat_617,023,base.state_mx_pue,Atzitzintla
+township_sat_618,023,base.state_mx_slp,Rayón
+township_sat_619,023,base.state_mx_son,Cumpas
+township_sat_620,023,base.state_mx_tamps,Méndez
+township_sat_621,023,base.state_mx_tlax,Natívitas
+township_sat_622,023,base.state_mx_ver,Atzalan
+township_sat_623,023,base.state_mx_yuc,Chocholá
+township_sat_624,023,base.state_mx_zac,Juchipila
+township_sat_625,024,base.state_mx_coah,Parras
+township_sat_626,024,base.state_mx_chih,Santa Isabel
+township_sat_627,024,base.state_mx_chis,Chanal
+township_sat_628,024,base.state_mx_dgo,Rodeo
+township_sat_629,024,base.state_mx_gro,Cualác
+township_sat_630,024,base.state_mx_gto,Pueblo Nuevo
+township_sat_631,024,base.state_mx_hgo,Huasca de Ocampo
+township_sat_632,024,base.state_mx_jal,Cocula
+township_sat_633,024,base.state_mx_mex,Cuautitlán
+township_sat_634,024,base.state_mx_mich,Cherán
+township_sat_635,024,base.state_mx_mor,Tlaltizapán de Zapata
+township_sat_636,024,base.state_mx_nl,General Zaragoza
+township_sat_637,024,base.state_mx_oax,Cuyamecalco Villa de Zaragoza
+township_sat_638,024,base.state_mx_pue,Axutla
+township_sat_639,024,base.state_mx_slp,Rioverde
+township_sat_640,024,base.state_mx_son,Divisaderos
+township_sat_641,024,base.state_mx_tamps,Mier
+township_sat_642,024,base.state_mx_tlax,Panotla
+township_sat_643,024,base.state_mx_ver,Tlaltetela
+township_sat_644,024,base.state_mx_yuc,Chumayel
+township_sat_645,024,base.state_mx_zac,Loreto
+township_sat_646,025,base.state_mx_coah,Piedras Negras
+township_sat_647,025,base.state_mx_chih,Gómez Farías
+township_sat_648,025,base.state_mx_chis,Chapultenango
+township_sat_649,025,base.state_mx_dgo,San Bernardo
+township_sat_650,025,base.state_mx_gro,Cuautepec
+township_sat_651,025,base.state_mx_gto,Purísima del Rincón
+township_sat_652,025,base.state_mx_hgo,Huautla
+township_sat_653,025,base.state_mx_jal,Colotlán
+township_sat_654,025,base.state_mx_mex,Chalco
+township_sat_655,025,base.state_mx_mich,Chilchota
+township_sat_656,025,base.state_mx_mor,Tlaquiltenango
+township_sat_657,025,base.state_mx_nl,General Zuazua
+township_sat_658,025,base.state_mx_oax,Chahuites
+township_sat_659,025,base.state_mx_pue,Ayotoxco de Guerrero
+township_sat_660,025,base.state_mx_slp,Salinas
+township_sat_661,025,base.state_mx_son,Empalme
+township_sat_662,025,base.state_mx_tamps,Miguel Alemán
+township_sat_663,025,base.state_mx_tlax,San Pablo del Monte
+township_sat_664,025,base.state_mx_ver,Ayahualulco
+township_sat_665,025,base.state_mx_yuc,Dzán
+township_sat_666,025,base.state_mx_zac,Luis Moya
+township_sat_667,026,base.state_mx_coah,Progreso
+township_sat_668,026,base.state_mx_chih,Gran Morelos
+township_sat_669,026,base.state_mx_chis,Chenalhó
+township_sat_670,026,base.state_mx_dgo,San Dimas
+township_sat_671,026,base.state_mx_gro,Cuetzala del Progreso
+township_sat_672,026,base.state_mx_gto,Romita
+township_sat_673,026,base.state_mx_hgo,Huazalingo
+township_sat_674,026,base.state_mx_jal,Concepción de Buenos Aires
+township_sat_675,026,base.state_mx_mex,Chapa de Mota
+township_sat_676,026,base.state_mx_mich,Chinicuila
+township_sat_677,026,base.state_mx_mor,Tlayacapan
+township_sat_678,026,base.state_mx_nl,Guadalupe
+township_sat_679,026,base.state_mx_oax,Chalcatongo de Hidalgo
+township_sat_680,026,base.state_mx_pue,Calpan
+township_sat_681,026,base.state_mx_slp,San Antonio
+township_sat_682,026,base.state_mx_son,Etchojoa
+township_sat_683,026,base.state_mx_tamps,Miquihuana
+township_sat_684,026,base.state_mx_tlax,Santa Cruz Tlaxcala
+township_sat_685,026,base.state_mx_ver,Banderilla
+township_sat_686,026,base.state_mx_yuc,Dzemul
+township_sat_687,026,base.state_mx_zac,Mazapil
+township_sat_688,027,base.state_mx_coah,Ramos Arizpe
+township_sat_689,027,base.state_mx_chih,Guachochi
+township_sat_690,027,base.state_mx_chis,Chiapa de Corzo
+township_sat_691,027,base.state_mx_dgo,San Juan de Guadalupe
+township_sat_692,027,base.state_mx_gro,Cutzamala de Pinzón
+township_sat_693,027,base.state_mx_gto,Salamanca
+township_sat_694,027,base.state_mx_hgo,Huehuetla
+township_sat_695,027,base.state_mx_jal,Cuautitlán de García Barragán
+township_sat_696,027,base.state_mx_mex,Chapultepec
+township_sat_697,027,base.state_mx_mich,Chucándiro
+township_sat_698,027,base.state_mx_mor,Totolapan
+township_sat_699,027,base.state_mx_nl,Los Herreras
+township_sat_700,027,base.state_mx_oax,Chiquihuitlán de Benito Juárez
+township_sat_701,027,base.state_mx_pue,Caltepec
+township_sat_702,027,base.state_mx_slp,San Ciro de Acosta
+township_sat_703,027,base.state_mx_son,Fronteras
+township_sat_704,027,base.state_mx_tamps,Nuevo Laredo
+township_sat_705,027,base.state_mx_tlax,Tenancingo
+township_sat_706,027,base.state_mx_ver,Benito Juárez
+township_sat_707,027,base.state_mx_yuc,Dzidzantún
+township_sat_708,027,base.state_mx_zac,Melchor Ocampo
+township_sat_709,028,base.state_mx_coah,Sabinas
+township_sat_710,028,base.state_mx_chih,Guadalupe
+township_sat_711,028,base.state_mx_chis,Chiapilla
+township_sat_712,028,base.state_mx_dgo,San Juan del Río
+township_sat_713,028,base.state_mx_gro,Chilapa de Álvarez
+township_sat_714,028,base.state_mx_gto,Salvatierra
+township_sat_715,028,base.state_mx_hgo,Huejutla de Reyes
+township_sat_716,028,base.state_mx_jal,Cuautla
+township_sat_717,028,base.state_mx_mex,Chiautla
+township_sat_718,028,base.state_mx_mich,Churintzio
+township_sat_719,028,base.state_mx_mor,Xochitepec
+township_sat_720,028,base.state_mx_nl,Higueras
+township_sat_721,028,base.state_mx_oax,Heroica Ciudad de Ejutla de Crespo
+township_sat_722,028,base.state_mx_pue,Camocuautla
+township_sat_723,028,base.state_mx_slp,San Luis Potosí
+township_sat_724,028,base.state_mx_son,Granados
+township_sat_725,028,base.state_mx_tamps,Nuevo Morelos
+township_sat_726,028,base.state_mx_tlax,Teolocholco
+township_sat_727,028,base.state_mx_ver,Boca del Río
+township_sat_728,028,base.state_mx_yuc,Dzilam de Bravo
+township_sat_729,028,base.state_mx_zac,Mezquital del Oro
+township_sat_730,029,base.state_mx_coah,Sacramento
+township_sat_731,029,base.state_mx_chih,Guadalupe y Calvo
+township_sat_732,029,base.state_mx_chis,Chicoasén
+township_sat_733,029,base.state_mx_dgo,San Luis del Cordero
+township_sat_734,029,base.state_mx_gro,Chilpancingo de los Bravo
+township_sat_735,029,base.state_mx_gto,San Diego de la Unión
+township_sat_736,029,base.state_mx_hgo,Huichapan
+township_sat_737,029,base.state_mx_jal,Cuquío
+township_sat_738,029,base.state_mx_mex,Chicoloapan
+township_sat_739,029,base.state_mx_mich,Churumuco
+township_sat_740,029,base.state_mx_mor,Yautepec
+township_sat_741,029,base.state_mx_nl,Hualahuises
+township_sat_742,029,base.state_mx_oax,Eloxochitlán de Flores Magón
+township_sat_743,029,base.state_mx_pue,Caxhuacan
+township_sat_744,029,base.state_mx_slp,San Martín Chalchicuautla
+township_sat_745,029,base.state_mx_son,Guaymas
+township_sat_746,029,base.state_mx_tamps,Ocampo
+township_sat_747,029,base.state_mx_tlax,Tepeyanco
+township_sat_748,029,base.state_mx_ver,Calcahualco
+township_sat_749,029,base.state_mx_yuc,Dzilam González
+township_sat_750,029,base.state_mx_zac,Miguel Auza
+township_sat_751,030,base.state_mx_coah,Saltillo
+township_sat_752,030,base.state_mx_chih,Guazapares
+township_sat_753,030,base.state_mx_chis,Chicomuselo
+township_sat_754,030,base.state_mx_dgo,San Pedro del Gallo
+township_sat_755,030,base.state_mx_gro,Florencio Villarreal
+township_sat_756,030,base.state_mx_gto,San Felipe
+township_sat_757,030,base.state_mx_hgo,Ixmiquilpan
+township_sat_758,030,base.state_mx_jal,Chapala
+township_sat_759,030,base.state_mx_mex,Chiconcuac
+township_sat_760,030,base.state_mx_mich,Ecuandureo
+township_sat_761,030,base.state_mx_mor,Yecapixtla
+township_sat_762,030,base.state_mx_nl,Iturbide
+township_sat_763,030,base.state_mx_oax,El Espinal
+township_sat_764,030,base.state_mx_pue,Coatepec
+township_sat_765,030,base.state_mx_slp,San Nicolás Tolentino
+township_sat_766,030,base.state_mx_son,Hermosillo
+township_sat_767,030,base.state_mx_tamps,Padilla
+township_sat_768,030,base.state_mx_tlax,Terrenate
+township_sat_769,030,base.state_mx_ver,Camerino Z. Mendoza
+township_sat_770,030,base.state_mx_yuc,Dzitás
+township_sat_771,030,base.state_mx_zac,Momax
+township_sat_772,031,base.state_mx_coah,San Buenaventura
+township_sat_773,031,base.state_mx_chih,Guerrero
+township_sat_774,031,base.state_mx_chis,Chilón
+township_sat_775,031,base.state_mx_dgo,Santa Clara
+township_sat_776,031,base.state_mx_gro,General Canuto A. Neri
+township_sat_777,031,base.state_mx_gto,San Francisco del Rincón
+township_sat_778,031,base.state_mx_hgo,Jacala de Ledezma
+township_sat_779,031,base.state_mx_jal,Chimaltitán
+township_sat_780,031,base.state_mx_mex,Chimalhuacán
+township_sat_781,031,base.state_mx_mich,Epitacio Huerta
+township_sat_782,031,base.state_mx_mor,Zacatepec
+township_sat_783,031,base.state_mx_nl,Juárez
+township_sat_784,031,base.state_mx_oax,Tamazulápam del Espíritu Santo
+township_sat_785,031,base.state_mx_pue,Coatzingo
+township_sat_786,031,base.state_mx_slp,Santa Catarina
+township_sat_787,031,base.state_mx_son,Huachinera
+township_sat_788,031,base.state_mx_tamps,Palmillas
+township_sat_789,031,base.state_mx_tlax,Tetla de la Solidaridad
+township_sat_790,031,base.state_mx_ver,Carrillo Puerto
+township_sat_791,031,base.state_mx_yuc,Dzoncauich
+township_sat_792,031,base.state_mx_zac,Monte Escobedo
+township_sat_793,032,base.state_mx_coah,San Juan de Sabinas
+township_sat_794,032,base.state_mx_chih,Hidalgo del Parral
+township_sat_795,032,base.state_mx_chis,Escuintla
+township_sat_796,032,base.state_mx_dgo,Santiago Papasquiaro
+township_sat_797,032,base.state_mx_gro,General Heliodoro Castillo
+township_sat_798,032,base.state_mx_gto,San José Iturbide
+township_sat_799,032,base.state_mx_hgo,Jaltocán
+township_sat_800,032,base.state_mx_jal,Chiquilistlán
+township_sat_801,032,base.state_mx_mex,Donato Guerra
+township_sat_802,032,base.state_mx_mich,Erongarícuaro
+township_sat_803,032,base.state_mx_mor,Zacualpan
+township_sat_804,032,base.state_mx_nl,Lampazos de Naranjo
+township_sat_805,032,base.state_mx_oax,Fresnillo de Trujano
+township_sat_806,032,base.state_mx_pue,Cohetzala
+township_sat_807,032,base.state_mx_slp,Santa María del Río
+township_sat_808,032,base.state_mx_son,Huásabas
+township_sat_809,032,base.state_mx_tamps,Reynosa
+township_sat_810,032,base.state_mx_tlax,Tetlatlahuca
+township_sat_811,032,base.state_mx_ver,Catemaco
+township_sat_812,032,base.state_mx_yuc,Espita
+township_sat_813,032,base.state_mx_zac,Morelos
+township_sat_814,033,base.state_mx_coah,San Pedro
+township_sat_815,033,base.state_mx_chih,Huejotitán
+township_sat_816,033,base.state_mx_chis,Francisco León
+township_sat_817,033,base.state_mx_dgo,Súchil
+township_sat_818,033,base.state_mx_gro,Huamuxtitlán
+township_sat_819,033,base.state_mx_gto,San Luis de la Paz
+township_sat_820,033,base.state_mx_hgo,Juárez Hidalgo
+township_sat_821,033,base.state_mx_jal,Degollado
+township_sat_822,033,base.state_mx_mex,Ecatepec de Morelos
+township_sat_823,033,base.state_mx_mich,Gabriel Zamora
+township_sat_824,033,base.state_mx_mor,Temoac
+township_sat_825,033,base.state_mx_nl,Linares
+township_sat_826,033,base.state_mx_oax,Guadalupe Etla
+township_sat_827,033,base.state_mx_pue,Cohuecan
+township_sat_828,033,base.state_mx_slp,Santo Domingo
+township_sat_829,033,base.state_mx_son,Huatabampo
+township_sat_830,033,base.state_mx_tamps,Río Bravo
+township_sat_831,033,base.state_mx_tlax,Tlaxcala
+township_sat_832,033,base.state_mx_ver,Cazones de Herrera
+township_sat_833,033,base.state_mx_yuc,Halachó
+township_sat_834,033,base.state_mx_zac,Moyahua de Estrada
+township_sat_835,034,base.state_mx_coah,Sierra Mojada
+township_sat_836,034,base.state_mx_chih,Ignacio Zaragoza
+township_sat_837,034,base.state_mx_chis,Frontera Comalapa
+township_sat_838,034,base.state_mx_dgo,Tamazula
+township_sat_839,034,base.state_mx_gro,Huitzuco de los Figueroa
+township_sat_840,034,base.state_mx_gto,Santa Catarina
+township_sat_841,034,base.state_mx_hgo,Lolotla
+township_sat_842,034,base.state_mx_jal,Ejutla
+township_sat_843,034,base.state_mx_mex,Ecatzingo
+township_sat_844,034,base.state_mx_mich,Hidalgo
+township_sat_845,034,base.state_mx_nl,Marín
+township_sat_846,034,base.state_mx_oax,Guadalupe de Ramírez
+township_sat_847,034,base.state_mx_pue,Coronango
+township_sat_848,034,base.state_mx_slp,San Vicente Tancuayalab
+township_sat_849,034,base.state_mx_son,Huépac
+township_sat_850,034,base.state_mx_tamps,San Carlos
+township_sat_851,034,base.state_mx_tlax,Tlaxco
+township_sat_852,034,base.state_mx_ver,Cerro Azul
+township_sat_853,034,base.state_mx_yuc,Hocabá
+township_sat_854,034,base.state_mx_zac,Nochistlán de Mejía
+township_sat_855,035,base.state_mx_coah,Torreón
+township_sat_856,035,base.state_mx_chih,Janos
+township_sat_857,035,base.state_mx_chis,Frontera Hidalgo
+township_sat_858,035,base.state_mx_dgo,Tepehuanes
+township_sat_859,035,base.state_mx_gro,Iguala de la Independencia
+township_sat_860,035,base.state_mx_gto,Santa Cruz de Juventino Rosas
+township_sat_861,035,base.state_mx_hgo,Metepec
+township_sat_862,035,base.state_mx_jal,Encarnación de Díaz
+township_sat_863,035,base.state_mx_mex,Huehuetoca
+township_sat_864,035,base.state_mx_mich,La Huacana
+township_sat_865,035,base.state_mx_nl,Melchor Ocampo
+township_sat_866,035,base.state_mx_oax,Guelatao de Juárez
+township_sat_867,035,base.state_mx_pue,Coxcatlán
+township_sat_868,035,base.state_mx_slp,Soledad de Graciano Sánchez
+township_sat_869,035,base.state_mx_son,Imuris
+township_sat_870,035,base.state_mx_tamps,San Fernando
+township_sat_871,035,base.state_mx_tlax,Tocatlán
+township_sat_872,035,base.state_mx_ver,Citlaltépetl
+township_sat_873,035,base.state_mx_yuc,Hoctún
+township_sat_874,035,base.state_mx_zac,Noria de Ángeles
+township_sat_875,036,base.state_mx_coah,Viesca
+township_sat_876,036,base.state_mx_chih,Jiménez
+township_sat_877,036,base.state_mx_chis,La Grandeza
+township_sat_878,036,base.state_mx_dgo,Tlahualilo
+township_sat_879,036,base.state_mx_gro,Igualapa
+township_sat_880,036,base.state_mx_gto,Santiago Maravatío
+township_sat_881,036,base.state_mx_hgo,San Agustín Metzquititlán
+township_sat_882,036,base.state_mx_jal,Etzatlán
+township_sat_883,036,base.state_mx_mex,Hueypoxtla
+township_sat_884,036,base.state_mx_mich,Huandacareo
+township_sat_885,036,base.state_mx_nl,Mier y Noriega
+township_sat_886,036,base.state_mx_oax,Guevea de Humboldt
+township_sat_887,036,base.state_mx_pue,Coyomeapan
+township_sat_888,036,base.state_mx_slp,Tamasopo
+township_sat_889,036,base.state_mx_son,Magdalena
+township_sat_890,036,base.state_mx_tamps,San Nicolás
+township_sat_891,036,base.state_mx_tlax,Totolac
+township_sat_892,036,base.state_mx_ver,Coacoatzintla
+township_sat_893,036,base.state_mx_yuc,Homún
+township_sat_894,036,base.state_mx_zac,Ojocaliente
+township_sat_895,037,base.state_mx_coah,Villa Unión
+township_sat_896,037,base.state_mx_chih,Juárez
+township_sat_897,037,base.state_mx_chis,Huehuetán
+township_sat_898,037,base.state_mx_dgo,Topia
+township_sat_899,037,base.state_mx_gro,Ixcateopan de Cuauhtémoc
+township_sat_900,037,base.state_mx_gto,Silao de la Victoria
+township_sat_901,037,base.state_mx_hgo,Metztitlán
+township_sat_902,037,base.state_mx_jal,El Grullo
+township_sat_903,037,base.state_mx_mex,Huixquilucan
+township_sat_904,037,base.state_mx_mich,Huaniqueo
+township_sat_905,037,base.state_mx_nl,Mina
+township_sat_906,037,base.state_mx_oax,Mesones Hidalgo
+township_sat_907,037,base.state_mx_pue,Coyotepec
+township_sat_908,037,base.state_mx_slp,Tamazunchale
+township_sat_909,037,base.state_mx_son,Mazatán
+township_sat_910,037,base.state_mx_tamps,Soto la Marina
+township_sat_911,037,base.state_mx_tlax,Ziltlaltépec de Trinidad Sánchez Santos
+township_sat_912,037,base.state_mx_ver,Coahuitlán
+township_sat_913,037,base.state_mx_yuc,Huhí
+township_sat_914,037,base.state_mx_zac,Pánuco
+township_sat_915,038,base.state_mx_coah,Zaragoza
+township_sat_916,038,base.state_mx_chih,Julimes
+township_sat_917,038,base.state_mx_chis,Huixtán
+township_sat_918,038,base.state_mx_dgo,Vicente Guerrero
+township_sat_919,038,base.state_mx_gro,Zihuatanejo de Azueta
+township_sat_920,038,base.state_mx_gto,Tarandacuao
+township_sat_921,038,base.state_mx_hgo,Mineral del Chico
+township_sat_922,038,base.state_mx_jal,Guachinango
+township_sat_923,038,base.state_mx_mex,Isidro Fabela
+township_sat_924,038,base.state_mx_mich,Huetamo
+township_sat_925,038,base.state_mx_nl,Montemorelos
+township_sat_926,038,base.state_mx_oax,Villa Hidalgo
+township_sat_927,038,base.state_mx_pue,Cuapiaxtla de Madero
+township_sat_928,038,base.state_mx_slp,Tampacán
+township_sat_929,038,base.state_mx_son,Moctezuma
+township_sat_930,038,base.state_mx_tamps,Tampico
+township_sat_931,038,base.state_mx_tlax,Tzompantepec
+township_sat_932,038,base.state_mx_ver,Coatepec
+township_sat_933,038,base.state_mx_yuc,Hunucmá
+township_sat_934,038,base.state_mx_zac,Pinos
+township_sat_935,039,base.state_mx_chih,López
+township_sat_936,039,base.state_mx_chis,Huitiupán
+township_sat_937,039,base.state_mx_dgo,Nuevo Ideal
+township_sat_938,039,base.state_mx_gro,Juan R. Escudero
+township_sat_939,039,base.state_mx_gto,Tarimoro
+township_sat_940,039,base.state_mx_hgo,Mineral del Monte
+township_sat_941,039,base.state_mx_jal,Guadalajara
+township_sat_942,039,base.state_mx_mex,Ixtapaluca
+township_sat_943,039,base.state_mx_mich,Huiramba
+township_sat_944,039,base.state_mx_nl,Monterrey
+township_sat_945,039,base.state_mx_oax,Heroica Ciudad de Huajuapan de León
+township_sat_946,039,base.state_mx_pue,Cuautempan
+township_sat_947,039,base.state_mx_slp,Tampamolón Corona
+township_sat_948,039,base.state_mx_son,Naco
+township_sat_949,039,base.state_mx_tamps,Tula
+township_sat_950,039,base.state_mx_tlax,Xaloztoc
+township_sat_951,039,base.state_mx_ver,Coatzacoalcos
+township_sat_952,039,base.state_mx_yuc,Ixil
+township_sat_953,039,base.state_mx_zac,Río Grande
+township_sat_954,040,base.state_mx_chih,Madera
+township_sat_955,040,base.state_mx_chis,Huixtla
+township_sat_956,040,base.state_mx_gro,Leonardo Bravo
+township_sat_957,040,base.state_mx_gto,Tierra Blanca
+township_sat_958,040,base.state_mx_hgo,La Misión
+township_sat_959,040,base.state_mx_jal,Hostotipaquillo
+township_sat_960,040,base.state_mx_mex,Ixtapan de la Sal
+township_sat_961,040,base.state_mx_mich,Indaparapeo
+township_sat_962,040,base.state_mx_nl,Parás
+township_sat_963,040,base.state_mx_oax,Huautepec
+township_sat_964,040,base.state_mx_pue,Cuautinchán
+township_sat_965,040,base.state_mx_slp,Tamuín
+township_sat_966,040,base.state_mx_son,Nácori Chico
+township_sat_967,040,base.state_mx_tamps,Valle Hermoso
+township_sat_968,040,base.state_mx_tlax,Xaltocan
+township_sat_969,040,base.state_mx_ver,Coatzintla
+township_sat_970,040,base.state_mx_yuc,Izamal
+township_sat_971,040,base.state_mx_zac,Sain Alto
+township_sat_972,041,base.state_mx_chih,Maguarichi
+township_sat_973,041,base.state_mx_chis,La Independencia
+township_sat_974,041,base.state_mx_gro,Malinaltepec
+township_sat_975,041,base.state_mx_gto,Uriangato
+township_sat_976,041,base.state_mx_hgo,Mixquiahuala de Juárez
+township_sat_977,041,base.state_mx_jal,Huejúcar
+township_sat_978,041,base.state_mx_mex,Ixtapan del Oro
+township_sat_979,041,base.state_mx_mich,Irimbo
+township_sat_980,041,base.state_mx_nl,Pesquería
+township_sat_981,041,base.state_mx_oax,Huautla de Jiménez
+township_sat_982,041,base.state_mx_pue,Cuautlancingo
+township_sat_983,041,base.state_mx_slp,Tanlajás
+township_sat_984,041,base.state_mx_son,Nacozari de García
+township_sat_985,041,base.state_mx_tamps,Victoria
+township_sat_986,041,base.state_mx_tlax,Papalotla de Xicohténcatl
+township_sat_987,041,base.state_mx_ver,Coetzala
+township_sat_988,041,base.state_mx_yuc,Kanasín
+township_sat_989,041,base.state_mx_zac,El Salvador
+township_sat_990,042,base.state_mx_chih,Manuel Benavides
+township_sat_991,042,base.state_mx_chis,Ixhuatán
+township_sat_992,042,base.state_mx_gro,Mártir de Cuilapan
+township_sat_993,042,base.state_mx_gto,Valle de Santiago
+township_sat_994,042,base.state_mx_hgo,Molango de Escamilla
+township_sat_995,042,base.state_mx_jal,Huejuquilla el Alto
+township_sat_996,042,base.state_mx_mex,Ixtlahuaca
+township_sat_997,042,base.state_mx_mich,Ixtlán
+township_sat_998,042,base.state_mx_nl,Los Ramones
+township_sat_999,042,base.state_mx_oax,Ixtlán de Juárez
+township_sat_1000,042,base.state_mx_pue,Cuayuca de Andrade
+township_sat_1001,042,base.state_mx_slp,Tanquián de Escobedo
+township_sat_1002,042,base.state_mx_son,Navojoa
+township_sat_1003,042,base.state_mx_tamps,Villagrán
+township_sat_1004,042,base.state_mx_tlax,Xicohtzinco
+township_sat_1005,042,base.state_mx_ver,Colipa
+township_sat_1006,042,base.state_mx_yuc,Kantunil
+township_sat_1007,042,base.state_mx_zac,Sombrerete
+township_sat_1008,043,base.state_mx_chih,Matachí
+township_sat_1009,043,base.state_mx_chis,Ixtacomitán
+township_sat_1010,043,base.state_mx_gro,Metlatónoc
+township_sat_1011,043,base.state_mx_gto,Victoria
+township_sat_1012,043,base.state_mx_hgo,Nicolás Flores
+township_sat_1013,043,base.state_mx_jal,La Huerta
+township_sat_1014,043,base.state_mx_mex,Xalatlaco
+township_sat_1015,043,base.state_mx_mich,Jacona
+township_sat_1016,043,base.state_mx_nl,Rayones
+township_sat_1017,043,base.state_mx_oax,Heroica Ciudad de Juchitán de Zaragoza
+township_sat_1018,043,base.state_mx_pue,Cuetzalan del Progreso
+township_sat_1019,043,base.state_mx_slp,Tierra Nueva
+township_sat_1020,043,base.state_mx_son,Nogales
+township_sat_1021,043,base.state_mx_tamps,Xicoténcatl
+township_sat_1022,043,base.state_mx_tlax,Yauhquemehcan
+township_sat_1023,043,base.state_mx_ver,Comapa
+township_sat_1024,043,base.state_mx_yuc,Kaua
+township_sat_1025,043,base.state_mx_zac,Susticacán
+township_sat_1026,044,base.state_mx_chih,Matamoros
+township_sat_1027,044,base.state_mx_chis,Ixtapa
+township_sat_1028,044,base.state_mx_gro,Mochitlán
+township_sat_1029,044,base.state_mx_gto,Villagrán
+township_sat_1030,044,base.state_mx_hgo,Nopala de Villagrán
+township_sat_1031,044,base.state_mx_jal,Ixtlahuacán de los Membrillos
+township_sat_1032,044,base.state_mx_mex,Jaltenco
+township_sat_1033,044,base.state_mx_mich,Jiménez
+township_sat_1034,044,base.state_mx_nl,Sabinas Hidalgo
+township_sat_1035,044,base.state_mx_oax,Loma Bonita
+township_sat_1036,044,base.state_mx_pue,Cuyoaco
+township_sat_1037,044,base.state_mx_slp,Vanegas
+township_sat_1038,044,base.state_mx_son,Onavas
+township_sat_1039,044,base.state_mx_tlax,Zacatelco
+township_sat_1040,044,base.state_mx_ver,Córdoba
+township_sat_1041,044,base.state_mx_yuc,Kinchil
+township_sat_1042,044,base.state_mx_zac,Tabasco
+township_sat_1043,045,base.state_mx_chih,Meoqui
+township_sat_1044,045,base.state_mx_chis,Ixtapangajoya
+township_sat_1045,045,base.state_mx_gro,Olinalá
+township_sat_1046,045,base.state_mx_gto,Xichú
+township_sat_1047,045,base.state_mx_hgo,Omitlán de Juárez
+township_sat_1048,045,base.state_mx_jal,Ixtlahuacán del Río
+township_sat_1049,045,base.state_mx_mex,Jilotepec
+township_sat_1050,045,base.state_mx_mich,Jiquilpan
+township_sat_1051,045,base.state_mx_nl,Salinas Victoria
+township_sat_1052,045,base.state_mx_oax,Magdalena Apasco
+township_sat_1053,045,base.state_mx_pue,Chalchicomula de Sesma
+township_sat_1054,045,base.state_mx_slp,Venado
+township_sat_1055,045,base.state_mx_son,Opodepe
+township_sat_1056,045,base.state_mx_tlax,Benito Juárez
+township_sat_1057,045,base.state_mx_ver,Cosamaloapan de Carpio
+township_sat_1058,045,base.state_mx_yuc,Kopomá
+township_sat_1059,045,base.state_mx_zac,Tepechitlán
+township_sat_1060,046,base.state_mx_chih,Morelos
+township_sat_1061,046,base.state_mx_chis,Jiquipilas
+township_sat_1062,046,base.state_mx_gro,Ometepec
+township_sat_1063,046,base.state_mx_gto,Yuriria
+township_sat_1064,046,base.state_mx_hgo,San Felipe Orizatlán
+township_sat_1065,046,base.state_mx_jal,Jalostotitlán
+township_sat_1066,046,base.state_mx_mex,Jilotzingo
+township_sat_1067,046,base.state_mx_mich,Juárez
+township_sat_1068,046,base.state_mx_nl,San Nicolás de los Garza
+township_sat_1069,046,base.state_mx_oax,Magdalena Jaltepec
+township_sat_1070,046,base.state_mx_pue,Chapulco
+township_sat_1071,046,base.state_mx_slp,Villa de Arriaga
+township_sat_1072,046,base.state_mx_son,Oquitoa
+township_sat_1073,046,base.state_mx_tlax,Emiliano Zapata
+township_sat_1074,046,base.state_mx_ver,Cosautlán de Carvajal
+township_sat_1075,046,base.state_mx_yuc,Mama
+township_sat_1076,046,base.state_mx_zac,Tepetongo
+township_sat_1077,047,base.state_mx_chih,Moris
+township_sat_1078,047,base.state_mx_chis,Jitotol
+township_sat_1079,047,base.state_mx_gro,Pedro Ascencio Alquisiras
+township_sat_1080,047,base.state_mx_hgo,Pacula
+township_sat_1081,047,base.state_mx_jal,Jamay
+township_sat_1082,047,base.state_mx_mex,Jiquipilco
+township_sat_1083,047,base.state_mx_mich,Jungapeo
+township_sat_1084,047,base.state_mx_nl,Hidalgo
+township_sat_1085,047,base.state_mx_oax,Santa Magdalena Jicotlán
+township_sat_1086,047,base.state_mx_pue,Chiautla
+township_sat_1087,047,base.state_mx_slp,Villa de Guadalupe
+township_sat_1088,047,base.state_mx_son,Pitiquito
+township_sat_1089,047,base.state_mx_tlax,Lázaro Cárdenas
+township_sat_1090,047,base.state_mx_ver,Coscomatepec
+township_sat_1091,047,base.state_mx_yuc,Maní
+township_sat_1092,047,base.state_mx_zac,Teúl de González Ortega
+township_sat_1093,048,base.state_mx_chih,Namiquipa
+township_sat_1094,048,base.state_mx_chis,Juárez
+township_sat_1095,048,base.state_mx_gro,Petatlán
+township_sat_1096,048,base.state_mx_hgo,Pachuca de Soto
+township_sat_1097,048,base.state_mx_jal,Jesús María
+township_sat_1098,048,base.state_mx_mex,Jocotitlán
+township_sat_1099,048,base.state_mx_mich,Lagunillas
+township_sat_1100,048,base.state_mx_nl,Santa Catarina
+township_sat_1101,048,base.state_mx_oax,Magdalena Mixtepec
+township_sat_1102,048,base.state_mx_pue,Chiautzingo
+township_sat_1103,048,base.state_mx_slp,Villa de la Paz
+township_sat_1104,048,base.state_mx_son,Puerto Peñasco
+township_sat_1105,048,base.state_mx_tlax,La Magdalena Tlaltelulco
+township_sat_1106,048,base.state_mx_ver,Cosoleacaque
+township_sat_1107,048,base.state_mx_yuc,Maxcanú
+township_sat_1108,048,base.state_mx_zac,Tlaltenango de Sánchez Román
+township_sat_1109,049,base.state_mx_chih,Nonoava
+township_sat_1110,049,base.state_mx_chis,Larráinzar
+township_sat_1111,049,base.state_mx_gro,Pilcaya
+township_sat_1112,049,base.state_mx_hgo,Pisaflores
+township_sat_1113,049,base.state_mx_jal,Jilotlán de los Dolores
+township_sat_1114,049,base.state_mx_mex,Joquicingo
+township_sat_1115,049,base.state_mx_mich,Madero
+township_sat_1116,049,base.state_mx_nl,Santiago
+township_sat_1117,049,base.state_mx_oax,Magdalena Ocotlán
+township_sat_1118,049,base.state_mx_pue,Chiconcuautla
+township_sat_1119,049,base.state_mx_slp,Villa de Ramos
+township_sat_1120,049,base.state_mx_son,Quiriego
+township_sat_1121,049,base.state_mx_tlax,San Damián Texóloc
+township_sat_1122,049,base.state_mx_ver,Cotaxtla
+township_sat_1123,049,base.state_mx_yuc,Mayapán
+township_sat_1124,049,base.state_mx_zac,Valparaíso
+township_sat_1125,050,base.state_mx_chih,Nuevo Casas Grandes
+township_sat_1126,050,base.state_mx_chis,La Libertad
+township_sat_1127,050,base.state_mx_gro,Pungarabato
+township_sat_1128,050,base.state_mx_hgo,Progreso de Obregón
+township_sat_1129,050,base.state_mx_jal,Jocotepec
+township_sat_1130,050,base.state_mx_mex,Juchitepec
+township_sat_1131,050,base.state_mx_mich,Maravatío
+township_sat_1132,050,base.state_mx_nl,Vallecillo
+township_sat_1133,050,base.state_mx_oax,Magdalena Peñasco
+township_sat_1134,050,base.state_mx_pue,Chichiquila
+township_sat_1135,050,base.state_mx_slp,Villa de Reyes
+township_sat_1136,050,base.state_mx_son,Rayón
+township_sat_1137,050,base.state_mx_tlax,San Francisco Tetlanohcan
+township_sat_1138,050,base.state_mx_ver,Coxquihui
+township_sat_1139,050,base.state_mx_yuc,Mérida
+township_sat_1140,050,base.state_mx_zac,Vetagrande
+township_sat_1141,051,base.state_mx_chih,Ocampo
+township_sat_1142,051,base.state_mx_chis,Mapastepec
+township_sat_1143,051,base.state_mx_gro,Quechultenango
+township_sat_1144,051,base.state_mx_hgo,Mineral de la Reforma
+township_sat_1145,051,base.state_mx_jal,Juanacatlán
+township_sat_1146,051,base.state_mx_mex,Lerma
+township_sat_1147,051,base.state_mx_mich,Marcos Castellanos
+township_sat_1148,051,base.state_mx_nl,Villaldama
+township_sat_1149,051,base.state_mx_oax,Magdalena Teitipac
+township_sat_1150,051,base.state_mx_pue,Chietla
+township_sat_1151,051,base.state_mx_slp,Villa Hidalgo
+township_sat_1152,051,base.state_mx_son,Rosario
+township_sat_1153,051,base.state_mx_tlax,San Jerónimo Zacualpan
+township_sat_1154,051,base.state_mx_ver,Coyutla
+township_sat_1155,051,base.state_mx_yuc,Mocochá
+township_sat_1156,051,base.state_mx_zac,Villa de Cos
+township_sat_1157,052,base.state_mx_chih,Ojinaga
+township_sat_1158,052,base.state_mx_chis,Las Margaritas
+township_sat_1159,052,base.state_mx_gro,San Luis Acatlán
+township_sat_1160,052,base.state_mx_hgo,San Agustín Tlaxiaca
+township_sat_1161,052,base.state_mx_jal,Juchitlán
+township_sat_1162,052,base.state_mx_mex,Malinalco
+township_sat_1163,052,base.state_mx_mich,Lázaro Cárdenas
+township_sat_1164,052,base.state_mx_oax,Magdalena Tequisistlán
+township_sat_1165,052,base.state_mx_pue,Chigmecatitlán
+township_sat_1166,052,base.state_mx_slp,Villa Juárez
+township_sat_1167,052,base.state_mx_son,Sahuaripa
+township_sat_1168,052,base.state_mx_tlax,San José Teacalco
+township_sat_1169,052,base.state_mx_ver,Cuichapa
+township_sat_1170,052,base.state_mx_yuc,Motul
+township_sat_1171,052,base.state_mx_zac,Villa García
+township_sat_1172,053,base.state_mx_chih,Praxedis G. Guerrero
+township_sat_1173,053,base.state_mx_chis,Mazapa de Madero
+township_sat_1174,053,base.state_mx_gro,San Marcos
+township_sat_1175,053,base.state_mx_hgo,San Bartolo Tutotepec
+township_sat_1176,053,base.state_mx_jal,Lagos de Moreno
+township_sat_1177,053,base.state_mx_mex,Melchor Ocampo
+township_sat_1178,053,base.state_mx_mich,Morelia
+township_sat_1179,053,base.state_mx_oax,Magdalena Tlacotepec
+township_sat_1180,053,base.state_mx_pue,Chignahuapan
+township_sat_1181,053,base.state_mx_slp,Axtla de Terrazas
+township_sat_1182,053,base.state_mx_son,San Felipe de Jesús
+township_sat_1183,053,base.state_mx_tlax,San Juan Huactzinco
+township_sat_1184,053,base.state_mx_ver,Cuitláhuac
+township_sat_1185,053,base.state_mx_yuc,Muna
+township_sat_1186,053,base.state_mx_zac,Villa González Ortega
+township_sat_1187,054,base.state_mx_chih,Riva Palacio
+township_sat_1188,054,base.state_mx_chis,Mazatán
+township_sat_1189,054,base.state_mx_gro,San Miguel Totolapan
+township_sat_1190,054,base.state_mx_hgo,San Salvador
+township_sat_1191,054,base.state_mx_jal,El Limón
+township_sat_1192,054,base.state_mx_mex,Metepec
+township_sat_1193,054,base.state_mx_mich,Morelos
+township_sat_1194,054,base.state_mx_oax,Magdalena Zahuatlán
+township_sat_1195,054,base.state_mx_pue,Chignautla
+township_sat_1196,054,base.state_mx_slp,Xilitla
+township_sat_1197,054,base.state_mx_son,San Javier
+township_sat_1198,054,base.state_mx_tlax,San Lorenzo Axocomanitla
+township_sat_1199,054,base.state_mx_ver,Chacaltianguis
+township_sat_1200,054,base.state_mx_yuc,Muxupip
+township_sat_1201,054,base.state_mx_zac,Villa Hidalgo
+township_sat_1202,055,base.state_mx_chih,Rosales
+township_sat_1203,055,base.state_mx_chis,Metapa
+township_sat_1204,055,base.state_mx_gro,Taxco de Alarcón
+township_sat_1205,055,base.state_mx_hgo,Santiago de Anaya
+township_sat_1206,055,base.state_mx_jal,Magdalena
+township_sat_1207,055,base.state_mx_mex,Mexicaltzingo
+township_sat_1208,055,base.state_mx_mich,Múgica
+township_sat_1209,055,base.state_mx_oax,Mariscala de Juárez
+township_sat_1210,055,base.state_mx_pue,Chila
+township_sat_1211,055,base.state_mx_slp,Zaragoza
+township_sat_1212,055,base.state_mx_son,San Luis Río Colorado
+township_sat_1213,055,base.state_mx_tlax,San Lucas Tecopilco
+township_sat_1214,055,base.state_mx_ver,Chalma
+township_sat_1215,055,base.state_mx_yuc,Opichén
+township_sat_1216,055,base.state_mx_zac,Villanueva
+township_sat_1217,056,base.state_mx_chih,Rosario
+township_sat_1218,056,base.state_mx_chis,Mitontic
+township_sat_1219,056,base.state_mx_gro,Tecoanapa
+township_sat_1220,056,base.state_mx_hgo,Santiago Tulantepec de Lugo Guerrero
+township_sat_1221,056,base.state_mx_jal,Santa María del Oro
+township_sat_1222,056,base.state_mx_mex,Morelos
+township_sat_1223,056,base.state_mx_mich,Nahuatzen
+township_sat_1224,056,base.state_mx_oax,Mártires de Tacubaya
+township_sat_1225,056,base.state_mx_pue,Chila de la Sal
+township_sat_1226,056,base.state_mx_slp,Villa de Arista
+township_sat_1227,056,base.state_mx_son,San Miguel de Horcasitas
+township_sat_1228,056,base.state_mx_tlax,Santa Ana Nopalucan
+township_sat_1229,056,base.state_mx_ver,Chiconamel
+township_sat_1230,056,base.state_mx_yuc,Oxkutzcab
+township_sat_1231,056,base.state_mx_zac,Zacatecas
+township_sat_1232,057,base.state_mx_chih,San Francisco de Borja
+township_sat_1233,057,base.state_mx_chis,Motozintla
+township_sat_1234,057,base.state_mx_gro,Técpan de Galeana
+township_sat_1235,057,base.state_mx_hgo,Singuilucan
+township_sat_1236,057,base.state_mx_jal,La Manzanilla de la Paz
+township_sat_1237,057,base.state_mx_mex,Naucalpan de Juárez
+township_sat_1238,057,base.state_mx_mich,Nocupétaro
+township_sat_1239,057,base.state_mx_oax,Matías Romero Avendaño
+township_sat_1240,057,base.state_mx_pue,Honey
+township_sat_1241,057,base.state_mx_slp,Matlapa
+township_sat_1242,057,base.state_mx_son,San Pedro de la Cueva
+township_sat_1243,057,base.state_mx_tlax,Santa Apolonia Teacalco
+township_sat_1244,057,base.state_mx_ver,Chiconquiaco
+township_sat_1245,057,base.state_mx_yuc,Panabá
+township_sat_1246,057,base.state_mx_zac,Trancoso
+township_sat_1247,058,base.state_mx_chih,San Francisco de Conchos
+township_sat_1248,058,base.state_mx_chis,Nicolás Ruíz
+township_sat_1249,058,base.state_mx_gro,Teloloapan
+township_sat_1250,058,base.state_mx_hgo,Tasquillo
+township_sat_1251,058,base.state_mx_jal,Mascota
+township_sat_1252,058,base.state_mx_mex,Nezahualcóyotl
+township_sat_1253,058,base.state_mx_mich,Nuevo Parangaricutiro
+township_sat_1254,058,base.state_mx_oax,Mazatlán Villa de Flores
+township_sat_1255,058,base.state_mx_pue,Chilchotla
+township_sat_1256,058,base.state_mx_slp,El Naranjo
+township_sat_1257,058,base.state_mx_son,Santa Ana
+township_sat_1258,058,base.state_mx_tlax,Santa Catarina Ayometla
+township_sat_1259,058,base.state_mx_ver,Chicontepec
+township_sat_1260,058,base.state_mx_yuc,Peto
+township_sat_1261,058,base.state_mx_zac,Santa María de la Paz
+township_sat_1262,059,base.state_mx_chih,San Francisco del Oro
+township_sat_1263,059,base.state_mx_chis,Ocosingo
+township_sat_1264,059,base.state_mx_gro,Tepecoacuilco de Trujano
+township_sat_1265,059,base.state_mx_hgo,Tecozautla
+township_sat_1266,059,base.state_mx_jal,Mazamitla
+township_sat_1267,059,base.state_mx_mex,Nextlalpan
+township_sat_1268,059,base.state_mx_mich,Nuevo Urecho
+township_sat_1269,059,base.state_mx_oax,Miahuatlán de Porfirio Díaz
+township_sat_1270,059,base.state_mx_pue,Chinantla
+township_sat_1271,059,base.state_mx_son,Santa Cruz
+township_sat_1272,059,base.state_mx_tlax,Santa Cruz Quilehtla
+township_sat_1273,059,base.state_mx_ver,Chinameca
+township_sat_1274,059,base.state_mx_yuc,Progreso
+township_sat_1275,060,base.state_mx_chih,Santa Bárbara
+township_sat_1276,060,base.state_mx_chis,Ocotepec
+township_sat_1277,060,base.state_mx_gro,Tetipac
+township_sat_1278,060,base.state_mx_hgo,Tenango de Doria
+township_sat_1279,060,base.state_mx_jal,Mexticacán
+township_sat_1280,060,base.state_mx_mex,Nicolás Romero
+township_sat_1281,060,base.state_mx_mich,Numarán
+township_sat_1282,060,base.state_mx_oax,Mixistlán de la Reforma
+township_sat_1283,060,base.state_mx_pue,Domingo Arenas
+township_sat_1284,060,base.state_mx_son,Sáric
+township_sat_1285,060,base.state_mx_tlax,Santa Isabel Xiloxoxtla
+township_sat_1286,060,base.state_mx_ver,Chinampa de Gorostiza
+township_sat_1287,060,base.state_mx_yuc,Quintana Roo
+township_sat_1288,061,base.state_mx_chih,Satevó
+township_sat_1289,061,base.state_mx_chis,Ocozocoautla de Espinosa
+township_sat_1290,061,base.state_mx_gro,Tixtla de Guerrero
+township_sat_1291,061,base.state_mx_hgo,Tepeapulco
+township_sat_1292,061,base.state_mx_jal,Mezquitic
+township_sat_1293,061,base.state_mx_mex,Nopaltepec
+township_sat_1294,061,base.state_mx_mich,Ocampo
+township_sat_1295,061,base.state_mx_oax,Monjas
+township_sat_1296,061,base.state_mx_pue,Eloxochitlán
+township_sat_1297,061,base.state_mx_son,Soyopa
+township_sat_1298,061,base.state_mx_ver,Las Choapas
+township_sat_1299,061,base.state_mx_yuc,Río Lagartos
+township_sat_1300,062,base.state_mx_chih,Saucillo
+township_sat_1301,062,base.state_mx_chis,Ostuacán
+township_sat_1302,062,base.state_mx_gro,Tlacoachistlahuaca
+township_sat_1303,062,base.state_mx_hgo,Tepehuacán de Guerrero
+township_sat_1304,062,base.state_mx_jal,Mixtlán
+township_sat_1305,062,base.state_mx_mex,Ocoyoacac
+township_sat_1306,062,base.state_mx_mich,Pajacuarán
+township_sat_1307,062,base.state_mx_oax,Natividad
+township_sat_1308,062,base.state_mx_pue,Epatlán
+township_sat_1309,062,base.state_mx_son,Suaqui Grande
+township_sat_1310,062,base.state_mx_ver,Chocamán
+township_sat_1311,062,base.state_mx_yuc,Sacalum
+township_sat_1312,063,base.state_mx_chih,Temósachic
+township_sat_1313,063,base.state_mx_chis,Osumacinta
+township_sat_1314,063,base.state_mx_gro,Tlacoapa
+township_sat_1315,063,base.state_mx_hgo,Tepeji del Río de Ocampo
+township_sat_1316,063,base.state_mx_jal,Ocotlán
+township_sat_1317,063,base.state_mx_mex,Ocuilan
+township_sat_1318,063,base.state_mx_mich,Panindícuaro
+township_sat_1319,063,base.state_mx_oax,Nazareno Etla
+township_sat_1320,063,base.state_mx_pue,Esperanza
+township_sat_1321,063,base.state_mx_son,Tepache
+township_sat_1322,063,base.state_mx_ver,Chontla
+township_sat_1323,063,base.state_mx_yuc,Samahil
+township_sat_1324,064,base.state_mx_chih,El Tule
+township_sat_1325,064,base.state_mx_chis,Oxchuc
+township_sat_1326,064,base.state_mx_gro,Tlalchapa
+township_sat_1327,064,base.state_mx_hgo,Tepetitlán
+township_sat_1328,064,base.state_mx_jal,Ojuelos de Jalisco
+township_sat_1329,064,base.state_mx_mex,El Oro
+township_sat_1330,064,base.state_mx_mich,Parácuaro
+township_sat_1331,064,base.state_mx_oax,Nejapa de Madero
+township_sat_1332,064,base.state_mx_pue,Francisco Z. Mena
+township_sat_1333,064,base.state_mx_son,Trincheras
+township_sat_1334,064,base.state_mx_ver,Chumatlán
+township_sat_1335,064,base.state_mx_yuc,Sanahcat
+township_sat_1336,065,base.state_mx_chih,Urique
+township_sat_1337,065,base.state_mx_chis,Palenque
+township_sat_1338,065,base.state_mx_gro,Tlalixtaquilla de Maldonado
+township_sat_1339,065,base.state_mx_hgo,Tetepango
+township_sat_1340,065,base.state_mx_jal,Pihuamo
+township_sat_1341,065,base.state_mx_mex,Otumba
+township_sat_1342,065,base.state_mx_mich,Paracho
+township_sat_1343,065,base.state_mx_oax,Ixpantepec Nieves
+township_sat_1344,065,base.state_mx_pue,General Felipe Ángeles
+township_sat_1345,065,base.state_mx_son,Tubutama
+township_sat_1346,065,base.state_mx_ver,Emiliano Zapata
+township_sat_1347,065,base.state_mx_yuc,San Felipe
+township_sat_1348,066,base.state_mx_chih,Uruachi
+township_sat_1349,066,base.state_mx_chis,Pantelhó
+township_sat_1350,066,base.state_mx_gro,Tlapa de Comonfort
+township_sat_1351,066,base.state_mx_hgo,Villa de Tezontepec
+township_sat_1352,066,base.state_mx_jal,Poncitlán
+township_sat_1353,066,base.state_mx_mex,Otzoloapan
+township_sat_1354,066,base.state_mx_mich,Pátzcuaro
+township_sat_1355,066,base.state_mx_oax,Santiago Niltepec
+township_sat_1356,066,base.state_mx_pue,Guadalupe
+township_sat_1357,066,base.state_mx_son,Ures
+township_sat_1358,066,base.state_mx_ver,Espinal
+township_sat_1359,066,base.state_mx_yuc,Santa Elena
+township_sat_1360,067,base.state_mx_chih,Valle de Zaragoza
+township_sat_1361,067,base.state_mx_chis,Pantepec
+township_sat_1362,067,base.state_mx_gro,Tlapehuala
+township_sat_1363,067,base.state_mx_hgo,Tezontepec de Aldama
+township_sat_1364,067,base.state_mx_jal,Puerto Vallarta
+township_sat_1365,067,base.state_mx_mex,Otzolotepec
+township_sat_1366,067,base.state_mx_mich,Penjamillo
+township_sat_1367,067,base.state_mx_oax,Oaxaca de Juárez
+township_sat_1368,067,base.state_mx_pue,Guadalupe Victoria
+township_sat_1369,067,base.state_mx_son,Villa Hidalgo
+township_sat_1370,067,base.state_mx_ver,Filomeno Mata
+township_sat_1371,067,base.state_mx_yuc,Seyé
+township_sat_1372,068,base.state_mx_chis,Pichucalco
+township_sat_1373,068,base.state_mx_gro,La Unión de Isidoro Montes de Oca
+township_sat_1374,068,base.state_mx_hgo,Tianguistengo
+township_sat_1375,068,base.state_mx_jal,Villa Purificación
+township_sat_1376,068,base.state_mx_mex,Ozumba
+township_sat_1377,068,base.state_mx_mich,Peribán
+township_sat_1378,068,base.state_mx_oax,Ocotlán de Morelos
+township_sat_1379,068,base.state_mx_pue,Hermenegildo Galeana
+township_sat_1380,068,base.state_mx_son,Villa Pesqueira
+township_sat_1381,068,base.state_mx_ver,Fortín
+township_sat_1382,068,base.state_mx_yuc,Sinanché
+township_sat_1383,069,base.state_mx_chis,Pijijiapan
+township_sat_1384,069,base.state_mx_gro,Xalpatláhuac
+township_sat_1385,069,base.state_mx_hgo,Tizayuca
+township_sat_1386,069,base.state_mx_jal,Quitupan
+township_sat_1387,069,base.state_mx_mex,Papalotla
+township_sat_1388,069,base.state_mx_mich,La Piedad
+township_sat_1389,069,base.state_mx_oax,La Pe
+township_sat_1390,069,base.state_mx_pue,Huaquechula
+township_sat_1391,069,base.state_mx_son,Yécora
+township_sat_1392,069,base.state_mx_ver,Gutiérrez Zamora
+township_sat_1393,069,base.state_mx_yuc,Sotuta
+township_sat_1394,070,base.state_mx_chis,El Porvenir
+township_sat_1395,070,base.state_mx_gro,Xochihuehuetlán
+township_sat_1396,070,base.state_mx_hgo,Tlahuelilpan
+township_sat_1397,070,base.state_mx_jal,El Salto
+township_sat_1398,070,base.state_mx_mex,La Paz
+township_sat_1399,070,base.state_mx_mich,Purépero
+township_sat_1400,070,base.state_mx_oax,Pinotepa de Don Luis
+township_sat_1401,070,base.state_mx_pue,Huatlatlauca
+township_sat_1402,070,base.state_mx_son,General Plutarco Elías Calles
+township_sat_1403,070,base.state_mx_ver,Hidalgotitlán
+township_sat_1404,070,base.state_mx_yuc,Sucilá
+township_sat_1405,071,base.state_mx_chis,Villa Comaltitlán
+township_sat_1406,071,base.state_mx_gro,Xochistlahuaca
+township_sat_1407,071,base.state_mx_hgo,Tlahuiltepa
+township_sat_1408,071,base.state_mx_jal,San Cristóbal de la Barranca
+township_sat_1409,071,base.state_mx_mex,Polotitlán
+township_sat_1410,071,base.state_mx_mich,Puruándiro
+township_sat_1411,071,base.state_mx_oax,Pluma Hidalgo
+township_sat_1412,071,base.state_mx_pue,Huauchinango
+township_sat_1413,071,base.state_mx_son,Benito Juárez
+township_sat_1414,071,base.state_mx_ver,Huatusco
+township_sat_1415,071,base.state_mx_yuc,Sudzal
+township_sat_1416,072,base.state_mx_chis,Pueblo Nuevo Solistahuacán
+township_sat_1417,072,base.state_mx_gro,Zapotitlán Tablas
+township_sat_1418,072,base.state_mx_hgo,Tlanalapa
+township_sat_1419,072,base.state_mx_jal,San Diego de Alejandría
+township_sat_1420,072,base.state_mx_mex,Rayón
+township_sat_1421,072,base.state_mx_mich,Queréndaro
+township_sat_1422,072,base.state_mx_oax,San José del Progreso
+township_sat_1423,072,base.state_mx_pue,Huehuetla
+township_sat_1424,072,base.state_mx_son,San Ignacio Río Muerto
+township_sat_1425,072,base.state_mx_ver,Huayacocotla
+township_sat_1426,072,base.state_mx_yuc,Suma
+township_sat_1427,073,base.state_mx_chis,Rayón
+township_sat_1428,073,base.state_mx_gro,Zirándaro
+township_sat_1429,073,base.state_mx_hgo,Tlanchinol
+township_sat_1430,073,base.state_mx_jal,San Juan de los Lagos
+township_sat_1431,073,base.state_mx_mex,San Antonio la Isla
+township_sat_1432,073,base.state_mx_mich,Quiroga
+township_sat_1433,073,base.state_mx_oax,Putla Villa de Guerrero
+township_sat_1434,073,base.state_mx_pue,Huehuetlán el Chico
+township_sat_1435,073,base.state_mx_ver,Hueyapan de Ocampo
+township_sat_1436,073,base.state_mx_yuc,Tahdziú
+township_sat_1437,074,base.state_mx_chis,Reforma
+township_sat_1438,074,base.state_mx_gro,Zitlala
+township_sat_1439,074,base.state_mx_hgo,Tlaxcoapan
+township_sat_1440,074,base.state_mx_jal,San Julián
+township_sat_1441,074,base.state_mx_mex,San Felipe del Progreso
+township_sat_1442,074,base.state_mx_mich,Cojumatlán de Régules
+township_sat_1443,074,base.state_mx_oax,Santa Catarina Quioquitani
+township_sat_1444,074,base.state_mx_pue,Huejotzingo
+township_sat_1445,074,base.state_mx_ver,Huiloapan de Cuauhtémoc
+township_sat_1446,074,base.state_mx_yuc,Tahmek
+township_sat_1447,075,base.state_mx_chis,Las Rosas
+township_sat_1448,075,base.state_mx_gro,Eduardo Neri
+township_sat_1449,075,base.state_mx_hgo,Tolcayuca
+township_sat_1450,075,base.state_mx_jal,San Marcos
+township_sat_1451,075,base.state_mx_mex,San Martín de las Pirámides
+township_sat_1452,075,base.state_mx_mich,Los Reyes
+township_sat_1453,075,base.state_mx_oax,Reforma de Pineda
+township_sat_1454,075,base.state_mx_pue,Hueyapan
+township_sat_1455,075,base.state_mx_ver,Ignacio de la Llave
+township_sat_1456,075,base.state_mx_yuc,Teabo
+township_sat_1457,076,base.state_mx_chis,Sabanilla
+township_sat_1458,076,base.state_mx_gro,Acatepec
+township_sat_1459,076,base.state_mx_hgo,Tula de Allende
+township_sat_1460,076,base.state_mx_jal,San Martín de Bolaños
+township_sat_1461,076,base.state_mx_mex,San Mateo Atenco
+township_sat_1462,076,base.state_mx_mich,Sahuayo
+township_sat_1463,076,base.state_mx_oax,La Reforma
+township_sat_1464,076,base.state_mx_pue,Hueytamalco
+township_sat_1465,076,base.state_mx_ver,Ilamatlán
+township_sat_1466,076,base.state_mx_yuc,Tecoh
+township_sat_1467,077,base.state_mx_chis,Salto de Agua
+township_sat_1468,077,base.state_mx_gro,Marquelia
+township_sat_1469,077,base.state_mx_hgo,Tulancingo de Bravo
+township_sat_1470,077,base.state_mx_jal,San Martín Hidalgo
+township_sat_1471,077,base.state_mx_mex,San Simón de Guerrero
+township_sat_1472,077,base.state_mx_mich,San Lucas
+township_sat_1473,077,base.state_mx_oax,Reyes Etla
+township_sat_1474,077,base.state_mx_pue,Hueytlalpan
+township_sat_1475,077,base.state_mx_ver,Isla
+township_sat_1476,077,base.state_mx_yuc,Tekal de Venegas
+township_sat_1477,078,base.state_mx_chis,San Cristóbal de las Casas
+township_sat_1478,078,base.state_mx_gro,Cochoapa el Grande
+township_sat_1479,078,base.state_mx_hgo,Xochiatipan
+township_sat_1480,078,base.state_mx_jal,San Miguel el Alto
+township_sat_1481,078,base.state_mx_mex,Santo Tomás
+township_sat_1482,078,base.state_mx_mich,Santa Ana Maya
+township_sat_1483,078,base.state_mx_oax,Rojas de Cuauhtémoc
+township_sat_1484,078,base.state_mx_pue,Huitzilan de Serdán
+township_sat_1485,078,base.state_mx_ver,Ixcatepec
+township_sat_1486,078,base.state_mx_yuc,Tekantó
+township_sat_1487,079,base.state_mx_chis,San Fernando
+township_sat_1488,079,base.state_mx_gro,José Joaquín de Herrera
+township_sat_1489,079,base.state_mx_hgo,Xochicoatlán
+township_sat_1490,079,base.state_mx_jal,Gómez Farías
+township_sat_1491,079,base.state_mx_mex,Soyaniquilpan de Juárez
+township_sat_1492,079,base.state_mx_mich,Salvador Escalante
+township_sat_1493,079,base.state_mx_oax,Salina Cruz
+township_sat_1494,079,base.state_mx_pue,Huitziltepec
+township_sat_1495,079,base.state_mx_ver,Ixhuacán de los Reyes
+township_sat_1496,079,base.state_mx_yuc,Tekax
+township_sat_1497,080,base.state_mx_chis,Siltepec
+township_sat_1498,080,base.state_mx_gro,Juchitán
+township_sat_1499,080,base.state_mx_hgo,Yahualica
+township_sat_1500,080,base.state_mx_jal,San Sebastián del Oeste
+township_sat_1501,080,base.state_mx_mex,Sultepec
+township_sat_1502,080,base.state_mx_mich,Senguio
+township_sat_1503,080,base.state_mx_oax,San Agustín Amatengo
+township_sat_1504,080,base.state_mx_pue,Atlequizayan
+township_sat_1505,080,base.state_mx_ver,Ixhuatlán del Café
+township_sat_1506,080,base.state_mx_yuc,Tekit
+township_sat_1507,081,base.state_mx_chis,Simojovel
+township_sat_1508,081,base.state_mx_gro,Iliatenco
+township_sat_1509,081,base.state_mx_hgo,Zacualtipán de Ángeles
+township_sat_1510,081,base.state_mx_jal,Santa María de los Ángeles
+township_sat_1511,081,base.state_mx_mex,Tecámac
+township_sat_1512,081,base.state_mx_mich,Susupuato
+township_sat_1513,081,base.state_mx_oax,San Agustín Atenango
+township_sat_1514,081,base.state_mx_pue,Ixcamilpa de Guerrero
+township_sat_1515,081,base.state_mx_ver,Ixhuatlancillo
+township_sat_1516,081,base.state_mx_yuc,Tekom
+township_sat_1517,082,base.state_mx_chis,Sitalá
+township_sat_1518,082,base.state_mx_hgo,Zapotlán de Juárez
+township_sat_1519,082,base.state_mx_jal,Sayula
+township_sat_1520,082,base.state_mx_mex,Tejupilco
+township_sat_1521,082,base.state_mx_mich,Tacámbaro
+township_sat_1522,082,base.state_mx_oax,San Agustín Chayuco
+township_sat_1523,082,base.state_mx_pue,Ixcaquixtla
+township_sat_1524,082,base.state_mx_ver,Ixhuatlán del Sureste
+township_sat_1525,082,base.state_mx_yuc,Telchac Pueblo
+township_sat_1526,083,base.state_mx_chis,Socoltenango
+township_sat_1527,083,base.state_mx_hgo,Zempoala
+township_sat_1528,083,base.state_mx_jal,Tala
+township_sat_1529,083,base.state_mx_mex,Temamatla
+township_sat_1530,083,base.state_mx_mich,Tancítaro
+township_sat_1531,083,base.state_mx_oax,San Agustín de las Juntas
+township_sat_1532,083,base.state_mx_pue,Ixtacamaxtitlán
+township_sat_1533,083,base.state_mx_ver,Ixhuatlán de Madero
+township_sat_1534,083,base.state_mx_yuc,Telchac Puerto
+township_sat_1535,084,base.state_mx_chis,Solosuchiapa
+township_sat_1536,084,base.state_mx_hgo,Zimapán
+township_sat_1537,084,base.state_mx_jal,Talpa de Allende
+township_sat_1538,084,base.state_mx_mex,Temascalapa
+township_sat_1539,084,base.state_mx_mich,Tangamandapio
+township_sat_1540,084,base.state_mx_oax,San Agustín Etla
+township_sat_1541,084,base.state_mx_pue,Ixtepec
+township_sat_1542,084,base.state_mx_ver,Ixmatlahuacan
+township_sat_1543,084,base.state_mx_yuc,Temax
+township_sat_1544,085,base.state_mx_chis,Soyaló
+township_sat_1545,085,base.state_mx_jal,Tamazula de Gordiano
+township_sat_1546,085,base.state_mx_mex,Temascalcingo
+township_sat_1547,085,base.state_mx_mich,Tangancícuaro
+township_sat_1548,085,base.state_mx_oax,San Agustín Loxicha
+township_sat_1549,085,base.state_mx_pue,Izúcar de Matamoros
+township_sat_1550,085,base.state_mx_ver,Ixtaczoquitlán
+township_sat_1551,085,base.state_mx_yuc,Temozón
+township_sat_1552,086,base.state_mx_chis,Suchiapa
+township_sat_1553,086,base.state_mx_jal,Tapalpa
+township_sat_1554,086,base.state_mx_mex,Temascaltepec
+township_sat_1555,086,base.state_mx_mich,Tanhuato
+township_sat_1556,086,base.state_mx_oax,San Agustín Tlacotepec
+township_sat_1557,086,base.state_mx_pue,Jalpan
+township_sat_1558,086,base.state_mx_ver,Jalacingo
+township_sat_1559,086,base.state_mx_yuc,Tepakán
+township_sat_1560,087,base.state_mx_chis,Suchiate
+township_sat_1561,087,base.state_mx_jal,Tecalitlán
+township_sat_1562,087,base.state_mx_mex,Temoaya
+township_sat_1563,087,base.state_mx_mich,Taretan
+township_sat_1564,087,base.state_mx_oax,San Agustín Yatareni
+township_sat_1565,087,base.state_mx_pue,Jolalpan
+township_sat_1566,087,base.state_mx_ver,Xalapa
+township_sat_1567,087,base.state_mx_yuc,Tetiz
+township_sat_1568,088,base.state_mx_chis,Sunuapa
+township_sat_1569,088,base.state_mx_jal,Tecolotlán
+township_sat_1570,088,base.state_mx_mex,Tenancingo
+township_sat_1571,088,base.state_mx_mich,Tarímbaro
+township_sat_1572,088,base.state_mx_oax,San Andrés Cabecera Nueva
+township_sat_1573,088,base.state_mx_pue,Jonotla
+township_sat_1574,088,base.state_mx_ver,Jalcomulco
+township_sat_1575,088,base.state_mx_yuc,Teya
+township_sat_1576,089,base.state_mx_chis,Tapachula
+township_sat_1577,089,base.state_mx_jal,Techaluta de Montenegro
+township_sat_1578,089,base.state_mx_mex,Tenango del Aire
+township_sat_1579,089,base.state_mx_mich,Tepalcatepec
+township_sat_1580,089,base.state_mx_oax,San Andrés Dinicuiti
+township_sat_1581,089,base.state_mx_pue,Jopala
+township_sat_1582,089,base.state_mx_ver,Jáltipan
+township_sat_1583,089,base.state_mx_yuc,Ticul
+township_sat_1584,090,base.state_mx_chis,Tapalapa
+township_sat_1585,090,base.state_mx_jal,Tenamaxtlán
+township_sat_1586,090,base.state_mx_mex,Tenango del Valle
+township_sat_1587,090,base.state_mx_mich,Tingambato
+township_sat_1588,090,base.state_mx_oax,San Andrés Huaxpaltepec
+township_sat_1589,090,base.state_mx_pue,Juan C. Bonilla
+township_sat_1590,090,base.state_mx_ver,Jamapa
+township_sat_1591,090,base.state_mx_yuc,Timucuy
+township_sat_1592,091,base.state_mx_chis,Tapilula
+township_sat_1593,091,base.state_mx_jal,Teocaltiche
+township_sat_1594,091,base.state_mx_mex,Teoloyucan
+township_sat_1595,091,base.state_mx_mich,Tingüindín
+township_sat_1596,091,base.state_mx_oax,San Andrés Huayápam
+township_sat_1597,091,base.state_mx_pue,Juan Galindo
+township_sat_1598,091,base.state_mx_ver,Jesús Carranza
+township_sat_1599,091,base.state_mx_yuc,Tinum
+township_sat_1600,092,base.state_mx_chis,Tecpatán
+township_sat_1601,092,base.state_mx_jal,Teocuitatlán de Corona
+township_sat_1602,092,base.state_mx_mex,Teotihuacán
+township_sat_1603,092,base.state_mx_mich,Tiquicheo de Nicolás Romero
+township_sat_1604,092,base.state_mx_oax,San Andrés Ixtlahuaca
+township_sat_1605,092,base.state_mx_pue,Juan N. Méndez
+township_sat_1606,092,base.state_mx_ver,Xico
+township_sat_1607,092,base.state_mx_yuc,Tixcacalcupul
+township_sat_1608,093,base.state_mx_chis,Tenejapa
+township_sat_1609,093,base.state_mx_jal,Tepatitlán de Morelos
+township_sat_1610,093,base.state_mx_mex,Tepetlaoxtoc
+township_sat_1611,093,base.state_mx_mich,Tlalpujahua
+township_sat_1612,093,base.state_mx_oax,San Andrés Lagunas
+township_sat_1613,093,base.state_mx_pue,Lafragua
+township_sat_1614,093,base.state_mx_ver,Jilotepec
+township_sat_1615,093,base.state_mx_yuc,Tixkokob
+township_sat_1616,094,base.state_mx_chis,Teopisca
+township_sat_1617,094,base.state_mx_jal,Tequila
+township_sat_1618,094,base.state_mx_mex,Tepetlixpa
+township_sat_1619,094,base.state_mx_mich,Tlazazalca
+township_sat_1620,094,base.state_mx_oax,San Andrés Nuxiño
+township_sat_1621,094,base.state_mx_pue,Libres
+township_sat_1622,094,base.state_mx_ver,Juan Rodríguez Clara
+township_sat_1623,094,base.state_mx_yuc,Tixmehuac
+township_sat_1624,095,base.state_mx_jal,Teuchitlán
+township_sat_1625,095,base.state_mx_mex,Tepotzotlán
+township_sat_1626,095,base.state_mx_mich,Tocumbo
+township_sat_1627,095,base.state_mx_oax,San Andrés Paxtlán
+township_sat_1628,095,base.state_mx_pue,La Magdalena Tlatlauquitepec
+township_sat_1629,095,base.state_mx_ver,Juchique de Ferrer
+township_sat_1630,095,base.state_mx_yuc,Tixpéhual
+township_sat_1631,096,base.state_mx_chis,Tila
+township_sat_1632,096,base.state_mx_jal,Tizapán el Alto
+township_sat_1633,096,base.state_mx_mex,Tequixquiac
+township_sat_1634,096,base.state_mx_mich,Tumbiscatío
+township_sat_1635,096,base.state_mx_oax,San Andrés Sinaxtla
+township_sat_1636,096,base.state_mx_pue,Mazapiltepec de Juárez
+township_sat_1637,096,base.state_mx_ver,Landero y Coss
+township_sat_1638,096,base.state_mx_yuc,Tizimín
+township_sat_1639,097,base.state_mx_chis,Tonalá
+township_sat_1640,097,base.state_mx_jal,Tlajomulco de Zúñiga
+township_sat_1641,097,base.state_mx_mex,Texcaltitlán
+township_sat_1642,097,base.state_mx_mich,Turicato
+township_sat_1643,097,base.state_mx_oax,San Andrés Solaga
+township_sat_1644,097,base.state_mx_pue,Mixtla
+township_sat_1645,097,base.state_mx_ver,Lerdo de Tejada
+township_sat_1646,097,base.state_mx_yuc,Tunkás
+township_sat_1647,098,base.state_mx_chis,Totolapa
+township_sat_1648,098,base.state_mx_jal,San Pedro Tlaquepaque
+township_sat_1649,098,base.state_mx_mex,Texcalyacac
+township_sat_1650,098,base.state_mx_mich,Tuxpan
+township_sat_1651,098,base.state_mx_oax,San Andrés Teotilálpam
+township_sat_1652,098,base.state_mx_pue,Molcaxac
+township_sat_1653,098,base.state_mx_ver,Magdalena
+township_sat_1654,098,base.state_mx_yuc,Tzucacab
+township_sat_1655,099,base.state_mx_chis,La Trinitaria
+township_sat_1656,099,base.state_mx_jal,Tolimán
+township_sat_1657,099,base.state_mx_mex,Texcoco
+township_sat_1658,099,base.state_mx_mich,Tuzantla
+township_sat_1659,099,base.state_mx_oax,San Andrés Tepetlapa
+township_sat_1660,099,base.state_mx_pue,Cañada Morelos
+township_sat_1661,099,base.state_mx_ver,Maltrata
+township_sat_1662,099,base.state_mx_yuc,Uayma
+township_sat_1663,100,base.state_mx_chis,Tumbalá
+township_sat_1664,100,base.state_mx_jal,Tomatlán
+township_sat_1665,100,base.state_mx_mex,Tezoyuca
+township_sat_1666,100,base.state_mx_mich,Tzintzuntzan
+township_sat_1667,100,base.state_mx_oax,San Andrés Yaá
+township_sat_1668,100,base.state_mx_pue,Naupan
+township_sat_1669,100,base.state_mx_ver,Manlio Fabio Altamirano
+township_sat_1670,100,base.state_mx_yuc,Ucú
+township_sat_1671,101,base.state_mx_chis,Tuxtla Gutiérrez
+township_sat_1672,101,base.state_mx_jal,Tonalá
+township_sat_1673,101,base.state_mx_mex,Tianguistenco
+township_sat_1674,101,base.state_mx_mich,Tzitzio
+township_sat_1675,101,base.state_mx_oax,San Andrés Zabache
+township_sat_1676,101,base.state_mx_pue,Nauzontla
+township_sat_1677,101,base.state_mx_ver,Mariano Escobedo
+township_sat_1678,101,base.state_mx_yuc,Umán
+township_sat_1679,102,base.state_mx_chis,Tuxtla Chico
+township_sat_1680,102,base.state_mx_jal,Tonaya
+township_sat_1681,102,base.state_mx_mex,Timilpan
+township_sat_1682,102,base.state_mx_mich,Uruapan
+township_sat_1683,102,base.state_mx_oax,San Andrés Zautla
+township_sat_1684,102,base.state_mx_pue,Nealtican
+township_sat_1685,102,base.state_mx_ver,Martínez de la Torre
+township_sat_1686,102,base.state_mx_yuc,Valladolid
+township_sat_1687,103,base.state_mx_chis,Tuzantán
+township_sat_1688,103,base.state_mx_jal,Tonila
+township_sat_1689,103,base.state_mx_mex,Tlalmanalco
+township_sat_1690,103,base.state_mx_mich,Venustiano Carranza
+township_sat_1691,103,base.state_mx_oax,San Antonino Castillo Velasco
+township_sat_1692,103,base.state_mx_pue,Nicolás Bravo
+township_sat_1693,103,base.state_mx_ver,Mecatlán
+township_sat_1694,103,base.state_mx_yuc,Xocchel
+township_sat_1695,104,base.state_mx_chis,Tzimol
+township_sat_1696,104,base.state_mx_jal,Totatiche
+township_sat_1697,104,base.state_mx_mex,Tlalnepantla de Baz
+township_sat_1698,104,base.state_mx_mich,Villamar
+township_sat_1699,104,base.state_mx_oax,San Antonino el Alto
+township_sat_1700,104,base.state_mx_pue,Nopalucan
+township_sat_1701,104,base.state_mx_ver,Mecayapan
+township_sat_1702,104,base.state_mx_yuc,Yaxcabá
+township_sat_1703,105,base.state_mx_chis,Unión Juárez
+township_sat_1704,105,base.state_mx_jal,Tototlán
+township_sat_1705,105,base.state_mx_mex,Tlatlaya
+township_sat_1706,105,base.state_mx_mich,Vista Hermosa
+township_sat_1707,105,base.state_mx_oax,San Antonino Monte Verde
+township_sat_1708,105,base.state_mx_pue,Ocotepec
+township_sat_1709,105,base.state_mx_ver,Medellín
+township_sat_1710,105,base.state_mx_yuc,Yaxkukul
+township_sat_1711,106,base.state_mx_chis,Venustiano Carranza
+township_sat_1712,106,base.state_mx_jal,Tuxcacuesco
+township_sat_1713,106,base.state_mx_mex,Toluca
+township_sat_1714,106,base.state_mx_mich,Yurécuaro
+township_sat_1715,106,base.state_mx_oax,San Antonio Acutla
+township_sat_1716,106,base.state_mx_pue,Ocoyucan
+township_sat_1717,106,base.state_mx_ver,Miahuatlán
+township_sat_1718,106,base.state_mx_yuc,Yobaín
+township_sat_1719,107,base.state_mx_chis,Villa Corzo
+township_sat_1720,107,base.state_mx_jal,Tuxcueca
+township_sat_1721,107,base.state_mx_mex,Tonatico
+township_sat_1722,107,base.state_mx_mich,Zacapu
+township_sat_1723,107,base.state_mx_oax,San Antonio de la Cal
+township_sat_1724,107,base.state_mx_pue,Olintla
+township_sat_1725,107,base.state_mx_ver,Las Minas
+township_sat_1726,108,base.state_mx_chis,Villaflores
+township_sat_1727,108,base.state_mx_jal,Tuxpan
+township_sat_1728,108,base.state_mx_mex,Tultepec
+township_sat_1729,108,base.state_mx_mich,Zamora
+township_sat_1730,108,base.state_mx_oax,San Antonio Huitepec
+township_sat_1731,108,base.state_mx_pue,Oriental
+township_sat_1732,108,base.state_mx_ver,Minatitlán
+township_sat_1733,109,base.state_mx_chis,Yajalón
+township_sat_1734,109,base.state_mx_jal,Unión de San Antonio
+township_sat_1735,109,base.state_mx_mex,Tultitlán
+township_sat_1736,109,base.state_mx_mich,Zináparo
+township_sat_1737,109,base.state_mx_oax,San Antonio Nanahuatípam
+township_sat_1738,109,base.state_mx_pue,Pahuatlán
+township_sat_1739,109,base.state_mx_ver,Misantla
+township_sat_1740,110,base.state_mx_chis,San Lucas
+township_sat_1741,110,base.state_mx_jal,Unión de Tula
+township_sat_1742,110,base.state_mx_mex,Valle de Bravo
+township_sat_1743,110,base.state_mx_mich,Zinapécuaro
+township_sat_1744,110,base.state_mx_oax,San Antonio Sinicahua
+township_sat_1745,110,base.state_mx_pue,Palmar de Bravo
+township_sat_1746,110,base.state_mx_ver,Mixtla de Altamirano
+township_sat_1747,111,base.state_mx_chis,Zinacantán
+township_sat_1748,111,base.state_mx_jal,Valle de Guadalupe
+township_sat_1749,111,base.state_mx_mex,Villa de Allende
+township_sat_1750,111,base.state_mx_mich,Ziracuaretiro
+township_sat_1751,111,base.state_mx_oax,San Antonio Tepetlapa
+township_sat_1752,111,base.state_mx_pue,Pantepec
+township_sat_1753,111,base.state_mx_ver,Moloacán
+township_sat_1754,112,base.state_mx_chis,San Juan Cancuc
+township_sat_1755,112,base.state_mx_jal,Valle de Juárez
+township_sat_1756,112,base.state_mx_mex,Villa del Carbón
+township_sat_1757,112,base.state_mx_mich,Zitácuaro
+township_sat_1758,112,base.state_mx_oax,San Baltazar Chichicápam
+township_sat_1759,112,base.state_mx_pue,Petlalcingo
+township_sat_1760,112,base.state_mx_ver,Naolinco
+township_sat_1761,113,base.state_mx_chis,Aldama
+township_sat_1762,113,base.state_mx_jal,San Gabriel
+township_sat_1763,113,base.state_mx_mex,Villa Guerrero
+township_sat_1764,113,base.state_mx_mich,José Sixto Verduzco
+township_sat_1765,113,base.state_mx_oax,San Baltazar Loxicha
+township_sat_1766,113,base.state_mx_pue,Piaxtla
+township_sat_1767,113,base.state_mx_ver,Naranjal
+township_sat_1768,114,base.state_mx_chis,Benemérito de las Américas
+township_sat_1769,114,base.state_mx_jal,Villa Corona
+township_sat_1770,114,base.state_mx_mex,Villa Victoria
+township_sat_1771,114,base.state_mx_oax,San Baltazar Yatzachi el Bajo
+township_sat_1772,114,base.state_mx_pue,Puebla
+township_sat_1773,114,base.state_mx_ver,Nautla
+township_sat_1774,115,base.state_mx_chis,Maravilla Tenejapa
+township_sat_1775,115,base.state_mx_jal,Villa Guerrero
+township_sat_1776,115,base.state_mx_mex,Xonacatlán
+township_sat_1777,115,base.state_mx_oax,San Bartolo Coyotepec
+township_sat_1778,115,base.state_mx_pue,Quecholac
+township_sat_1779,115,base.state_mx_ver,Nogales
+township_sat_1780,116,base.state_mx_chis,Marqués de Comillas
+township_sat_1781,116,base.state_mx_jal,Villa Hidalgo
+township_sat_1782,116,base.state_mx_mex,Zacazonapan
+township_sat_1783,116,base.state_mx_oax,San Bartolomé Ayautla
+township_sat_1784,116,base.state_mx_pue,Quimixtlán
+township_sat_1785,116,base.state_mx_ver,Oluta
+township_sat_1786,117,base.state_mx_chis,Montecristo de Guerrero
+township_sat_1787,117,base.state_mx_jal,Cañadas de Obregón
+township_sat_1788,117,base.state_mx_mex,Zacualpan
+township_sat_1789,117,base.state_mx_oax,San Bartolomé Loxicha
+township_sat_1790,117,base.state_mx_pue,Rafael Lara Grajales
+township_sat_1791,117,base.state_mx_ver,Omealca
+township_sat_1792,118,base.state_mx_chis,San Andrés Duraznal
+township_sat_1793,118,base.state_mx_jal,Yahualica de González Gallo
+township_sat_1794,118,base.state_mx_mex,Zinacantepec
+township_sat_1795,118,base.state_mx_oax,San Bartolomé Quialana
+township_sat_1796,118,base.state_mx_pue,Los Reyes de Juárez
+township_sat_1797,118,base.state_mx_ver,Orizaba
+township_sat_1798,119,base.state_mx_chis,Santiago el Pinar
+township_sat_1799,119,base.state_mx_jal,Zacoalco de Torres
+township_sat_1800,119,base.state_mx_mex,Zumpahuacán
+township_sat_1801,119,base.state_mx_oax,San Bartolomé Yucuañe
+township_sat_1802,119,base.state_mx_pue,San Andrés Cholula
+township_sat_1803,119,base.state_mx_ver,Otatitlán
+township_sat_1804,120,base.state_mx_jal,Zapopan
+township_sat_1805,120,base.state_mx_mex,Zumpango
+township_sat_1806,120,base.state_mx_oax,San Bartolomé Zoogocho
+township_sat_1807,120,base.state_mx_pue,San Antonio Cañada
+township_sat_1808,120,base.state_mx_ver,Oteapan
+township_sat_1809,121,base.state_mx_jal,Zapotiltic
+township_sat_1810,121,base.state_mx_mex,Cuautitlán Izcalli
+township_sat_1811,121,base.state_mx_oax,San Bartolo Soyaltepec
+township_sat_1812,121,base.state_mx_pue,San Diego la Mesa Tochimiltzingo
+township_sat_1813,121,base.state_mx_ver,Ozuluama de Mascareñas
+township_sat_1814,122,base.state_mx_jal,Zapotitlán de Vadillo
+township_sat_1815,122,base.state_mx_mex,Valle de Chalco Solidaridad
+township_sat_1816,122,base.state_mx_oax,San Bartolo Yautepec
+township_sat_1817,122,base.state_mx_pue,San Felipe Teotlalcingo
+township_sat_1818,122,base.state_mx_ver,Pajapan
+township_sat_1819,123,base.state_mx_jal,Zapotlán del Rey
+township_sat_1820,123,base.state_mx_mex,Luvianos
+township_sat_1821,123,base.state_mx_oax,San Bernardo Mixtepec
+township_sat_1822,123,base.state_mx_pue,San Felipe Tepatlán
+township_sat_1823,123,base.state_mx_ver,Pánuco
+township_sat_1824,124,base.state_mx_jal,Zapotlanejo
+township_sat_1825,124,base.state_mx_mex,San José del Rincón
+township_sat_1826,124,base.state_mx_oax,San Blas Atempa
+township_sat_1827,124,base.state_mx_pue,San Gabriel Chilac
+township_sat_1828,124,base.state_mx_ver,Papantla
+township_sat_1829,125,base.state_mx_jal,San Ignacio Cerro Gordo
+township_sat_1830,125,base.state_mx_mex,Tonanitla
+township_sat_1831,125,base.state_mx_oax,San Carlos Yautepec
+township_sat_1832,125,base.state_mx_pue,San Gregorio Atzompa
+township_sat_1833,125,base.state_mx_ver,Paso del Macho
+township_sat_1834,126,base.state_mx_oax,San Cristóbal Amatlán
+township_sat_1835,126,base.state_mx_pue,San Jerónimo Tecuanipan
+township_sat_1836,126,base.state_mx_ver,Paso de Ovejas
+township_sat_1837,127,base.state_mx_oax,San Cristóbal Amoltepec
+township_sat_1838,127,base.state_mx_pue,San Jerónimo Xayacatlán
+township_sat_1839,127,base.state_mx_ver,La Perla
+township_sat_1840,128,base.state_mx_oax,San Cristóbal Lachirioag
+township_sat_1841,128,base.state_mx_pue,San José Chiapa
+township_sat_1842,128,base.state_mx_ver,Perote
+township_sat_1843,129,base.state_mx_oax,San Cristóbal Suchixtlahuaca
+township_sat_1844,129,base.state_mx_pue,San José Miahuatlán
+township_sat_1845,129,base.state_mx_ver,Platón Sánchez
+township_sat_1846,130,base.state_mx_oax,San Dionisio del Mar
+township_sat_1847,130,base.state_mx_pue,San Juan Atenco
+township_sat_1848,130,base.state_mx_ver,Playa Vicente
+township_sat_1849,131,base.state_mx_oax,San Dionisio Ocotepec
+township_sat_1850,131,base.state_mx_pue,San Juan Atzompa
+township_sat_1851,131,base.state_mx_ver,Poza Rica de Hidalgo
+township_sat_1852,132,base.state_mx_oax,San Dionisio Ocotlán
+township_sat_1853,132,base.state_mx_pue,San Martín Texmelucan
+township_sat_1854,132,base.state_mx_ver,Las Vigas de Ramírez
+township_sat_1855,133,base.state_mx_oax,San Esteban Atatlahuca
+township_sat_1856,133,base.state_mx_pue,San Martín Totoltepec
+township_sat_1857,133,base.state_mx_ver,Pueblo Viejo
+township_sat_1858,134,base.state_mx_oax,San Felipe Jalapa de Díaz
+township_sat_1859,134,base.state_mx_pue,San Matías Tlalancaleca
+township_sat_1860,134,base.state_mx_ver,Puente Nacional
+township_sat_1861,135,base.state_mx_oax,San Felipe Tejalápam
+township_sat_1862,135,base.state_mx_pue,San Miguel Ixitlán
+township_sat_1863,135,base.state_mx_ver,Rafael Delgado
+township_sat_1864,136,base.state_mx_oax,San Felipe Usila
+township_sat_1865,136,base.state_mx_pue,San Miguel Xoxtla
+township_sat_1866,136,base.state_mx_ver,Rafael Lucio
+township_sat_1867,137,base.state_mx_oax,San Francisco Cahuacuá
+township_sat_1868,137,base.state_mx_pue,San Nicolás Buenos Aires
+township_sat_1869,137,base.state_mx_ver,Los Reyes
+township_sat_1870,138,base.state_mx_oax,San Francisco Cajonos
+township_sat_1871,138,base.state_mx_pue,San Nicolás de los Ranchos
+township_sat_1872,138,base.state_mx_ver,Río Blanco
+township_sat_1873,139,base.state_mx_oax,San Francisco Chapulapa
+township_sat_1874,139,base.state_mx_pue,San Pablo Anicano
+township_sat_1875,139,base.state_mx_ver,Saltabarranca
+township_sat_1876,140,base.state_mx_oax,San Francisco Chindúa
+township_sat_1877,140,base.state_mx_pue,San Pedro Cholula
+township_sat_1878,140,base.state_mx_ver,San Andrés Tenejapan
+township_sat_1879,141,base.state_mx_oax,San Francisco del Mar
+township_sat_1880,141,base.state_mx_pue,San Pedro Yeloixtlahuaca
+township_sat_1881,141,base.state_mx_ver,San Andrés Tuxtla
+township_sat_1882,142,base.state_mx_oax,San Francisco Huehuetlán
+township_sat_1883,142,base.state_mx_pue,San Salvador el Seco
+township_sat_1884,142,base.state_mx_ver,San Juan Evangelista
+township_sat_1885,143,base.state_mx_oax,San Francisco Ixhuatán
+township_sat_1886,143,base.state_mx_pue,San Salvador el Verde
+township_sat_1887,143,base.state_mx_ver,Santiago Tuxtla
+township_sat_1888,144,base.state_mx_oax,San Francisco Jaltepetongo
+township_sat_1889,144,base.state_mx_pue,San Salvador Huixcolotla
+township_sat_1890,144,base.state_mx_ver,Sayula de Alemán
+township_sat_1891,145,base.state_mx_oax,San Francisco Lachigoló
+township_sat_1892,145,base.state_mx_pue,San Sebastián Tlacotepec
+township_sat_1893,145,base.state_mx_ver,Soconusco
+township_sat_1894,146,base.state_mx_oax,San Francisco Logueche
+township_sat_1895,146,base.state_mx_pue,Santa Catarina Tlaltempan
+township_sat_1896,146,base.state_mx_ver,Sochiapa
+township_sat_1897,147,base.state_mx_oax,San Francisco Nuxaño
+township_sat_1898,147,base.state_mx_pue,Santa Inés Ahuatempan
+township_sat_1899,147,base.state_mx_ver,Soledad Atzompa
+township_sat_1900,148,base.state_mx_oax,San Francisco Ozolotepec
+township_sat_1901,148,base.state_mx_pue,Santa Isabel Cholula
+township_sat_1902,148,base.state_mx_ver,Soledad de Doblado
+township_sat_1903,149,base.state_mx_oax,San Francisco Sola
+township_sat_1904,149,base.state_mx_pue,Santiago Miahuatlán
+township_sat_1905,149,base.state_mx_ver,Soteapan
+township_sat_1906,150,base.state_mx_oax,San Francisco Telixtlahuaca
+township_sat_1907,150,base.state_mx_pue,Huehuetlán el Grande
+township_sat_1908,150,base.state_mx_ver,Tamalín
+township_sat_1909,151,base.state_mx_oax,San Francisco Teopan
+township_sat_1910,151,base.state_mx_pue,Santo Tomás Hueyotlipan
+township_sat_1911,151,base.state_mx_ver,Tamiahua
+township_sat_1912,152,base.state_mx_oax,San Francisco Tlapancingo
+township_sat_1913,152,base.state_mx_pue,Soltepec
+township_sat_1914,152,base.state_mx_ver,Tampico Alto
+township_sat_1915,153,base.state_mx_oax,San Gabriel Mixtepec
+township_sat_1916,153,base.state_mx_pue,Tecali de Herrera
+township_sat_1917,153,base.state_mx_ver,Tancoco
+township_sat_1918,154,base.state_mx_oax,San Ildefonso Amatlán
+township_sat_1919,154,base.state_mx_pue,Tecamachalco
+township_sat_1920,154,base.state_mx_ver,Tantima
+township_sat_1921,155,base.state_mx_oax,San Ildefonso Sola
+township_sat_1922,155,base.state_mx_pue,Tecomatlán
+township_sat_1923,155,base.state_mx_ver,Tantoyuca
+township_sat_1924,156,base.state_mx_oax,San Ildefonso Villa Alta
+township_sat_1925,156,base.state_mx_pue,Tehuacán
+township_sat_1926,156,base.state_mx_ver,Tatatila
+township_sat_1927,157,base.state_mx_oax,San Jacinto Amilpas
+township_sat_1928,157,base.state_mx_pue,Tehuitzingo
+township_sat_1929,157,base.state_mx_ver,Castillo de Teayo
+township_sat_1930,158,base.state_mx_oax,San Jacinto Tlacotepec
+township_sat_1931,158,base.state_mx_pue,Tenampulco
+township_sat_1932,158,base.state_mx_ver,Tecolutla
+township_sat_1933,159,base.state_mx_oax,San Jerónimo Coatlán
+township_sat_1934,159,base.state_mx_pue,Teopantlán
+township_sat_1935,159,base.state_mx_ver,Tehuipango
+township_sat_1936,160,base.state_mx_oax,San Jerónimo Silacayoapilla
+township_sat_1937,160,base.state_mx_pue,Teotlalco
+township_sat_1938,160,base.state_mx_ver,Álamo Temapache
+township_sat_1939,161,base.state_mx_oax,San Jerónimo Sosola
+township_sat_1940,161,base.state_mx_pue,Tepanco de López
+township_sat_1941,161,base.state_mx_ver,Tempoal
+township_sat_1942,162,base.state_mx_oax,San Jerónimo Taviche
+township_sat_1943,162,base.state_mx_pue,Tepango de Rodríguez
+township_sat_1944,162,base.state_mx_ver,Tenampa
+township_sat_1945,163,base.state_mx_oax,San Jerónimo Tecóatl
+township_sat_1946,163,base.state_mx_pue,Tepatlaxco de Hidalgo
+township_sat_1947,163,base.state_mx_ver,Tenochtitlán
+township_sat_1948,164,base.state_mx_oax,San Jorge Nuchita
+township_sat_1949,164,base.state_mx_pue,Tepeaca
+township_sat_1950,164,base.state_mx_ver,Teocelo
+township_sat_1951,165,base.state_mx_oax,San José Ayuquila
+township_sat_1952,165,base.state_mx_pue,Tepemaxalco
+township_sat_1953,165,base.state_mx_ver,Tepatlaxco
+township_sat_1954,166,base.state_mx_oax,San José Chiltepec
+township_sat_1955,166,base.state_mx_pue,Tepeojuma
+township_sat_1956,166,base.state_mx_ver,Tepetlán
+township_sat_1957,167,base.state_mx_oax,San José del Peñasco
+township_sat_1958,167,base.state_mx_pue,Tepetzintla
+township_sat_1959,167,base.state_mx_ver,Tepetzintla
+township_sat_1960,168,base.state_mx_oax,San José Estancia Grande
+township_sat_1961,168,base.state_mx_pue,Tepexco
+township_sat_1962,168,base.state_mx_ver,Tequila
+township_sat_1963,169,base.state_mx_oax,San José Independencia
+township_sat_1964,169,base.state_mx_pue,Tepexi de Rodríguez
+township_sat_1965,169,base.state_mx_ver,José Azueta
+township_sat_1966,170,base.state_mx_oax,San José Lachiguiri
+township_sat_1967,170,base.state_mx_pue,Tepeyahualco
+township_sat_1968,170,base.state_mx_ver,Texcatepec
+township_sat_1969,171,base.state_mx_oax,San José Tenango
+township_sat_1970,171,base.state_mx_pue,Tepeyahualco de Cuauhtémoc
+township_sat_1971,171,base.state_mx_ver,Texhuacán
+township_sat_1972,172,base.state_mx_oax,San Juan Achiutla
+township_sat_1973,172,base.state_mx_pue,Tetela de Ocampo
+township_sat_1974,172,base.state_mx_ver,Texistepec
+township_sat_1975,173,base.state_mx_oax,San Juan Atepec
+township_sat_1976,173,base.state_mx_pue,Teteles de Avila Castillo
+township_sat_1977,173,base.state_mx_ver,Tezonapa
+township_sat_1978,174,base.state_mx_oax,Ánimas Trujano
+township_sat_1979,174,base.state_mx_pue,Teziutlán
+township_sat_1980,174,base.state_mx_ver,Tierra Blanca
+township_sat_1981,175,base.state_mx_oax,San Juan Bautista Atatlahuca
+township_sat_1982,175,base.state_mx_pue,Tianguismanalco
+township_sat_1983,175,base.state_mx_ver,Tihuatlán
+township_sat_1984,176,base.state_mx_oax,San Juan Bautista Coixtlahuaca
+township_sat_1985,176,base.state_mx_pue,Tilapa
+township_sat_1986,176,base.state_mx_ver,Tlacojalpan
+township_sat_1987,177,base.state_mx_oax,San Juan Bautista Cuicatlán
+township_sat_1988,177,base.state_mx_pue,Tlacotepec de Benito Juárez
+township_sat_1989,177,base.state_mx_ver,Tlacolulan
+township_sat_1990,178,base.state_mx_oax,San Juan Bautista Guelache
+township_sat_1991,178,base.state_mx_pue,Tlacuilotepec
+township_sat_1992,178,base.state_mx_ver,Tlacotalpan
+township_sat_1993,179,base.state_mx_oax,San Juan Bautista Jayacatlán
+township_sat_1994,179,base.state_mx_pue,Tlachichuca
+township_sat_1995,179,base.state_mx_ver,Tlacotepec de Mejía
+township_sat_1996,180,base.state_mx_oax,San Juan Bautista Lo de Soto
+township_sat_1997,180,base.state_mx_pue,Tlahuapan
+township_sat_1998,180,base.state_mx_ver,Tlachichilco
+township_sat_1999,181,base.state_mx_oax,San Juan Bautista Suchitepec
+township_sat_2000,181,base.state_mx_pue,Tlaltenango
+township_sat_2001,181,base.state_mx_ver,Tlalixcoyan
+township_sat_2002,182,base.state_mx_oax,San Juan Bautista Tlacoatzintepec
+township_sat_2003,182,base.state_mx_pue,Tlanepantla
+township_sat_2004,182,base.state_mx_ver,Tlalnelhuayocan
+township_sat_2005,183,base.state_mx_oax,San Juan Bautista Tlachichilco
+township_sat_2006,183,base.state_mx_pue,Tlaola
+township_sat_2007,183,base.state_mx_ver,Tlapacoyan
+township_sat_2008,184,base.state_mx_oax,San Juan Bautista Tuxtepec
+township_sat_2009,184,base.state_mx_pue,Tlapacoya
+township_sat_2010,184,base.state_mx_ver,Tlaquilpa
+township_sat_2011,185,base.state_mx_oax,San Juan Cacahuatepec
+township_sat_2012,185,base.state_mx_pue,Tlapanalá
+township_sat_2013,185,base.state_mx_ver,Tlilapan
+township_sat_2014,186,base.state_mx_oax,San Juan Cieneguilla
+township_sat_2015,186,base.state_mx_pue,Tlatlauquitepec
+township_sat_2016,186,base.state_mx_ver,Tomatlán
+township_sat_2017,187,base.state_mx_oax,San Juan Coatzóspam
+township_sat_2018,187,base.state_mx_pue,Tlaxco
+township_sat_2019,187,base.state_mx_ver,Tonayán
+township_sat_2020,188,base.state_mx_oax,San Juan Colorado
+township_sat_2021,188,base.state_mx_pue,Tochimilco
+township_sat_2022,188,base.state_mx_ver,Totutla
+township_sat_2023,189,base.state_mx_oax,San Juan Comaltepec
+township_sat_2024,189,base.state_mx_pue,Tochtepec
+township_sat_2025,189,base.state_mx_ver,Tuxpan
+township_sat_2026,190,base.state_mx_oax,San Juan Cotzocón
+township_sat_2027,190,base.state_mx_pue,Totoltepec de Guerrero
+township_sat_2028,190,base.state_mx_ver,Tuxtilla
+township_sat_2029,191,base.state_mx_oax,San Juan Chicomezúchil
+township_sat_2030,191,base.state_mx_pue,Tulcingo
+township_sat_2031,191,base.state_mx_ver,Ursulo Galván
+township_sat_2032,192,base.state_mx_oax,San Juan Chilateca
+township_sat_2033,192,base.state_mx_pue,Tuzamapan de Galeana
+township_sat_2034,192,base.state_mx_ver,Vega de Alatorre
+township_sat_2035,193,base.state_mx_oax,San Juan del Estado
+township_sat_2036,193,base.state_mx_pue,Tzicatlacoyan
+township_sat_2037,193,base.state_mx_ver,Veracruz
+township_sat_2038,194,base.state_mx_oax,San Juan del Río
+township_sat_2039,194,base.state_mx_pue,Venustiano Carranza
+township_sat_2040,194,base.state_mx_ver,Villa Aldama
+township_sat_2041,195,base.state_mx_oax,San Juan Diuxi
+township_sat_2042,195,base.state_mx_pue,Vicente Guerrero
+township_sat_2043,195,base.state_mx_ver,Xoxocotla
+township_sat_2044,196,base.state_mx_oax,San Juan Evangelista Analco
+township_sat_2045,196,base.state_mx_pue,Xayacatlán de Bravo
+township_sat_2046,196,base.state_mx_ver,Yanga
+township_sat_2047,197,base.state_mx_oax,San Juan Guelavía
+township_sat_2048,197,base.state_mx_pue,Xicotepec
+township_sat_2049,197,base.state_mx_ver,Yecuatla
+township_sat_2050,198,base.state_mx_oax,San Juan Guichicovi
+township_sat_2051,198,base.state_mx_pue,Xicotlán
+township_sat_2052,198,base.state_mx_ver,Zacualpan
+township_sat_2053,199,base.state_mx_oax,San Juan Ihualtepec
+township_sat_2054,199,base.state_mx_pue,Xiutetelco
+township_sat_2055,199,base.state_mx_ver,Zaragoza
+township_sat_2056,200,base.state_mx_oax,San Juan Juquila Mixes
+township_sat_2057,200,base.state_mx_pue,Xochiapulco
+township_sat_2058,200,base.state_mx_ver,Zentla
+township_sat_2059,201,base.state_mx_oax,San Juan Juquila Vijanos
+township_sat_2060,201,base.state_mx_pue,Xochiltepec
+township_sat_2061,201,base.state_mx_ver,Zongolica
+township_sat_2062,202,base.state_mx_oax,San Juan Lachao
+township_sat_2063,202,base.state_mx_pue,Xochitlán de Vicente Suárez
+township_sat_2064,202,base.state_mx_ver,Zontecomatlán de López y Fuentes
+township_sat_2065,203,base.state_mx_oax,San Juan Lachigalla
+township_sat_2066,203,base.state_mx_pue,Xochitlán Todos Santos
+township_sat_2067,203,base.state_mx_ver,Zozocolco de Hidalgo
+township_sat_2068,204,base.state_mx_oax,San Juan Lajarcia
+township_sat_2069,204,base.state_mx_pue,Yaonáhuac
+township_sat_2070,204,base.state_mx_ver,Agua Dulce
+township_sat_2071,205,base.state_mx_oax,San Juan Lalana
+township_sat_2072,205,base.state_mx_pue,Yehualtepec
+township_sat_2073,205,base.state_mx_ver,El Higo
+township_sat_2074,206,base.state_mx_oax,San Juan de los Cués
+township_sat_2075,206,base.state_mx_pue,Zacapala
+township_sat_2076,206,base.state_mx_ver,Nanchital de Lázaro Cárdenas del Río
+township_sat_2077,207,base.state_mx_oax,San Juan Mazatlán
+township_sat_2078,207,base.state_mx_pue,Zacapoaxtla
+township_sat_2079,207,base.state_mx_ver,Tres Valles
+township_sat_2080,208,base.state_mx_oax,San Juan Mixtepec -Dto. 08 -
+township_sat_2081,208,base.state_mx_pue,Zacatlán
+township_sat_2082,208,base.state_mx_ver,Carlos A. Carrillo
+township_sat_2083,209,base.state_mx_oax,San Juan Mixtepec -Dto. 26 -
+township_sat_2084,209,base.state_mx_pue,Zapotitlán
+township_sat_2085,209,base.state_mx_ver,Tatahuicapan de Juárez
+township_sat_2086,210,base.state_mx_oax,San Juan Ñumí
+township_sat_2087,210,base.state_mx_pue,Zapotitlán de Méndez
+township_sat_2088,210,base.state_mx_ver,Uxpanapa
+township_sat_2089,211,base.state_mx_oax,San Juan Ozolotepec
+township_sat_2090,211,base.state_mx_pue,Zaragoza
+township_sat_2091,211,base.state_mx_ver,San Rafael
+township_sat_2092,212,base.state_mx_oax,San Juan Petlapa
+township_sat_2093,212,base.state_mx_pue,Zautla
+township_sat_2094,212,base.state_mx_ver,Santiago Sochiapan
+township_sat_2095,213,base.state_mx_oax,San Juan Quiahije
+township_sat_2096,213,base.state_mx_pue,Zihuateutla
+township_sat_2097,214,base.state_mx_oax,San Juan Quiotepec
+township_sat_2098,214,base.state_mx_pue,Zinacatepec
+township_sat_2099,215,base.state_mx_oax,San Juan Sayultepec
+township_sat_2100,215,base.state_mx_pue,Zongozotla
+township_sat_2101,216,base.state_mx_oax,San Juan Tabaá
+township_sat_2102,216,base.state_mx_pue,Zoquiapan
+township_sat_2103,217,base.state_mx_oax,San Juan Tamazola
+township_sat_2104,217,base.state_mx_pue,Zoquitlán
+township_sat_2105,218,base.state_mx_oax,San Juan Teita
+township_sat_2106,219,base.state_mx_oax,San Juan Teitipac
+township_sat_2107,220,base.state_mx_oax,San Juan Tepeuxila
+township_sat_2108,221,base.state_mx_oax,San Juan Teposcolula
+township_sat_2109,222,base.state_mx_oax,San Juan Yaeé
+township_sat_2110,223,base.state_mx_oax,San Juan Yatzona
+township_sat_2111,224,base.state_mx_oax,San Juan Yucuita
+township_sat_2112,225,base.state_mx_oax,San Lorenzo
+township_sat_2113,226,base.state_mx_oax,San Lorenzo Albarradas
+township_sat_2114,227,base.state_mx_oax,San Lorenzo Cacaotepec
+township_sat_2115,228,base.state_mx_oax,San Lorenzo Cuaunecuiltitla
+township_sat_2116,229,base.state_mx_oax,San Lorenzo Texmelúcan
+township_sat_2117,230,base.state_mx_oax,San Lorenzo Victoria
+township_sat_2118,231,base.state_mx_oax,San Lucas Camotlán
+township_sat_2119,232,base.state_mx_oax,San Lucas Ojitlán
+township_sat_2120,233,base.state_mx_oax,San Lucas Quiaviní
+township_sat_2121,234,base.state_mx_oax,San Lucas Zoquiápam
+township_sat_2122,235,base.state_mx_oax,San Luis Amatlán
+township_sat_2123,236,base.state_mx_oax,San Marcial Ozolotepec
+township_sat_2124,237,base.state_mx_oax,San Marcos Arteaga
+township_sat_2125,238,base.state_mx_oax,San Martín de los Cansecos
+township_sat_2126,239,base.state_mx_oax,San Martín Huamelúlpam
+township_sat_2127,240,base.state_mx_oax,San Martín Itunyoso
+township_sat_2128,241,base.state_mx_oax,San Martín Lachilá
+township_sat_2129,242,base.state_mx_oax,San Martín Peras
+township_sat_2130,243,base.state_mx_oax,San Martín Tilcajete
+township_sat_2131,244,base.state_mx_oax,San Martín Toxpalan
+township_sat_2132,245,base.state_mx_oax,San Martín Zacatepec
+township_sat_2133,246,base.state_mx_oax,San Mateo Cajonos
+township_sat_2134,247,base.state_mx_oax,Capulálpam de Méndez
+township_sat_2135,248,base.state_mx_oax,San Mateo del Mar
+township_sat_2136,249,base.state_mx_oax,San Mateo Yoloxochitlán
+township_sat_2137,250,base.state_mx_oax,San Mateo Etlatongo
+township_sat_2138,251,base.state_mx_oax,San Mateo Nejápam
+township_sat_2139,252,base.state_mx_oax,San Mateo Peñasco
+township_sat_2140,253,base.state_mx_oax,San Mateo Piñas
+township_sat_2141,254,base.state_mx_oax,San Mateo Río Hondo
+township_sat_2142,255,base.state_mx_oax,San Mateo Sindihui
+township_sat_2143,256,base.state_mx_oax,San Mateo Tlapiltepec
+township_sat_2144,257,base.state_mx_oax,San Melchor Betaza
+township_sat_2145,258,base.state_mx_oax,San Miguel Achiutla
+township_sat_2146,259,base.state_mx_oax,San Miguel Ahuehuetitlán
+township_sat_2147,260,base.state_mx_oax,San Miguel Aloápam
+township_sat_2148,261,base.state_mx_oax,San Miguel Amatitlán
+township_sat_2149,262,base.state_mx_oax,San Miguel Amatlán
+township_sat_2150,263,base.state_mx_oax,San Miguel Coatlán
+township_sat_2151,264,base.state_mx_oax,San Miguel Chicahua
+township_sat_2152,265,base.state_mx_oax,San Miguel Chimalapa
+township_sat_2153,266,base.state_mx_oax,San Miguel del Puerto
+township_sat_2154,267,base.state_mx_oax,San Miguel del Río
+township_sat_2155,268,base.state_mx_oax,San Miguel Ejutla
+township_sat_2156,269,base.state_mx_oax,San Miguel el Grande
+township_sat_2157,270,base.state_mx_oax,San Miguel Huautla
+township_sat_2158,271,base.state_mx_oax,San Miguel Mixtepec
+township_sat_2159,272,base.state_mx_oax,San Miguel Panixtlahuaca
+township_sat_2160,273,base.state_mx_oax,San Miguel Peras
+township_sat_2161,274,base.state_mx_oax,San Miguel Piedras
+township_sat_2162,275,base.state_mx_oax,San Miguel Quetzaltepec
+township_sat_2163,276,base.state_mx_oax,San Miguel Santa Flor
+township_sat_2164,277,base.state_mx_oax,Villa Sola de Vega
+township_sat_2165,278,base.state_mx_oax,San Miguel Soyaltepec
+township_sat_2166,279,base.state_mx_oax,San Miguel Suchixtepec
+township_sat_2167,280,base.state_mx_oax,Villa Talea de Castro
+township_sat_2168,281,base.state_mx_oax,San Miguel Tecomatlán
+township_sat_2169,282,base.state_mx_oax,San Miguel Tenango
+township_sat_2170,283,base.state_mx_oax,San Miguel Tequixtepec
+township_sat_2171,284,base.state_mx_oax,San Miguel Tilquiápam
+township_sat_2172,285,base.state_mx_oax,San Miguel Tlacamama
+township_sat_2173,286,base.state_mx_oax,San Miguel Tlacotepec
+township_sat_2174,287,base.state_mx_oax,San Miguel Tulancingo
+township_sat_2175,288,base.state_mx_oax,San Miguel Yotao
+township_sat_2176,289,base.state_mx_oax,San Nicolás
+township_sat_2177,290,base.state_mx_oax,San Nicolás Hidalgo
+township_sat_2178,291,base.state_mx_oax,San Pablo Coatlán
+township_sat_2179,292,base.state_mx_oax,San Pablo Cuatro Venados
+township_sat_2180,293,base.state_mx_oax,San Pablo Etla
+township_sat_2181,294,base.state_mx_oax,San Pablo Huitzo
+township_sat_2182,295,base.state_mx_oax,San Pablo Huixtepec
+township_sat_2183,296,base.state_mx_oax,San Pablo Macuiltianguis
+township_sat_2184,297,base.state_mx_oax,San Pablo Tijaltepec
+township_sat_2185,298,base.state_mx_oax,San Pablo Villa de Mitla
+township_sat_2186,299,base.state_mx_oax,San Pablo Yaganiza
+township_sat_2187,300,base.state_mx_oax,San Pedro Amuzgos
+township_sat_2188,301,base.state_mx_oax,San Pedro Apóstol
+township_sat_2189,302,base.state_mx_oax,San Pedro Atoyac
+township_sat_2190,303,base.state_mx_oax,San Pedro Cajonos
+township_sat_2191,304,base.state_mx_oax,San Pedro Coxcaltepec Cántaros
+township_sat_2192,305,base.state_mx_oax,San Pedro Comitancillo
+township_sat_2193,306,base.state_mx_oax,San Pedro el Alto
+township_sat_2194,307,base.state_mx_oax,San Pedro Huamelula
+township_sat_2195,308,base.state_mx_oax,San Pedro Huilotepec
+township_sat_2196,309,base.state_mx_oax,San Pedro Ixcatlán
+township_sat_2197,310,base.state_mx_oax,San Pedro Ixtlahuaca
+township_sat_2198,311,base.state_mx_oax,San Pedro Jaltepetongo
+township_sat_2199,312,base.state_mx_oax,San Pedro Jicayán
+township_sat_2200,313,base.state_mx_oax,San Pedro Jocotipac
+township_sat_2201,314,base.state_mx_oax,San Pedro Juchatengo
+township_sat_2202,315,base.state_mx_oax,San Pedro Mártir
+township_sat_2203,316,base.state_mx_oax,San Pedro Mártir Quiechapa
+township_sat_2204,317,base.state_mx_oax,San Pedro Mártir Yucuxaco
+township_sat_2205,318,base.state_mx_oax,San Pedro Mixtepec -Dto. 22 -
+township_sat_2206,319,base.state_mx_oax,San Pedro Mixtepec -Dto. 26 -
+township_sat_2207,320,base.state_mx_oax,San Pedro Molinos
+township_sat_2208,321,base.state_mx_oax,San Pedro Nopala
+township_sat_2209,322,base.state_mx_oax,San Pedro Ocopetatillo
+township_sat_2210,323,base.state_mx_oax,San Pedro Ocotepec
+township_sat_2211,324,base.state_mx_oax,San Pedro Pochutla
+township_sat_2212,325,base.state_mx_oax,San Pedro Quiatoni
+township_sat_2213,326,base.state_mx_oax,San Pedro Sochiápam
+township_sat_2214,327,base.state_mx_oax,San Pedro Tapanatepec
+township_sat_2215,328,base.state_mx_oax,San Pedro Taviche
+township_sat_2216,329,base.state_mx_oax,San Pedro Teozacoalco
+township_sat_2217,330,base.state_mx_oax,San Pedro Teutila
+township_sat_2218,331,base.state_mx_oax,San Pedro Tidaá
+township_sat_2219,332,base.state_mx_oax,San Pedro Topiltepec
+township_sat_2220,333,base.state_mx_oax,San Pedro Totolápam
+township_sat_2221,334,base.state_mx_oax,Villa de Tututepec de Melchor Ocampo
+township_sat_2222,335,base.state_mx_oax,San Pedro Yaneri
+township_sat_2223,336,base.state_mx_oax,San Pedro Yólox
+township_sat_2224,337,base.state_mx_oax,San Pedro y San Pablo Ayutla
+township_sat_2225,338,base.state_mx_oax,Villa de Etla
+township_sat_2226,339,base.state_mx_oax,San Pedro y San Pablo Teposcolula
+township_sat_2227,340,base.state_mx_oax,San Pedro y San Pablo Tequixtepec
+township_sat_2228,341,base.state_mx_oax,San Pedro Yucunama
+township_sat_2229,342,base.state_mx_oax,San Raymundo Jalpan
+township_sat_2230,343,base.state_mx_oax,San Sebastián Abasolo
+township_sat_2231,344,base.state_mx_oax,San Sebastián Coatlán
+township_sat_2232,345,base.state_mx_oax,San Sebastián Ixcapa
+township_sat_2233,346,base.state_mx_oax,San Sebastián Nicananduta
+township_sat_2234,347,base.state_mx_oax,San Sebastián Río Hondo
+township_sat_2235,348,base.state_mx_oax,San Sebastián Tecomaxtlahuaca
+township_sat_2236,349,base.state_mx_oax,San Sebastián Teitipac
+township_sat_2237,350,base.state_mx_oax,San Sebastián Tutla
+township_sat_2238,351,base.state_mx_oax,San Simón Almolongas
+township_sat_2239,352,base.state_mx_oax,San Simón Zahuatlán
+township_sat_2240,353,base.state_mx_oax,Santa Ana
+township_sat_2241,354,base.state_mx_oax,Santa Ana Ateixtlahuaca
+township_sat_2242,355,base.state_mx_oax,Santa Ana Cuauhtémoc
+township_sat_2243,356,base.state_mx_oax,Santa Ana del Valle
+township_sat_2244,357,base.state_mx_oax,Santa Ana Tavela
+township_sat_2245,358,base.state_mx_oax,Santa Ana Tlapacoyan
+township_sat_2246,359,base.state_mx_oax,Santa Ana Yareni
+township_sat_2247,360,base.state_mx_oax,Santa Ana Zegache
+township_sat_2248,361,base.state_mx_oax,Santa Catalina Quierí
+township_sat_2249,362,base.state_mx_oax,Santa Catarina Cuixtla
+township_sat_2250,363,base.state_mx_oax,Santa Catarina Ixtepeji
+township_sat_2251,364,base.state_mx_oax,Santa Catarina Juquila
+township_sat_2252,365,base.state_mx_oax,Santa Catarina Lachatao
+township_sat_2253,366,base.state_mx_oax,Santa Catarina Loxicha
+township_sat_2254,367,base.state_mx_oax,Santa Catarina Mechoacán
+township_sat_2255,368,base.state_mx_oax,Santa Catarina Minas
+township_sat_2256,369,base.state_mx_oax,Santa Catarina Quiané
+township_sat_2257,370,base.state_mx_oax,Santa Catarina Tayata
+township_sat_2258,371,base.state_mx_oax,Santa Catarina Ticuá
+township_sat_2259,372,base.state_mx_oax,Santa Catarina Yosonotú
+township_sat_2260,373,base.state_mx_oax,Santa Catarina Zapoquila
+township_sat_2261,374,base.state_mx_oax,Santa Cruz Acatepec
+township_sat_2262,375,base.state_mx_oax,Santa Cruz Amilpas
+township_sat_2263,376,base.state_mx_oax,Santa Cruz de Bravo
+township_sat_2264,377,base.state_mx_oax,Santa Cruz Itundujia
+township_sat_2265,378,base.state_mx_oax,Santa Cruz Mixtepec
+township_sat_2266,379,base.state_mx_oax,Santa Cruz Nundaco
+township_sat_2267,380,base.state_mx_oax,Santa Cruz Papalutla
+township_sat_2268,381,base.state_mx_oax,Santa Cruz Tacache de Mina
+township_sat_2269,382,base.state_mx_oax,Santa Cruz Tacahua
+township_sat_2270,383,base.state_mx_oax,Santa Cruz Tayata
+township_sat_2271,384,base.state_mx_oax,Santa Cruz Xitla
+township_sat_2272,385,base.state_mx_oax,Santa Cruz Xoxocotlán
+township_sat_2273,386,base.state_mx_oax,Santa Cruz Zenzontepec
+township_sat_2274,387,base.state_mx_oax,Santa Gertrudis
+township_sat_2275,388,base.state_mx_oax,Santa Inés del Monte
+township_sat_2276,389,base.state_mx_oax,Santa Inés Yatzeche
+township_sat_2277,390,base.state_mx_oax,Santa Lucía del Camino
+township_sat_2278,391,base.state_mx_oax,Santa Lucía Miahuatlán
+township_sat_2279,392,base.state_mx_oax,Santa Lucía Monteverde
+township_sat_2280,393,base.state_mx_oax,Santa Lucía Ocotlán
+township_sat_2281,394,base.state_mx_oax,Santa María Alotepec
+township_sat_2282,395,base.state_mx_oax,Santa María Apazco
+township_sat_2283,396,base.state_mx_oax,Santa María la Asunción
+township_sat_2284,397,base.state_mx_oax,Heroica Ciudad de Tlaxiaco
+township_sat_2285,398,base.state_mx_oax,Ayoquezco de Aldama
+township_sat_2286,399,base.state_mx_oax,Santa María Atzompa
+township_sat_2287,400,base.state_mx_oax,Santa María Camotlán
+township_sat_2288,401,base.state_mx_oax,Santa María Colotepec
+township_sat_2289,402,base.state_mx_oax,Santa María Cortijo
+township_sat_2290,403,base.state_mx_oax,Santa María Coyotepec
+township_sat_2291,404,base.state_mx_oax,Santa María Chachoápam
+township_sat_2292,405,base.state_mx_oax,Villa de Chilapa de Díaz
+township_sat_2293,406,base.state_mx_oax,Santa María Chilchotla
+township_sat_2294,407,base.state_mx_oax,Santa María Chimalapa
+township_sat_2295,408,base.state_mx_oax,Santa María del Rosario
+township_sat_2296,409,base.state_mx_oax,Santa María del Tule
+township_sat_2297,410,base.state_mx_oax,Santa María Ecatepec
+township_sat_2298,411,base.state_mx_oax,Santa María Guelacé
+township_sat_2299,412,base.state_mx_oax,Santa María Guienagati
+township_sat_2300,413,base.state_mx_oax,Santa María Huatulco
+township_sat_2301,414,base.state_mx_oax,Santa María Huazolotitlán
+township_sat_2302,415,base.state_mx_oax,Santa María Ipalapa
+township_sat_2303,416,base.state_mx_oax,Santa María Ixcatlán
+township_sat_2304,417,base.state_mx_oax,Santa María Jacatepec
+township_sat_2305,418,base.state_mx_oax,Santa María Jalapa del Marqués
+township_sat_2306,419,base.state_mx_oax,Santa María Jaltianguis
+township_sat_2307,420,base.state_mx_oax,Santa María Lachixío
+township_sat_2308,421,base.state_mx_oax,Santa María Mixtequilla
+township_sat_2309,422,base.state_mx_oax,Santa María Nativitas
+township_sat_2310,423,base.state_mx_oax,Santa María Nduayaco
+township_sat_2311,424,base.state_mx_oax,Santa María Ozolotepec
+township_sat_2312,425,base.state_mx_oax,Santa María Pápalo
+township_sat_2313,426,base.state_mx_oax,Santa María Peñoles
+township_sat_2314,427,base.state_mx_oax,Santa María Petapa
+township_sat_2315,428,base.state_mx_oax,Santa María Quiegolani
+township_sat_2316,429,base.state_mx_oax,Santa María Sola
+township_sat_2317,430,base.state_mx_oax,Santa María Tataltepec
+township_sat_2318,431,base.state_mx_oax,Santa María Tecomavaca
+township_sat_2319,432,base.state_mx_oax,Santa María Temaxcalapa
+township_sat_2320,433,base.state_mx_oax,Santa María Temaxcaltepec
+township_sat_2321,434,base.state_mx_oax,Santa María Teopoxco
+township_sat_2322,435,base.state_mx_oax,Santa María Tepantlali
+township_sat_2323,436,base.state_mx_oax,Santa María Texcatitlán
+township_sat_2324,437,base.state_mx_oax,Santa María Tlahuitoltepec
+township_sat_2325,438,base.state_mx_oax,Santa María Tlalixtac
+township_sat_2326,439,base.state_mx_oax,Santa María Tonameca
+township_sat_2327,440,base.state_mx_oax,Santa María Totolapilla
+township_sat_2328,441,base.state_mx_oax,Santa María Xadani
+township_sat_2329,442,base.state_mx_oax,Santa María Yalina
+township_sat_2330,443,base.state_mx_oax,Santa María Yavesía
+township_sat_2331,444,base.state_mx_oax,Santa María Yolotepec
+township_sat_2332,445,base.state_mx_oax,Santa María Yosoyúa
+township_sat_2333,446,base.state_mx_oax,Santa María Yucuhiti
+township_sat_2334,447,base.state_mx_oax,Santa María Zacatepec
+township_sat_2335,448,base.state_mx_oax,Santa María Zaniza
+township_sat_2336,449,base.state_mx_oax,Santa María Zoquitlán
+township_sat_2337,450,base.state_mx_oax,Santiago Amoltepec
+township_sat_2338,451,base.state_mx_oax,Santiago Apoala
+township_sat_2339,452,base.state_mx_oax,Santiago Apóstol
+township_sat_2340,453,base.state_mx_oax,Santiago Astata
+township_sat_2341,454,base.state_mx_oax,Santiago Atitlán
+township_sat_2342,455,base.state_mx_oax,Santiago Ayuquililla
+township_sat_2343,456,base.state_mx_oax,Santiago Cacaloxtepec
+township_sat_2344,457,base.state_mx_oax,Santiago Camotlán
+township_sat_2345,458,base.state_mx_oax,Santiago Comaltepec
+township_sat_2346,459,base.state_mx_oax,Santiago Chazumba
+township_sat_2347,460,base.state_mx_oax,Santiago Choápam
+township_sat_2348,461,base.state_mx_oax,Santiago del Río
+township_sat_2349,462,base.state_mx_oax,Santiago Huajolotitlán
+township_sat_2350,463,base.state_mx_oax,Santiago Huauclilla
+township_sat_2351,464,base.state_mx_oax,Santiago Ihuitlán Plumas
+township_sat_2352,465,base.state_mx_oax,Santiago Ixcuintepec
+township_sat_2353,466,base.state_mx_oax,Santiago Ixtayutla
+township_sat_2354,467,base.state_mx_oax,Santiago Jamiltepec
+township_sat_2355,468,base.state_mx_oax,Santiago Jocotepec
+township_sat_2356,469,base.state_mx_oax,Santiago Juxtlahuaca
+township_sat_2357,470,base.state_mx_oax,Santiago Lachiguiri
+township_sat_2358,471,base.state_mx_oax,Santiago Lalopa
+township_sat_2359,472,base.state_mx_oax,Santiago Laollaga
+township_sat_2360,473,base.state_mx_oax,Santiago Laxopa
+township_sat_2361,474,base.state_mx_oax,Santiago Llano Grande
+township_sat_2362,475,base.state_mx_oax,Santiago Matatlán
+township_sat_2363,476,base.state_mx_oax,Santiago Miltepec
+township_sat_2364,477,base.state_mx_oax,Santiago Minas
+township_sat_2365,478,base.state_mx_oax,Santiago Nacaltepec
+township_sat_2366,479,base.state_mx_oax,Santiago Nejapilla
+township_sat_2367,480,base.state_mx_oax,Santiago Nundiche
+township_sat_2368,481,base.state_mx_oax,Santiago Nuyoó
+township_sat_2369,482,base.state_mx_oax,Santiago Pinotepa Nacional
+township_sat_2370,483,base.state_mx_oax,Santiago Suchilquitongo
+township_sat_2371,484,base.state_mx_oax,Santiago Tamazola
+township_sat_2372,485,base.state_mx_oax,Santiago Tapextla
+township_sat_2373,486,base.state_mx_oax,Villa Tejúpam de la Unión
+township_sat_2374,487,base.state_mx_oax,Santiago Tenango
+township_sat_2375,488,base.state_mx_oax,Santiago Tepetlapa
+township_sat_2376,489,base.state_mx_oax,Santiago Tetepec
+township_sat_2377,490,base.state_mx_oax,Santiago Texcalcingo
+township_sat_2378,491,base.state_mx_oax,Santiago Textitlán
+township_sat_2379,492,base.state_mx_oax,Santiago Tilantongo
+township_sat_2380,493,base.state_mx_oax,Santiago Tillo
+township_sat_2381,494,base.state_mx_oax,Santiago Tlazoyaltepec
+township_sat_2382,495,base.state_mx_oax,Santiago Xanica
+township_sat_2383,496,base.state_mx_oax,Santiago Xiacuí
+township_sat_2384,497,base.state_mx_oax,Santiago Yaitepec
+township_sat_2385,498,base.state_mx_oax,Santiago Yaveo
+township_sat_2386,499,base.state_mx_oax,Santiago Yolomécatl
+township_sat_2387,500,base.state_mx_oax,Santiago Yosondúa
+township_sat_2388,501,base.state_mx_oax,Santiago Yucuyachi
+township_sat_2389,502,base.state_mx_oax,Santiago Zacatepec
+township_sat_2390,503,base.state_mx_oax,Santiago Zoochila
+township_sat_2391,504,base.state_mx_oax,Nuevo Zoquiápam
+township_sat_2392,505,base.state_mx_oax,Santo Domingo Ingenio
+township_sat_2393,506,base.state_mx_oax,Santo Domingo Albarradas
+township_sat_2394,507,base.state_mx_oax,Santo Domingo Armenta
+township_sat_2395,508,base.state_mx_oax,Santo Domingo Chihuitán
+township_sat_2396,509,base.state_mx_oax,Santo Domingo de Morelos
+township_sat_2397,510,base.state_mx_oax,Santo Domingo Ixcatlán
+township_sat_2398,511,base.state_mx_oax,Santo Domingo Nuxaá
+township_sat_2399,512,base.state_mx_oax,Santo Domingo Ozolotepec
+township_sat_2400,513,base.state_mx_oax,Santo Domingo Petapa
+township_sat_2401,514,base.state_mx_oax,Santo Domingo Roayaga
+township_sat_2402,515,base.state_mx_oax,Santo Domingo Tehuantepec
+township_sat_2403,516,base.state_mx_oax,Santo Domingo Teojomulco
+township_sat_2404,517,base.state_mx_oax,Santo Domingo Tepuxtepec
+township_sat_2405,518,base.state_mx_oax,Santo Domingo Tlatayápam
+township_sat_2406,519,base.state_mx_oax,Santo Domingo Tomaltepec
+township_sat_2407,520,base.state_mx_oax,Santo Domingo Tonalá
+township_sat_2408,521,base.state_mx_oax,Santo Domingo Tonaltepec
+township_sat_2409,522,base.state_mx_oax,Santo Domingo Xagacía
+township_sat_2410,523,base.state_mx_oax,Santo Domingo Yanhuitlán
+township_sat_2411,524,base.state_mx_oax,Santo Domingo Yodohino
+township_sat_2412,525,base.state_mx_oax,Santo Domingo Zanatepec
+township_sat_2413,526,base.state_mx_oax,Santos Reyes Nopala
+township_sat_2414,527,base.state_mx_oax,Santos Reyes Pápalo
+township_sat_2415,528,base.state_mx_oax,Santos Reyes Tepejillo
+township_sat_2416,529,base.state_mx_oax,Santos Reyes Yucuná
+township_sat_2417,530,base.state_mx_oax,Santo Tomás Jalieza
+township_sat_2418,531,base.state_mx_oax,Santo Tomás Mazaltepec
+township_sat_2419,532,base.state_mx_oax,Santo Tomás Ocotepec
+township_sat_2420,533,base.state_mx_oax,Santo Tomás Tamazulapan
+township_sat_2421,534,base.state_mx_oax,San Vicente Coatlán
+township_sat_2422,535,base.state_mx_oax,San Vicente Lachixío
+township_sat_2423,536,base.state_mx_oax,San Vicente Nuñú
+township_sat_2424,537,base.state_mx_oax,Silacayoápam
+township_sat_2425,538,base.state_mx_oax,Sitio de Xitlapehua
+township_sat_2426,539,base.state_mx_oax,Soledad Etla
+township_sat_2427,540,base.state_mx_oax,Villa de Tamazulápam del Progreso
+township_sat_2428,541,base.state_mx_oax,Tanetze de Zaragoza
+township_sat_2429,542,base.state_mx_oax,Taniche
+township_sat_2430,543,base.state_mx_oax,Tataltepec de Valdés
+township_sat_2431,544,base.state_mx_oax,Teococuilco de Marcos Pérez
+township_sat_2432,545,base.state_mx_oax,Teotitlán de Flores Magón
+township_sat_2433,546,base.state_mx_oax,Teotitlán del Valle
+township_sat_2434,547,base.state_mx_oax,Teotongo
+township_sat_2435,548,base.state_mx_oax,Tepelmeme Villa de Morelos
+township_sat_2436,549,base.state_mx_oax,Tezoatlán de Segura y Luna
+township_sat_2437,550,base.state_mx_oax,San Jerónimo Tlacochahuaya
+township_sat_2438,551,base.state_mx_oax,Tlacolula de Matamoros
+township_sat_2439,552,base.state_mx_oax,Tlacotepec Plumas
+township_sat_2440,553,base.state_mx_oax,Tlalixtac de Cabrera
+township_sat_2441,554,base.state_mx_oax,Totontepec Villa de Morelos
+township_sat_2442,555,base.state_mx_oax,Trinidad Zaachila
+township_sat_2443,556,base.state_mx_oax,La Trinidad Vista Hermosa
+township_sat_2444,557,base.state_mx_oax,Unión Hidalgo
+township_sat_2445,558,base.state_mx_oax,Valerio Trujano
+township_sat_2446,559,base.state_mx_oax,San Juan Bautista Valle Nacional
+township_sat_2447,560,base.state_mx_oax,Villa Díaz Ordaz
+township_sat_2448,561,base.state_mx_oax,Yaxe
+township_sat_2449,562,base.state_mx_oax,Magdalena Yodocono de Porfirio Díaz
+township_sat_2450,563,base.state_mx_oax,Yogana
+township_sat_2451,564,base.state_mx_oax,Yutanduchi de Guerrero
+township_sat_2452,565,base.state_mx_oax,Villa de Zaachila
+township_sat_2453,566,base.state_mx_oax,San Mateo Yucutindoo
+township_sat_2454,567,base.state_mx_oax,Zapotitlán Lagunas
+township_sat_2455,568,base.state_mx_oax,Zapotitlán Palmas
+township_sat_2456,569,base.state_mx_oax,Santa Inés de Zaragoza
+township_sat_2457,570,base.state_mx_oax,Zimatlán de Álvarez

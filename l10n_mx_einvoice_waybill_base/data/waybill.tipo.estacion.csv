@@ -1,0 +1,4 @@
+id,code,name,charge_key,start_date
+waybill_tipo_estacion_00,01,Origen Nacional,"02, 03 y 04",2021-06-01
+waybill_tipo_estacion_01,02,Intermedia ,"02, 03 y 04",2021-06-02
+waybill_tipo_estacion_02,03,Destino Final Nacional,"02, 03 y 04",2021-06-03

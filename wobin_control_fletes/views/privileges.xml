@@ -1,0 +1,91 @@
+<odoo>
+    <data>
+        
+        <!--//////////////////////////////////////-->
+        <!-- PERMISSIONS FOR READ MODE ROLE GROUP -->
+        <!--//////////////////////////////////////-->
+
+        <!--Avoid Creation of Service Orders for Read Mode Group in FORM & TREE views-->
+        <record id="hide_general_view_form_service_order" model="ir.ui.view">
+        <field name="name">Ordenes de Servicio</field>
+        <field name="model">wobin.orden.servicio</field>
+        <field name="inherit_id" ref="wobin_control_fletes.view_wbn_service_orders_form"/>
+        <field name="groups_id" eval="[(4,ref('wobin_control_fletes.group_wl_read_mode_wbn_control_fletes'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record> 
+
+        <record id="hide_general_view_tree_service_order" model="ir.ui.view">
+        <field name="name">Ordenes de Servicio</field>
+        <field name="model">wobin.orden.servicio</field>
+        <field name="inherit_id" ref="wobin_control_fletes.view_wbn_service_orders_list"/>
+        <field name="groups_id" eval="[(4,ref('wobin_control_fletes.group_wl_read_mode_wbn_control_fletes'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="/tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record>             
+
+
+        <!--//////////////////////////////////////-->
+        <!-- PERMISSIONS FOR READ MODE ROLE GROUP -->
+        <!--//////////////////////////////////////-->
+
+        <!--Avoid Creation of Service Orders Lines for Read Mode Group in FORM & TREE views-->
+        <record id="hide_general_view_form_service_order_lns" model="ir.ui.view">
+        <field name="name">Ordenes de Servicios Lineas</field>
+        <field name="model">wobin.orden.servicio.lineas</field>
+        <field name="inherit_id" ref="wobin_control_fletes.view_wbn_service_orders_lns_form"/>
+        <field name="groups_id" eval="[(4,ref('wobin_control_fletes.group_wl_read_mode_wbn_control_fletes'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record> 
+
+        <record id="hide_general_view_tree_service_order_lns" model="ir.ui.view">
+        <field name="name">Ordenes de Servicio Lineas</field>
+        <field name="model">wobin.orden.servicio.lineas</field>
+        <field name="inherit_id" ref="wobin_control_fletes.view_wbn_service_orders_lns_list"/>
+        <field name="groups_id" eval="[(4,ref('wobin_control_fletes.group_wl_read_mode_wbn_control_fletes'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="/tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record> 
+
+        <!--//////////////////////////////////////-->
+        <!-- PERMISSIONS FOR READ MODE ROLE GROUP -->
+        <!--//////////////////////////////////////-->
+
+        <!--Avoid Creation of Pickings for Read Mode Group in REPORT TREE view -->
+        <record id="hide_general_view_tree_pickings" model="ir.ui.view">
+        <field name="name">Pickings Report</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="wobin_control_fletes.view_wbn_pickings"/>
+        <field name="groups_id" eval="[(4,ref('wobin_control_fletes.group_wl_read_mode_wbn_control_fletes'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="/tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record>         
+
+    </data>
+</odoo>

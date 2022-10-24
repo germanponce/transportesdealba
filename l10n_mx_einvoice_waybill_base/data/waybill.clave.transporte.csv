@@ -1,0 +1,6 @@
+id,code,name,start_date
+waybill_clave_transporte_00,01,Autotransporte Federal,2021-06-01
+waybill_clave_transporte_01,02,Transporte Marítimo,2021-06-01
+waybill_clave_transporte_02,03,Transporte Aereo,2021-06-01
+waybill_clave_transporte_03,04,Transporte Ferroviario,2021-06-01
+waybill_clave_transporte_04,05,Ducto,2021-06-01

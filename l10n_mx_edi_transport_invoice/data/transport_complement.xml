@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="cfdi_v40_transport" inherit_id="l10n_mx_edi_40.cfdiv40">
+        <xpath expr="//*[name()='cfdi:Comprobante']" position="attributes" t-if="record.transport_document_cfdi">
+            <attribute name="Total">0</attribute>
+            <attribute name="SubTotal">0</attribute>
+        </xpath>
+        <!-- <xpath expr="//*[name()='cfdi:Impuestos'][last()]" position="attributes" t-if="record.transport_document_cfdi">
+            <cfdi:Complemento
+                    xmlns:cfdi="http://www.sat.gob.mx/cfd/3"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <cartaporte:CartaPorte
+                         xsi:schemaLocation="http://www.sat.gob.mx/CartaPorte http://www.sat.gob.mx/sitio_internet/cfd/CartaPorte/CartaPorte.xsd"
+                         xmlns:cartaporte="http://www.sat.gob.mx/CartaPorte" t-att-TotalDistRec='record.travel_total_distance' t-att-TranspInternac="'Si' if record.international_shipping == 'SI' else 'No'" Version="1.0" >
+                     </cartaporte:CartaPorte>
+                </cfdi:Complemento>
+        </xpath> -->
+    </template>
+
+</odoo>

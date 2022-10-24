@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data noupdate="1">
+
+        <!-- Tipos de Comprobante -->
+    <record id="tipo_00" model="sat.tipo.comprobante">
+        <field name="code">I</field>
+        <field name="name">Ingreso</field>
+    </record>
+
+    <record id="tipo_01" model="sat.tipo.comprobante">
+        <field name="code">E</field>
+        <field name="name">Egreso</field>
+    </record>
+ 
+     <record id="tipo_02" model="sat.tipo.comprobante">
+        <field name="code">T</field>
+        <field name="name">Traslado</field>
+    </record>
+
+     <record id="tipo_03" model="sat.tipo.comprobante">
+        <field name="code">N</field>
+        <field name="name">Nómina</field>
+    </record>
+
+     <record id="tipo_04" model="sat.tipo.comprobante">
+        <field name="code">P</field>
+        <field name="name">Pago</field>
+    </record>
+ 
+     <!-- Metodos de Pago -->
+     <record id="metodo_00" model="sat.metodo.pago">
+        <field name="name">Pago en una sola exhibición</field>
+        <field name="code">PUE</field>
+    </record>
+
+     <!-- <record id="metodo_01" model="sat.metodo.pago">
+        <field name="name">Pago inicial y parcialidades</field>
+        <field name="code">PIP</field>
+    </record> -->
+
+    <record id="metodo_02" model="sat.metodo.pago">
+        <field name="name">Pago en parcialidades
+o diferido</field>
+        <field name="code">PPD</field>
+    </record>
+
+    <!-- IMPUESTOS -->
+    <record id="impuesto_01" model="sat.impuesto">
+        <field name="name">ISR</field>
+        <field name="code">001</field>
+        <field name="retencion">True</field>
+        <field name="traslado">False</field>
+        <field name="tipo">federal</field>
+    </record>
+
+    <record id="impuesto_02" model="sat.impuesto">
+        <field name="name">IVA</field>
+        <field name="code">002</field>
+        <field name="retencion">True</field>
+        <field name="traslado">True</field>
+        <field name="tipo">federal</field>
+    </record>
+
+    <record id="impuesto_03" model="sat.impuesto">
+        <field name="name">IEPS</field>
+        <field name="code">003</field>
+        <field name="retencion">True</field>
+        <field name="traslado">True</field>
+        <field name="tipo">federal</field>
+    </record>
+    
+    
+</data>
+</odoo>

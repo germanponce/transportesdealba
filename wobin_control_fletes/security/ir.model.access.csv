@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wobin_orden_servicio,access_wobin_orden_servicio,model_wobin_orden_servicio,,1,1,1,1
+access_wobin_orden_servicio_lineas,access_wobin_orden_servicio_lineas,model_wobin_orden_servicio_lineas,,1,1,1,1

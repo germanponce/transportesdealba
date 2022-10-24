@@ -1,0 +1,8 @@
+id,code,type,name,start_date
+waybill_tipo_carro_00,TC01,Furgon,,2021-06-01
+waybill_tipo_carro_01,TC02,Gondola,,2021-06-01
+waybill_tipo_carro_02,TC03,Tolva,,2021-06-01
+waybill_tipo_carro_03,TC04,Tanque,,2021-06-01
+waybill_tipo_carro_04,TC05,Plataforma Intermodal,Se utiliza cuando se transportan contenedores.,2021-06-01
+waybill_tipo_carro_05,TC06,Plataforma Especializada,Se utiliza para transportar mercancias de gran peso o volumen,2021-06-01
+waybill_tipo_carro_06,TC07,Plataforma Automotriz,Se utiliza cuando se transportan automoviles,2021-06-01

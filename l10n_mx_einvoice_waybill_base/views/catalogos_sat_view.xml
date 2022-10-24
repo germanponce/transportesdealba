@@ -1,0 +1,1511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <!-- Figura Transporte -->
+
+        <record id="waybill_figura_transporte_tree" model="ir.ui.view">
+            <field name="name">waybill.figura.transporte.tree</field>
+            <field name="model">waybill.figura.transporte</field>
+            <field name="arch" type="xml">
+                <tree string="Figuras Transporte" >
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_figura_transporte_form" model="ir.ui.view">
+            <field name="name">waybill.figura.transporte.form</field>
+            <field name="model">waybill.figura.transporte</field>
+            <field name="arch" type="xml">
+                <form string="Figura Transporte">
+                    <sheet>
+                         <div class="oe_title">
+                        <label class="oe_edit_only" for="code" string="Clave SAT"/>
+                        <h1><field name="code" placeholder="CVE0000"/></h1>
+                        
+                    </div>
+                        
+                        <group >
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="start_date" />
+                            </group>
+                            <group>
+                                <field name="start_date" />
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_figura_transporte_search" model="ir.ui.view">
+            <field name="name">waybill.figura.transporte.serch</field>
+            <field name="model">waybill.figura.transporte</field>
+            <field name="arch" type="xml">
+                <search string="Figuras transporte">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+
+    <!-- Figura Transporte -->
+
+        <record id="waybill_parte_transporte_tree" model="ir.ui.view">
+            <field name="name">waybill.parte.transporte.tree</field>
+            <field name="model">waybill.parte.transporte</field>
+            <field name="arch" type="xml">
+                <tree string="Tipos Parte Transporte" >
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_parte_transporte_form" model="ir.ui.view">
+            <field name="name">waybill.parte.transporte.form</field>
+            <field name="model">waybill.parte.transporte</field>
+            <field name="arch" type="xml">
+                <form string="Tipo Parte Transporte">
+                    <sheet>
+                         <div class="oe_title">
+                        <label class="oe_edit_only" for="code" string="Clave SAT"/>
+                        <h1><field name="code" placeholder="CVE0000"/></h1>
+                        
+                    </div>
+                        
+                        <group >
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="start_date" />
+                            </group>
+                            <group>
+                                <field name="start_date" />
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_parte_transporte_search" model="ir.ui.view">
+            <field name="name">waybill.parte.transporte.serch</field>
+            <field name="model">waybill.parte.transporte</field>
+            <field name="arch" type="xml">
+                <search string="Tipos Parte transporte">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+        
+    <!-- Unidad Peso -->
+
+        <record id="waybill_unidad_peso_tree" model="ir.ui.view">
+            <field name="name">waybill.unidad.peso.tree</field>
+            <field name="model">waybill.unidad.peso</field>
+            <field name="arch" type="xml">
+                <tree string="Unidades de Peso" >
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="comments"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="simbol"/>
+                    <field name="bandera"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_unidad_peso_form" model="ir.ui.view">
+            <field name="name">waybill.unidad.peso.form</field>
+            <field name="model">waybill.unidad.peso</field>
+            <field name="arch" type="xml">
+                <form string="Unidad de Peso">
+                    <sheet>
+                         <div class="oe_title">
+                        <label class="oe_edit_only" for="code" string="Clave SAT"/>
+                        <h1><field name="code" placeholder="CVE0000"/></h1>
+                        
+                    </div>
+                        
+                        <group >
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="comments"/>
+                                <field name="simbol"/>
+                                <field name="bandera"/>
+                            </group>
+                            <group>
+                                <field name="start_date" />
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_unidad_peso_search" model="ir.ui.view">
+            <field name="name">waybill.unidad.peso.serch</field>
+            <field name="model">waybill.unidad.peso</field>
+            <field name="arch" type="xml">
+                <search string="Unidades Peso">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="comments"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="simbol"/>
+                    <field name="bandera"/>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- Tipos de Permiso -->
+
+        <record id="waybill_tipo_permiso_tree" model="ir.ui.view">
+            <field name="name">waybill.tipo.permiso.tree</field>
+            <field name="model">waybill.tipo.permiso</field>
+            <field name="arch" type="xml">
+                <tree string="Tipos de Permiso" >
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="transport_key"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_tipo_permiso_form" model="ir.ui.view">
+            <field name="name">waybill.tipo.permiso.form</field>
+            <field name="model">waybill.tipo.permiso</field>
+            <field name="arch" type="xml">
+                <form string="Tipo de Permiso">
+                    <sheet>
+                         <div class="oe_title">
+                        <label class="oe_edit_only" for="code" string="Clave SAT"/>
+                        <h1><field name="code" placeholder="CVE0000"/></h1>
+                        
+                    </div>
+                        
+                        <group >
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="transport_key" />
+                            </group>
+                            <group>
+                                <field name="start_date" />
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_tipo_permiso_search" model="ir.ui.view">
+            <field name="name">waybill.tipo.permiso.serch</field>
+            <field name="model">waybill.tipo.permiso</field>
+            <field name="arch" type="xml">
+                <search string="Tipos de Permiso">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="transport_key"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Tipo de Estacion -->
+
+        <record id="waybill_tipo_embalaje_tree" model="ir.ui.view">
+            <field name="name">waybill.tipo.embalaje.tree</field>
+            <field name="model">waybill.tipo.embalaje</field>
+            <field name="arch" type="xml">
+                <tree string="Tipos de Estacion" >
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_tipo_embalaje_form" model="ir.ui.view">
+            <field name="name">waybill.tipo.embalaje.form</field>
+            <field name="model">waybill.tipo.embalaje</field>
+            <field name="arch" type="xml">
+                <form string="Tipo de Embalaje">
+                    <sheet>
+                         <div class="oe_title">
+                        <label class="oe_edit_only" for="code" string="Clave SAT"/>
+                        <h1><field name="code" placeholder="CVE0000"/></h1>
+                        
+                    </div>
+                        
+                        <group >
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="start_date" />
+                            </group>
+                            <group>
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_tipo_embalaje_search" model="ir.ui.view">
+            <field name="name">waybill.tipo.embalaje.serch</field>
+            <field name="model">waybill.tipo.embalaje</field>
+            <field name="arch" type="xml">
+                <search string="Tipos de Embalaje">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Materiales Peligrosos -->
+
+        <record id="waybill_materiales_peligrosos_tree" model="ir.ui.view">
+            <field name="name">waybill.materiales.peligrosos.tree</field>
+            <field name="model">waybill.materiales.peligrosos</field>
+            <field name="arch" type="xml">
+                <tree string="Materiales Peligrosos" >
+                    <field name="code" />
+                    <field name="name" />
+                    <field name="class_div" />
+                    <field name="danger_sec" />
+                    <field name="group_env_onu" />
+                    <field name="group_env_onu_disp_esp" />
+                    <field name="qty_limit" />
+                    <field name="qty_except" />
+                    <field name="int_emb_env" />
+                    <field name="int_emb_env_disp_esp" />
+                    <field name="int_trasp" />
+                    <field name="int_trasp_disp_esp" />
+
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_materiales_peligrosos_form" model="ir.ui.view">
+            <field name="name">waybill.materiales.peligrosos.form</field>
+            <field name="model">waybill.materiales.peligrosos</field>
+            <field name="arch" type="xml">
+                <form string="Materiale Peligroso">
+                    <sheet>
+                         <div class="oe_title">
+                        <label class="oe_edit_only" for="code" string="Clave SAT"/>
+                        <h1><field name="code" placeholder="CVE0000"/></h1>
+                        
+                    </div>
+
+                        
+                        <group >
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="code" />
+                                <field name="class_div" />
+                                <field name="group_env_onu" />
+                                <field name="qty_limit" />
+                                <field name="int_emb_env" />
+                                <field name="int_trasp" />
+                            </group>
+                            <group>
+                                <field name="name" />
+                                <field name="danger_sec" />
+                                <field name="group_env_onu_disp_esp" />
+                                <field name="qty_except" />
+                                <field name="int_emb_env_disp_esp" />
+                                <field name="int_trasp_disp_esp" />
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="start_date" />
+                            </group>
+                            <group>
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_materiales_peligrosos_search" model="ir.ui.view">
+            <field name="name">waybill.materiales.peligrosos.serch</field>
+            <field name="model">waybill.materiales.peligrosos</field>
+            <field name="arch" type="xml">
+                <search string="Materiales Peligrosos">
+                    <field name="code" />
+                    <field name="name" />
+                    <field name="class_div" />
+                    <field name="danger_sec" />
+                    <field name="group_env_onu" />
+                    <field name="group_env_onu_disp_esp" />
+                    <field name="qty_limit" />
+                    <field name="qty_except" />
+                    <field name="int_emb_env" />
+                    <field name="int_emb_env_disp_esp" />
+                    <field name="int_trasp" />
+                    <field name="int_trasp_disp_esp" />
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Claves de Transporte -->
+
+        <record id="waybill_clave_transporte_tree" model="ir.ui.view">
+            <field name="name">waybill.clave.transporte.tree</field>
+            <field name="model">waybill.clave.transporte</field>
+            <field name="arch" type="xml">
+                <tree string="Claves de Transporte" >
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_clave_transporte_form" model="ir.ui.view">
+            <field name="name">waybill.clave.transporte.form</field>
+            <field name="model">waybill.clave.transporte</field>
+            <field name="arch" type="xml">
+                <form string="Clave de Transporte">
+                    <sheet>
+                         <div class="oe_title">
+                        <label class="oe_edit_only" for="code" string="Clave SAT"/>
+                        <h1><field name="code" placeholder="CVE0000"/></h1>
+                        
+                    </div>
+
+                        
+                        <group >
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="start_date" />
+                            </group>
+                            <group>
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_clave_transporte_search" model="ir.ui.view">
+            <field name="name">waybill.clave.transporte.serch</field>
+            <field name="model">waybill.clave.transporte</field>
+            <field name="arch" type="xml">
+                <search string="Claves de Transporte">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Estaciones -->
+
+        <record id="waybill_complemento_estacion_tree" model="ir.ui.view">
+            <field name="name">waybill.complemento.estacion.tree</field>
+            <field name="model">waybill.complemento.estacion</field>
+            <field name="arch" type="xml">
+                <tree string="Estaciones" >
+                    <field name="code"/>
+                    <field name="code_identification"/>
+                    <field name="name"/>
+                    <field name="nationality"/>
+                    <field name="designer_iata"/>
+                    <field name="iron_line"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_complemento_estacion_form" model="ir.ui.view">
+            <field name="name">waybill.complemento.estacion.form</field>
+            <field name="model">waybill.complemento.estacion</field>
+            <field name="arch" type="xml">
+                <form string="Estacion">
+                    <sheet>
+                        <div class="oe_title">
+                            <label class="oe_edit_only" for="code" string="Clave SAT"/>
+                            <h1>
+                                <div class="o_row">
+                                    <field name="code"/> - 
+                                    <field name="code_identification"/>
+                                </div>
+                            </h1>
+                        
+                        </div>
+                        
+                        <group >
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="nationality" />
+                                <field name="designer_iata" />
+                            </group>
+                            <group>
+                                <field name="iron_line" />
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="start_date" />
+                            </group>
+                            <group>
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_complemento_estacion_search" model="ir.ui.view">
+            <field name="name">waybill.complemento.estacion.serch</field>
+            <field name="model">waybill.complemento.estacion</field>
+            <field name="arch" type="xml">
+                <search string="Estaciones">
+                    <field name="code"/>
+                    <field name="code_identification"/>
+                    <field name="name"/>
+                    <field name="nationality"/>
+                    <field name="designer_iata"/>
+                    <field name="iron_line"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Tipo de Estacion -->
+
+        <record id="waybill_tipo_estacion_tree" model="ir.ui.view">
+            <field name="name">waybill.tipo.estacion.tree</field>
+            <field name="model">waybill.tipo.estacion</field>
+            <field name="arch" type="xml">
+                <tree string="Tipos de Estacion" >
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="charge_key"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_tipo_estacion_form" model="ir.ui.view">
+            <field name="name">waybill.tipo.estacion.form</field>
+            <field name="model">waybill.tipo.estacion</field>
+            <field name="arch" type="xml">
+                <form string="Tipo de Estacion">
+                    <sheet>
+                         <div class="oe_title">
+                        <label class="oe_edit_only" for="code" string="Clave SAT"/>
+                        <h1><field name="code" placeholder="CVE0000"/></h1>
+                        
+                    </div>
+                        
+                        <group >
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="charge_key" />
+                            </group>
+                            <group>
+                                <field name="start_date" />
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_tipo_estacion_search" model="ir.ui.view">
+            <field name="name">waybill.tipo.estacion.serch</field>
+            <field name="model">waybill.tipo.estacion</field>
+            <field name="arch" type="xml">
+                <search string="Tipos de Estacion">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="charge_key"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Configuracion Autotransporte Federal -->
+
+        <record id="waybill_configuracion_autotransporte_federal_tree" model="ir.ui.view">
+            <field name="name">waybill.configuracion.autotransporte.federal.tree</field>
+            <field name="model">waybill.configuracion.autotransporte.federal</field>
+            <field name="arch" type="xml">
+                <tree string="Configuracion Autotransporte Federal" >
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="axis_number"/>
+                    <field name="tires_number"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_configuracion_autotransporte_federal_form" model="ir.ui.view">
+            <field name="name">waybill.configuracion.autotransporte.federal.form</field>
+            <field name="model">waybill.configuracion.autotransporte.federal</field>
+            <field name="arch" type="xml">
+                <form string="Configuracion Autotransporte Federal">
+                    <sheet>
+                         <div class="oe_title">
+                        <label class="oe_edit_only" for="code" string="Clave SAT"/>
+                        <h1><field name="code" placeholder="CVE0000"/></h1>
+                        
+                    </div>
+                        
+                        <group >
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="axis_number" />
+                                <field name="start_date" />
+                            </group>
+                            <group>
+                                <field name="tires_number" />
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_configuracion_autotransporte_federal_search" model="ir.ui.view">
+            <field name="name">waybill.configuracion.autotransporte.federal.serch</field>
+            <field name="model">waybill.configuracion.autotransporte.federal</field>
+            <field name="arch" type="xml">
+                <search string="Configuracion Autotransporte Federal">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="axis_number"/>
+                    <field name="tires_number"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Tipos de Remolque -->
+
+        <record id="waybill_tipo_remolque_tree" model="ir.ui.view">
+            <field name="name">waybill.tipo.remolque.tree</field>
+            <field name="model">waybill.tipo.remolque</field>
+            <field name="arch" type="xml">
+                <tree string="Tipos de remolque" >
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_tipo_remolque_form" model="ir.ui.view">
+            <field name="name">waybill.tipo.remolque.form</field>
+            <field name="model">waybill.tipo.remolque</field>
+            <field name="arch" type="xml">
+                <form string="Tipo de Remolque">
+                    <sheet>
+                         <div class="oe_title">
+                        <label class="oe_edit_only" for="code" string="Clave SAT"/>
+                        <h1><field name="code" placeholder="CVE0000"/></h1>
+                        
+                    </div>
+
+                        
+                        <group >
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="start_date" />
+                            </group>
+                            <group>
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_tipo_remolque_search" model="ir.ui.view">
+            <field name="name">waybill.tipo.remolque.serch</field>
+            <field name="model">waybill.tipo.remolque</field>
+            <field name="arch" type="xml">
+                <search string="Tipos de Remolque">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Configuracion Maritima -->
+
+        <record id="waybill_configuracion_maritima_tree" model="ir.ui.view">
+            <field name="name">waybill.configuracion.maritima.tree</field>
+            <field name="model">waybill.configuracion.maritima</field>
+            <field name="arch" type="xml">
+                <tree string="Configuracion Maritima" >
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_configuracion_maritima_form" model="ir.ui.view">
+            <field name="name">waybill.configuracion.maritima.form</field>
+            <field name="model">waybill.configuracion.maritima</field>
+            <field name="arch" type="xml">
+                <form string="Configuracion Maritima">
+                    <sheet>
+                         <div class="oe_title">
+                        <label class="oe_edit_only" for="code" string="Clave SAT"/>
+                        <h1><field name="code" placeholder="CVE0000"/></h1>
+                        
+                    </div>
+                        
+                        <group >
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="start_date" />
+                            </group>
+                            <group>
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_configuracion_maritima_search" model="ir.ui.view">
+            <field name="name">waybill.configuracion.maritima.serch</field>
+            <field name="model">waybill.configuracion.maritima</field>
+            <field name="arch" type="xml">
+                <search string="Configuracion Maritima">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Tipos de Carga -->
+
+        <record id="waybill_tipo_carga_tree" model="ir.ui.view">
+            <field name="name">waybill.tipo.carga.tree</field>
+            <field name="model">waybill.tipo.carga</field>
+            <field name="arch" type="xml">
+                <tree string="Tipos de Carga" >
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_tipo_carga_form" model="ir.ui.view">
+            <field name="name">waybill.tipo.carga.form</field>
+            <field name="model">waybill.tipo.carga</field>
+            <field name="arch" type="xml">
+                <form string="Tipo de Carga">
+                    <sheet>
+                         <div class="oe_title">
+                        <label class="oe_edit_only" for="code" string="Clave SAT"/>
+                        <h1><field name="code" placeholder="CVE0000"/></h1>
+                        
+                    </div>
+
+                        
+                        <group >
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="start_date" />
+                            </group>
+                            <group>
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_tipo_carga_search" model="ir.ui.view">
+            <field name="name">waybill.tipo.carga.serch</field>
+            <field name="model">waybill.tipo.carga</field>
+            <field name="arch" type="xml">
+                <search string="Tipos de Carga">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Contenedores Maritimos -->
+
+        <record id="waybill_contenedor_maritimo_tree" model="ir.ui.view">
+            <field name="name">waybill.contenedor.maritimo.tree</field>
+            <field name="model">waybill.contenedor.maritimo</field>
+            <field name="arch" type="xml">
+                <tree string="Contenedores Maritimos" >
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_contenedor_maritimo_form" model="ir.ui.view">
+            <field name="name">waybill.contenedor.maritimo.form</field>
+            <field name="model">waybill.contenedor.maritimo</field>
+            <field name="arch" type="xml">
+                <form string="Contenedor Maritimo">
+                    <sheet>
+                         <div class="oe_title">
+                        <label class="oe_edit_only" for="code" string="Clave SAT"/>
+                        <h1><field name="code" placeholder="CVE0000"/></h1>
+                        
+                    </div>
+
+                        
+                        <group >
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="start_date" />
+                            </group>
+                            <group>
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_contenedor_maritimo_search" model="ir.ui.view">
+            <field name="name">waybill.contenedor.maritimo.serch</field>
+            <field name="model">waybill.contenedor.maritimo</field>
+            <field name="arch" type="xml">
+                <search string="Contenedores Maritimos">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Num. Autorizacion Naviera Consignatario -->
+
+        <record id="waybill_numero_autorizacion_naviera_tree" model="ir.ui.view">
+            <field name="name">waybill.numero.autorizacion.naviera.tree</field>
+            <field name="model">waybill.numero.autorizacion.naviera</field>
+            <field name="arch" type="xml">
+                <tree string="Num. Autorizacion Naviera Consignatario" >
+                    <field name="code"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_numero_autorizacion_naviera_form" model="ir.ui.view">
+            <field name="name">waybill.numero.autorizacion.naviera.form</field>
+            <field name="model">waybill.numero.autorizacion.naviera</field>
+            <field name="arch" type="xml">
+                <form string="Num. Autorizacion Naviera Consignatario">
+                    <sheet>
+                         <div class="oe_title">
+                        <label class="oe_edit_only" for="code" string="Numero SAT"/>
+                        <h1><field name="code" placeholder="CVE0000"/></h1>
+                        
+                    </div>
+
+                        <group>
+                            <group>
+                                <field name="start_date" />
+                            </group>
+                            <group>
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_numero_autorizacion_naviera_search" model="ir.ui.view">
+            <field name="name">waybill.numero.autorizacion.naviera.serch</field>
+            <field name="model">waybill.numero.autorizacion.naviera</field>
+            <field name="arch" type="xml">
+                <search string="Num. Autorizacion Naviera Consignatario">
+                    <field name="code"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Codigos de Transporte Aereo -->
+
+        <record id="waybill_waybill_codigo_transporte_aereo_tree" model="ir.ui.view">
+            <field name="name">waybill.codigo.transporte.aereo.tree</field>
+            <field name="model">waybill.codigo.transporte.aereo</field>
+            <field name="arch" type="xml">
+                <tree string="Codigos de Transporte Aereo" >
+                    <field name="code"/>
+                    <field name="country_nationality"/>
+                    <field name="name"/>
+                    <field name="oaci_name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_waybill_codigo_transporte_aereo_form" model="ir.ui.view">
+            <field name="name">waybill.codigo.transporte.aereo.form</field>
+            <field name="model">waybill.codigo.transporte.aereo</field>
+            <field name="arch" type="xml">
+                <form string="Codigo de Transporte Aereo">
+                    <sheet>
+                         <div class="oe_title">
+                        <label class="oe_edit_only" for="code" string="Clave SAT"/>
+                        <h1><field name="code" placeholder="CVE0000"/></h1>
+                        
+                    </div>
+
+                        
+                        <group >
+                            <field name="country_nationality" />
+                            <field name="name" />
+                            <field name="oaci_name" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="start_date" />
+                            </group>
+                            <group>
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_waybill_codigo_transporte_aereo_search" model="ir.ui.view">
+            <field name="name">waybill.codigo.transporte.aereo.serch</field>
+            <field name="model">waybill.codigo.transporte.aereo</field>
+            <field name="arch" type="xml">
+                <search string="Codigos de Transporte Aereo">
+                    <field name="code"/>
+                    <field name="country_nationality"/>
+                    <field name="name"/>
+                    <field name="oaci_name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Productos y Servicios STCC -->
+
+        <record id="waybill_productos_stcc_tree" model="ir.ui.view">
+            <field name="name">waybill.producto.stcc.tree</field>
+            <field name="model">waybill.producto.stcc</field>
+            <field name="arch" type="xml">
+                <tree string="Productos y Servicios STCC" >
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_productos_stcc_form" model="ir.ui.view">
+            <field name="name">waybill.producto.stcc.form</field>
+            <field name="model">waybill.producto.stcc</field>
+            <field name="arch" type="xml">
+                <form string="Producto o Servicio STCC">
+                    <sheet>
+                         <div class="oe_title">
+                        <label class="oe_edit_only" for="code" string="Clave STCC"/>
+                        <h1><field name="code" placeholder="CVE0000"/></h1>
+                        
+                    </div>
+
+                        
+                        <group >
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="start_date" />
+                            </group>
+                            <group>
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_productos_stcc_search" model="ir.ui.view">
+            <field name="name">waybill.producto.stcc.serch</field>
+            <field name="model">waybill.producto.stcc</field>
+            <field name="arch" type="xml">
+                <search string="Productos y Servicios STCC">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Tipos de Servicio -->
+
+        <record id="waybill_tipo_servicio_tree" model="ir.ui.view">
+            <field name="name">waybill.tipo.servicio.tree</field>
+            <field name="model">waybill.tipo.servicio</field>
+            <field name="arch" type="xml">
+                <tree string="Tipos de Servicio" >
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_tipo_servicio_form" model="ir.ui.view">
+            <field name="name">waybill.tipo.servicio.form</field>
+            <field name="model">waybill.tipo.servicio</field>
+            <field name="arch" type="xml">
+                <form string="Tipo de Servicio">
+                    <sheet>
+                         <div class="oe_title">
+                        <label class="oe_edit_only" for="code" string="Clave STCC"/>
+                        <h1><field name="code" placeholder="CVE0000"/></h1>
+                        
+                    </div>
+
+                        
+                        <group >
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="start_date" />
+                            </group>
+                            <group>
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_tipo_servicio_search" model="ir.ui.view">
+            <field name="name">waybill.tipo.servicio.serch</field>
+            <field name="model">waybill.tipo.servicio</field>
+            <field name="arch" type="xml">
+                <search string="Tipos de Servicio">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Codigos de Derecho de Paso -->
+
+        <record id="waybill_codigo_derecho_paso_tree" model="ir.ui.view">
+            <field name="name">waybill.codigo.derecho.paso.tree</field>
+            <field name="model">waybill.codigo.derecho.paso</field>
+            <field name="arch" type="xml">
+                <tree string="Codigos de Derecho de Paso" >
+                    <field name="code" />
+                    <field name="name" />
+                    <field name="between" />
+                    <field name="stop_to" />
+                    <field name="grant_receive" />
+                    <field name="concessionaire" />
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_codigo_derecho_paso_form" model="ir.ui.view">
+            <field name="name">waybill.codigo.derecho.paso.form</field>
+            <field name="model">waybill.codigo.derecho.paso</field>
+            <field name="arch" type="xml">
+                <form string="Codigo de Derecho de Paso">
+                    <sheet>
+                         <div class="oe_title">
+                        <label class="oe_edit_only" for="code" string="Clave STCC"/>
+                        <h1><field name="code" placeholder="CVE0000"/></h1>
+                        
+                    </div>
+
+                        
+                        <group >
+                            <field name="name" />
+                            <field name="between" />
+                            <field name="stop_to" />
+                            <field name="grant_receive" />
+                            <field name="concessionaire" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="start_date" />
+                            </group>
+                            <group>
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_codigo_derecho_paso_search" model="ir.ui.view">
+            <field name="name">waybill.codigo.derecho.paso.serch</field>
+            <field name="model">waybill.codigo.derecho.paso</field>
+            <field name="arch" type="xml">
+                <search string="Codigos de Derecho de Paso">
+                    <field name="code" />
+                    <field name="name" />
+                    <field name="between" />
+                    <field name="stop_to" />
+                    <field name="grant_receive" />
+                    <field name="concessionaire" />
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Tipos de Carro -->
+
+        <record id="waybill_tipo_carro_tree" model="ir.ui.view">
+            <field name="name">waybill.tipo.carro.tree</field>
+            <field name="model">waybill.tipo.carro</field>
+            <field name="arch" type="xml">
+                <tree string="Tipos de Carro" >
+                    <field name="code"/>
+                    <field name="type"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_tipo_carro_form" model="ir.ui.view">
+            <field name="name">waybill.tipo.carro.form</field>
+            <field name="model">waybill.tipo.carro</field>
+            <field name="arch" type="xml">
+                <form string="Tipo de Carro">
+                    <sheet>
+                         <div class="oe_title">
+                        <label class="oe_edit_only" for="code" string="Clave STCC"/>
+                        <h1><field name="code" placeholder="CVE0000"/></h1>
+                        
+                    </div>
+
+                        
+                        <group >
+                            <field name="type" />
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="start_date" />
+                            </group>
+                            <group>
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_tipo_carro_search" model="ir.ui.view">
+            <field name="name">waybill.tipo.carro.serch</field>
+            <field name="model">waybill.tipo.carro</field>
+            <field name="arch" type="xml">
+                <search string="Tipos de Carro">
+                    <field name="code"/>
+                    <field name="type"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Tipos de Contenedor -->
+
+        <record id="waybill_tipo_contenedor_tree" model="ir.ui.view">
+            <field name="name">waybill.tipo.contenedor.tree</field>
+            <field name="model">waybill.tipo.contenedor</field>
+            <field name="arch" type="xml">
+                <tree string="Tipos de Contenedor" >
+                    <field name="code"/>
+                    <field name="type"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="waybill_tipo_contenedor_form" model="ir.ui.view">
+            <field name="name">waybill.tipo.contenedor.form</field>
+            <field name="model">waybill.tipo.contenedor</field>
+            <field name="arch" type="xml">
+                <form string="Tipo de Contenedor">
+                    <sheet>
+                         <div class="oe_title">
+                        <label class="oe_edit_only" for="code" string="Clave STCC"/>
+                        <h1><field name="code" placeholder="CVE0000"/></h1>
+                        
+                    </div>
+
+                        
+                        <group >
+                            <field name="type" />
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="start_date" />
+                            </group>
+                            <group>
+                                <field name="end_date" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+
+        <record id="waybill_tipo_contenedor_search" model="ir.ui.view">
+            <field name="name">waybill.tipo.contenedor.serch</field>
+            <field name="model">waybill.tipo.contenedor</field>
+            <field name="arch" type="xml">
+                <search string="Tipos de Contenedor">
+                    <field name="code"/>
+                    <field name="type"/>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_waybill_tipo_contenedor" model="ir.actions.act_window">
+            <field name="name">Tipos de Contenedor</field>
+            <field name="res_model">waybill.tipo.contenedor</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_tipo_contenedor_tree"/>
+        </record>
+
+
+    <!-- Acciones de Ventana -->
+
+        <record id="action_waybill_tipo_permiso" model="ir.actions.act_window">
+            <field name="name">Tipos de Permiso</field>
+            <field name="res_model">waybill.tipo.permiso</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_tipo_permiso_tree"/>
+        </record>
+
+        <record id="action_waybill_tipo_embalaje" model="ir.actions.act_window">
+            <field name="name">Tipos de Embalaje</field>
+            <field name="res_model">waybill.tipo.embalaje</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_tipo_embalaje_tree"/>
+        </record>
+
+        <record id="action_waybill_materiales_peligrosos" model="ir.actions.act_window">
+            <field name="name">Materiales Peligrosos</field>
+            <field name="res_model">waybill.materiales.peligrosos</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_materiales_peligrosos_tree"/>
+        </record>
+
+        <record id="action_waybill_clave_transporte" model="ir.actions.act_window">
+            <field name="name">Claves de Transporte</field>
+            <field name="res_model">waybill.clave.transporte</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_clave_transporte_tree"/>
+        </record>
+
+        <record id="action_waybill_complemento_estacion" model="ir.actions.act_window">
+            <field name="name">Estaciones</field>
+            <field name="res_model">waybill.complemento.estacion</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_complemento_estacion_tree"/>
+        </record>
+
+        <record id="action_waybill_tipo_estacion" model="ir.actions.act_window">
+            <field name="name">Tipos de Estacion</field>
+            
+            <field name="res_model">waybill.tipo.estacion</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_tipo_estacion_tree"/>
+        </record>
+
+        <record id="action_waybill_configuracion_autotransporte_federal" model="ir.actions.act_window">
+            <field name="name">Configuracion Autotransporte Federal</field>
+            <field name="res_model">waybill.configuracion.autotransporte.federal</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_configuracion_autotransporte_federal_tree"/>
+        </record>
+
+        <record id="action_waybill_tipo_remolque" model="ir.actions.act_window">
+            <field name="name">Tipos de Remolque</field>
+            <field name="res_model">waybill.tipo.remolque</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_tipo_remolque_tree"/>
+        </record>
+
+        <record id="action_waybill_configuracion_maritima" model="ir.actions.act_window">
+            <field name="name">Configuracion Maritima</field>
+            <field name="res_model">waybill.configuracion.maritima</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_configuracion_maritima_tree"/>
+        </record>
+
+        <record id="action_waybill_tipo_carga" model="ir.actions.act_window">
+            <field name="name">Tipos de Carga</field>
+            <field name="res_model">waybill.tipo.carga</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_tipo_carga_tree"/>
+        </record>
+
+        <record id="action_waybill_contenedor_maritimo" model="ir.actions.act_window">
+            <field name="name">Contenedores Maritimos</field>
+            <field name="res_model">waybill.contenedor.maritimo</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_contenedor_maritimo_tree"/>
+        </record>
+
+        <record id="action_waybill_numero_autorizacion_naviera" model="ir.actions.act_window">
+            <field name="name">Num. Autorizacion Naviera Consignatario</field>
+            <field name="res_model">waybill.numero.autorizacion.naviera</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_numero_autorizacion_naviera_tree"/>
+        </record>
+
+        <record id="action_waybill_waybill_codigo_transporte_aereo" model="ir.actions.act_window">
+            <field name="name">Codigos de Transporte Aereo</field>
+            <field name="res_model">waybill.codigo.transporte.aereo</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_waybill_codigo_transporte_aereo_tree"/>
+        </record>
+
+        <record id="action_waybill_productos_stcc" model="ir.actions.act_window">
+            <field name="name">Productos y Servicios STCC</field>
+            <field name="res_model">waybill.producto.stcc</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_productos_stcc_tree"/>
+        </record>
+
+        <record id="action_waybill_tipo_servicio" model="ir.actions.act_window">
+            <field name="name">Tipos de Servicio</field>
+            <field name="res_model">waybill.tipo.servicio</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_tipo_servicio_tree"/>
+        </record>
+
+        <record id="action_waybill_codigo_derecho_paso" model="ir.actions.act_window">
+            <field name="name">Codigos de Derecho de Paso</field>
+            <field name="res_model">waybill.codigo.derecho.paso</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_codigo_derecho_paso_tree"/>
+        </record>
+
+        <record id="action_waybill_tipo_carro" model="ir.actions.act_window">
+            <field name="name">Tipos de Carro</field>
+            <field name="res_model">waybill.tipo.carro</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_tipo_carro_tree"/>
+        </record>
+
+        <record id="action_waybill_unidad_peso" model="ir.actions.act_window">
+            <field name="name">Unidades de Peso</field>
+            <field name="res_model">waybill.unidad.peso</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_unidad_peso_tree"/>
+        </record>
+
+        <record id="action_waybill_figura_transporte" model="ir.actions.act_window">
+            <field name="name">Figuras Transporte</field>
+            <field name="res_model">waybill.figura.transporte</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_figura_transporte_tree"/>
+        </record>
+
+        <record id="action_waybill_parte_transporte" model="ir.actions.act_window">
+            <field name="name">Tipos Parte de Transporte</field>
+            <field name="res_model">waybill.parte.transporte</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="waybill_parte_transporte_tree"/>
+        </record>
+
+    </data>
+</odoo>

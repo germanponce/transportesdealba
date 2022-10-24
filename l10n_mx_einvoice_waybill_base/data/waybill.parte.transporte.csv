@@ -1,0 +1,13 @@
+"id","code","name","start_date","end_date"
+"waybill_parte_transporte_PT01","PT01","Camión unitario",2021-12-01,
+"waybill_parte_transporte_PT02","PT02","Camión",2021-12-01,
+"waybill_parte_transporte_PT03","PT03","Tractocamión",2021-12-01,
+"waybill_parte_transporte_PT04","PT04","Remolque",2021-12-01,
+"waybill_parte_transporte_PT05","PT05","Semirremolque",2021-12-01,
+"waybill_parte_transporte_PT06","PT06","Vehículo ligero de carga",2021-12-01,
+"waybill_parte_transporte_PT07","PT07","Grúa",2021-12-01,
+"waybill_parte_transporte_PT08","PT08","Aeronave",2021-12-01,
+"waybill_parte_transporte_PT09","PT09","Barco o buque",2021-12-01,
+"waybill_parte_transporte_PT10","PT10","Carro o vagón",2021-12-01,
+"waybill_parte_transporte_PT11","PT11","Contenedor",2021-12-01,
+"waybill_parte_transporte_PT12","PT12","Locomotora",2021-12-01,

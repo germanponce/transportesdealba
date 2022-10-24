@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+        <record model="ir.ui.view" id="hr_employee_complement_waybill_ext">
+            <field name="name">hr.employee.cfdi.40</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <field name="work_phone" position="after">
+                    <field name="driver_cp_vat"/>
+                </field>
+            </field>
+        </record>
+
+
+</data>
+</odoo>

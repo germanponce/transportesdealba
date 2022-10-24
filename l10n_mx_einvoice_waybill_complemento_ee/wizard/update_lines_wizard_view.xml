@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!--========== ASISTENTE ACTUALIZACION ===========-->
+
+        <record id="import_lines_detail_waybill_form" model="ir.ui.view">
+            <field name="name">import.lines.detail.waybill</field>
+            <field name="model">import.lines.detail.waybill</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Actualización de lineas del Complemento Carta Porte" >
+                    <sheet>
+                        <group string="Actualización Masiva">
+                            <group>
+                                <field name="action_type" required="1"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="file_import" attrs="{'required':[('action_type','=','import')],'invisible':[('action_type','!=','import')]}"/>
+                        </group>
+                            
+                    </sheet>
+                    
+                    <footer>
+                        <center>
+                            <!-- Crear Lineas Factura -->
+                            <button name="export_to_invoice_line" string="Crear Lineas Factura" type="object" class="oe_highlight" icon="fa-cogs" attrs="{'invisible':[('action_type','!=','export_to_invoice_line')]}"/>
+                            <button name="import_to_merchandise_line" string="Crear Lineas Mercancia Transportada" type="object" class="oe_highlight" icon="fa-cogs" attrs="{'invisible':[('action_type','!=','import_to_merchandise_line')]}"/>
+                            
+                            <!-- Importar/Exportar Mercancia Transportada -->
+                            <button name="download_data" string="Descargar" type="object" class="oe_highlight" icon="fa-cogs" attrs="{'invisible':[('action_type','!=','download')]}"/>
+                            <button name="import_data" string="Importar" type="object" class="oe_highlight" icon="fa-cogs" attrs="{'invisible':[('action_type','!=','import')]}"/>
+                            ó
+                            <button string="Cerrar" class="oe_highlight oe_link" special="cancel" icon="fa-close" />
+                        </center>
+                    </footer>
+                </form>
+                </field>
+            </record>
+
+
+        <!--============================================ACCION========================================-->
+        <record id="import_lines_detail_waybill_act" model="ir.actions.act_window">
+            <field name="name">Actualización Mercancias</field>
+            <field name="res_model">import.lines.detail.waybill</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+</odoo>

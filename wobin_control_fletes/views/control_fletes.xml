@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--     INHERITANCES                           -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->    
+
+    <!--Purchase Order Form Inherited where new field was added: Ordenes de Servicio-->
+    <record id="purchase_order_form_inherit_fletes" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>	
+        <field name="arch" type="xml">
+            <field name="picking_type_id" position="after">
+                <field name="wbn_service_order_ids" widget="many2many_tags" domain="[('estado', '=', 'borrador')]" attrs="{'readonly': [('state', 'in', ['purchase', 'done', 'cancel'])]}"/>
+                <field name="summation_service_orders"/>
+            </field>           
+        </field>
+    </record>
+
+
+
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--     VIEWS                                  -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->  
+
+    <!-- Wobin Services Orders - LIST VIEW -->
+    <record id="view_wbn_service_orders_list" model="ir.ui.view">
+      <field name="name">wobin.orden.servicio.list</field>
+      <field name="model">wobin.orden.servicio</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="partner_id"/>
+          <field name="tarifas"/> 
+          <field name="precio_producto"/> 
+          <field name="purchase_with_order_id"/>                                                     
+          <field name="purchase_provider"/>            
+          <field name="purchase_invoice_state"/>  
+          <field name="create_date"/>                 
+          <field name="estado"/>            
+          <field name="dif_merma_excedente"/>
+          <field name="tolerancia"/>
+          <field name="tolerancia_ajustada"/>
+          <field name="tolerancia_autorizada"/>
+          <field name="tolerancia_excedida"/>
+          <field name="subtotal_antes_desc"/>
+          <field name="desc_tolerancia_exced"/>
+          <field name="importe"/>
+          <field name="iva"/>
+          <field name="retencion"/>
+          <field name="total"/> 
+        </tree>
+      </field>
+    </record>   
+
+    <!-- Wobin Services Orders - FORM VIEW -->
+    <record id="view_wbn_service_orders_form" model="ir.ui.view"> 
+        <field name="name">wobin.orden.servicio.form</field> 
+        <field name="model">wobin.orden.servicio</field> 
+        <field name="arch" type="xml"> 
+            <form> 
+                <header>
+                    <!--<button string="Cancelar" name="cancelar_orden" type="object" class="oe_highlight" attrs="{'invisible': [('estado', '=', 'cancelada')]}"/>-->
+                    <field name="estado" widget="statusbar" statusbar_visible="borrador,oc_relacionada"/>
+                </header>
+                <sheet> 
+                    <div class="oe_left oe_title">
+                        <h1>
+                            <field name="name" readonly="True"/>
+                        </h1>
+                    </div>
+
+                    <group>
+                        <group>
+                            <field name="partner_id" required="True" attrs="{'readonly': [('estado', '=', 'oc_relacionada')]}"/>                 
+                        </group>                                                 
+                        <group>   
+                            <field name="tarifas" attrs="{'readonly': [('estado', '=', 'oc_relacionada')]}"/>
+                            <field name="precio_producto" attrs="{'readonly': [('estado', '=', 'oc_relacionada')]}"/>
+                            <div class="row">
+                                <label style="margin-left: 15px" class="font-italic" for="precio_producto_lbl"/>
+                                <field name="precio_producto_lbl" class="oe_inline"/>                                                                
+                            </div>                                                                              
+                        </group> 
+                    </group> 
+                    
+                    <field name="pickings_ids" attrs="{'readonly': [('estado', '=', 'oc_relacionada')]}">
+                        <tree editable="bottom">
+                            <!--Origen-->
+                            <field name="transferencia_origen_id"/>
+                            <field name="fecha_carga_origen"/>
+                            <field name="producto_id"/>
+                            <field name="toneladas_origen" sum="Total Tn. Origen"/>
+                            <!--Destino-->
+                            <field name="transferencia_destino_id"/>
+                            <field name="fecha_descarga_destino"/>
+                            <field name="producto_destino_id"/>                            
+                            <field name="toneladas_destino" sum="Total Tn. Destino"/>
+                            <field name="toneladas_ef_entregados" sum="Total Tn. Ef Entregados"/>                                    
+                        </tree>
+                    </field>   
+
+                    <group>
+                        <field name="pago_efectivo"/> 
+                    </group>
+                     
+                    <notebook>
+                        <!-- Primera Pestaña de "Visualización Completa" -->
+                        <page string="Visualización Completa" attrs ="{'invisible':[('pago_efectivo','=', True)]}">  
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">                                                                     
+                                    <table class="table table-responsive table-bordered p-10" style="margin-top: 10px; margin-right: 15px;">
+                                        <tr class="font-weight-bold">
+                                            <td class="text-right" style="background-color: RebeccaPurple; color: white;">Diferencia Merma</td>
+                                            <td><field name="dif_merma_excedente"/></td>
+                                        </tr>
+                                        <tr class="font-weight-bold">
+                                            <td class="text-right" style="background-color: RebeccaPurple; color: white;">Tolerancia Sistema</td>
+                                            <td><field name="tolerancia"/></td>
+                                        </tr>
+                                        <tr class="font-weight-bold">
+                                            <td class="text-right" style="background-color: MediumPurple; color: white;">Tolerancia Ajustada</td>
+                                            <td><field name="tolerancia_ajustada"/></td>
+                                        </tr>
+                                        <tr class="font-weight-bold">
+                                            <td class="text-right" style="background-color: RebeccaPurple; color: white;">Tolerancia Autorizada</td>
+                                            <td><field name="tolerancia_autorizada"/></td>
+                                        </tr>
+                                        <tr class="font-weight-bold">
+                                            <td class="text-right" style="background-color: RebeccaPurple; color: white;">Tolerancia Excedida</td>
+                                            <td><field name="tolerancia_excedida"/></td>     
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                    <table class="table table-responsive table-bordered p-10" style="margin-top: 10px">
+                                        <tr class="font-weight-bold">
+                                            <td class="text-right" style="background-color: RebeccaPurple; color: white;">Subtotal antes Descuento</td>
+                                            <td><field name="subtotal_antes_desc"/></td> 
+                                        </tr>
+                                        <tr class="font-weight-bold">
+                                            <td class="text-right" style="background-color: RebeccaPurple; color: white;">Descuento por Tolerancia Excedida</td>
+                                            <td><field name="desc_tolerancia_exced"/></td>
+                                        </tr>
+                                        <tr class="font-weight-bold">
+                                            <td class="text-right" style="background-color: RebeccaPurple; color: white;">Importe</td>
+                                            <td><field name="importe"/></td>
+                                        </tr>
+                                        <tr class="font-weight-bold">
+                                            <td class="text-right" style="background-color: RebeccaPurple; color: white;">IVA</td>
+                                            <td><field name="iva"/></td>
+                                        </tr>
+                                        <tr class="font-weight-bold">
+                                            <td class="text-right" style="background-color: RebeccaPurple; color: white;">Retención</td>
+                                            <td><field name="retencion"/></td>
+                                        </tr>
+                                        <tr class="font-weight-bold">
+                                            <td class="text-right" style="background-color: RebeccaPurple; color: white;">Total</td>
+                                            <td><field name="total"/></td>     
+                                        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+                                    </table> 
+                                </div>
+                            </div>
+                        </page> 
+
+                        <!-- Segunda Pestaña de "Visualización de Pago Efectivo" -->
+                        <page string="Visualización de Pago Efectivo" attrs ="{'invisible':[('pago_efectivo','=', False)]}">                                            
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">                             
+                                    <table class="table table-responsive table-bordered p-10" style="margin-top: 40px; margin-right: 15px;">
+                                        <tr class="font-weight-bold">
+                                            <td class="text-right" style="background-color: RebeccaPurple; color: white;">Diferencia Merma</td>
+                                            <td><field name="dif_merma_excedente"/></td>
+                                        </tr>
+                                        <tr class="font-weight-bold">
+                                            <td class="text-right" style="background-color: RebeccaPurple; color: white;">Tolerancia Sistema</td>
+                                            <td><field name="tolerancia"/></td>
+                                        </tr>
+                                        <tr class="font-weight-bold">
+                                            <td class="text-right" style="background-color: MediumPurple; color: white;">Tolerancia Ajustada</td>
+                                            <td><field name="tolerancia_ajustada"/></td>
+                                        </tr>      
+                                        <tr class="font-weight-bold">
+                                            <td class="text-right" style="background-color: RebeccaPurple; color: white;">Tolerancia Autorizada</td>
+                                            <td><field name="tolerancia_autorizada"/></td>
+                                        </tr>     
+                                    </table>  
+                                </div>
+                                
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">  
+                                    <table class="table table-responsive table-bordered p-10" style="margin-top: 40px">                                
+                                        <tr class="font-weight-bold">
+                                            <td class="text-right" style="background-color: RebeccaPurple; color: white;">Subtotal antes Descuento</td>
+                                            <td><field name="subtotal_antes_desc"/></td> 
+                                        </tr>
+                                        <tr class="font-weight-bold">
+                                            <td class="text-right" style="background-color: RebeccaPurple; color: white;">Importe</td>
+                                            <td><field name="importe"/></td>
+                                        </tr>    
+                                        <tr class="font-weight-bold">
+                                            <td class="text-right" style="background-color: RebeccaPurple; color: white;">Total</td>
+                                            <td><field name="total_pago_efectivo"/></td>     
+                                        </tr>                                                                         
+                                    </table> 
+                                </div>
+                            </div>                                                                  
+                        </page> 
+                    </notebook>                                    
+                                                             
+                </sheet>              
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>               
+            </form> 
+        </field> 
+    </record>
+
+
+    <!-- Wobin Services Orders Lines - LIST VIEW -->
+    <record id="view_wbn_service_orders_lns_list" model="ir.ui.view">
+      <field name="name">wobin.orden.servicio.list</field>
+      <field name="model">wobin.orden.servicio.lineas</field>
+      <field name="arch" type="xml">
+            <tree>
+                <field name="wbn_service_order_id"/>
+                <field name="estado_wbn_servi_ord"/>
+                <field name="wbn_pur_order_related"/>
+                <field name="transferencia_origen_id"/>
+                <field name="fecha_carga_origen"/>
+                <field name="producto_id"/>
+                <field name="toneladas_origen"/>
+                <field name="transferencia_destino_id"/>
+                <field name="fecha_descarga_destino"/>
+                <field name="producto_destino_id"/>
+                <field name="toneladas_destino"/>
+                <field name="toneladas_ef_entregados"/>                
+            </tree>
+      </field>
+    </record> 
+
+    <!-- Wobin Services Orders Lines - FORM VIEW -->
+    <record id="view_wbn_service_orders_lns_form" model="ir.ui.view"> 
+        <field name="name">wobin.orden.servicio.line.form</field> 
+        <field name="model">wobin.orden.servicio.lineas</field> 
+        <field name="arch" type="xml"> 
+            <form> 
+                <header>
+                    <field name="estado_wbn_servi_ord" widget="statusbar" statusbar_visible="borrador,oc_relacionada"/>
+                </header>
+                <sheet> 
+                    <div class="oe_left oe_title">
+                        <h1>
+                            <field name="wbn_service_order_id" readonly="True"/>
+                        </h1>
+                    </div>
+
+                    <group>
+                        <group>
+                            <field name="wbn_pur_order_related" readonly="True"/>                 
+                        </group>                                                 
+                        <group>                                                              
+                        </group> 
+                    </group> 
+
+
+                    <group>
+
+                        <div class="container border border-info m-2" style="border-radius: 10px;">
+                          <div style="margin-top: 27px !important;">
+                            <div style="padding-top: 30px !important;">
+                                <h5 style="background: #fff none repeat scroll 0 0; height: auto; margin-left: 20px; padding: 3px 5px; position: absolute; margin-top: -47px; border: 1px solid #337ab7; border-radius: 8px;"><strong>Movimiento Origen</strong></h5>                    
+                                <group>
+                                    <field name="transferencia_origen_id"/>
+                                    <field name="fecha_carga_origen"/>
+                                    <field name="producto_id"/>
+                                    <field name="toneladas_origen"/>                           
+                                </group>   
+                            </div>  
+                          </div> 
+                        </div>
+
+                        <div class="container border border-info m-2" style="border-radius: 10px;">
+                          <div style="margin-top: 27px !important;">
+                            <div style="padding-top: 30px !important;">
+                                <h5 style="background: #fff none repeat scroll 0 0; height: auto; margin-left: 20px; padding: 3px 5px; position: absolute; margin-top: -47px; border: 1px solid #337ab7; border-radius: 8px;"><strong>Movimiento Destino</strong></h5>                                                                                                                          
+                                <group>  
+                                    <field name="transferencia_destino_id"/>
+                                    <field name="fecha_descarga_destino"/>
+                                    <field name="producto_destino_id"/>                                    
+                                    <field name="toneladas_destino"/>
+                                    <field name="toneladas_ef_entregados"/>                                                                         
+                                </group> 
+                            </div>  
+                          </div> 
+                        </div> 
+
+                    </group> 
+
+                </sheet>  
+
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>  
+
+            </form> 
+        </field> 
+    </record>   
+
+    <!-- Wobin Stock Pickings {Aid in see Service Order and Authorization} - LIST VIEW -->
+    <record id="view_wbn_pickings" model="ir.ui.view">
+        <field name="name">wobin.pickings.fletes</field>
+        <field name="model">stock.picking</field>
+        <field name="arch" type="xml">
+            <tree decoration-info="state == 'draft'" decoration-muted="state == 'cancel'" decoration-danger="state not in ('cancel', 'done') and scheduled_date &lt; current_date" string="Picking list">
+                <field name="name"/>
+                <field name="location_dest_id" groups="stock.group_stock_multi_locations"/>
+                <field name="orden_servicio"/>            
+                <field name="partner_id"/>
+                <field name="date" invisible="1"/>
+                <field name="scheduled_date"/>
+                <field name="origin"/>
+                <field name="group_id" invisible="1"/>
+                <field name="backorder_id"/>
+                <field name="state"/>
+                <field name="priority" invisible="1"/>
+                <field name="picking_type_id" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+
+
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--   ACTIONS                                  -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <!-- Wobin Services Orders - GENERAL ACTION -->
+    <record id="action_wbn_service_orders" model="ir.actions.act_window">
+      <field name="name">Ordenes de Servicio</field>
+      <field name="res_model">wobin.orden.servicio</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Wobin Services Orders Lines - GENERAL ACTION -->
+    <record id="action_wbn_service_orders_lns" model="ir.actions.act_window">
+      <field name="name">Reporte Órdenes de Servicio</field>
+      <field name="res_model">wobin.orden.servicio.lineas</field>
+      <field name="view_mode">tree,form</field>
+    </record> 
+
+    <!-- Wobin Stock Pickings {Aid in see Service Order and Authorization} - GENERAL ACTION -->
+    <record id="action_wbn_stock_pickings" model="ir.actions.act_window">
+      <field name="name">Reporte de Albaranes</field>
+      <field name="res_model">stock.picking</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="view_wbn_pickings"/>
+    </record>    
+
+
+
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--       MENUITEMS                            -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::--> 
+
+    <!-- Menuitem ROOT -->    
+    <menuitem name="Wobin Control Fletes" 
+              id="wobin_control_fletes.menu_root"            
+              groups="wobin_control_fletes.group_wl_general_access_wbn_control_fletes"   
+              web_icon="wobin_control_fletes,static/description/icon.jpg"/>
+
+    <!-- Menuitem Ordenes de Servicio -->
+    <menuitem 
+        name="Ordenes de Servicio" 
+        id="menu_stock_wbn_serv_ord" 
+        action="action_wbn_service_orders" 
+        parent="wobin_control_fletes.menu_root" 
+        sequence="1"/>
+
+    <!-- Menuitem Reportes -->
+    <menuitem 
+        name="Reportes" 
+        id="menu_reports" 
+        parent="wobin_control_fletes.menu_root"
+        sequence="2"/> 
+
+    <!-- Menuitem Reporte Stock Pickings -->
+    <menuitem 
+        name="Reporte de Albaranes" 
+        id="menu_report_stock_pickings" 
+        action="action_wbn_stock_pickings" 
+        parent="wobin_control_fletes.menu_reports"
+        sequence="1"/>  
+
+    <!-- Menuitem Reporte de Ordenes de Servicio -->
+    <menuitem 
+        name="Reporte Órdenes de Servicio" 
+        id="menu_report_wbn_serv_ord_lns" 
+        action="action_wbn_service_orders_lns" 
+        parent="wobin_control_fletes.menu_reports"
+        sequence="2"/>         
+
+  </data>
+
+
+  <data noupdate="1">
+        <!--::::::::::::::::::::::::::::::::::::::::::::-->
+        <!-- SEQUENCE for name of Wobin Service Orders  -->
+        <!--::::::::::::::::::::::::::::::::::::::::::::-->
+        <record id="secuencia_wobin_ordenes_servicio" model="ir.sequence">
+        <field name="name">Orden de Servicio</field>
+        <field name="code">self.osf</field>
+        <field name="active">TRUE</field>
+        <field name="prefix">OSF</field>
+        <field name="padding">6</field>
+        <!--<field name="number_next">1</field>-->
+        <field name="number_increment">1</field>
+        </record>             
+  </data>   
+
+</odoo>

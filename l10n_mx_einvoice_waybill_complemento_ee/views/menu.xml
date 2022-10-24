@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	
+        <menuitem id="catalogos_sat_menu" name="Catálogos SAT" 
+                  parent="account.menu_finance_configuration" sequence="99" 
+                  groups="account.group_account_manager" />
+    
+        <menuitem id="SAT_CatalogosWizard_menu" 
+                  name="Ver Catálogos SAT" 
+                  parent="catalogos_sat_menu" sequence="10"
+                  action="SAT_CatalogosWizard_action"/>
+
+    </data>    
+</odoo>

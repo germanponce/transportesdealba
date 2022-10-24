@@ -1,0 +1,466 @@
+id,code,name,start_date
+waybill_producto_stcc_00,01,Productos agricolas,2021-06-01
+waybill_producto_stcc_01,011,Cultivos de campo,2021-06-01
+waybill_producto_stcc_02,0112,Algodon en bruto,2021-06-01
+waybill_producto_stcc_03,01131,Cebada,2021-06-01
+waybill_producto_stcc_04,01132,Maiz,2021-06-01
+waybill_producto_stcc_05,01133,Avena,2021-06-01
+waybill_producto_stcc_06,01134,Arroz,2021-06-01
+waybill_producto_stcc_07,01135,Centeno,2021-06-01
+waybill_producto_stcc_08,01136,Sorgo,2021-06-01
+waybill_producto_stcc_09,01137,Trigo,2021-06-01
+waybill_producto_stcc_10,01139,Grano,2021-06-01
+waybill_producto_stcc_11,0114,"Semillas oleaginosas, nueces y granos",2021-06-01
+waybill_producto_stcc_12,01144,Soja,2021-06-01
+waybill_producto_stcc_13,0115,Semillas de campo excluidas semillas oleaginosas,2021-06-01
+waybill_producto_stcc_14,0119,Cultivos de campo miscelaneos,2021-06-01
+waybill_producto_stcc_15,01193,Tabaco de hoja,2021-06-01
+waybill_producto_stcc_16,01195,Patatas distintas de las dulces,2021-06-01
+waybill_producto_stcc_17,01197,Remolacha azucarera,2021-06-01
+waybill_producto_stcc_18,012,Frutas frescas y nueces de arbol,2021-06-01
+waybill_producto_stcc_19,0121,Frutas citricas,2021-06-01
+waybill_producto_stcc_20,0122,Frutos caducifolios,2021-06-01
+waybill_producto_stcc_21,01221,Manzanas,2021-06-01
+waybill_producto_stcc_22,01224,Uvas,2021-06-01
+waybill_producto_stcc_23,01226,Melocotones,2021-06-01
+waybill_producto_stcc_24,0123,Frutas tropicales excluidos citricos,2021-06-01
+waybill_producto_stcc_25,01232,Platanos,2021-06-01
+waybill_producto_stcc_26,0129,Varias frutas frescas y nueces,2021-06-01
+waybill_producto_stcc_27,01295,Cafe verde,2021-06-01
+waybill_producto_stcc_28,013,Vegetales frescos,2021-06-01
+waybill_producto_stcc_29,0131,"Bulbos, raices y tuberculos",2021-06-01
+waybill_producto_stcc_30,01318,Cebollas secas,2021-06-01
+waybill_producto_stcc_31,0133,Verduras frescas de hoja,2021-06-01
+waybill_producto_stcc_32,01334,Apio,2021-06-01
+waybill_producto_stcc_33,01335,Lechuga,2021-06-01
+waybill_producto_stcc_34,0134,"Semillas de verduras maduras secas, etc.",2021-06-01
+waybill_producto_stcc_35,01341,Frijoles maduros secos,2021-06-01
+waybill_producto_stcc_36,01342,Guisantes secos,2021-06-01
+waybill_producto_stcc_37,0139,Verduras frescas varias,2021-06-01
+waybill_producto_stcc_38,01392,Sandias,2021-06-01
+waybill_producto_stcc_39,01394,Tomates,2021-06-01
+waybill_producto_stcc_40,01398,Melones excluyendo sandias,2021-06-01
+waybill_producto_stcc_41,014,Ganaderia y ganaderia,2021-06-01
+waybill_producto_stcc_42,0141,Ganado,2021-06-01
+waybill_producto_stcc_43,01411,Vacas,2021-06-01
+waybill_producto_stcc_44,01413,"Porcinos, jabalies y cerdos",2021-06-01
+waybill_producto_stcc_45,01414,Ovejas y corderos,2021-06-01
+waybill_producto_stcc_46,0142,Granja lechera,2021-06-01
+waybill_producto_stcc_47,0143,Fibras animales,2021-06-01
+waybill_producto_stcc_48,01431,Lana,2021-06-01
+waybill_producto_stcc_49,015,Aves de corral,2021-06-01
+waybill_producto_stcc_50,0151,Aves de corral vivas,2021-06-01
+waybill_producto_stcc_51,0152,Huevos de aves de corral,2021-06-01
+waybill_producto_stcc_52,019,Productos agricolas varios,2021-06-01
+waybill_producto_stcc_53,0191,Especialidades horticolas,2021-06-01
+waybill_producto_stcc_54,0192,Especialidades animales,2021-06-01
+waybill_producto_stcc_55,08,Productos extranjeros,2021-06-01
+waybill_producto_stcc_56,084,"Gomas y cortezas, crudas",2021-06-01
+waybill_producto_stcc_57,08423,Latex y encias afines,2021-06-01
+waybill_producto_stcc_58,086,Productos forestales diversos,2021-06-01
+waybill_producto_stcc_59,09,Pescado fresco,2021-06-01
+waybill_producto_stcc_60,091,Pescado fresco y productos marinos,2021-06-01
+waybill_producto_stcc_61,0912,Pescado y ballena,2021-06-01
+waybill_producto_stcc_62,09131,"Conchas (ostras, cangrejos, etc.)",2021-06-01
+waybill_producto_stcc_63,098,"Criaderos de peces, granjas",2021-06-01
+waybill_producto_stcc_64,10,Minerales metalicos,2021-06-01
+waybill_producto_stcc_65,101,Minerales de hierro,2021-06-01
+waybill_producto_stcc_66,10112,Beneficio de mineral de grado,2021-06-01
+waybill_producto_stcc_67,102,Minerales de cobre,2021-06-01
+waybill_producto_stcc_68,103,Minerales de plomo y zinc,2021-06-01
+waybill_producto_stcc_69,1031,Minerales de plomo,2021-06-01
+waybill_producto_stcc_70,1032,Minerales de zinc,2021-06-01
+waybill_producto_stcc_71,104,Minerales de oro y plata,2021-06-01
+waybill_producto_stcc_72,105,Minerales de bauxita y aluminio,2021-06-01
+waybill_producto_stcc_73,106,Minerales de manganeso,2021-06-01
+waybill_producto_stcc_74,107,Minerales de tungsteno,2021-06-01
+waybill_producto_stcc_75,108,Minerales de cromo,2021-06-01
+waybill_producto_stcc_76,109,Minerales metalicos miscelaneos,2021-06-01
+waybill_producto_stcc_77,11,Carbon,2021-06-01
+waybill_producto_stcc_78,111,Antracita,2021-06-01
+waybill_producto_stcc_79,11111,Antracita cruda,2021-06-01
+waybill_producto_stcc_80,11112,Antracita limpia,2021-06-01
+waybill_producto_stcc_81,112,Carbon bituminoso y lignito,2021-06-01
+waybill_producto_stcc_82,1121,Carbon bituminoso,2021-06-01
+waybill_producto_stcc_83,13,Petroleo crudo y gasolina natural,2021-06-01
+waybill_producto_stcc_84,131,Petroleo crudo y GNL,2021-06-01
+waybill_producto_stcc_85,132,Gasolina natural,2021-06-01
+waybill_producto_stcc_86,14,Minerales no metalicos,2021-06-01
+waybill_producto_stcc_87,141,"Piedra de dimension, cantera",2021-06-01
+waybill_producto_stcc_88,142,Piedra triturada y rota,2021-06-01
+waybill_producto_stcc_89,14211,Caliza agricola,2021-06-01
+waybill_producto_stcc_90,14212,Piedra fundente o cales,2021-06-01
+waybill_producto_stcc_91,14219,Piedra triturada y rota,2021-06-01
+waybill_producto_stcc_92,144,Arena y grava,2021-06-01
+waybill_producto_stcc_93,14411,Arena (agregado y lastre),2021-06-01
+waybill_producto_stcc_94,14412,Grava (agregado y lastre),2021-06-01
+waybill_producto_stcc_95,14413,Arena industrial cruda,2021-06-01
+waybill_producto_stcc_96,145,"Arcilla, ceramica y refractaria",2021-06-01
+waybill_producto_stcc_97,14511,Bentonita bruta,2021-06-01
+waybill_producto_stcc_98,14512,Arcilla de fuego cruda,2021-06-01
+waybill_producto_stcc_99,14514,Bola bruta y arcilla de caolin,2021-06-01
+waybill_producto_stcc_100,147,Minerales quimicos y fertilizantes,2021-06-01
+waybill_producto_stcc_101,14711,Barita cruda,2021-06-01
+waybill_producto_stcc_102,14713,"Borato crudo, potasa y soda",2021-06-01
+waybill_producto_stcc_103,14714,Roca de apatita y fosfato,2021-06-01
+waybill_producto_stcc_104,14715,Sal de roca bruta,2021-06-01
+waybill_producto_stcc_105,14716,Azufre crudo,2021-06-01
+waybill_producto_stcc_106,149,Minerales no metalicos miscelaneos,2021-06-01
+waybill_producto_stcc_107,14911,Anhidrita bruta y yeso,2021-06-01
+waybill_producto_stcc_108,14913,Asfalto y betunes nativos,2021-06-01
+waybill_producto_stcc_109,14914,Piedra pomez y pumicita cruda,2021-06-01
+waybill_producto_stcc_110,19,Artilleria,2021-06-01
+waybill_producto_stcc_111,191,"Armas, obuses y morteros",2021-06-01
+waybill_producto_stcc_112,192,"Municiones, mas de 30 mm",2021-06-01
+waybill_producto_stcc_113,193,Vehiculos de combate con orugas completas,2021-06-01
+waybill_producto_stcc_114,194,Equipo de avistamiento y control de incendios,2021-06-01
+waybill_producto_stcc_115,195,"Brazos peque\xc3\xb1os, LTE 30 mm",2021-06-01
+waybill_producto_stcc_116,196,"Municion para armas peque\xc3\xb1as, LTE 30 mm",2021-06-01
+waybill_producto_stcc_117,199,Miscelanea de municiones y accesorios,2021-06-01
+waybill_producto_stcc_118,20,Productos alimenticios,2021-06-01
+waybill_producto_stcc_119,201,Carne y aves de corral,2021-06-01
+waybill_producto_stcc_120,2011,"Carne, fresca o refrigerada",2021-06-01
+waybill_producto_stcc_121,2012,Carne fresca congelada,2021-06-01
+waybill_producto_stcc_122,2013,Productos de carne,2021-06-01
+waybill_producto_stcc_123,2014,Subproductos animales no comestibles,2021-06-01
+waybill_producto_stcc_124,20141,"Cueros y pieles, sin curtir",2021-06-01
+waybill_producto_stcc_125,2015,Aves frescas ali\xc3\xb1adas,2021-06-01
+waybill_producto_stcc_126,2016,Aves de corral congeladas,2021-06-01
+waybill_producto_stcc_127,2017,Aves procesadas y caza menor,2021-06-01
+waybill_producto_stcc_128,202,Productos lacteos,2021-06-01
+waybill_producto_stcc_129,2021,Crema de mantequilla,2021-06-01
+waybill_producto_stcc_130,2023,Evaporar leche en polvo condensada,2021-06-01
+waybill_producto_stcc_131,2024,Helados y postres helados,2021-06-01
+waybill_producto_stcc_132,2025,Queso y lacteos especiales prd,2021-06-01
+waybill_producto_stcc_133,2026,Leche y nata procesadas,2021-06-01
+waybill_producto_stcc_134,203,Alimentos enlatados y en conserva,2021-06-01
+waybill_producto_stcc_135,2031,Mariscos enlatados y curados,2021-06-01
+waybill_producto_stcc_136,2032,Especialidades enlatadas,2021-06-01
+waybill_producto_stcc_137,2033,"Frutas, verduras y mermeladas enlatadas",2021-06-01
+waybill_producto_stcc_138,2034,Frutas y verduras secas y deshidratadas,2021-06-01
+waybill_producto_stcc_139,2035,"Frutas y verduras en escabeche, salsas",2021-06-01
+waybill_producto_stcc_140,2036,Pescado envasado,2021-06-01
+waybill_producto_stcc_141,2037,"Frutas, jugos y verduras congeladas",2021-06-01
+waybill_producto_stcc_142,2038,Especialidades congeladas,2021-06-01
+waybill_producto_stcc_143,2039,Frutas y verduras enlatadas y en conserva,2021-06-01
+waybill_producto_stcc_144,204,Productos de molino de grano,2021-06-01
+waybill_producto_stcc_145,2041,Molino de harina y otros granos prd,2021-06-01
+waybill_producto_stcc_146,20411,Harina de trigo excl. Mezclada,2021-06-01
+waybill_producto_stcc_147,20412,Salvado de trigo,2021-06-01
+waybill_producto_stcc_148,20421,Pienso preparado para animales,2021-06-01
+waybill_producto_stcc_149,20423,Alimentos enlatados para animales,2021-06-01
+waybill_producto_stcc_150,2043,Preparaciones de cereales,2021-06-01
+waybill_producto_stcc_151,2044,"Harina, harina y arroz molidos",2021-06-01
+waybill_producto_stcc_152,2045,Harina mezclada y preparada,2021-06-01
+waybill_producto_stcc_153,2046,Productos de molienda de maiz humedo,2021-06-01
+waybill_producto_stcc_154,20461,Jarabe de maiz,2021-06-01
+waybill_producto_stcc_155,20462,Maicena,2021-06-01
+waybill_producto_stcc_156,20463,Azucar de maiz,2021-06-01
+waybill_producto_stcc_157,20471,Alimentos para mascotas no enlatados,2021-06-01
+waybill_producto_stcc_158,20472,Alimentos enlatados para mascotas,2021-06-01
+waybill_producto_stcc_159,205,Productos de panaderia,2021-06-01
+waybill_producto_stcc_160,206,Azucar,2021-06-01
+waybill_producto_stcc_161,2061,Prd y subproductos de molino de azucar,2021-06-01
+waybill_producto_stcc_162,20611,Azucar crudo de ca\xc3\xb1a y remolacha,2021-06-01
+waybill_producto_stcc_163,20616,"Melazas de azucar, exc blackstrap",2021-06-01
+waybill_producto_stcc_164,20617,Melaza,2021-06-01
+waybill_producto_stcc_165,2062,Azucar refinado de ca\xc3\xb1a y remolacha,2021-06-01
+waybill_producto_stcc_166,20625,Subproductos del refino de azucar,2021-06-01
+waybill_producto_stcc_167,20626,"Pulpa, melaza, remolacha",2021-06-01
+waybill_producto_stcc_168,207,Confiteria y prd relacionados,2021-06-01
+waybill_producto_stcc_169,208,Bebidas y extractos,2021-06-01
+waybill_producto_stcc_170,20821,"Cerveza, ale, porter, grueso",2021-06-01
+waybill_producto_stcc_171,20823,Cerveceros granos gastados,2021-06-01
+waybill_producto_stcc_172,2083,Malta,2021-06-01
+waybill_producto_stcc_173,2084,"Vinos, brandy, licores",2021-06-01
+waybill_producto_stcc_174,20851,Licores destilados y mezclados,2021-06-01
+waybill_producto_stcc_175,20859,Destilados de licor,2021-06-01
+waybill_producto_stcc_176,2086,Refrescos enlatados,2021-06-01
+waybill_producto_stcc_177,2087,Extractos miscelaneos sin chocolate,2021-06-01
+waybill_producto_stcc_178,209,Preparaciones alimenticias diversas,2021-06-01
+waybill_producto_stcc_179,20911,Aceite de algodon,2021-06-01
+waybill_producto_stcc_180,20914,Pastel o harina de semillas de algodon,2021-06-01
+waybill_producto_stcc_181,20921,Aceite de soja,2021-06-01
+waybill_producto_stcc_182,20923,Pastel o harina de soja,2021-06-01
+waybill_producto_stcc_183,2093,Aceites vegetales y de nueces,2021-06-01
+waybill_producto_stcc_184,2094,Grasas y aceites marinos,2021-06-01
+waybill_producto_stcc_185,2095,Cafe tostado,2021-06-01
+waybill_producto_stcc_186,2096,"Manteca, aceites de mesa, etc.",2021-06-01
+waybill_producto_stcc_187,2097,"Hielo, natural o elaborado",2021-06-01
+waybill_producto_stcc_188,2098,"Macarrones, espaguetis, etc.",2021-06-01
+waybill_producto_stcc_189,21,Productos de tabaco,2021-06-01
+waybill_producto_stcc_190,211,Cigarrillos,2021-06-01
+waybill_producto_stcc_191,212,Puros,2021-06-01
+waybill_producto_stcc_192,213,Mascar y fumar tabaco,2021-06-01
+waybill_producto_stcc_193,214,Tabaco despalillado y resecado,2021-06-01
+waybill_producto_stcc_194,22,Productos textiles para fabricas,2021-06-01
+waybill_producto_stcc_195,221,Tejidos anchos de algodon,2021-06-01
+waybill_producto_stcc_196,222,Fibra y seda artificiales,2021-06-01
+waybill_producto_stcc_197,223,Tejidos anchos de lana,2021-06-01
+waybill_producto_stcc_198,224,Tejidos estrechos,2021-06-01
+waybill_producto_stcc_199,225,Tejidos de punto,2021-06-01
+waybill_producto_stcc_200,227,"Revestimientos de suelo, textiles",2021-06-01
+waybill_producto_stcc_201,228,Hilo e hilo,2021-06-01
+waybill_producto_stcc_202,229,Productos textiles diversos,2021-06-01
+waybill_producto_stcc_203,2296,Cordones y tejidos para neumaticos,2021-06-01
+waybill_producto_stcc_204,2297,Lana y mohair,2021-06-01
+waybill_producto_stcc_205,2298,Cordaje y bramante,2021-06-01
+waybill_producto_stcc_206,23,Ropa y otros textiles acabados,2021-06-01
+waybill_producto_stcc_207,231,Ropa para hombres y ni\xc3\xb1os,2021-06-01
+waybill_producto_stcc_208,233,"Ropa para mujeres, ni\xc3\xb1as y bebes",2021-06-01
+waybill_producto_stcc_209,235,"Sombrereria, sombreros y gorras",2021-06-01
+waybill_producto_stcc_210,237,Articulos de piel,2021-06-01
+waybill_producto_stcc_211,238,Ropa y accesorios miscelaneos,2021-06-01
+waybill_producto_stcc_212,239,Textil fabricado miscelaneo,2021-06-01
+waybill_producto_stcc_213,24,Madera y productos de madera,2021-06-01
+waybill_producto_stcc_214,241,Productos forestales primarios,2021-06-01
+waybill_producto_stcc_215,24114,Troncos de madera para pasta,2021-06-01
+waybill_producto_stcc_216,24115,Astillas de madera,2021-06-01
+waybill_producto_stcc_217,24116,"Postes, postes y pilotes de madera",2021-06-01
+waybill_producto_stcc_218,242,Aserradero y cepillado prd,2021-06-01
+waybill_producto_stcc_219,2421,Stock de madera y dimensiones,2021-06-01
+waybill_producto_stcc_220,24212,Corbatas aserradas,2021-06-01
+waybill_producto_stcc_221,2429,Varios aserradores y plng mill prd,2021-06-01
+waybill_producto_stcc_222,243,"Carpinteria, chapa, madera contrachapada",2021-06-01
+waybill_producto_stcc_223,2431,Carpinteria,2021-06-01
+waybill_producto_stcc_224,2432,Chapa y madera contrachapada,2021-06-01
+waybill_producto_stcc_225,244,Contenedores de madera,2021-06-01
+waybill_producto_stcc_226,249,Productos de madera diversos,2021-06-01
+waybill_producto_stcc_227,2491,Madera creosotada o tratada con aceite,2021-06-01
+waybill_producto_stcc_228,25,Muebles y Accesorios,2021-06-01
+waybill_producto_stcc_229,251,Mobiliario de hogar y oficina,2021-06-01
+waybill_producto_stcc_230,253,Edificio publico y mobiliario rltd,2021-06-01
+waybill_producto_stcc_231,254,"Tabiques, estanterias, taquillas",2021-06-01
+waybill_producto_stcc_232,259,Mobiliario y accesorios varios,2021-06-01
+waybill_producto_stcc_233,26,Productos de pulpa y papel,2021-06-01
+waybill_producto_stcc_234,261,Productos de pulpa y plantas de celulosa,2021-06-01
+waybill_producto_stcc_235,26111,Pulpa,2021-06-01
+waybill_producto_stcc_236,262,"Papel, excepto papel de construccion",2021-06-01
+waybill_producto_stcc_237,26211,Papel prensa,2021-06-01
+waybill_producto_stcc_238,26212,"Papel para madera molida, sin revestimiento",2021-06-01
+waybill_producto_stcc_239,26213,Papel para imprimir,2021-06-01
+waybill_producto_stcc_240,26214,Papel de regalo,2021-06-01
+waybill_producto_stcc_241,26217,Papel industrial especial,2021-06-01
+waybill_producto_stcc_242,26218,Stock de tejido sanitario,2021-06-01
+waybill_producto_stcc_243,263,"Carton, pulpbrd y fiberbrd",2021-06-01
+waybill_producto_stcc_244,264,Papel y papel convertidos brd prd,2021-06-01
+waybill_producto_stcc_245,2643,Bolsas de papel,2021-06-01
+waybill_producto_stcc_246,26471,Tejidos sanitarios / salud prd,2021-06-01
+waybill_producto_stcc_247,265,Envases de carton,2021-06-01
+waybill_producto_stcc_248,266,Papel de construccion y carton para edificios,2021-06-01
+waybill_producto_stcc_249,26613,Tablero,2021-06-01
+waybill_producto_stcc_250,27,Impresos,2021-06-01
+waybill_producto_stcc_251,271,Periodicos,2021-06-01
+waybill_producto_stcc_252,272,Publicaciones periodicas,2021-06-01
+waybill_producto_stcc_253,273,Libros,2021-06-01
+waybill_producto_stcc_254,274,Material impreso miscelaneo,2021-06-01
+waybill_producto_stcc_255,276,Formularios comerciales multiples,2021-06-01
+waybill_producto_stcc_256,277,"Tarjetas de felicitacion, sellos, etiquetas.",2021-06-01
+waybill_producto_stcc_257,278,"Libros en blanco, carpetas de hojas sueltas",2021-06-01
+waybill_producto_stcc_258,279,Productos de industrias de servicios,2021-06-01
+waybill_producto_stcc_259,28,Quimicos,2021-06-01
+waybill_producto_stcc_260,281,"Productos quimicos industriales, org / inorg",2021-06-01
+waybill_producto_stcc_261,2812,"Sodio, ptsm y otros quimicos inorganicos",2021-06-01
+waybill_producto_stcc_262,28123,"Sodio cpd, exc alcalinos",2021-06-01
+waybill_producto_stcc_263,2813,Gases industriales comprimidos,2021-06-01
+waybill_producto_stcc_264,2814,Prd crudo de alquitran de carbon,2021-06-01
+waybill_producto_stcc_265,2816,Pigmentos inorganicos,2021-06-01
+waybill_producto_stcc_266,2818,Sustancias quimicas organicas diversas,2021-06-01
+waybill_producto_stcc_267,28184,Alcoholes,2021-06-01
+waybill_producto_stcc_268,2819,Varios productos quimicos de inorg industriales,2021-06-01
+waybill_producto_stcc_269,28193,acido sulfurico,2021-06-01
+waybill_producto_stcc_270,282,Plasticos y resinas sinteticas,2021-06-01
+waybill_producto_stcc_271,28212,Caucho sintetico,2021-06-01
+waybill_producto_stcc_272,28213,Fibras sinteticas,2021-06-01
+waybill_producto_stcc_273,283,Medicamentos y farmaceuticos prd,2021-06-01
+waybill_producto_stcc_274,284,Preparaciones de limpieza y jabon,2021-06-01
+waybill_producto_stcc_275,2841,Jabon y otros detergentes,2021-06-01
+waybill_producto_stcc_276,285,"Pinturas, barnices y lacas",2021-06-01
+waybill_producto_stcc_277,286,Productos quimicos de goma y madera,2021-06-01
+waybill_producto_stcc_278,287,Quimicos agriculturales,2021-06-01
+waybill_producto_stcc_279,2871,Fertilizantes,2021-06-01
+waybill_producto_stcc_280,289,Productos quimicos miscelaneos,2021-06-01
+waybill_producto_stcc_281,2892,Explosivos,2021-06-01
+waybill_producto_stcc_282,28991,Sal comun,2021-06-01
+waybill_producto_stcc_283,29,Productos de petroleo y carbon,2021-06-01
+waybill_producto_stcc_284,291,Productos de refino de petroleo,2021-06-01
+waybill_producto_stcc_285,29111,"Gasolina, combustible para aviones, etc.",2021-06-01
+waybill_producto_stcc_286,29112,Queroseno,2021-06-01
+waybill_producto_stcc_287,29113,Aceite combustible destilado,2021-06-01
+waybill_producto_stcc_288,29114,Aceites lubricantes y similares,2021-06-01
+waybill_producto_stcc_289,29115,Grasas lubricantes,2021-06-01
+waybill_producto_stcc_290,29116,"Asfalto, alquitran y brea",2021-06-01
+waybill_producto_stcc_291,29117,Aceite combustible residual,2021-06-01
+waybill_producto_stcc_292,29119,"Prd de refino de gasolina, nec",2021-06-01
+waybill_producto_stcc_293,2912,Gases licuados del petroleo,2021-06-01
+waybill_producto_stcc_294,295,Materiales de pavimentacion y techado,2021-06-01
+waybill_producto_stcc_295,2951,Bloques y mezclas de pavimento de asfalto,2021-06-01
+waybill_producto_stcc_296,2952,Fieltro y revestimientos asfalticos,2021-06-01
+waybill_producto_stcc_297,299,Varios petroleo y carbon,2021-06-01
+waybill_producto_stcc_298,29911,Briquetas de carbon y coque,2021-06-01
+waybill_producto_stcc_299,29913,Coque de gasolina sin briquetas,2021-06-01
+waybill_producto_stcc_300,29914,Coque producido a partir del carbon,2021-06-01
+waybill_producto_stcc_301,30,Productos de caucho y plastico,2021-06-01
+waybill_producto_stcc_302,301,Neumaticos y camaras de aire,2021-06-01
+waybill_producto_stcc_303,302,Calzado de caucho y plastico,2021-06-01
+waybill_producto_stcc_304,303,Caucho recuperado,2021-06-01
+waybill_producto_stcc_305,304,Mangueras y correas de caucho y plastico,2021-06-01
+waybill_producto_stcc_306,306,Caucho fabricado miscelaneo,2021-06-01
+waybill_producto_stcc_307,307,Productos diversos de plastico,2021-06-01
+waybill_producto_stcc_308,31,Cuero y productos de cuero,2021-06-01
+waybill_producto_stcc_309,311,Cuero,2021-06-01
+waybill_producto_stcc_310,312,Cinturones de cuero industriales,2021-06-01
+waybill_producto_stcc_311,313,Stock de corte de bota y zapato,2021-06-01
+waybill_producto_stcc_312,314,"Calzado, excepto caucho o plastico",2021-06-01
+waybill_producto_stcc_313,315,Guantes y manoplas de cuero,2021-06-01
+waybill_producto_stcc_314,316,"Equipaje, bolsos",2021-06-01
+waybill_producto_stcc_315,319,Marroquineria miscelanea,2021-06-01
+waybill_producto_stcc_316,32,"Productos de piedra, arcilla y vidrio",2021-06-01
+waybill_producto_stcc_317,321,Vidrio plano,2021-06-01
+waybill_producto_stcc_318,322,Vidrio y cristaleria,2021-06-01
+waybill_producto_stcc_319,3221,Contenedores de vidrio,2021-06-01
+waybill_producto_stcc_320,324,Cemento hidraulico,2021-06-01
+waybill_producto_stcc_321,32411,"Cemento, hydlc, portland, nat",2021-06-01
+waybill_producto_stcc_322,325,Productos de arcilla estructural,2021-06-01
+waybill_producto_stcc_323,3251,Ladrillos y teja de arcilla estructural,2021-06-01
+waybill_producto_stcc_324,32511,"Ladrillos y bloques, arcilla y pizarra",2021-06-01
+waybill_producto_stcc_325,3253,Baldosas y baldosas de ceramica,2021-06-01
+waybill_producto_stcc_326,3255,"Refractarios, arcilla y no arcilla.",2021-06-01
+waybill_producto_stcc_327,3259,Productos miscelaneos de arcilla estructural,2021-06-01
+waybill_producto_stcc_328,32594,Teja de arcilla,2021-06-01
+waybill_producto_stcc_329,326,Ceramica y productos relacionados,2021-06-01
+waybill_producto_stcc_330,327,"Hormigon, yeso y yeso prd",2021-06-01
+waybill_producto_stcc_331,3271,Prd de hormigon,2021-06-01
+waybill_producto_stcc_332,3274,Yeso de cal y cal,2021-06-01
+waybill_producto_stcc_333,3275,Productos de yeso,2021-06-01
+waybill_producto_stcc_334,328,Cortar piedra y productos de piedra,2021-06-01
+waybill_producto_stcc_335,329,"Abrasivos, amianto y miscelaneas",2021-06-01
+waybill_producto_stcc_336,3291,Productos abrasivos,2021-06-01
+waybill_producto_stcc_337,3295,Tierras o minerales no metidos,2021-06-01
+waybill_producto_stcc_338,33,Productos de metales primarios,2021-06-01
+waybill_producto_stcc_339,331,Acerias y laminacion prd,2021-06-01
+waybill_producto_stcc_340,33111,Arrabio,2021-06-01
+waybill_producto_stcc_341,33112,Escoria de horno,2021-06-01
+waybill_producto_stcc_342,33119,Horno de coque y blast furn prd,2021-06-01
+waybill_producto_stcc_343,3312,Prd de hierro y acero primario,2021-06-01
+waybill_producto_stcc_344,33121,Lingote de acero y semiacabado,2021-06-01
+waybill_producto_stcc_345,3313,Prd electrometalurgico,2021-06-01
+waybill_producto_stcc_346,3315,"Alambre de acero, clavos y puas",2021-06-01
+waybill_producto_stcc_347,332,Fundiciones de hierro y acero,2021-06-01
+waybill_producto_stcc_348,33211,Tubo de fundicion de hierro y acero,2021-06-01
+waybill_producto_stcc_349,333,Productos de fundicion no ferrosos,2021-06-01
+waybill_producto_stcc_350,3331,"Cobre, laton o bronce",2021-06-01
+waybill_producto_stcc_351,3332,Productos de fundicion de plomo,2021-06-01
+waybill_producto_stcc_352,3333,Productos de fundicion de zinc,2021-06-01
+waybill_producto_stcc_353,3334,Productos de fundicion de aluminio,2021-06-01
+waybill_producto_stcc_354,335,Formas basicas de metales no ferrosos,2021-06-01
+waybill_producto_stcc_355,3351,"Cobre, laton o bronce",2021-06-01
+waybill_producto_stcc_356,3352,Aluminio,2021-06-01
+waybill_producto_stcc_357,3357,Metal no ferroso y aislado,2021-06-01
+waybill_producto_stcc_358,336,Piezas fundidas no ferrosas,2021-06-01
+waybill_producto_stcc_359,3361,Aleacion a base de aluminio y alumbre,2021-06-01
+waybill_producto_stcc_360,3362,"Laton, bronce, cobre y cba",2021-06-01
+waybill_producto_stcc_361,339,Productos varios de metales primarios,2021-06-01
+waybill_producto_stcc_362,3391,Forjas de hierro y acero,2021-06-01
+waybill_producto_stcc_363,3392,Forjas de metales no ferrosos,2021-06-01
+waybill_producto_stcc_364,34,Productos de metal fabricados,2021-06-01
+waybill_producto_stcc_365,341,Latas de metal,2021-06-01
+waybill_producto_stcc_366,342,"Cubiertos, herramientas manuales y ferreteria",2021-06-01
+waybill_producto_stcc_367,343,Fontaneria fxtrs y calefaccion,2021-06-01
+waybill_producto_stcc_368,3433,"Equipo de calefaccion, exc electrico",2021-06-01
+waybill_producto_stcc_369,344,Prd metal estructural fabricado,2021-06-01
+waybill_producto_stcc_370,3441,Productos metalicos estructurales fabricados,2021-06-01
+waybill_producto_stcc_371,34411,Hierro o acero estructural fabricado,2021-06-01
+waybill_producto_stcc_372,345,"Pernos, tuercas, tornillos, remaches",2021-06-01
+waybill_producto_stcc_373,346,Estampado de metal,2021-06-01
+waybill_producto_stcc_374,348,Productos diversos de alambre fabricado,2021-06-01
+waybill_producto_stcc_375,349,Productos metalicos diversos,2021-06-01
+waybill_producto_stcc_376,3491,Contenedores de transporte metalicos,2021-06-01
+waybill_producto_stcc_377,3494,Valvulas y accesorios de tuberia,2021-06-01
+waybill_producto_stcc_378,35,"Maquinaria, excepto electrica",2021-06-01
+waybill_producto_stcc_379,351,Motores y turbinas,2021-06-01
+waybill_producto_stcc_380,352,Maquinaria y equipo agricola,2021-06-01
+waybill_producto_stcc_381,3524,Tractores y equipos de jardin,2021-06-01
+waybill_producto_stcc_382,353,"Construccion, mineria y materiales hndlng",2021-06-01
+waybill_producto_stcc_383,3531,Maquinaria y equipo de construccion,2021-06-01
+waybill_producto_stcc_384,3532,Maquinaria y equipo para mineria,2021-06-01
+waybill_producto_stcc_385,3533,Maquinaria y equipo para campos petroleros,2021-06-01
+waybill_producto_stcc_386,3537,Camiones y tractores industriales,2021-06-01
+waybill_producto_stcc_387,354,Maquinaria y equipo para metalurgia,2021-06-01
+waybill_producto_stcc_388,355,Maquinaria industrial especial,2021-06-01
+waybill_producto_stcc_389,356,Maquinaria industrial general,2021-06-01
+waybill_producto_stcc_390,357,Equipo de oficina e informatica,2021-06-01
+waybill_producto_stcc_391,358,Maquinas de la industria de servicios,2021-06-01
+waybill_producto_stcc_392,359,"Maquinaria no electrica, nec",2021-06-01
+waybill_producto_stcc_393,36,"Maquina electrica, equipo y alimentacion",2021-06-01
+waybill_producto_stcc_394,361,Equipo de transmision y distribucion electrica,2021-06-01
+waybill_producto_stcc_395,362,Aparatos industriales electricos,2021-06-01
+waybill_producto_stcc_396,363,Electrodomesticos,2021-06-01
+waybill_producto_stcc_397,3631,Equipo de cocina para el hogar,2021-06-01
+waybill_producto_stcc_398,3632,Refrigeradores y congeladores domesticos,2021-06-01
+waybill_producto_stcc_399,3633,Equipo de lavanderia para el hogar,2021-06-01
+waybill_producto_stcc_400,364,Equipo de iluminacion y cableado electrico,2021-06-01
+waybill_producto_stcc_401,365,Aparatos de radio y television,2021-06-01
+waybill_producto_stcc_402,366,Equipo de comunicacion,2021-06-01
+waybill_producto_stcc_403,367,Componentes electronicos,2021-06-01
+waybill_producto_stcc_404,369,Varios equipos electricos,2021-06-01
+waybill_producto_stcc_405,37,Equipo de transporte,2021-06-01
+waybill_producto_stcc_406,371,Vehiculos de motor y equipar,2021-06-01
+waybill_producto_stcc_407,3711,Vehiculos de motor ensamblados,2021-06-01
+waybill_producto_stcc_408,37111,Carros pasajeros,2021-06-01
+waybill_producto_stcc_409,37112,Camiones tractores y camiones,2021-06-01
+waybill_producto_stcc_410,37113,"Autocares, asd, departamento de bomberos",2021-06-01
+waybill_producto_stcc_411,3712,Carrocerias de turismos,2021-06-01
+waybill_producto_stcc_412,3713,Carrocerias de camiones y autobuses,2021-06-01
+waybill_producto_stcc_413,3714,Piezas de vehiculos de motor,2021-06-01
+waybill_producto_stcc_414,37147,Partes de carroceria de vehiculos de motor,2021-06-01
+waybill_producto_stcc_415,3715,Remolques de camiones,2021-06-01
+waybill_producto_stcc_416,372,Aeronaves y piezas,2021-06-01
+waybill_producto_stcc_417,373,Barcos y embarcaciones,2021-06-01
+waybill_producto_stcc_418,374,Equipo de ferrocarril,2021-06-01
+waybill_producto_stcc_419,37422,Vagones de tren de mercancias,2021-06-01
+waybill_producto_stcc_420,375,"Motocicletas, bicicletas y repuestos",2021-06-01
+waybill_producto_stcc_421,376,Piezas de vehiculos espaciales,2021-06-01
+waybill_producto_stcc_422,379,Transporte miscelaneo,2021-06-01
+waybill_producto_stcc_423,38,Instrumentos y articulos opticos,2021-06-01
+waybill_producto_stcc_424,381,"Instruccion de ingenieria, laboratorio y ciencias",2021-06-01
+waybill_producto_stcc_425,382,"Manometros, medidores y controles",2021-06-01
+waybill_producto_stcc_426,383,Instrumentos opticos y lentes,2021-06-01
+waybill_producto_stcc_427,384,"Instruccion quirurgica, medica y dental",2021-06-01
+waybill_producto_stcc_428,385,Productos oftalmicos u opticos,2021-06-01
+waybill_producto_stcc_429,386,Equipo y suministros fotograficos,2021-06-01
+waybill_producto_stcc_430,387,"Relojes, relojes, dispositivos y piezas",2021-06-01
+waybill_producto_stcc_431,39,Productos de fabricacion miscelaneos,2021-06-01
+waybill_producto_stcc_432,391,"Joyas, plateria y ba\xc3\xb1o",2021-06-01
+waybill_producto_stcc_433,393,Instrumentos musicales y partes,2021-06-01
+waybill_producto_stcc_434,394,"Juguetes, diversion y equipamiento deportivo",2021-06-01
+waybill_producto_stcc_435,3949,Articulos deportivos y deportivos,2021-06-01
+waybill_producto_stcc_436,395,"Boligrafos, lapices y matl de oficina",2021-06-01
+waybill_producto_stcc_437,396,"Bisuteria, novedades",2021-06-01
+waybill_producto_stcc_438,399,Productos manufacturados miscelaneos,2021-06-01
+waybill_producto_stcc_439,40,Materiales de desecho y desecho,2021-06-01
+waybill_producto_stcc_440,401,Despojos mortales,2021-06-01
+waybill_producto_stcc_441,402,"Desperdicios y desechos, excepto cenizas",2021-06-01
+waybill_producto_stcc_442,4021,"Chatarra, desechos y relaves de metal",2021-06-01
+waybill_producto_stcc_443,40211,"Desechos, desechos de hierro y acero",2021-06-01
+waybill_producto_stcc_444,4022,Desechos y desechos textiles,2021-06-01
+waybill_producto_stcc_445,4024,Desechos y desperdicios de papel,2021-06-01
+waybill_producto_stcc_446,4026,Residuos y desechos de caucho y plastico,2021-06-01
+waybill_producto_stcc_447,41,Envios de carga miscelaneos,2021-06-01
+waybill_producto_stcc_448,411,Envios de carga miscelaneos,2021-06-01
+waybill_producto_stcc_449,41111,Conjuntos o kits,2021-06-01
+waybill_producto_stcc_450,41114,"Articulos, usados, excl codigos",2021-06-01
+waybill_producto_stcc_451,41115,"Articulos, usados, rtd para reparacion",2021-06-01
+waybill_producto_stcc_452,412,Productos varios,2021-06-01
+waybill_producto_stcc_453,42,Contenedores y remolques vacios,2021-06-01
+waybill_producto_stcc_454,421,Envases vacios nonrev,2021-06-01
+waybill_producto_stcc_455,422,Remolques vacios,2021-06-01
+waybill_producto_stcc_456,423,Ingresos remolques vacios,2021-06-01
+waybill_producto_stcc_457,44,Trafico de transporte de carga,2021-06-01
+waybill_producto_stcc_458,441,Trafico de transitarios,2021-06-01
+waybill_producto_stcc_459,45,Transporte asociado o trafico similar,2021-06-01
+waybill_producto_stcc_460,451,Remitente de trafico,2021-06-01
+waybill_producto_stcc_461,46,Envios mixtos miscelaneos,2021-06-01
+waybill_producto_stcc_462,461,Envios mixtos miscelaneos,2021-06-01
+waybill_producto_stcc_463,462,"Envios varios mixtos, 2 productos",2021-06-01
+waybill_producto_stcc_464,48,Residuos peligrosos,2021-06-01

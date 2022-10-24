@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <!-- Codigos Postales --> 
+    
+        <record id="res_country_zip_sat_code_tree" model="ir.ui.view">
+            <field name="name">res.country.zip.sat.code.tree</field>
+            <field name="model">res.country.zip.sat.code</field>
+            <field name="arch" type="xml">
+                <tree string="Listado Codigos Postales SAT" editable="bottom">
+                    <field name="code"  required="1"/>
+                    <field name="state_sat_code"  required="1"/>
+                    <field name="township_sat_code"/>
+                    <field name="locality_sat_code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="res_country_zip_sat_code_form" model="ir.ui.view">
+            <field name="name">res.country.zip.sat.code.form</field>
+            <field name="model">res.country.zip.sat.code</field>
+            <field name="arch" type="xml">
+                <form string="Codigos Postales SAT">
+                    <sheet>
+                        <group>
+                            <field name="code"  required="1"/>
+                            <field name="state_sat_code"  required="1"/>
+                            <field name="township_sat_code"/>
+                            <field name="locality_sat_code" />
+                        </group>
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+        <record id="res_country_zip_sat_code_search" model="ir.ui.view">
+            <field name="name">res.country.zip.sat.code.serch</field>
+            <field name="model">res.country.zip.sat.code</field>
+            <field name="arch" type="xml">
+                <search string="Busqueda Codigos Postales SAT">
+                    <field name="code" filter_domain="['|', '|', '|', ('code','ilike',self),('state_sat_code','ilike',self),('township_sat_code','ilike',self),('locality_sat_code','ilike',self)]" string="Codigos Postales ..."/>
+                    <field name="code" />
+                    <field name="state_sat_code" />
+                    <field name="township_sat_code" />
+                    <field name="locality_sat_code" />
+                </search>
+            </field>
+        </record>
+
+        <record id="action_sat_country_zip_codes" model="ir.actions.act_window">
+            <field name="name">Codigos Postales</field>
+            <field name="res_model">res.country.zip.sat.code</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="res_country_zip_sat_code_tree"/>
+        </record>
+
+
+
+    <!-- Colonias -->
+
+        <record id="res_colonia_zip_sat_code_tree" model="ir.ui.view">
+            <field name="name">res.colonia.zip.sat.code.tree</field>
+            <field name="model">res.colonia.zip.sat.code</field>
+            <field name="arch" type="xml">
+                <tree string="Listado Colonias SAT" editable="bottom">
+                    <field name="code"  required="1"/>
+                    <field name="name"  required="1"/>
+                    <field name="zip_sat_code"  required="1"/>
+                </tree>
+            </field>
+        </record>
+
+            
+        <!--
+        <record id="res_colonia_zip_sat_code_form" model="ir.ui.view">
+            <field name="name">res.colonia.zip.sat.code.form</field>
+            <field name="model">res.colonia.zip.sat.code</field>
+            <field name="arch" type="xml">
+                <form string="Listado Colonias SAT">
+                    <sheet>
+                        <group>
+                            <field name="code"  required="1"/>
+                            <field name="zip_sat_code"  required="1"/>
+                            <field name="name"  required="1"/>
+                        </group>
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+        -->
+
+        <record id="res_colonia_zip_sat_code_search" model="ir.ui.view">
+            <field name="name">res.colonia.zip.sat.code.serch</field>
+            <field name="model">res.colonia.zip.sat.code</field>
+            <field name="arch" type="xml">
+                <search string="Busqueda Colonias SAT">
+                    <field name="name" filter_domain="['|', '|', ('code','ilike',self),('name','ilike',self),('zip_sat_code','ilike',self)]" string="Colonias ..."/>
+                    <!--<field name="code" />
+                    <field name="zip_sat_code" />
+                    <field name="name" />-->
+                </search>
+            </field>
+        </record>
+
+
+        <record id="action_sat_colonia_zip_codes" model="ir.actions.act_window">
+            <field name="name">Colonias</field>
+            <field name="res_model">res.colonia.zip.sat.code</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="res_colonia_zip_sat_code_tree"/>
+        </record>
+
+     <!-- LOCALIDADES --> 
+    
+        <record id="res_country_locality_sat_code_tree" model="ir.ui.view">
+            <field name="name">res.country.locality.sat.code.tree</field>
+            <field name="model">res.country.locality.sat.code</field>
+            <field name="arch" type="xml">
+                <tree string="Listado Codigos Localidades SAT" editable="bottom">
+                    <field name="code"  required="1"/>
+                    <field name="name"  required="1"/>
+                    <field name="state_sat_code" options="{'no_open': True, 'no_create': True}"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--
+        <record id="res_country_locality_sat_code_form" model="ir.ui.view">
+            <field name="name">res.country.locality.sat.code.form</field>
+            <field name="model">res.country.locality.sat.code</field>
+            <field name="arch" type="xml">
+                <form string="Codigos Localidades SAT">
+                    <sheet>
+                        <group>
+                            <field name="code"  required="1"/>
+                            <field name="name"  required="1"/>
+                            <field name="state_sat_code" required="1" />
+                        </group>
+                    </sheet>
+                   
+                </form>
+            </field>
+        </record>
+        -->
+        <record id="res_country_locality_sat_code_search" model="ir.ui.view">
+            <field name="name">res.country.locality.sat.code.serch</field>
+            <field name="model">res.country.locality.sat.code</field>
+            <field name="arch" type="xml">
+                <search string="Busqueda Codigos Localidades SAT">
+                    <field name="name" filter_domain="['|', '|', ('code','ilike',self),('name','ilike',self),('state_sat_code','ilike',self)]" string="Localidades ..."/>
+                    <field name="code" />
+                    <field name="name" />
+                    <field name="state_sat_code" />
+                </search>
+            </field>
+        </record>
+
+        <record id="action_sat_country_locality_codes" model="ir.actions.act_window">
+            <field name="name">Codigos Localidades</field>
+            
+            <field name="res_model">res.country.locality.sat.code</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="res_country_locality_sat_code_tree"/>
+        </record>
+
+
+     <!-- MUNICIPIOS --> 
+    
+        <record id="res_country_township_sat_code_tree" model="ir.ui.view">
+            <field name="name">res.country.township.sat.code.tree</field>
+            <field name="model">res.country.township.sat.code</field>
+            <field name="arch" type="xml">
+                <tree string="Listado Codigos Municipios SAT" editable="bottom">
+                    <field name="code"  required="1"/>
+                    <field name="name"  required="1"/>
+                    <field name="state_sat_code" options="{'no_open': True, 'no_create': True}"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--
+        <record id="res_country_township_sat_code_form" model="ir.ui.view">
+            <field name="name">res.country.township.sat.code.form</field>
+            <field name="model">res.country.township.sat.code</field>
+            <field name="arch" type="xml">
+                <form string="Codigos Municipios SAT">
+                    <sheet>
+                        <group>
+                            <field name="code"  required="1"/>
+                            <field name="name"  required="1"/>
+                            <field name="state_sat_code" required="1" />
+                        </group>
+                    </sheet>
+                   
+                </form>
+            </field>
+        </record>
+        -->
+
+        <record id="res_country_township_sat_code_search" model="ir.ui.view">
+            <field name="name">res.country.township.sat.code.serch</field>
+            <field name="model">res.country.township.sat.code</field>
+            <field name="arch" type="xml">
+                <search string="Busqueda Codigos Municipios SAT">
+                    <field name="name" filter_domain="['|', '|', ('code','ilike',self),('name','ilike',self),('state_sat_code','ilike',self)]" string="Municipios ..."/>
+                    <field name="code" />
+                    <field name="name" />
+                    <field name="state_sat_code" />
+                </search>
+            </field>
+        </record>
+
+        <record id="action_sat_country_township_codes" model="ir.actions.act_window">
+            <field name="name">Codigos Municipios</field>
+            <field name="res_model">res.country.township.sat.code</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="res_country_township_sat_code_tree"/>
+        </record>
+
+
+
+    </data>
+</odoo>

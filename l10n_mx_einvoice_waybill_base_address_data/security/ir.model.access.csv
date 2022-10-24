@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+res_colonia_zip_sat_code_access,res.colonia.zip.sat.code,model_res_colonia_zip_sat_code,,1,1,1,1
+res_country_locality_sat_code_access,res.country.locality.sat.code,model_res_country_locality_sat_code,,1,1,1,1
+res_country_township_sat_code_access,res.country.township.sat.code,model_res_country_township_sat_code,,1,1,1,1
+res_country_zip_sat_code_access,res.country.zip.sat.code,model_res_country_zip_sat_code,,1,1,1,1

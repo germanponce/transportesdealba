@@ -1,0 +1,665 @@
+id,code,state_sat_code/id,name
+Locality_01,01,base.state_mx_ags,Aguascalientes
+Locality_02,01,base.state_mx_bc,Ensenada
+Locality_03,01,base.state_mx_bcs,Ciudad Constitución
+Locality_04,01,base.state_mx_camp,San Francisco de Campeche
+Locality_05,01,base.state_mx_coah,Ciudad Acuña
+Locality_06,01,base.state_mx_col,Colima
+Locality_07,01,base.state_mx_chih,Santa Rosalía de Camargo
+Locality_08,01,base.state_mx_chis,Comitán de Domínguez
+Locality_09,01,base.state_mx_df,Ciudad de México
+Locality_10,01,base.state_mx_dgo,Victoria de Durango
+Locality_11,01,base.state_mx_gro,Acapulco de Juárez
+Locality_12,01,base.state_mx_gto,Acámbaro
+Locality_13,01,base.state_mx_hgo,Actopan
+Locality_14,01,base.state_mx_jal,Ameca
+Locality_15,01,base.state_mx_mex,Ciudad Adolfo López Mateos
+Locality_16,01,base.state_mx_mich,Apatzingán de la Constitución
+Locality_17,01,base.state_mx_mor,Cuautla (Cuautla de Morelos)
+Locality_18,01,base.state_mx_nay,Santiago Ixcuintla
+Locality_19,01,base.state_mx_nl,Ciudad Apodaca
+Locality_20,01,base.state_mx_oax,Juchitán (Juchitán de Zaragoza)
+Locality_21,01,base.state_mx_pue,Atlixco
+Locality_22,01,base.state_mx_qro,Querétaro
+Locality_23,01,base.state_mx_q_roo,Cancún
+Locality_24,01,base.state_mx_sin,Los Mochis
+Locality_25,01,base.state_mx_slp,Ciudad Valles
+Locality_26,01,base.state_mx_son,San Luis Río Colorado
+Locality_27,01,base.state_mx_tab,Cárdenas
+Locality_28,01,base.state_mx_tamps,Altamira
+Locality_29,01,base.state_mx_tlax,Apizaco
+Locality_30,01,base.state_mx_ver,Acayucan
+Locality_31,01,base.state_mx_yuc,Mérida
+Locality_32,01,base.state_mx_zac,Fresnillo
+Locality_33,02,base.state_mx_ags,Calvillo
+Locality_34,02,base.state_mx_bc,Mexicali
+Locality_35,02,base.state_mx_bcs,La Paz
+Locality_36,02,base.state_mx_camp,Ciudad del Carmen
+Locality_37,02,base.state_mx_coah,Frontera
+Locality_38,02,base.state_mx_col,Manzanillo
+Locality_39,02,base.state_mx_chih,Chihuahua
+Locality_40,02,base.state_mx_chis,San Cristóbal de las Casas
+Locality_41,02,base.state_mx_df,Ciudad de México
+Locality_42,02,base.state_mx_dgo,Gómez Palacio
+Locality_43,02,base.state_mx_gro,Chilpancingo de los Bravo
+Locality_44,02,base.state_mx_gto,San miguel de Allende
+Locality_45,02,base.state_mx_hgo,Apan
+Locality_46,02,base.state_mx_jal,Ciudad Guzmán
+Locality_47,02,base.state_mx_mex,Chimalhuacán
+Locality_48,02,base.state_mx_mich,Los Reyes de Salgado
+Locality_49,02,base.state_mx_mor,Cuernavaca
+Locality_50,02,base.state_mx_nay,Tepic
+Locality_51,02,base.state_mx_nl,San Pedro Garza García
+Locality_52,02,base.state_mx_oax,Oaxaca de Juárez
+Locality_53,02,base.state_mx_pue,Izúcar de Matamoros
+Locality_54,02,base.state_mx_qro,San Juan del Rio
+Locality_55,02,base.state_mx_q_roo,Cozumel
+Locality_56,02,base.state_mx_sin,Culiacán Rosales
+Locality_57,02,base.state_mx_slp,Ébano
+Locality_58,02,base.state_mx_son,Agua Prieta
+Locality_59,02,base.state_mx_tab,Villahermosa
+Locality_60,02,base.state_mx_tamps,Ciudad Camargo
+Locality_61,02,base.state_mx_tlax,Villa Vicente Guerrero
+Locality_62,02,base.state_mx_ver,Naranjos
+Locality_63,02,base.state_mx_yuc,Tizimín
+Locality_64,02,base.state_mx_zac,Jerez de García Salinas
+Locality_65,03,base.state_mx_ags,San Francisco de los Romo
+Locality_66,03,base.state_mx_bc,Tecate
+Locality_67,03,base.state_mx_bcs,Cabo San Lucas
+Locality_68,03,base.state_mx_camp,Calkini
+Locality_69,03,base.state_mx_coah,Matamoros
+Locality_70,03,base.state_mx_col,Tecoman
+Locality_71,03,base.state_mx_chih,Cuauhtémoc
+Locality_72,03,base.state_mx_chis,Tapachula de Córdova y Ordóñez
+Locality_73,03,base.state_mx_df,Ciudad de México
+Locality_74,03,base.state_mx_dgo,Ciudad Lerdo
+Locality_75,03,base.state_mx_gro,Iguala de la Independencia
+Locality_76,03,base.state_mx_gto,Celaya
+Locality_77,03,base.state_mx_hgo,Pachuca de Soto
+Locality_78,03,base.state_mx_jal,Guadalajara
+Locality_79,03,base.state_mx_mex,Coacalco de Berriozabal
+Locality_80,03,base.state_mx_mich,Ciudad Hidalgo
+Locality_81,03,base.state_mx_mor,Galeana
+Locality_82,03,base.state_mx_nay,Tuxpan
+Locality_83,03,base.state_mx_nl,Ciudad General Escobedo
+Locality_84,03,base.state_mx_oax,Salina Cruz
+Locality_85,03,base.state_mx_pue,Puebla (Heroica Puebla)
+Locality_86,03,base.state_mx_q_roo,Felipe Carrillo Puerto
+Locality_87,03,base.state_mx_sin,Escuinapa de Hidalgo
+Locality_88,03,base.state_mx_slp,Matehuala
+Locality_89,03,base.state_mx_son,Heroica Caborca
+Locality_90,03,base.state_mx_tab,Comalcalco
+Locality_91,03,base.state_mx_tamps,Ciudad Madero
+Locality_92,03,base.state_mx_tlax,Tlaxcala (Tlaxcala de Xicotencatl)
+Locality_93,03,base.state_mx_ver,Boca del RÍo
+Locality_94,03,base.state_mx_yuc,Ticul
+Locality_95,03,base.state_mx_zac,Zacatecas
+Locality_96,04,base.state_mx_ags,Jesús María
+Locality_97,04,base.state_mx_bc,Tijuana
+Locality_98,04,base.state_mx_bcs,San José del Cabo
+Locality_99,04,base.state_mx_camp,Candelaria
+Locality_100,04,base.state_mx_coah,Monclova
+Locality_101,04,base.state_mx_col,Ciudad de Villa de Álvarez
+Locality_102,04,base.state_mx_chih,Delicias
+Locality_103,04,base.state_mx_chis,Tuxtla Gutiérrez
+Locality_104,04,base.state_mx_df,Ciudad de México
+Locality_105,04,base.state_mx_dgo,Santiago Papasquiaro
+Locality_106,04,base.state_mx_gro,Taxco de Alarcón
+Locality_107,04,base.state_mx_gto,Cortazar
+Locality_108,04,base.state_mx_hgo,Cd. de Fray Bernardino de Sahagún
+Locality_109,04,base.state_mx_jal,Lagos de Moreno
+Locality_110,04,base.state_mx_mex,Cuautitlán Izcalli
+Locality_111,04,base.state_mx_mich,Jacona de Plancarte
+Locality_112,04,base.state_mx_mor,Jojutla
+Locality_113,04,base.state_mx_nay,Acaponeta
+Locality_114,04,base.state_mx_nl,Guadalupe
+Locality_115,04,base.state_mx_oax,San Juan Bautista Tuxtepec
+Locality_116,04,base.state_mx_pue,San Martín Texmelucan de Labastida
+Locality_117,04,base.state_mx_qro,El Pueblito
+Locality_118,04,base.state_mx_q_roo,Chetumal
+Locality_119,04,base.state_mx_sin,Guasave
+Locality_120,04,base.state_mx_slp,Rioverde
+Locality_121,04,base.state_mx_son,Ciudad Obregón
+Locality_122,04,base.state_mx_tab,Emiliano Zapata
+Locality_123,04,base.state_mx_tamps,Ciudad Mante
+Locality_124,04,base.state_mx_tlax,Huamantla
+Locality_125,04,base.state_mx_ver,Coatepec
+Locality_126,04,base.state_mx_yuc,Motul de Carrillo Puerto
+Locality_127,04,base.state_mx_zac,Guadalupe
+Locality_128,05,base.state_mx_ags,Pabellón de Arteaga
+Locality_129,05,base.state_mx_bc,Playas de Rosarito
+Locality_130,05,base.state_mx_bcs,Loreto
+Locality_131,05,base.state_mx_camp,Escárcega
+Locality_132,05,base.state_mx_coah,Parras de la Fuente
+Locality_133,05,base.state_mx_col,Ciudad de Armería
+Locality_134,05,base.state_mx_chih,Hidalgo del Parral
+Locality_135,05,base.state_mx_chis,Venustiano Carranza
+Locality_136,05,base.state_mx_df,Ciudad de México
+Locality_137,05,base.state_mx_dgo,Canatlán
+Locality_138,05,base.state_mx_gro,Arcelia
+Locality_139,05,base.state_mx_gto,Guanajuato
+Locality_140,05,base.state_mx_hgo,Tula de Allende
+Locality_141,05,base.state_mx_jal,Ocotlán
+Locality_142,05,base.state_mx_mex,Ecatepec de Morelos
+Locality_143,05,base.state_mx_mich,La piedad de Cabadas
+Locality_144,05,base.state_mx_mor,Puente de Ixtla
+Locality_145,05,base.state_mx_nay,Tecuala
+Locality_146,05,base.state_mx_nl,Linares
+Locality_147,05,base.state_mx_oax,Matías Romero Avendaño
+Locality_148,05,base.state_mx_pue,Tehuacan
+Locality_149,05,base.state_mx_q_roo,Playa del Carmen
+Locality_150,05,base.state_mx_sin,Mazatlán
+Locality_151,05,base.state_mx_slp,San Luis Potosí
+Locality_152,05,base.state_mx_son,Empalme
+Locality_153,05,base.state_mx_tab,Jalpa de Méndez
+Locality_154,05,base.state_mx_tamps,Heroica Matamoros
+Locality_155,05,base.state_mx_tlax,Calpulalpan
+Locality_156,05,base.state_mx_ver,Agua dulce
+Locality_157,05,base.state_mx_yuc,Valladolid
+Locality_158,05,base.state_mx_zac,Río Grande
+Locality_159,06,base.state_mx_ags,Rincón de Romos
+Locality_160,06,base.state_mx_bc,Rodolfo Sánchez T. (Maneadero)
+Locality_161,06,base.state_mx_bcs,Puerto Adolfo López Mateos
+Locality_162,06,base.state_mx_camp,Sabancuy
+Locality_163,06,base.state_mx_coah,Piedras Negras
+Locality_164,06,base.state_mx_chih,Juárez
+Locality_165,06,base.state_mx_chis,Jiquipilas
+Locality_166,06,base.state_mx_df,Ciudad de México
+Locality_167,06,base.state_mx_dgo,San Juan del Río del Centauro del Norte
+Locality_168,06,base.state_mx_gro,Ayutla de los Libres
+Locality_169,06,base.state_mx_gto,Irapuato
+Locality_170,06,base.state_mx_hgo,Tulancingo
+Locality_171,06,base.state_mx_jal,Puerto Vallarta
+Locality_172,06,base.state_mx_mex,Huixquilucan de Degollado
+Locality_173,06,base.state_mx_mich,Morelia
+Locality_174,06,base.state_mx_mor,Santa Rosa Treinta
+Locality_175,06,base.state_mx_nay,Compostela
+Locality_176,06,base.state_mx_nl,Montemorelos
+Locality_177,06,base.state_mx_oax,Heroica Ciudad de Huajuapan de León
+Locality_178,06,base.state_mx_pue,Teziutlan
+Locality_179,06,base.state_mx_q_roo,Kantunilkín
+Locality_180,06,base.state_mx_sin,Guamúchil
+Locality_181,06,base.state_mx_slp,Soledad de Graciano Sánchez
+Locality_182,06,base.state_mx_son,Heroica Guaymas
+Locality_183,06,base.state_mx_tamps,Nuevo Laredo
+Locality_184,06,base.state_mx_tlax,Chiautempan
+Locality_185,06,base.state_mx_ver,Coatzacoalcos
+Locality_186,06,base.state_mx_yuc,Kanasín
+Locality_187,06,base.state_mx_zac,Ciudad Cuauhtémoc
+Locality_188,07,base.state_mx_ags,Asientos
+Locality_189,07,base.state_mx_bc,San Felipe
+Locality_190,07,base.state_mx_bcs,Todos Santos
+Locality_191,07,base.state_mx_camp,Hopelchén
+Locality_192,07,base.state_mx_coah,Sabinas
+Locality_193,07,base.state_mx_chih,Nuevo Casas Grandes
+Locality_194,07,base.state_mx_chis,Villaflores
+Locality_195,07,base.state_mx_df,Ciudad de México
+Locality_196,07,base.state_mx_dgo,Peñón Blanco
+Locality_197,07,base.state_mx_gro,Atoyac de Álvarez
+Locality_198,07,base.state_mx_gto,León de los Aldama
+Locality_199,07,base.state_mx_hgo,Zimapan
+Locality_200,07,base.state_mx_jal,San Juan de los Lagos
+Locality_201,07,base.state_mx_mex,Los Reyes Acaquilpan (La Paz)
+Locality_202,07,base.state_mx_mich,Pátzcuaro
+Locality_203,07,base.state_mx_mor,Zacatepec de Hidalgo
+Locality_204,07,base.state_mx_nay,Francisco I. Madero (Puga)
+Locality_205,07,base.state_mx_nl,Monterrey
+Locality_206,07,base.state_mx_oax,Loma Bonita
+Locality_207,07,base.state_mx_pue,San Andrés Cholula
+Locality_208,07,base.state_mx_q_roo,Isla Mujeres
+Locality_209,07,base.state_mx_sin,Navolato
+Locality_210,07,base.state_mx_slp,Charcas
+Locality_211,07,base.state_mx_son,Hermosillo
+Locality_212,07,base.state_mx_tab,Macuspana
+Locality_213,07,base.state_mx_tamps,Reynosa
+Locality_214,07,base.state_mx_ver,Córdoba
+Locality_215,07,base.state_mx_zac,Ojocaliente
+Locality_216,08,base.state_mx_ags,Tepezalá
+Locality_217,08,base.state_mx_bcs,Heroica Mulegé
+Locality_218,08,base.state_mx_camp,Champotón
+Locality_219,08,base.state_mx_coah,Saltillo
+Locality_220,08,base.state_mx_chis,Las Margaritas
+Locality_221,08,base.state_mx_df,Ciudad de México
+Locality_222,08,base.state_mx_dgo,Francisco I. Madero
+Locality_223,08,base.state_mx_gto,Moroleón
+Locality_224,08,base.state_mx_hgo,Huejutla de Reyes
+Locality_225,08,base.state_mx_jal,Tepatitlán de Morelos
+Locality_226,08,base.state_mx_mex,Metepec
+Locality_227,08,base.state_mx_mich,Sahuayo de Morelos
+Locality_228,08,base.state_mx_mor,Tlaquiltenango
+Locality_229,08,base.state_mx_nay,Villa Hidalgo (El Nuevo)
+Locality_230,08,base.state_mx_nl,Ciudad Sabinas Hidalgo
+Locality_231,08,base.state_mx_oax,Puerto Escondido
+Locality_232,08,base.state_mx_pue,San Pedro Cholula
+Locality_233,08,base.state_mx_q_roo,Bacalar
+Locality_234,08,base.state_mx_sin,Quila
+Locality_235,08,base.state_mx_slp,Salinas de Hidalgo
+Locality_236,08,base.state_mx_son,Huatabampo
+Locality_237,08,base.state_mx_tab,Tenosique de Pino Suárez
+Locality_238,08,base.state_mx_tamps,Ciudad Río Bravo
+Locality_239,08,base.state_mx_ver,Tres Valles
+Locality_240,08,base.state_mx_zac,Villa Hidalgo
+Locality_241,09,base.state_mx_ags,Cosío
+Locality_242,09,base.state_mx_bcs,Villa Alberto Andrés Alvarado Arámburo
+Locality_243,09,base.state_mx_camp,Hecelchakán
+Locality_244,09,base.state_mx_coah,Nueva Rosita
+Locality_245,09,base.state_mx_chih,Madera
+Locality_246,09,base.state_mx_chis,Arriaga
+Locality_247,09,base.state_mx_df,Ciudad de México
+Locality_248,09,base.state_mx_dgo,Nombre de Dios
+Locality_249,09,base.state_mx_gro,San Jerónimo de Juárez
+Locality_250,09,base.state_mx_gto,Salamanca
+Locality_251,09,base.state_mx_hgo,Tlaxcoapan
+Locality_252,09,base.state_mx_jal,Tlaquepaque
+Locality_253,09,base.state_mx_mex,Naucalpan de Juárez
+Locality_254,09,base.state_mx_mich,Uruapan
+Locality_255,09,base.state_mx_nay,Ruiz
+Locality_256,09,base.state_mx_nl,San Nicolás de los Garza
+Locality_257,09,base.state_mx_oax,Río Grande o Piedra Parada
+Locality_258,09,base.state_mx_pue,Huauchinango
+Locality_259,09,base.state_mx_sin,Ahome
+Locality_260,09,base.state_mx_slp,Cárdenas
+Locality_261,09,base.state_mx_son,Navojoa
+Locality_262,09,base.state_mx_tab,Teapa
+Locality_263,09,base.state_mx_tamps,San Fernando
+Locality_264,09,base.state_mx_ver,Jáltipan de Morelos
+Locality_265,09,base.state_mx_zac,Villanueva
+Locality_266,10,base.state_mx_bcs,San Ignacio
+Locality_267,10,base.state_mx_coah,San Pedro
+Locality_268,10,base.state_mx_chih,Colonia Anáhuac
+Locality_269,10,base.state_mx_chis,Palenque
+Locality_270,10,base.state_mx_df,Ciudad de México
+Locality_271,10,base.state_mx_dgo,Vicente Guerrero
+Locality_272,10,base.state_mx_gro,Ciudad Apaxtla de Castrejón
+Locality_273,10,base.state_mx_gto,San Francisco del Rincón
+Locality_274,10,base.state_mx_hgo,Tizayuca
+Locality_275,10,base.state_mx_jal,Zapopan
+Locality_276,10,base.state_mx_mex,Ciudad Nezahualcoyotl
+Locality_277,10,base.state_mx_mich,Zacapu
+Locality_278,10,base.state_mx_nay,San Blas
+Locality_279,10,base.state_mx_nl,Ciudad Santa Catarina
+Locality_280,10,base.state_mx_pue,Acatlán de Osorio
+Locality_281,10,base.state_mx_sin,Higuera de Zaragoza
+Locality_282,10,base.state_mx_slp,Cerritos
+Locality_283,10,base.state_mx_son,Heroica Nogales
+Locality_284,10,base.state_mx_tab,Paraíso
+Locality_285,10,base.state_mx_tamps,Tampico
+Locality_286,10,base.state_mx_ver,Xalapa-Enríquez
+Locality_287,10,base.state_mx_zac,Villa de Cos
+Locality_288,11,base.state_mx_bcs,Guerrero Negro
+Locality_289,11,base.state_mx_camp,Pomuch
+Locality_290,11,base.state_mx_coah,Torreón
+Locality_291,11,base.state_mx_chih,Juan Aldama
+Locality_292,11,base.state_mx_chis,Ocosingo
+Locality_293,11,base.state_mx_df,Ciudad de México
+Locality_294,11,base.state_mx_dgo,El Salto
+Locality_295,11,base.state_mx_gro,Ciudad Altamirano
+Locality_296,11,base.state_mx_gto,Silao
+Locality_297,11,base.state_mx_hgo,Santiago Tulantepec
+Locality_298,11,base.state_mx_jal,Tlajomulco de Zúñiga
+Locality_299,11,base.state_mx_mex,Villa Nicolás Romero
+Locality_300,11,base.state_mx_mich,Zamora de Hidalgo
+Locality_301,11,base.state_mx_nay,Ixtlán del Río
+Locality_302,11,base.state_mx_nl,Doctor Arroyo
+Locality_303,11,base.state_mx_oax,Santiago Suchilquitongo
+Locality_304,11,base.state_mx_pue,Cuautlancingo
+Locality_305,11,base.state_mx_sin,Choix
+Locality_306,11,base.state_mx_slp,Tamuin
+Locality_307,11,base.state_mx_son,Puerto Peñasco
+Locality_308,11,base.state_mx_tab,Frontera
+Locality_309,11,base.state_mx_tamps,Ciudad Victoria
+Locality_310,11,base.state_mx_ver,Minatitlán
+Locality_311,11,base.state_mx_zac,Nochistlán de Mejía
+Locality_312,12,base.state_mx_bcs,Santa Rosalía
+Locality_313,12,base.state_mx_coah,Castaños
+Locality_314,12,base.state_mx_chih,José Mariano Jiménez
+Locality_315,12,base.state_mx_chis,Tonalá
+Locality_316,12,base.state_mx_df,Ciudad de México
+Locality_317,12,base.state_mx_dgo,Santa María del Oro
+Locality_318,12,base.state_mx_gro,Buenavista de Cuellar
+Locality_319,12,base.state_mx_gto,Jerécuaro
+Locality_320,12,base.state_mx_hgo,Ixmiquilpan
+Locality_321,12,base.state_mx_jal,Tonalá
+Locality_322,12,base.state_mx_mex,Tecamac de Felipe Villanueva
+Locality_323,12,base.state_mx_mich,Heroica Zitácuaro
+Locality_324,12,base.state_mx_nay,Bucerías
+Locality_325,12,base.state_mx_nl,Ciénega de Flores
+Locality_326,12,base.state_mx_oax,San Felipe Jalapa de Díaz
+Locality_327,12,base.state_mx_pue,Tepeaca
+Locality_328,12,base.state_mx_sin,Villa Unión
+Locality_329,12,base.state_mx_slp,Tamasopo
+Locality_330,12,base.state_mx_son,Heroica Ciudad de Cananea
+Locality_331,12,base.state_mx_tab,Cunduacán
+Locality_332,12,base.state_mx_tamps,González
+Locality_333,12,base.state_mx_ver,Orizaba
+Locality_334,12,base.state_mx_zac,Víctor Rosales
+Locality_335,13,base.state_mx_coah,Francisco I. Madero (Chávez)
+Locality_336,13,base.state_mx_chih,Manuel Ojinaga
+Locality_337,13,base.state_mx_chis,Mapastepec
+Locality_338,13,base.state_mx_df,Ciudad de México
+Locality_339,13,base.state_mx_gro,Cutzamala de Pinzón
+Locality_340,13,base.state_mx_gto,Santiago Maravatío
+Locality_341,13,base.state_mx_hgo,Tepeji del Rio
+Locality_342,13,base.state_mx_jal,Tuxpan
+Locality_343,13,base.state_mx_mex,Tepotzotlán
+Locality_344,13,base.state_mx_mich,Paracho de Verduzco
+Locality_345,13,base.state_mx_nay,Las Varas
+Locality_346,13,base.state_mx_nl,Hualahuises
+Locality_347,13,base.state_mx_oax,Bahias de Huatulco
+Locality_348,13,base.state_mx_pue,Tecamachalco
+Locality_349,13,base.state_mx_sin,Sinaloa de Leyva
+Locality_350,13,base.state_mx_slp,Ciudad del Maíz
+Locality_351,13,base.state_mx_son,Sonoita
+Locality_352,13,base.state_mx_tab,Huimanguillo
+Locality_353,13,base.state_mx_tamps,Jaumave
+Locality_354,13,base.state_mx_ver,Papantla de Olarte
+Locality_355,13,base.state_mx_zac,Valparaíso
+Locality_356,14,base.state_mx_coah,Cuatro Ciénegas de Carranza
+Locality_357,14,base.state_mx_chih,Bachíniva
+Locality_358,14,base.state_mx_chis,Las Rosas
+Locality_359,14,base.state_mx_df,Ciudad de México
+Locality_360,14,base.state_mx_gro,Coyuca de Catalán
+Locality_361,14,base.state_mx_gto,Romita
+Locality_362,14,base.state_mx_hgo,Cruz Azul
+Locality_363,14,base.state_mx_jal,Tototlán
+Locality_364,14,base.state_mx_mex,Tlalnepantla de Baz
+Locality_365,14,base.state_mx_mich,Tangancícuaro de Arista
+Locality_366,14,base.state_mx_nay,Xalisco
+Locality_367,14,base.state_mx_oax,Putla Villa de Guerrero
+Locality_368,14,base.state_mx_pue,Zacatlán
+Locality_369,14,base.state_mx_sin,Mocorito
+Locality_370,14,base.state_mx_slp,Cedral
+Locality_371,14,base.state_mx_son,Magdalena de Kino
+Locality_372,14,base.state_mx_tamps,Ciudad Gustavo Díaz Ordaz
+Locality_373,14,base.state_mx_ver,Poza Rica de Hidalgo
+Locality_374,14,base.state_mx_zac,Luis Moya
+Locality_375,15,base.state_mx_coah,Nadadores
+Locality_376,15,base.state_mx_chih,Saucillo
+Locality_377,15,base.state_mx_chis,Chiapa de Corzo
+Locality_378,15,base.state_mx_df,Ciudad de México
+Locality_379,15,base.state_mx_gro,Tierra Colorada
+Locality_380,15,base.state_mx_gto,Tarandacuao
+Locality_381,15,base.state_mx_hgo,Tepeapulco
+Locality_382,15,base.state_mx_jal,San Diego de Alejandría
+Locality_383,15,base.state_mx_mex,Santa Maria Tultepec
+Locality_384,15,base.state_mx_mich,Maravatío de Ocampo
+Locality_385,15,base.state_mx_nay,San pedro Lagunillas
+Locality_386,15,base.state_mx_nl,Cadereyta Jiménez
+Locality_387,15,base.state_mx_oax,Cosolapa
+Locality_388,15,base.state_mx_pue,Xicotepec
+Locality_389,15,base.state_mx_sin,Angostura
+Locality_390,15,base.state_mx_slp,Tierra Nueva
+Locality_391,15,base.state_mx_tamps,Estación Manuel (Úrsulo Galván)
+Locality_392,15,base.state_mx_ver,San Andrés Tuxtla
+Locality_393,15,base.state_mx_zac,Moyahua de Estrada
+Locality_394,16,base.state_mx_coah,Ramos Arizpe
+Locality_395,16,base.state_mx_chis,Cacahoatán
+Locality_396,16,base.state_mx_df,Ciudad de México
+Locality_397,16,base.state_mx_gro,Coyuca de Benítez
+Locality_398,16,base.state_mx_gto,Huanímaro
+Locality_399,16,base.state_mx_jal,La Resolana
+Locality_400,16,base.state_mx_mex,Tultitlán de Mariano Escobedo
+Locality_401,16,base.state_mx_mich,Zinapécuaro de Figueroa
+Locality_402,16,base.state_mx_nay,La peñita de Jaltemba
+Locality_403,16,base.state_mx_oax,Tlacolula de Matamoros
+Locality_404,16,base.state_mx_pue,Ciudad Serdán
+Locality_405,16,base.state_mx_sin,San Blas
+Locality_406,16,base.state_mx_slp,Villa de Reyes
+Locality_407,16,base.state_mx_tamps,Xicoténcatl
+Locality_408,16,base.state_mx_ver,Túxpam de Rodríguez Cano
+Locality_409,16,base.state_mx_zac,Sombrerete
+Locality_410,17,base.state_mx_coah,Nava
+Locality_411,17,base.state_mx_chis,Ocozocoautla de Espinosa
+Locality_412,17,base.state_mx_gro,Olinalá
+Locality_413,17,base.state_mx_gto,Comonfort
+Locality_414,17,base.state_mx_jal,Atotonilco el Alto
+Locality_415,17,base.state_mx_mex,Cuautitlán
+Locality_416,17,base.state_mx_mich,Puruándiro
+Locality_417,17,base.state_mx_nay,Jala
+Locality_418,17,base.state_mx_nl,Santiago
+Locality_419,17,base.state_mx_oax,San Pablo Villa de Mitla
+Locality_420,17,base.state_mx_pue,Amozoc
+Locality_421,17,base.state_mx_sin,La Cruz
+Locality_422,17,base.state_mx_slp,Fracción el Refugio
+Locality_423,17,base.state_mx_tamps,Ciudad Miguel Alemán
+Locality_424,17,base.state_mx_ver,Veracruz
+Locality_425,17,base.state_mx_zac,Jalpa
+Locality_426,18,base.state_mx_coah,Zaragoza
+Locality_427,18,base.state_mx_chis,Cintalapa de Figueroa
+Locality_428,18,base.state_mx_gro,Marquelia
+Locality_429,18,base.state_mx_gto,Uriangato
+Locality_430,18,base.state_mx_jal,Jalostotitlán
+Locality_431,18,base.state_mx_mex,Ixtapaluca
+Locality_432,18,base.state_mx_mich,Yurécuaro
+Locality_433,18,base.state_mx_nay,Ahuacatlán
+Locality_434,18,base.state_mx_nl,El cercado
+Locality_435,18,base.state_mx_oax,Natividad
+Locality_436,18,base.state_mx_sin,El rosario
+Locality_437,18,base.state_mx_slp,Tamazunchale
+Locality_438,18,base.state_mx_tamps,Soto la Marina
+Locality_439,18,base.state_mx_ver,Tierra Blanca
+Locality_440,18,base.state_mx_zac,Loreto
+Locality_441,19,base.state_mx_coah,San Buenaventura
+Locality_442,19,base.state_mx_chis,Pichucalco
+Locality_443,19,base.state_mx_gro,Zumpango del Río
+Locality_444,19,base.state_mx_gto,Pénjamo
+Locality_445,19,base.state_mx_jal,Poncitlán
+Locality_446,19,base.state_mx_mex,Texcoco de Mora
+Locality_447,19,base.state_mx_mich,Huetamo de Núñez
+Locality_448,19,base.state_mx_oax,Teotitlán de Flores Magón
+Locality_449,19,base.state_mx_sin,Estación Naranjo
+Locality_450,19,base.state_mx_slp,Santa María del Río
+Locality_451,19,base.state_mx_tamps,Ciudad Tula
+Locality_452,19,base.state_mx_ver,Cosamaloapan
+Locality_453,19,base.state_mx_zac,Juan Aldama
+Locality_454,20,base.state_mx_coah,Ciudad Melchor Múzquiz
+Locality_455,20,base.state_mx_chis,Puerto Madero (San Benito)
+Locality_456,20,base.state_mx_gro,San Luis de la Loma
+Locality_457,20,base.state_mx_gto,Cuerámaro
+Locality_458,20,base.state_mx_jal,Arandas
+Locality_459,20,base.state_mx_mex,Toluca de Lerdo
+Locality_460,20,base.state_mx_mich,Tacámbaro de Codallos
+Locality_461,20,base.state_mx_nl,Anáhuac
+Locality_462,20,base.state_mx_oax,Santa María Huatulco
+Locality_463,20,base.state_mx_sin,Aguaruto
+Locality_464,20,base.state_mx_slp,El Naranjo
+Locality_465,20,base.state_mx_tamps,Nueva Ciudad Guerrero
+Locality_466,20,base.state_mx_ver,Carlos A. Carrillo
+Locality_467,21,base.state_mx_coah,Viesca
+Locality_468,21,base.state_mx_chis,Pijijiapan
+Locality_469,21,base.state_mx_gro,Petatlán
+Locality_470,21,base.state_mx_gto,Empalme Escobedo (Escobedo)
+Locality_471,21,base.state_mx_jal,Talpa de Allende
+Locality_472,21,base.state_mx_mex,Valle de Chalco Solidaridad
+Locality_473,21,base.state_mx_mich,Ciudad Lázaro Cárdenas
+Locality_474,21,base.state_mx_nl,García
+Locality_475,21,base.state_mx_oax,San Juan Bautista Cuicatlán
+Locality_476,21,base.state_mx_sin,Cosalá
+Locality_477,21,base.state_mx_tamps,Valle Hermoso
+Locality_478,21,base.state_mx_ver,Pánuco
+Locality_479,22,base.state_mx_coah,Morelos
+Locality_480,22,base.state_mx_chis,Reforma
+Locality_481,22,base.state_mx_gro,La Unión
+Locality_482,22,base.state_mx_gto,San Luis de la Paz
+Locality_483,22,base.state_mx_jal,Etzatlán
+Locality_484,22,base.state_mx_mex,Tejupilco de Hidalgo
+Locality_485,22,base.state_mx_mich,Las Guacamayas
+Locality_486,22,base.state_mx_nl,Ciudad Benito Juárez
+Locality_487,22,base.state_mx_oax,Villa Sola de Vega
+Locality_488,22,base.state_mx_sin,San Ignacio
+Locality_489,22,base.state_mx_ver,Tampico Alto
+Locality_490,23,base.state_mx_coah,Arteaga
+Locality_491,23,base.state_mx_chis,Huixtla
+Locality_492,23,base.state_mx_gro,San Luis San Pedro
+Locality_493,23,base.state_mx_gto,Valle de Santiago
+Locality_494,23,base.state_mx_jal,Sayula
+Locality_495,23,base.state_mx_mex,Chalco de Díaz Covarrubias
+Locality_496,23,base.state_mx_mich,Jiquilpan de Juárez
+Locality_497,23,base.state_mx_oax,Ocotlán de Morelos
+Locality_498,23,base.state_mx_sin,Topolobampo
+Locality_499,23,base.state_mx_ver,Tempoal de Sánchez
+Locality_500,24,base.state_mx_coah,Allende
+Locality_501,24,base.state_mx_chis,Motozintla de Mendoza
+Locality_502,24,base.state_mx_gro,Teloloapan
+Locality_503,24,base.state_mx_gto,Abasolo
+Locality_504,24,base.state_mx_jal,Ahualulco de Mercado
+Locality_505,24,base.state_mx_mex,Amatepec
+Locality_506,24,base.state_mx_mich,Tuxpan
+Locality_507,24,base.state_mx_oax,Villa de Zaachila
+Locality_508,24,base.state_mx_sin,Lic. Benito Juárez (Campo Gobierno)
+Locality_509,24,base.state_mx_ver,Tantoyuca
+Locality_510,25,base.state_mx_chis,Acala
+Locality_511,25,base.state_mx_gro,Técpan de Galeana
+Locality_512,25,base.state_mx_gto,Rincón de Tamayo
+Locality_513,25,base.state_mx_jal,Autlán de Navarro
+Locality_514,25,base.state_mx_mich,Cotija de la Paz
+Locality_515,25,base.state_mx_oax,Miahuatlán de Porfirio Díaz
+Locality_516,25,base.state_mx_ver,Gutiérrez Zamora
+Locality_517,26,base.state_mx_gro,Huitzuco
+Locality_518,26,base.state_mx_gto,Villagrán
+Locality_519,26,base.state_mx_jal,Magdalena
+Locality_520,26,base.state_mx_mex,Melchor Ocampo
+Locality_521,26,base.state_mx_mich,Nueva Italia de Ruiz
+Locality_522,26,base.state_mx_oax,Unión Hidalgo
+Locality_523,26,base.state_mx_ver,Platón Sánchez
+Locality_524,27,base.state_mx_gro,Tixtla de Guerrero
+Locality_525,27,base.state_mx_gto,Yuriria
+Locality_526,27,base.state_mx_jal,San Julián
+Locality_527,27,base.state_mx_mex,San Vicente Chicoloapan de Juárez
+Locality_528,27,base.state_mx_mich,Cuitzeo del Porvenir
+Locality_529,27,base.state_mx_oax,El Camarón
+Locality_530,27,base.state_mx_ver,Juan Rodríguez Clara
+Locality_531,28,base.state_mx_gro,Tepecoacuilco de Trujano
+Locality_532,28,base.state_mx_gto,Apaseo el Grande
+Locality_533,28,base.state_mx_jal,Cocula
+Locality_534,28,base.state_mx_mex,Capulhuac
+Locality_535,28,base.state_mx_oax,San Pedro Mixtepec -Dto. 22-
+Locality_536,28,base.state_mx_ver,Huatusco de Chicuellar
+Locality_537,29,base.state_mx_gro,San Marcos
+Locality_538,29,base.state_mx_gto,Purísima de Bustos
+Locality_539,29,base.state_mx_jal,El Grullo
+Locality_540,29,base.state_mx_mex,Juchitepec de Mariano Riva Palacio
+Locality_541,29,base.state_mx_oax,Santa Cruz Itundujia
+Locality_542,29,base.state_mx_ver,Ixtaczoquitlán
+Locality_543,30,base.state_mx_gro,Azoyú
+Locality_544,30,base.state_mx_gto,Salvatierra
+Locality_545,30,base.state_mx_jal,San Miguel el Alto
+Locality_546,30,base.state_mx_mex,Tequixquiac
+Locality_547,30,base.state_mx_oax,Chahuites
+Locality_548,30,base.state_mx_ver,Río Blanco
+Locality_549,31,base.state_mx_gro,Tlapehuala
+Locality_550,31,base.state_mx_gto,Marfil
+Locality_551,31,base.state_mx_jal,Tala
+Locality_552,31,base.state_mx_mex,Xonacatlán
+Locality_553,31,base.state_mx_oax,Heroica Ciudad de Ejutla de Crespo
+Locality_554,31,base.state_mx_ver,Isla
+Locality_555,32,base.state_mx_gro,San Luis Acatlán
+Locality_556,32,base.state_mx_gto,San José Iturbide
+Locality_557,32,base.state_mx_jal,La Barca
+Locality_558,32,base.state_mx_mex,San Mateo Atenco
+Locality_559,32,base.state_mx_oax,San Pedro Tapanatepec
+Locality_560,32,base.state_mx_ver,Cuitláhuac
+Locality_561,33,base.state_mx_gro,Chilapa de Álvarez
+Locality_562,33,base.state_mx_gto,Apaseo el Alto
+Locality_563,33,base.state_mx_jal,Jamay
+Locality_564,33,base.state_mx_oax,Vicente Camalote
+Locality_565,33,base.state_mx_ver,Fortín de las Flores
+Locality_566,34,base.state_mx_gro,Tlapa de Comonfort
+Locality_567,34,base.state_mx_gto,Ciudad Manuel Doblado
+Locality_568,34,base.state_mx_jal,Yahualica de González Gallo
+Locality_569,34,base.state_mx_oax,Villa de Tamazulápam del Progreso
+Locality_570,34,base.state_mx_ver,Alvarado
+Locality_571,35,base.state_mx_gro,Tlalixtaquilla
+Locality_572,35,base.state_mx_gto,Jaral del Progreso
+Locality_573,35,base.state_mx_jal,Colotlán
+Locality_574,35,base.state_mx_oax,San Juan Bautista lo de Soto
+Locality_575,35,base.state_mx_ver,José Cardel
+Locality_576,36,base.state_mx_gro,Cuajinicuilapa
+Locality_577,36,base.state_mx_gto,San Diego de la Unión
+Locality_578,36,base.state_mx_jal,Cihuatlán
+Locality_579,36,base.state_mx_mex,Chiconcuac
+Locality_580,36,base.state_mx_oax,San Juan Cacahuatepec
+Locality_581,36,base.state_mx_ver,Banderilla
+Locality_582,37,base.state_mx_gro,Huamuxtitlan
+Locality_583,37,base.state_mx_gto,Santa Cruz Juventino Rosas
+Locality_584,37,base.state_mx_jal,Zapotiltic
+Locality_585,37,base.state_mx_oax,San Pedro Totolapa
+Locality_586,37,base.state_mx_ver,Paraje Nuevo
+Locality_587,38,base.state_mx_gro,Cruz Grande
+Locality_588,38,base.state_mx_gto,Doctor Mora
+Locality_589,38,base.state_mx_jal,Villa Corona
+Locality_590,38,base.state_mx_oax,San Miguel el Grande
+Locality_591,38,base.state_mx_ver,Playa Vicente
+Locality_592,39,base.state_mx_gro,Ocotito
+Locality_593,39,base.state_mx_gto,Dolores Hgo. Cuna de la Indep. Nal.
+Locality_594,39,base.state_mx_jal,Teocaltiche
+Locality_595,39,base.state_mx_mex,Almoloya de Juárez
+Locality_596,39,base.state_mx_oax,Zimatlán de Álvarez
+Locality_597,39,base.state_mx_ver,Altotonga
+Locality_598,40,base.state_mx_gro,Copala
+Locality_599,40,base.state_mx_mex,Ocoyoacac
+Locality_600,40,base.state_mx_oax,San Pablo Huitzo
+Locality_601,40,base.state_mx_ver,Juan Díaz Covarrubias
+Locality_602,41,base.state_mx_gro,Zihuatanejo
+Locality_603,41,base.state_mx_jal,Tequila
+Locality_604,41,base.state_mx_mex,Zumpango
+Locality_605,41,base.state_mx_oax,San Francisco Telixtlahuaca
+Locality_606,41,base.state_mx_ver,Cuichapa
+Locality_607,42,base.state_mx_jal,El Quince (San José el Quince)
+Locality_608,42,base.state_mx_oax,Mariscala de Juárez
+Locality_609,42,base.state_mx_ver,Santiago Tuxtla
+Locality_610,43,base.state_mx_jal,San José el Verde (El Verde)
+Locality_611,43,base.state_mx_oax,Santiago Pinotepa Nacional
+Locality_612,43,base.state_mx_ver,Huayacocotla
+Locality_613,44,base.state_mx_jal,Jocotepec
+Locality_614,44,base.state_mx_oax,Santiago Jamiltepec
+Locality_615,44,base.state_mx_ver,Paso de Ovejas
+Locality_616,45,base.state_mx_jal,Tecalitlán
+Locality_617,45,base.state_mx_oax,San Pedro Pochutla
+Locality_618,45,base.state_mx_ver,Catemaco
+Locality_619,46,base.state_mx_jal,Chapala
+Locality_620,46,base.state_mx_oax,Heroica Ciudad de Tlaxiaco
+Locality_621,46,base.state_mx_ver,Nogales
+Locality_622,47,base.state_mx_jal,Ajijic
+Locality_623,47,base.state_mx_oax,San Juan Bautista Valle Nacional
+Locality_624,47,base.state_mx_ver,Las Choapas
+Locality_625,48,base.state_mx_jal,San Ignacio Cerro Gordo
+Locality_626,48,base.state_mx_oax,Lagunas
+Locality_627,48,base.state_mx_ver,General Miguel Alemán (Potrero Nuevo)
+Locality_628,49,base.state_mx_jal,Zacoalco de Torres
+Locality_629,49,base.state_mx_oax,Ciudad Ixtepec
+Locality_630,49,base.state_mx_ver,Coatzintla
+Locality_631,50,base.state_mx_jal,Huejuquilla el Alto
+Locality_632,50,base.state_mx_oax,Santiago Juxtlahuaca
+Locality_633,50,base.state_mx_ver,Ángel R. Cabada
+Locality_634,51,base.state_mx_jal,Villa Hidalgo
+Locality_635,51,base.state_mx_oax,San Sebastián Tecomaxtlahuaca
+Locality_636,51,base.state_mx_ver,San Rafael
+Locality_637,52,base.state_mx_jal,Unión de San Antonio
+Locality_638,52,base.state_mx_oax,Asunción Nochixtlán
+Locality_639,52,base.state_mx_ver,Tlacojalpan
+Locality_640,53,base.state_mx_jal,Las Pintitas
+Locality_641,53,base.state_mx_oax,San Francisco Ixhuatán
+Locality_642,53,base.state_mx_ver,Cosoleacaque
+Locality_643,54,base.state_mx_jal,Tamazula de Gordiano
+Locality_644,54,base.state_mx_oax,San Blas Atempa
+Locality_645,54,base.state_mx_ver,Lerdo de Tejada
+Locality_646,55,base.state_mx_jal,Acatlán de Juárez
+Locality_647,55,base.state_mx_oax,Santo Domingo Tehuantepec
+Locality_648,55,base.state_mx_ver,Tihuatlán
+Locality_649,56,base.state_mx_jal,Valle de Guadalupe
+Locality_650,56,base.state_mx_oax,Cuilápam de Guerrero
+Locality_651,56,base.state_mx_ver,Atoyac
+Locality_652,57,base.state_mx_oax,El Rosario
+Locality_653,57,base.state_mx_ver,Huiloapan de Cuauhtémoc
+Locality_654,58,base.state_mx_oax,Santa Lucia del Camino
+Locality_655,58,base.state_mx_ver,Cazones de Herrera
+Locality_656,59,base.state_mx_oax,San Antonio de la Cal
+Locality_657,59,base.state_mx_ver,Yecuatla
+Locality_658,60,base.state_mx_ver,Soledad de Doblado
+Locality_659,61,base.state_mx_ver,Cerro Azul
+Locality_660,62,base.state_mx_ver,Tezonapa
+Locality_661,66,base.state_mx_ver,Sihuapan
+Locality_662,67,base.state_mx_ver,El Higo
+Locality_663,68,base.state_mx_ver,Paso del Macho
+Locality_664,69,base.state_mx_ver,Tlapacoyan

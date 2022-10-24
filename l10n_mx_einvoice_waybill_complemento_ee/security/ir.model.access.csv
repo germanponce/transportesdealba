@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+invoice_line_complement_cp_access,invoice.line.complement.cp,model_invoice_line_complement_cp,,1,1,1,1
+import_lines_detail_waybill_access,import.lines.detail.waybill,model_import_lines_detail_waybill,,1,1,1,1
+invoice_waybill_trailer_info_access,invoice.waybill.trailer.info,model_invoice_waybill_trailer_info,,1,1,1,1
+sat_catalogos_wizard_access,sat.catalogos.wizard,model_sat_catalogos_wizard,,1,1,1,1
+invoice_complement_location_cp_access,invoice.complement.location.cp,model_invoice_complement_location_cp,,1,1,1,1
+invoice_line_complement_pedimento_access,invoice.line.complement.pedimento,model_invoice_line_complement_pedimento,,1,1,1,1
+invoice_line_complement_cantidad_transporta_access,invoice.line.complement.cantidad.transporta,model_invoice_line_complement_cantidad_transporta,,1,1,1,1
+invoice_complements_insurance_access,invoice.complements.insurance,model_invoice_complements_insurance,,1,1,1,1
+invoice_complements_transport_figure_access,invoice.complements.transport.figure,model_invoice_complements_transport_figure,,1,1,1,1
+invoice_line_complement_guia,invoice.line.complement.guia,model_invoice_line_complement_guia,,1,1,1,1

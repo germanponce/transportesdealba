@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+    <!-- Clientes -->
+     <record model="ir.ui.view" id="res_partner_waybill_automatic_data_form">
+        <field name="name">res.partner.cp</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="vat" position="after" >
+                <field name="country_code_rel_2" invisible="1" />
+                <field name="num_reg_trib" string="Numero de Identificacion Fiscal"
+                       attrs="{'invisible':[('country_code_rel_2','=','MX')]}"/>
+            </field>
+            <notebook position="inside">
+                <page string="Carta Porte">
+                    <group>
+                        <group string="Ubicaciones">
+                            <field name="idorigen" />
+                            <field name="iddestino" />
+                        </group>
+                        <group string="Seguros">
+                            <field name="insurance_policy" />
+                            <field name="ambiental_insurance_policy" />
+                            <field name="transport_insurance_policy" />
+                        </group>
+                    </group>
+                    <group string="Figuras Transporte">
+                        <group string="Operadores">
+                            <field name="cp_driver_license" />
+                        </group>
+                        <group string="Otras Figuras">
+                            <field name="figure_type_id" options="{'no_create': True, 'no_create_edit': True}"/>
+                            <field name="transport_part_ids" widget="many2many_tags" options="{'no_create': True, 'no_create_edit': True}"/>
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+     </record>
+
+    <record model="ir.ui.view" id="res_partner_references_ext_form">
+        <field name="name">res.partner.form.sat.codes</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="vat" position="before">
+                <field name="l10n_mx_street_reference" />
+            </field>
+            <!-- <field name="street" position="before">
+                <field name="country_code_rel" invisible="1"/>
+            </field> -->
+        </field>
+    </record>
+
+    
+    <record model="ir.ui.view" id="view_partner_form_compl_cp">
+        <field name="name">res.partner.form.transp.aereo</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="ref" position="after">
+                <field name="codigo_transportista_aereo_id" />
+            </field>
+        </field>
+    </record>
+
+    
+    <record model="ir.ui.view" id="mx_partner_address_form_extension">
+        <field name="name">res.partner.form.sat.codes</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="l10n_mx_edi.mx_partner_address_form"/>
+        <field name="arch" type="xml">
+            <field name="l10n_mx_edi_colony" position="replace">
+                <field name="country_code_rel" invisible="1"/>
+                <field name="colonia_sat_id" options="{'no_create_edit': True,'no_create': True}" placeholder="Colonia..." attrs="{'invisible':[('country_code_rel','!=','MX')]}" />
+                <field name="l10n_mx_edi_colony"  attrs="{'invisible':[('country_code_rel','=','MX')]}" force_save="1"/>
+            </field>
+            <field name="city" position="replace">
+                <field name="city" placeholder="Ciudad ..." class="o_address_city" 
+                       attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)], 'invisible':[('country_code_rel','=','MX')]}" force_save="1"/>
+                
+            </field>
+            <field name="zip" position="replace">
+                <field name="zip_sat_id" placeholder="Codigo Postal" class="o_address_zip" 
+                           options="{'no_create_edit': True,'no_create': True}" 
+                           attrs="{'invisible':[('country_code_rel','!=','MX')]}"/>
+
+                <field name="zip" class="o_address_zip" 
+                       attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)], 'invisible':[('country_code_rel','=','MX')]}" force_save="1"/>
+            </field>
+            <field name="country_id" position="after">
+
+            </field>
+            
+        </field>
+    </record>
+
+    </data>
+</odoo>
