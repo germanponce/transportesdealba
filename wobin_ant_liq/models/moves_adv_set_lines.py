@@ -89,14 +89,14 @@ class WobinMovesAdvSetLines(models.Model):
     @api.depends('operator_id')
     def set_advances(self):
         for rec in self:
-            list_advances = self.env['wobin.advances'].search([('operator_id', '=', rec.operator_id.id),
-                                                               ('trip_id', '=', rec.trip_id.id)]).ids                                                                   
-            rec.advance_ids = [(6, 0, list_advances)]
+            #list_advances = self.env['wobin.advances'].search([('operator_id', '=', rec.operator_id.id),
+            #                                                   ('trip_id', '=', rec.trip_id.id)]).ids                                                                   
+            #rec.advance_ids = [(6, 0, list_advances)]
 
-            if rec.advance_ids:
-                sum_amount = sum(line.amount for line in rec.advance_ids)
-                rec.advance_sum_amnt = sum_amount          
-                self.update({'advance_sum_amnt': sum_amount})             
+            #if rec.advance_ids:
+            sum_amount = sum(line.amount for line in rec.advance_ids)
+            rec.advance_sum_amnt = sum_amount          
+            #self.update({'advance_sum_amnt': sum_amount})             
         
     
 
