@@ -19,14 +19,24 @@ class WobinMovesAdvSetLines(models.Model):
                 'comprobation_ids': [(6, 0, list_comprobations)]
             })  
         
-        return res                                                                
+        return res      
+
+
+    @api.model
+    def default_comprobations(self):
+        #self.comprobation_ids = [(6, 0, self.env['wobin.comprobations'].search([('mov_lns_ad_set_id', '=', self.id)]).ids)]
+        list_comprobations = self.env['wobin.comprobations'].search([('operator_id', '=', self.operator_id.id),
+                                                                     ('trip_id', '=', self.trip_id.id),
+                                                                     ('estado', '!=', 'cancelado')]).ids                                                                                                                                            
+        return list_comprobations
+        #rec.comprobation_ids = [(6, 0, list_comprobations)]                                                                  
 
 
     check_selection = fields.Boolean(string=' ')
     operator_id     = fields.Many2one('res.partner',string='Operator', ondelete='cascade')
     trip_id         = fields.Many2one('wobin.logistics.trips', string='Trip', ondelete='cascade')
     advance_ids     = fields.One2many('wobin.advances', 'mov_lns_ad_set_id', string='Related Advances', ondelete='cascade', compute='set_advances', store=True)
-    comprobation_ids      = fields.One2many('wobin.comprobations', 'mov_lns_ad_set_id', string='Related Comprobations', ondelete='cascade')#, compute='set_comprobations', store=True)
+    comprobation_ids      = fields.One2many('wobin.comprobations', 'mov_lns_ad_set_id', string='Related Comprobations', ondelete='cascade', default=default_comprobations)#, compute='set_comprobations', store=True)
     advance_sum_amnt      = fields.Float(string='Advances', digits=(15,2), compute='set_advances', store=True)
     comprobation_sum_amnt = fields.Float(string='Comprobations', digits=(15,2), compute='set_comprobation_sum_amnt', store=True)
     amount_to_settle      = fields.Float(string='Amount to Settle', digits=(15,2), compute='set_amount_to_settle', store=True)
