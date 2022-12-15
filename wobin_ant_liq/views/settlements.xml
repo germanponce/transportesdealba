@@ -1,0 +1,179 @@
+<odoo>
+  <data>
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- VIEWS {LISTS, FORMS, SEARCH} -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <!-- SETTLEMENTS - SEARCH VIEW -->    
+    <record id="view_settlements_tree" model="ir.ui.view"> 
+      <field name="name">Settlements</field>
+      <field name="model">wobin.settlements</field>
+        <field name="arch" type="xml"> 
+            <search> 
+              <field name="name"/>
+              <field name="operator_id"/>            
+              <field name="date"/>                 
+              <!--<field name="trip_id"/>-->
+              <field name="state"/>
+            </search> 
+        </field> 
+    </record>    
+
+    <!-- SETTLEMENTS - LIST VIEW -->
+    <record id="view_settlements_list" model="ir.ui.view">
+      <field name="name">Settlements</field>
+      <field name="model">wobin.settlements</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="operator_id"/>            
+          <field name="date"/>                 
+          <!--<field name="trip_id"/>-->   
+          <field name="state"/>
+        </tree>
+      </field>
+    </record>    
+
+    <!-- SETTLEMENTS - FORM VIEW -->
+    <record id="view_settlements_form" model="ir.ui.view"> 
+        <field name="name">Settlements</field> 
+        <field name="model">wobin.settlements</field> 
+        <field name="arch" type="xml"> 
+            <form duplicate="0"> 
+                <header>
+                    <button name="create_payment" type="object" string="Pay Settlement" class="oe_highlight" attrs="{'invisible': ['|', ('btn_crt_payment', '=', False), ('state', '!=', 'pending')]}"/>
+                    <button name="mark_settled" type="object" string="Mark Settled" class="oe_highlight" attrs="{'invisible': ['|', ('btn_mark_settle', '=', False), ('state', '!=', 'pending')]}"/>
+                    <!--<button name="send_debtor" type="object" string="Send to Debtor" class="oe_highlight" attrs="{'invisible': ['|', ('btn_debtor_new_adv', '=', False), ('state', '!=', 'pending')]}"/>-->
+                    <button name="create_advance" type="object" string="Charge into New Advance" class="oe_highlight" attrs="{'invisible': ['|', ('btn_debtor_new_adv', '=', False), ('state', '!=', 'pending')]}"/> 
+                    <button name="settle_operation" type="object" string="Settle" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'ready')]}"/> 
+                    <field name="state" widget="statusbar" statusbar_visible="pending,ready,settled"/>
+                </header>
+                <sheet> 
+                    <div class="oe_left oe_title">
+                        <h1>
+                            <field name="name" readonly="True"/>
+                        </h1>
+                    </div>
+
+                    <div style="margin-top: 50px; margin-bottom: 15px;" class="p-3 bg-info text-white text-center" attrs="{'invisible': [('label_process', '=', False)]}">
+                        <field name="label_process" readonly="True"/>
+                    </div>
+
+                    <group>
+                        <group>
+                          <field name="operator_id" required="True" attrs="{'readonly': [('state', 'in', ['ready', 'settled'])]}"/>           
+                          <field name="date" required="True" attrs="{'readonly': [('state', 'in', ['ready', 'settled'])]}"/>
+                          <!--<field name="trip_id" required="True"/>-->                          
+                        </group>  
+                        <group>
+                          <field name="attachments" widget="many2many_binary"/>
+                          
+                          <field name="btn_crt_payment" invisible="True"/>
+                          <field name="payment_related_id" attrs="{'invisible': [('btn_crt_payment', '=', False)], 'readonly': [('state', 'in', ['ready', 'settled'])]}"/>
+                          
+                          <field name="btn_mark_settle" invisible="True"/>                                    
+
+                          <field name="btn_debtor_new_adv" invisible="True"/>
+                          <!--<field name="acc_mov_related_id" attrs="{'invisible': [('btn_debtor_new_adv', '=', False)]}"/>-->
+                          <field name="advance_related_id" attrs="{'invisible': [('btn_debtor_new_adv', '=', False)],'readonly': [('state', 'in', ['ready', 'settled'])]}"/>                                             
+                        </group>                                                
+                    </group>
+                    
+                    <field name="possible_adv_set_lines_ids" force_save="1" attrs="{'invisible': [('state', '!=', 'pending')]}">
+                        <tree editable="bottom"> <!--decoration-danger="flag_pending_process == False">-->
+                            <field name="check_selection"/>
+                            <field name="operator_id"/>
+                            <field name="trip_id"/>
+                            <field name="advance_sum_amnt" force_save="1"/>                      
+                            <field name="comprobation_sum_amnt" force_save="1"/>
+                            <field name="amount_to_settle" sum="Sum Amounts" force_save="1"/>
+                        </tree>
+                    </field>
+                    <field name="settled_adv_set_lines_ids" force_save="1" attrs="{'invisible': [('state', '==', 'pending')], 'readonly': [('state', 'in', ['ready', 'settled'])]}">
+                        <tree editable="bottom">
+                            <field name="check_selection"/>
+                            <field name="operator_id"/>
+                            <field name="trip_id"/>
+                            <field name="advance_sum_amnt" force_save="1"/>                      
+                            <field name="comprobation_sum_amnt" force_save="1"/>
+                            <field name="amount_to_settle" sum="Sum Amounts" force_save="1"/>
+                        </tree>
+                    </field>                    
+                     
+                    <div class="oe_subtotal_footer oe_right font-weight-bold">
+                        <group>
+                            <field name="total_selected" readonly="True" force_save="1" attrs="{'invisible': [('state', '!=', 'pending')]}"/>
+                            <field name="total_settlement" readonly="True" force_save="1" attrs="{'invisible': [('state', '==', 'pending')]}"/>
+                            <!--<field name="amount_to_settle" readonly="True" force_save="1" attrs="{'invisible': [('state', '==', 'pending')]}"/>-->
+                            <field name="advance_sum_amnt" invisible="True"/>
+                            <field name="comprobation_sum_amnt" invisible="True"/>
+                            <field name="trips_related_ids" invisible="True"/>
+                        </group>
+                    </div>                                                                                   
+                </sheet>              
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>               
+            </form> 
+        </field> 
+    </record>
+
+
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- VIEWS FOR CONCEPTS MODEL {LISTS, FORMS, SEARCH} -->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <!-- SETTINGS / CONCEPTS - SEARCH VIEW -->    
+    <record id="view_concepts_tree" model="ir.ui.view"> 
+      <field name="name">Concepts</field>
+      <field name="model">wobin.concepts</field>
+        <field name="arch" type="xml"> 
+            <search> 
+              <field name="name"/>
+              <field name="account_account_id"/> 
+              <field name="credit_flag"/>           
+            </search> 
+        </field> 
+    </record>    
+
+    <!-- SETTINGS / CONCEPTS - LIST VIEW -->
+    <record id="view_concepts_list" model="ir.ui.view">
+      <field name="name">Concepts</field>
+      <field name="model">wobin.concepts</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="account_account_id"/>
+            <field name="credit_flag"/>
+        </tree>
+      </field>
+    </record>    
+
+    <!-- SETTINGS / CONCEPTS - FORM VIEW -->
+    <record id="view_concepts_form" model="ir.ui.view"> 
+        <field name="name">Concepts</field> 
+        <field name="model">wobin.concepts</field> 
+        <field name="arch" type="xml"> 
+            <form> 
+                <sheet> 
+                    <group>
+                        <group>
+                            <field name="name" required="True"/>
+                            <field name="account_account_id" required="True"/>       
+                            <field name="credit_flag"/>                  
+                        </group>                                                  
+                    </group>                                                                                   
+                </sheet> 
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>                                     
+            </form> 
+        </field> 
+    </record>
+
+  </data>  
+</odoo> 

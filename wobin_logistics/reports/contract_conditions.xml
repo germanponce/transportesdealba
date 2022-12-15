@@ -1,0 +1,263 @@
+<odoo>
+
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- REPORT & TEMPLATE -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->    
+
+    <report
+        id="report_contract_conditions"
+        model="wobin.logistics.contracts"
+        string="Condiciones de Contrato"
+        name="wobin_logistics.report_contract_conditions_view"
+        file="wobin_logistics.report_contract_conditions"
+        report_type="qweb-pdf" />
+
+    <template id="report_contract_conditions_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+
+                    <table class="table" style="margin-bottom:25px; margin-top:20px;">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Núm. Contrato</th>
+                                <td colspan="6"><span t-field="doc.name"/></td>
+                                <td></td><td></td><td></td><td></td><td></td>                                
+                            </tr>
+                            <tr>
+                                <th scope="row">Cliente</th>
+                                <td colspan="6"><span t-field="doc.client_id.name"/></td>                                
+                                <td></td><td></td><td></td><td></td><td></td>                               
+                            </tr>
+                            <tr>
+                                <th scope="row">Producto</th>
+                                <td colspan="6"><span t-field="doc.product_id"/></td>
+                                <td></td><td></td><td></td><td></td><td></td>                                
+                            </tr>                                                        
+                            <tr>
+                                <th scope="row">Origen</th>
+                                <td colspan="6"><span t-field="doc.origin_id"/></td>
+                                <td></td><td></td><td></td><td></td><td></td>                                                              
+                            </tr>
+                            <tr>
+                                <th scope="row">Destino</th>
+                                <td colspan="6"><span t-field="doc.destination_id"/></td>
+                                <td></td><td></td><td></td><td></td><td></td>                                                             
+                            </tr>
+                        </tbody>
+                    </table>
+                
+                    <div class="page" style="margin-left:80px; margin-right:80px;">
+                        <h3 class="text-center font-weight-bold" style="margin-bottom:25px;">
+                            CONDICIONES DEL CONTRATO DE TRANSPORTE QUE AMPARA ESTA CARTA PORTE
+                        </h3>
+
+                        <p class="text-justify"> 
+                            <strong>PRIMERA: </strong>
+                            El objeto del presente contrato es la Presentación del Servicio de Transporte de Carga Foráneo.
+                        </p>
+
+                        <p class="text-justify"> 
+                            <strong>SEGUNDA: </strong>  
+                            Para los efectos del presente contrato de transporte se denomina "Porteador" al
+                            transportista y "Remitente" (<span t-field="doc.remitter"/>) al usuario que contrata el servicio. "Destinatario" (<span t-field="doc.recipient"/>) es la persona física o
+                            moral a la que va a dirigida el "Envío" transportado y "Envío" (<span t-field="doc.shipping"/>) es la mercancía que documenta el
+                            "Remitente".                          
+                        </p>
+
+                        <p class="text-justify"> 
+                            <strong>TERCERA: </strong>  
+                            El "Remitente " acepta los términos de este contrato al documentar la mercancía para
+                            su " Envío". El “Porteador” se obliga a proporcionar estos términos al "Remitente". El "Porteador"
+                            declara que tiene la capacidad e infraestructura para celebrar el presente contrato en los términos
+                            y condiciones a aquí previstas                                                      
+                        </p>
+
+                        <p class="text-justify"> 
+                            <strong>CUARTA: </strong>   
+                            El "Remitente" debe declarar al "Porteador" el tipo de mercancía o efectos de que se
+                            trate, peso, medidas y/o número de carga que entrega para su transporte y en su caso el valor de
+                            la misma.                                                     
+                        </p>
+
+                        <p class="text-justify"> 
+                            <strong>QUINTA: </strong>  
+                            Es obligación del "Remitente" declarar verazmente al "Porteador" toda la información
+                            relativa a la descripción, valor, cantidad y peso y demás características de la mercancía que
+                            pretende transportar, en caso de falsedad el "Remitente" será directamente responsable frente al
+                            "Porteador" de las multas y demás sanciones impuestas por las autoridades competentes así como
+                            por la legislación aplicable, obligándose a resarcir al "Porteador" o terceras personas en su caso,
+                            los daños y perjuicios que le pudiera ocasionar por tal motivo y a su vez libera al "Porteador" de
+                            cualquier responsabilidad originada por dicha omisión.                                                      
+                        </p>
+
+                        <p class="text-justify"> 
+                            <strong>SEXTA: </strong>      
+                            El "Porteador" deberá recoger y entregar la carga precisamente en los domicilios que
+                            señale el "Remitente" ajustándose a los términos y condiciones convenidos. El "Porteador" será
+                            responsable del envío desde el momento que lo recibe hasta que se entregue al "Remitente"
+                            encargándose de las maniobras de carga y descarga de los bienes con un límite de 200 kilogramos
+                            por pieza. En caso de que el peso máximo establecido sea rebasado, las maniobras de carga y
+                            descarga de los bienes serán por cuenta y riesgo del "Remitente" y/o "Destinatario"
+                            respectivamente. El "Destinatario" firmara de conformidad por dicha recepción, después de
+                            revisar la mercancía con el "Porteador". El "Porteador" solo está obligado a llevar el "Envío" al
+                            domicilio señalado por el remitente para su entrega una solo vez. Si esta no fuera recibida se
+                            dejara aviso por escrito en el domicilio del "Destinatario" de que la mercancía queda a disposición
+                            del interesado en las bodegas que indique el "Porteador".                                                  
+                        </p>
+
+                        <p class="text-justify"> 
+                            <strong>SÉPTIMA: </strong>  
+                            Si la carga no fuera retirada dentro de los 30 días naturales siguientes a aquel en que
+                            hubiere sido puesta a disposición del "Destinatario"; el "Porteador" podrá promover judicialmente
+                            su venta con arreglo a lo dispuesto en los artículos 603 y 604 del Código de Comercio. El
+                            "Remitente" pagara los gastos que se generen por no retirar la mercancía en plazo estipulado en la
+                            presente clausula.                                                      
+                        </p>
+
+                        <p class="text-justify"> 
+                            <strong>OCTAVA: </strong>  
+                            El "Remitente" pagara el precio del servicio de acuerdo a lo establecido en el anverso
+                            de esta Carta Porte el cual siempre será en moneda nacional e incluyendo los impuestos
+                            aplicables. En todos los casos el "Porteador" entregara al "Remitente" factura o recibo de los
+                            servicios prestados.                                                      
+                        </p>    
+
+                        <p class="text-justify"> 
+                            <strong>NOVENA: </strong>  
+                            El precio del Transporte deberá pagarse en origen salvo convenio entre las partes de
+                            pago destino. Cuando el transporte se hubiera concertado por cobrar la entrega de las mercancías
+                            o efectos se hará contar el pago y el “Porteador” tendrá derecho a retener mientras no se le cubra
+                            el precio convenido.                                                      
+                        </p>
+
+                        <p class="text-justify"> 
+                            <strong>DÉCIMA: </strong> 
+                            El “Porteador” queda eximido de la obligación de recibir mercancías o efectos para su
+                            transporte en los siguientes casos:                            
+                        </p>
+
+                        <div style="margin-left:25px;">
+                            <ol type="a">
+                                <li class="text-justify">
+                                    Cuando se trate de cargas que por su naturaleza peso volumen, embalaje defectuoso o
+                                    cualquier otra circunstancia no pueda transportarse sin destruirse o sin causar daño a los
+                                    demás artículos o al material rodante salvo que la empresa de que se trate tenga el equipo
+                                    adecuado.
+                                </li>
+                                <li class="text-justify">
+                                    Las mercancías cuyo transporte haya sido prohibido por disposiciones legales o
+                                    reglamentarias. Cuando tales disposiciones no prohíban precisamente el transporte
+                                    determinadas mercancías pero si ordene la presentación de ciertos documentos para que
+                                    puedan ser transportadas el “Remitente” estará obligado a entregar al “Porteador” los
+                                    documentos correspondientes.                            
+                                </li>
+                            </ol>
+                        </div>
+
+                        <p class="text-justify"> 
+                            <strong>DÉCIMA PRIMERA: </strong>   
+                            Para el caso que el “Remitente” contrate carro por entero (se entiende por
+                            “Carro por Entero” cuando la totalidad de la carga es propiedad de uno solo “Remitente” y/o
+                            “Destinatario” ), este aceptara la responsabilidad solidaria para con el “Porteador” mediante la
+                            figura de la corresponsabilidad que contiene el artículo 10 del Reglamento Sobre el Peso
+                            Dimensiones y Capacidad de los Vehículos de Autotransporte que Transitan en los Caminos y
+                            Puentes de Jurisdicción Federal, por lo que el “Remitente” queda obligado a verificar que la carga
+                            y el vehículo que la transporta, cumpla con el peso y dimensiones establecidos en la
+                            NOM-012-SCT-2-2008, sobre el peso y dimensiones máximas con los que pueden circular los
+                            vehículos de autotransportes que transitan en las vías generales de comunicación de jurisdicción
+                            federal.                                                     
+                        </p>
+
+                        <p class="text-justify"> 
+                            Para el caso de incumplimiento e inobservancias a las disposiciones que regulan el peso y
+                            dimensiones por parte del “Remitente”, este será responsable de las infracciones y multas que la
+                            Secretaria de Comunicación y Transporte y la Policía Federal Preventiva imponga al “Porteador”
+                            por cargar las unidades con exceso de peso.                        
+                        </p>
+
+                        <p class="text-justify"> 
+                            <strong>DÉCIMA SEGUNDA: </strong>  
+                            En caso de pérdida, daño o robo de la mercancía transportada el “Porteador”
+                            cuenta con una póliza de Seguro que cubrirá el valor declarado por el “Remitente” de las
+                            mercancías objeto del contrato, seguro por el cual el “Porteador” realizara el cargo
+                            correspondiente al “Remitente” Cuando el usuario no declare el valor de la mercancía; la 
+                            responsabilidad quedara limitada a la cantidad equivalente a 15 días de salario mínimo general
+                            vigente del Distrito Federal, por tonelada o por parte proporcional que corresponda tratándose de
+                            embarques de menor peso.                                                      
+                        </p>
+
+                        <p class="text-justify"> 
+                            <strong>DÉCIMA TERCERA: </strong> 
+                            Si al momento de la entrega resulta algún faltante o avería el “Remitente “ o
+                            “Destinatario” deberá hacerla constar en ese acto en la Carta Porte y formular su reclamación por
+                            escrito al “Porteador” dentro de las 24 horas siguientes, reclamación que se contestara dentro de
+                            los 15 días hábiles.                                                       
+                        </p>
+
+                        <p class="text-justify"> 
+                            <strong>DÉCIMA CUARTA: </strong> 
+                            En caso de incumplir por cualquier de las partes del presente contrato se
+                            establece como pena convencional el pago del 5%del valor del servicio prestado.                                                       
+                        </p>
+
+                        <p class="text-justify"> 
+                            <strong>DÉCIMA QUINTA: </strong> 
+                            El “Porteador” esta exentó de las responsabilidades por perdida, retraso
+                            en la entrega o daño causado en el “Envío” en los siguientes casos:                                                       
+                        </p>
+
+                        <div style="margin-left:25px;">
+                            <ol type="a">
+                                <li>Por vicios propios del mismo.</li>
+                                <li>Por embalajes inadecuados.</li>
+                                <li>Cuando el “Envío” por su propia naturaleza sufra deterioro o daño total o parcial.</li>
+                                <li class="text-justify">Por la ambigüedad, falta de exactitud o falsedad de las declaraciones o instrucciones proporcionada por el “Remitente” y/o “Destinatario” del “Envío”.</li>
+                                <li>Por acto de guerra, huelga, motines, disturbios, caso fortuito, fuerza mayor.</li>
+                                <li class="text-justify">Por daño eléctrico o magnético, borradura o cualquier otro daño a información e imágenes eléctricas, fotográficas o grabadas en cualquier otro tipo.</li>
+                                <li>Por disposición de las autoridades competentes o de cualquier otro motivo razonable fuera del control del “Porteador”.</li>                            
+                            </ol>
+                        </div>
+
+                        <p class="text-justify"> 
+                            <strong>DÉCIMA SEXTA: </strong>  
+                            En todos los casos se entenderá que el “Remitente” y/o “Destinatario” no aceptan
+                            que se ceda o transmita a terceros, con fines mercadotécnicos o publicitarios la información
+                            proporcionada por el motivo del presente contrato y que no acepta que le envíen publicidad
+                            sobre bienes y servicios salvo que el “Remitente” y/o “Destinatario” manifieste su autorización
+                            para ello, casos en lo que se harán una anotación en la parte frontal de la presente Carta Porte en
+                            la cual se manifiesta la aceptación con su firma autógrafa.                                                      
+                        </p>
+
+                        <p class="text-justify"> 
+                            <strong>DÉCIMA SÉPTIMA: </strong>  
+                            Para los casos de controversia en la interpretación, aplicación o ejecución de
+                            este contrato, las partes señalan como competentes dentro de la esfera de atribuciones que las
+                            leyes le atribuyen y según sea el caso a la Procuraduría Federal del Consumidor en la vía
+                            administrativa en primera instancia y de persistir la controversia a los tribunales del Fuero Común
+                            de Guadalajara renunciando por ello al fuero que les pueda corresponder por razones de domicilio
+                            presente o futuro.                                                      
+                        </p>                                                                                                                                                                        
+
+                        <p class="text-justify"> 
+                            Se entenderá que se tienen por aceptado los términos y condiciones aquí pactadas cuando el
+                            “Remitente” documente el “Envío” de acurdo con la presente carta Porte.
+                        </p>
+
+                        <p class="text-center font-weight-bold"> 
+                            INSTRUCCIONES PARA LLENAR ESTA CARTA PORTE
+                        </p>                        
+
+                        <p class="text-justify font-italic"> 
+                            La empresa porteadora deberá de llenar todos y cada uno de los datos que se consignan en la
+                            presente Carta Porte y tomando como base las informaciones rendidas por el remitente haciendo
+                            las verificaciones o comprobaciones que sean necesarias.                        
+                        </p>  
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

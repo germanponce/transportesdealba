@@ -1,0 +1,115 @@
+<odoo>
+
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- REPORT & TEMPLATE -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->    
+    <report
+        id="report_waybill"
+        model="wobin.logistics.trips"
+        string="Carta Porte"
+        name="wobin_logistics.report_waybill_view"
+        file="wobin_logistics.report_waybill"
+        report_type="qweb-pdf" />
+
+    <template id="report_waybill_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                
+                    <div class="page" style="margin-left:50px; margin-right:50px;">
+                        
+                        <h3 class="text-center p-1 font-weight-bold">CARTA PORTE</h3>
+
+
+                        <table class="table w-50" style="font-size: 11px; padding: 2px;">
+                            <tbody>
+                                <tr>
+                                    <td class="table-info font-weight-bold" >CONTRATO</td>
+                                    <td><span t-field="doc.contract_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-info font-weight-bold">ESTADO</td>
+                                    <td><span t-field="doc.state"/></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-info font-weight-bold">SUCURSAL</td>
+                                    <td><span t-field="doc.sucursal_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-info font-weight-bold">CANTIDAD DE CARGA</td>
+                                    <td><span t-field="doc.real_load_qty"/> kg</td>
+                                </tr>
+                                <tr>
+                                    <td class="table-info font-weight-bold">FECHA / HORA</td>
+                                    <td><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y %H:%M')"/></td>
+                                </tr>                                                                                                
+                            </tbody>
+                        </table>
+
+
+                        <h6 class="w-100 bg-info text-center p-1 font-weight-bold rounded">CONDICIONES</h6>
+                        <table class="table w-100" style="font-size: 11px; padding: 2px;">
+                            <tbody>
+                                <tr>
+                                    <td class="w-25 table-info font-weight-bold">CLIENTE</td>
+                                    <td class="w-75"><span t-field="doc.contract_id.client_id"/></td>
+                                </tr>
+                                <tr>
+                                    <td class="w-25 table-info font-weight-bold">PRODUCTO</td>
+                                    <td class="w-75"><span t-field="doc.contract_id.product_id"/></td>
+                                </tr>
+                                <tr>
+                                    <td class="w-25 table-info font-weight-bold">ORIGEN</td>
+                                    <td class="w-75"><span t-field="doc.contract_id.origin_id"/></td>
+                                </tr>
+                                <tr>
+                                    <td class="w-25 table-info font-weight-bold">DESTINO</td>
+                                    <td class="w-75"><span t-field="doc.contract_id.destination_id"/></td>
+                                </tr>                                
+                            </tbody>
+                        </table>
+
+
+                        <h6 class="w-100 bg-info text-center p-1 font-weight-bold rounded">TRANSPORTE</h6>
+                        <table class="table w-75" style="font-size: 11px; padding: 2px;">
+                            <tbody>
+                                <tr>
+                                    <td class="w-25 table-info font-weight-bold">OPERADOR</td>
+                                    <td class="w-50"><span t-field="doc.operator_id"/></td>
+                                </tr>
+                                <tr>
+                                    <td class="w-25 table-info font-weight-bold">VEHÍCULO</td>  
+                                    <td class="w-50"><span t-field="doc.vehicle_id.name"/></td>
+                                </tr>  
+                                <tr>
+                                    <td class="w-25 table-info font-weight-bold">PLACA</td>  
+                                    <td class="w-50"><span t-field="doc.vehicle_id.license_plate"/></td>
+                                </tr>                                                             
+                            </tbody>
+                        </table>                        
+
+
+                        <h6 class="w-100 bg-info text-center p-1 font-weight-bold rounded">OBSERVACIONES</h6>
+                        <div class="border border-info rounded" style="font-size: 11px; padding-bottom: 32px; margin-bottom:5px;">
+                            <span t-field="doc.contract_id.observations"/>
+                        </div>
+
+                        <h6 class="w-100 bg-info text-center p-1 font-weight-bold rounded">DOCUMENTOS REQUERIDOS</h6>
+                        <div class="border border-info rounded" style="padding-bottom: 32px; margin-bottom:5px;"></div>
+
+                        <h6 class="w-100 bg-info text-center p-1 font-weight-bold rounded">TOTALES</h6>
+                        <table class="table w-50 float-right" style="font-size: 11px; padding: 2px;">
+                            <tr>
+                                <td class="w-25 table-info font-weight-bold">IMPORTE</td>
+                                <td class="w-25">$<span t-field="doc.qty_to_bill"/></td>
+                            </tr>                              
+                        </table>
+
+                    </div>
+
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

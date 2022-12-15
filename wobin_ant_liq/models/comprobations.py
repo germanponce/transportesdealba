@@ -1,0 +1,308 @@
+# -*- coding: utf-8 -*-
+from odoo import models, fields, api
+from odoo.exceptions import UserError
+
+import logging
+_logger = logging.getLogger(__name__)
+
+
+class WobinComprobations(models.Model):
+    _name = 'wobin.comprobations'
+    _description = 'Wobin Comprobations'
+    _inherit = ['mail.thread', 'mail.activity.mixin']     
+
+    
+    @api.model
+    def create(self, vals):  
+        """This method intends to create a sequence for a given comprobation"""
+        #Change of sequence (if it isn't stored is shown "New" else e.g COMP000005)  
+        if vals.get('name', 'New') == 'New':
+            sequence = self.env['ir.sequence'].next_by_code(
+                'self.comprobation') or 'New'
+            vals['name'] = sequence    
+
+        res = super(WobinComprobations, self).create(vals)  
+
+        #Intend to link this record with Wobin Moves Advances Settlements Lines:
+        #operator = res.operator_id.id
+        #trip     = res.trip_id.id
+        #advance  = res.advance_id.id
+        
+        #get_id_mvs = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', operator),
+        #                                                           ('trip_id', '=', trip),
+        #                                                           ('advance_id', '=', advance)], limit=1)
+                                                                       
+        #mov_lns_obj = self.env['wobin.moves.adv.set.lines'].browse(get_id_mvs.id)
+        #mov_lns_obj.write({'comprobation_id': res.id}) 
+
+        #Set value of id for Wobin Moves Advances Settlements Lines in Advances:
+        #res.mov_lns_ad_set_id = mov_lns_obj.id   
+            
+        #After record was created successfully and if considering there is a new trip 
+        #with new record for operator then create a new record for Wobin Moves Advances Settlements Lines 
+        existing_movs = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', res.operator_id.id),
+                                                                      ('trip_id', '=', res.trip_id.id)]).ids                                                                       
+        if not existing_movs:
+            #Create a new record for Wobin Moves Advances Settlements Lines
+            values = {
+                      'operator_id': res.operator_id.id,
+                      'trip_id': res.trip_id.id,
+                      'comprobation_id': res.id,
+                     }
+            movs = self.env['wobin.moves.adv.set.lines'].create(values)                                                                                              
+
+        return res
+
+
+    name        = fields.Char(string="Advance", readonly=True, required=True, copy=False, default='New', track_visibility='always')
+    operator_id = fields.Many2one('res.partner',string='Operator', track_visibility='always', ondelete='cascade')
+    date        = fields.Date(string='Date', track_visibility='always')
+    amount      = fields.Float(string='Amount $', digits=(15,2), track_visibility='always')
+    total       = fields.Float(string='Total $', digits=(15,2))
+    trip_id     = fields.Many2one('wobin.logistics.trips', string='Trip', track_visibility='always', ondelete='cascade')
+    expenses_to_refund = fields.Float(string='Pending Expenses to Refund', digits=(15,2), compute='set_expenses_to_refund', store=True, track_visibility='always')
+    acc_mov_related_id = fields.Many2one('account.move', string='Related Account Move', compute='set_related_acc_mov', store=True, ondelete='cascade', track_visibility='always')
+    mov_lns_ad_set_id  = fields.Many2one('wobin.moves.adv.set.lines', ondelete='cascade')
+    mov_lns_aux_id     = fields.Many2one('wobin.moves.adv.set.lines', compute='_set_mov_lns_aux', store=True)
+    comprobation_lines_ids = fields.One2many('wobin.comprobation.lines', 'comprobation_id', string='Concept Lines')
+    invoices_to_refund_ids = fields.Many2many('account.move')
+    company_id = fields.Many2one('res.company', default=lambda self: self.env['res.company']._company_default_get('your.module'))
+    estado     = fields.Selection([('borrador', 'Borrador'),
+                                   ('comprobado', 'Comprobado'),                                     
+                                   ('cancelado', 'Cancelado')
+                                  ], string='Estado', default='borrador', track_visibility='always')      
+
+
+
+    #@api.multi
+    def write(self, vals):
+        #Override write method in order to detect fields changed:
+        res = super(WobinComprobations, self).write(vals)  
+
+        self.ensure_one()
+        
+        #If in fields changed are operator_id and trip_id update 
+        #that data in its respective wobin.moves.adv.set.lines rows:
+        if vals.get('operator_id', False):
+            mov_lns_obj = self.env['wobin.moves.adv.set.lines'].browse(self.mov_lns_aux_id.id)
+            
+            if mov_lns_obj:
+                mov_lns_obj.operator_id = vals['operator_id']
+
+        if vals.get('trip_id', False):
+            mov_lns_obj = self.env['wobin.moves.adv.set.lines'].browse(self.mov_lns_aux_id.id)
+            
+            if mov_lns_obj:
+                mov_lns_obj.trip_id = vals['trip_id'] 
+
+                sql_query = """SELECT count(*) 
+                               FROM wobin_moves_adv_set_lines
+                               WHERE operator_id = %s AND trip_id = %s"""
+                self.env.cr.execute(sql_query, (self.operator_id.id, self.trip_id.id,))
+                result = self.env.cr.fetchone()
+
+                if result:                   
+                    if result[0] > 1:
+                        self.env['wobin.moves.adv.set.lines'].browse(self.mov_lns_aux_id.id).unlink()
+            
+            else:                
+                #Considering there is a new trip with new record for operator 
+                #then create a new record for Wobin Moves Advances Settlements Lines 
+                existing_movs = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', self.operator_id.id),
+                                                                              ('trip_id', '=', self.trip_id.id)]).ids                                                                       
+                if not existing_movs:
+                    #Create a new record for Wobin Moves Advances Settlements Lines
+                    values = {
+                            'operator_id': self.operator_id.id,
+                            'trip_id': self.trip_id.id,
+                            'comprobation_id': self.id,
+                            }
+                    self.env['wobin.moves.adv.set.lines'].create(values)                                  
+
+        return res  
+
+
+
+    def create_acc_mov(self):
+        #This method intends to display a Form View of Account Move        
+        #context_modified = False
+        line_ids_list    = list()
+        item             = tuple()
+        dictionary_vals  = dict()
+
+        # | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+        # Subprocess:
+        #Consult different models in order to fill up by default some fields in 
+        #pop up window of account move lines
+        
+        #   For Debit Lines
+        for line in self.comprobation_lines_ids:  
+            credit = None; debit = None           
+            account_id          = line.concept_id.account_account_id.id
+            enterprise_id       = self.operator_id.enterprise_id.id
+            #contact_id          = self.env['res.partner'].search([('id', '=', self.operator_id.id)], limit=1).contact_id.id
+            analytic_account_id = self.trip_id.analytic_account_id.id
+            analytic_tag_ids    = self.env['account.analytic.tag'].search([('name', '=', self.trip_id.name)], limit=1).ids          
+            
+            # Determine Concepts Set like Credit:
+            credit_flag = line.concept_id.credit_flag
+            if credit_flag == True:
+                credit = line.amount
+            else:
+                debit = line.amount            
+            
+
+            #Construct tuple item for each line (0, 0, dictionary_vals)
+            dictionary_vals = {
+                'account_id': account_id,
+                'partner_id': enterprise_id,                 
+                'analytic_account_id': analytic_account_id,
+                'analytic_tag_ids': analytic_tag_ids,
+                'debit': debit,
+                'credit': credit
+            }
+            item = (0, 0, dictionary_vals)
+
+            _logger.error("\n\n\n\n dictionary_vals: %s", dictionary_vals)
+
+            #Append into list which it will be used later in context:
+            line_ids_list.append(item)
+
+            _logger.error("\n\n\n\n line_ids_list: %s", line_ids_list)
+
+
+        # | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |                           
+        
+        ctxt = {
+                'default_comprobation_id': self.id,
+                'default_line_ids': line_ids_list
+               }                               
+         
+        return {
+            #'name':_(""),
+            'type': 'ir.actions.act_window',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'res_model': 'account.move',
+            'view_id': self.env.ref('account.view_move_form').id,                        
+            #'res_id': p_id,            
+            'nodestroy': True,
+            'target': 'new',
+            'domain': '[]',
+            'context': ctxt
+        }  
+
+
+
+    @api.onchange('comprobation_lines_ids')
+    def _onchange_comprobation_lines_ids(self):        
+        # Only sum up lines which are not credit concepts:
+        sum_amount = sum(line.amount for line in self.comprobation_lines_ids if line.concept_id.credit_flag != True)
+        # Assign to amount and total:
+        self.amount = sum_amount        
+        self.total = sum_amount
+
+        #Sum all amounts of debit concepts and fill up authomatically
+        #amount if concept to input is credit:
+        for line in self.comprobation_lines_ids: 
+            if line.concept_id.credit_flag == True: 
+                line.amount = sum_amount  
+                
+                
+                
+    def cancelar_comprobacion(self):
+        for rec in self:
+            #Validate if there is no Accounting Moves related else Cancel Comprobation:
+            if rec.acc_mov_related_id:
+                msg =  "No se puede cancelar esta Comprobación "
+                msg += rec.name
+                msg += "\nDebido a que posee un Movimiento Contable ya relacionado con ella."
+                msg += "\n\nPor favor, primero Cancelar y Suprimir este Asiento Contable: "
+                msg += rec.acc_mov_related_id.name
+                raise UserError(msg)
+
+            else:            
+                rec.estado = 'cancelado'                 
+
+
+
+    def set_invoices_to_refund_ids(self): 
+        for rec in self:
+            id_fact_x_reem = self.env['wobin.concepts'].search([('name', 'ilike', 'FACTURAS POR REEMBOLSAR')], limit=1).id
+
+            if id_fact_x_reem:
+                query = """DELETE FROM wobin_comprobation_lines 
+                                WHERE comprobation_id = %s AND concept_id = %s;"""
+                self.env.cr.execute(query, (rec.id, id_fact_x_reem,))
+
+                for line in rec.invoices_to_refund_ids:
+                    rec.comprobation_lines_ids = [(0, 0, {'concept_id': id_fact_x_reem, 'amount': line.amount_total})]
+
+            # Only sum up lines which are not credit concepts:
+            sum_amount = sum(line.amount for line in rec.comprobation_lines_ids if line.concept_id.credit_flag != True)
+            
+            # Assign to amount and total:
+            rec.amount = sum_amount        
+            rec.total = sum_amount
+
+
+
+    #@api.one
+    def set_expenses_to_refund(self):
+        for rec in self:
+            #Sum amounts from the same trip by operator
+            sql_query = """SELECT SUM(amount) 
+                            FROM wobin_comprobations 
+                            WHERE trip_id = %s AND operator_id = %s;"""
+            self.env.cr.execute(sql_query, (rec.trip_id.id, rec.operator_id.id,))
+            result = self.env.cr.fetchone()
+
+            if result:                    
+                rec.expenses_to_refund = result[0]        
+
+
+
+    #@api.one
+    def set_related_acc_mov(self):
+        for rec in self:
+            acc_mov_related = self.env['account.move'].search([('comprobation_id', '=', rec.id)], limit=1).id
+            if acc_mov_related:            
+                #Change estado to "comprobado" in order to make disappear 
+                #button "Create Comprobation Entry"
+                self.write({'estado': 'comprobado'}) 
+                        
+                rec.acc_mov_related_id = acc_mov_related
+
+
+
+    #@api.one
+    def _set_mov_lns_aux(self):
+        for rec in self:
+            mov_lns_id = self.env['wobin.moves.adv.set.lines'].search([('comprobation_id', '=', rec.id)]).id
+            if mov_lns_id: 
+                rec.mov_lns_aux_id = mov_lns_id 
+            else:
+                rec.mov_lns_aux_id = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', rec.operator_id.id),
+                                                                                    ('trip_id', '=', rec.trip_id.id)], limit=1).id
+
+
+
+
+
+class WobinComprobationLines(models.Model):
+    _name = 'wobin.comprobation.lines'
+    _description = 'Wobin Comprobation Lines'
+    _inherit = ['mail.thread', 'mail.activity.mixin'] 
+
+
+    comprobation_id = fields.Many2one('wobin.comprobations', string='Comprobation Reference', required=True, ondelete='cascade', index=True)
+    concept_id      = fields.Many2one('wobin.concepts', string='Concept', track_visibility='always')
+    amount          = fields.Float(string='Amount $', digits=(15,2), track_visibility='always')
+    credit_flag     = fields.Boolean(string='Concept Set Like Credit', compute='set_flag', store=True)
+    company_id = fields.Many2one('res.company', default=lambda self: self.env['res.company']._company_default_get('wobin_ant_liq'))
+
+
+    #@api.one
+    def set_flag(self):
+        for rec in self:
+            rec.credit_flag = self.env['wobin.concepts'].search([('id', '=', rec.concept_id.id)], limit=1).credit_flag

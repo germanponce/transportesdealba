@@ -1,0 +1,90 @@
+<odoo>
+
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- REPORT & TEMPLATE -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->    
+
+    <report
+        id="reporte_liquidacion_formato"
+        model="wobin.settlements"
+        string="Imprimir Liquidación"
+        name="wobin_ant_liq.reporte_liquidacion_formato"
+        file="wobin_ant_liq.liquidacion_formato"
+        report_type="qweb-pdf" />
+
+    <template id="reporte_liquidacion_formato">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                
+                    <div class="page" style="margin-left:50px; margin-right:50px;">
+                        
+                        <h3 class="text-center p-1 font-weight-bold">Liquidación</h3>
+
+                        <table class="table w-50" style="font-size: 12px; padding: 2px; margin-top: 30px;">
+                            <tbody>
+                                <tr>
+                                    <td class="table-secondary font-weight-bold" >No. Liquidación</td>
+                                    <td><span t-field="doc.name"/></td>
+                                </tr>                            
+                                <tr>
+                                    <td class="table-secondary font-weight-bold" >Operador</td>
+                                    <td><span t-field="doc.operator_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-secondary font-weight-bold">Fecha</td>
+                                    <td><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y %H:%M')"/></td>
+                                </tr> 
+                                <tr>
+                                    <td class="table-secondary font-weight-bold">Anticipo o Pago Relacionado</td>
+                                    <td><span t-field="doc.advance_related_id.name"/><span t-field="doc.payment_related_id.name"/></td>
+                                </tr>                                                                                                                              
+                            </tbody>
+                        </table>
+
+                        <table class="table table-condensed" style="font-size: 12px; margin-top: 40px;">
+                            <tr>
+                                <th class="table-secondary">Operador</th>
+                                <th class="table-secondary">Viaje</th>
+                                <th class="table-secondary">Anticipos</th>                            
+                                <th class="table-secondary">Comprobaciones</th>
+                                <th class="table-secondary">Saldo a Liquidar</th>
+                            </tr>                             
+                            <tr t-foreach='doc.settled_adv_set_lines_ids' t-as='line'>
+                                <td><span t-esc="line.operator_id.name"/></td>                            
+                                <td><span t-esc="line.trip_id.name"/></td>
+                                <td><span t-esc="line.advance_sum_amnt"/></td>
+                                <td><span t-esc="line.comprobation_sum_amnt"/></td>
+                                <td><span t-esc="line.amount_to_settle"/></td>
+                            </tr>  
+                        </table>  
+
+                        <table class="table borderless" style="font-size: 12px; margin-top: 50px; table-layout: fixed;">                           
+                            <tr>
+                                <td style="width: 100px;"></td>                            
+                                <td style="width: 100px;"></td>
+                                <td style="width: 100px;"></td>
+                                <td style="width: 100px;"></td>
+                                <td style="width: 100px;"></td>
+                                <td>Total de Liquidación</td>
+                                <td><span t-field="doc.total_settlement"/></td>
+                            </tr>  
+                        </table>                                    
+            
+                        <div class="float-left text-center" style="font-size: 12px; margin-top: 70px; margin-left: 80px;">
+                            <p>______________________</p>
+                            <p>FIRMA OPERADOR</p>
+                        </div>
+
+                        <div class="float-right text-center" style="font-size: 12px; margin-top: 70px; margin-right: 80px;">
+                            <p>_________________________</p>
+                            <p>FIRMA ADMINISTRACIÓN</p>
+                        </div>                        
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

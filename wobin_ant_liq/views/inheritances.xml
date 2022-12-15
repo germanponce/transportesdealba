@@ -1,0 +1,24 @@
+<odoo>
+  <data>
+
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- INHERITANCES -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--Add a new many2one field Enterprise into Res Partner model-->
+    <record id="res_partner_enterprise_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+           <xpath expr="//field[@name='type']" position="after">
+               <group>
+                  <group> 
+                      <field name="enterprise_id"/>
+                  </group>
+                </group>
+            </xpath>        
+        </field>
+    </record>       
+
+  </data>
+</odoo>

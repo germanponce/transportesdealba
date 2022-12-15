@@ -1,0 +1,44 @@
+<odoo>
+    <data noupdate="1">
+
+        <!--::::::::::::::::::::::::::::::::::::::::::::-->
+        <!-- SEQUENCE for name of Advances              -->
+        <!--::::::::::::::::::::::::::::::::::::::::::::-->
+        <record id="sequence_wobin_advances" model="ir.sequence">
+        <field name="name">Wobin Advances</field>
+        <field name="code">self.advance</field>
+        <field name="active">TRUE</field>
+        <field name="prefix">ANT</field>
+        <field name="padding">6</field>
+        <!--<field name="number_next">1</field>-->
+        <field name="number_increment">1</field>
+        </record> 
+
+        <!--:::::::::::::::::::::::::::::::::::<data noupdate="1">:::::::::-->
+        <!-- SEQUENCE for name of Comprobations         -->
+        <!--::::::::::::::::::::::::::::::::::::::::::::-->
+        <record id="sequence_wobin_advances" model="ir.sequence">
+        <field name="name">Wobin Comprobations</field>
+        <field name="code">self.comprobation</field>
+        <field name="active">TRUE</field>
+        <field name="prefix">COMP</field>
+        <field name="padding">6</field>
+        <!--<field name="number_next">1</field>-->
+        <field name="number_increment">1</field>
+        </record>     
+
+        <!--::::::::::::::::::::::::::::::::::::::::::::-->
+        <!-- SEQUENCE for name of Settlements              -->
+        <!--::::::::::::::::::::::::::::::::::::::::::::-->
+        <record id="sequence_wobin_advances" model="ir.sequence">
+        <field name="name">Wobin Settlements</field>
+        <field name="code">self.settlement</field>
+        <field name="active">TRUE</field>
+        <field name="prefix">LIQ</field>
+        <field name="padding">6</field>
+        <!--<field name="number_next">1</field>-->
+        <field name="number_increment">1</field>
+        </record>             
+    
+    </data>  
+</odoo>      

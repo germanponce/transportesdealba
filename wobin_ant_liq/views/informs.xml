@@ -1,0 +1,122 @@
+<odoo>
+  <data>
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- VIEWS {LISTS, FORMS, SEARCH} -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <!-- INFORMS - SEARCH VIEW -->   
+    <record id="view_informs_search" model="ir.ui.view"> 
+      <field name="name">Informs</field>
+      <field name="model">wobin.moves.adv.set.lines</field>
+        <field name="arch" type="xml"> 
+            <search> 
+              <field name="id"/>     
+              <field name="check_selection"/> 
+              <field name="operator_id"/> 
+              <field name="trip_id"/> 
+              <field name="advance_ids"/>                     
+              <field name="comprobation_ids"/>                 
+              <field name="settled"/>
+              <field name="amount_to_settle"/>  
+            </search> 
+        </field> 
+    </record>     
+
+    <!-- INFORMS - LIST VIEW -->
+    <record id="view_informs_list" model="ir.ui.view">
+      <field name="name">Informs</field>
+      <field name="model">wobin.moves.adv.set.lines</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="operator_id"/> 
+            <field name="trip_id"/> 
+            <field name="advance_ids" widget='many2many_tags' force_save="1"/>                     
+            <field name="advance_sum_amnt" force_save="1"/> 
+            <field name="comprobation_ids" widget='many2many_tags' force_save="1"/>  
+            <field name="comprobation_sum_amnt" force_save="1"/>                
+            <field name="amount_to_settle"/>
+            <field name="settlement_aux_id"/> 
+            <field name="total_settlement"/> 
+            <field name="state"/> 
+        </tree>
+      </field>
+    </record> 
+
+    <!-- INFORMS - FORM VIEW --> 
+    <record id="view_informs_form" model="ir.ui.view"> 
+        <field name="name">Informs</field> 
+        <field name="model">wobin.moves.adv.set.lines</field> 
+        <field name="arch" type="xml"> 
+            <form duplicate="0"> 
+                <sheet> 
+                    <div class="oe_left oe_title">
+                        <h1>
+                            <field name="trip_id" readonly="True"/>
+                        </h1>
+                        <h2>
+                            <field name="operator_id" readonly="True"/>
+                        </h2>                        
+                    </div>
+                    <group>
+                        <group>
+                          <field name="advance_ids" readonly="True" force_save="1" nolabel="1" >
+                              <tree>
+                                  <field name="name"/>
+                                  <field name="date"/>
+                                  <field name="payment_related_id"/>
+                                  <field name="amount"/>
+                              </tree>
+                          </field>                                 
+                        </group>                                                 
+                        <group>       
+                            <field name="advance_sum_amnt" readonly="True" force_save="1"/>                                                  
+                        </group> 
+                    </group> 
+                    <group>
+                        <group>
+                          <field name="comprobation_ids" readonly="True" force_save="1" nolabel="1" >
+                              <tree>
+                                  <field name="name"/>
+                                  <field name="date"/>
+                                  <field name="acc_mov_related_id"/>
+                                  <field name="amount"/>
+                              </tree>
+                          </field>                                 
+                        </group>                                                 
+                        <group>       
+                            <field name="comprobation_sum_amnt" readonly="True" force_save="1"/>                                                  
+                        </group> 
+                    </group>  
+                    <group>
+                    </group> 
+                    
+                    <group> 
+                        <field name="amount_to_settle" readonly="True" force_save="1"/> 
+                    </group>
+
+                    <group>
+                    </group> 
+
+                    <group>                    
+                      <field name="settlements_ids" readonly="True" force_save="1" nolabel="1" >
+                      <tree>
+                        <field name="name"/>
+                        <field name="date"/>
+                        <field name="payment_related_id"/>
+                        <field name="advance_related_id"/>
+                        <field name="total_settlement"/>
+                      </tree>
+                      </field>                     
+                    </group>                                                                                                                           
+                </sheet>              
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>               
+            </form> 
+        </field> 
+    </record>        
+
+  </data>  
+</odoo> 

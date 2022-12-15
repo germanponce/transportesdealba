@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wobin_advances,access_wobin_advances,model_wobin_advances,,1,1,1,1
+access_wobin_comprobations,access_wobin_comprobations,model_wobin_comprobations,,1,1,1,1
+access_wobin_comprobation_lines,access_wobin_comprobation_lines,model_wobin_comprobation_lines,,1,1,1,1
+access_wobin_settlements,access_wobin_settlements,model_wobin_settlements,,1,1,1,1
+access_wobin_moves_adv_set_lines,access_wobin_moves_adv_set_lines,model_wobin_moves_adv_set_lines,,1,1,1,1
+access_wobin_concepts,access_wobin_concepts,model_wobin_concepts,,1,1,1,1
