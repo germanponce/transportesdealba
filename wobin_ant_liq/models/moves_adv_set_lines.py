@@ -37,8 +37,8 @@ class WobinMovesAdvSetLines(models.Model):
     trip_id         = fields.Many2one('wobin.logistics.trips', string='Trip', ondelete='cascade')
     advances_ids             = fields.One2many('wobin.advances', 'mov_lns_ad_set_id', string='Related Advances', ondelete='cascade')#, compute='set_advances', store=True)
     comprobations_ids        = fields.One2many('wobin.comprobations', 'mov_lns_ad_set_id', string='Related Comprobations', ondelete='cascade')#, compute='set_comprobations', store=True)
-    advances_sum_amount      = fields.Float(string='Advances', digits=(15,2), compute='_set_advances_sum_amnt', store=True)
-    comprobations_sum_amount = fields.Float(string='Comprobations', digits=(15,2), compute='_set_comprobations_sum_amnt', store=True)
+    advances_sum_amount      = fields.Float(string='Advances', digits=(15,2), compute='_set_advances_sum_amount', store=True)
+    comprobations_sum_amount = fields.Float(string='Comprobations', digits=(15,2), compute='_set_comprobations_sum_amount', store=True)
     amount_to_settle      = fields.Float(string='Amount to Settle', digits=(15,2), compute='set_amount_to_settle', store=True)
     settled               = fields.Boolean(string='Move Settled')      
     #flag_pending_process  = fields.Boolean(string='Pending Process', compute='set_flag_pending_process')    
@@ -86,7 +86,7 @@ class WobinMovesAdvSetLines(models.Model):
 
 
     @api.depends('advances_ids')
-    def _set_advances_sum_amnt(self):
+    def _set_advances_sum_amount(self):
         for rec in self:
             sum_amount = sum(line.amount for line in rec.advances_ids)
             rec.advances_sum_amount = sum_amount                   
@@ -94,7 +94,7 @@ class WobinMovesAdvSetLines(models.Model):
 
 
     @api.depends('comprobations_ids')
-    def _set_comprobations_sum_amnt(self):     
+    def _set_comprobations_sum_amount(self):     
         for rec in self: 
             sum_amount = sum(line.amount for line in rec.comprobations_ids)
             rec.comprobations_sum_amount = sum_amount          
