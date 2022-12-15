@@ -10,13 +10,13 @@ class WobinMovesAdvSetLines(models.Model):
 
     @api.model
     def default_get(self, fields):
-        res = super(WobinMovesAdvSetLines).default_get(fields)
+        res = super(WobinMovesAdvSetLines, self).default_get(fields)
         list_comprobations = self.env['wobin.comprobations'].search([('operator_id', '=', self.operator_id.id),
                                                                      ('trip_id', '=', self.trip_id.id),
                                                                      ('estado', '!=', 'cancelado')]).ids
         if list_comprobations:                                                                       
             res.update({
-                'comprobation_ids': list_comprobations
+                'comprobation_ids': [(6, 0, list_comprobations)]
             })  
         
         return res                                                                
