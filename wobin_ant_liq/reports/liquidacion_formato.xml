@@ -53,8 +53,8 @@
                             <tr t-foreach='doc.settled_adv_set_lines_ids' t-as='line'>
                                 <td><span t-esc="line.operator_id.name"/></td>                            
                                 <td><span t-esc="line.trip_id.name"/></td>
-                                <td><span t-esc="line.advance_sum_amnt"/></td>
-                                <td><span t-esc="line.comprobation_sum_amnt"/></td>
+                                <td><span t-esc="line.advances_sum_amount"/></td>
+                                <td><span t-esc="line.comprobations_sum_amount"/></td>
                                 <td><span t-esc="line.amount_to_settle"/></td>
                             </tr>  
                         </table>  

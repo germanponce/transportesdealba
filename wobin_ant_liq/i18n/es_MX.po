@@ -75,8 +75,8 @@ msgstr "Anticipo"
 
 #. module: wobin_ant_liq
 #: model:ir.actions.act_window,name:wobin_ant_liq.action_advances
-#: model:ir.model.fields,field_description:wobin_ant_liq.field_wobin_moves_adv_set_lines__advance_sum_amnt
-#: model:ir.model.fields,field_description:wobin_ant_liq.field_wobin_settlements__advance_sum_amnt
+#: model:ir.model.fields,field_description:wobin_ant_liq.field_wobin_moves_adv_set_lines__advances_sum_amount
+#: model:ir.model.fields,field_description:wobin_ant_liq.field_wobin_settlements__advances_sum_amount
 #: model:ir.ui.menu,name:wobin_ant_liq.advances_menu_1
 msgid "Advances"
 msgstr "Anticipos"
@@ -151,8 +151,8 @@ msgstr "Referencia de Comprobación"
 
 #. module: wobin_ant_liq
 #: model:ir.actions.act_window,name:wobin_ant_liq.action_comprobations
-#: model:ir.model.fields,field_description:wobin_ant_liq.field_wobin_moves_adv_set_lines__comprobation_sum_amnt
-#: model:ir.model.fields,field_description:wobin_ant_liq.field_wobin_settlements__comprobation_sum_amnt
+#: model:ir.model.fields,field_description:wobin_ant_liq.field_wobin_moves_adv_set_lines__comprobations_sum_amount
+#: model:ir.model.fields,field_description:wobin_ant_liq.field_wobin_settlements__comprobations_sum_amount
 #: model:ir.ui.menu,name:wobin_ant_liq.comprobations_menu_2
 msgid "Comprobations"
 msgstr "Comprobaciones"
@@ -607,12 +607,12 @@ msgid "Related Advance"
 msgstr "Anticipo Relacionado"
 
 #. module: wobin_ant_liq
-#: model:ir.model.fields,field_description:wobin_ant_liq.field_wobin_moves_adv_set_lines__advance_ids
+#: model:ir.model.fields,field_description:wobin_ant_liq.field_wobin_moves_adv_set_lines__advances_ids
 msgid "Related Advances"
 msgstr "Anticipos Relacionados"
 
 #. module: wobin_ant_liq
-#: model:ir.model.fields,field_description:wobin_ant_liq.field_wobin_moves_adv_set_lines__comprobation_ids
+#: model:ir.model.fields,field_description:wobin_ant_liq.field_wobin_moves_adv_set_lines__comprobations_ids
 msgid "Related Comprobations"
 msgstr "Comprobaciones Relacionadas"
 

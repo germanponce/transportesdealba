@@ -22,34 +22,21 @@ class WobinComprobations(models.Model):
             vals['name'] = sequence    
 
         res = super(WobinComprobations, self).create(vals)  
-
-        #Intend to link this record with Wobin Moves Advances Settlements Lines:
-        #operator = res.operator_id.id
-        #trip     = res.trip_id.id
-        #advance  = res.advance_id.id
-        
-        #get_id_mvs = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', operator),
-        #                                                           ('trip_id', '=', trip),
-        #                                                           ('advance_id', '=', advance)], limit=1)
-                                                                       
-        #mov_lns_obj = self.env['wobin.moves.adv.set.lines'].browse(get_id_mvs.id)
-        #mov_lns_obj.write({'comprobation_id': res.id}) 
-
-        #Set value of id for Wobin Moves Advances Settlements Lines in Advances:
-        #res.mov_lns_ad_set_id = mov_lns_obj.id   
             
         #After record was created successfully and if considering there is a new trip 
         #with new record for operator then create a new record for Wobin Moves Advances Settlements Lines 
-        existing_movs = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', res.operator_id.id),
-                                                                      ('trip_id', '=', res.trip_id.id)]).ids                                                                       
-        if not existing_movs:
+        existing_move = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', res.operator_id.id),
+                                                                      ('trip_id', '=', res.trip_id.id)], limit=1)                                                                       
+        if not existing_move:
             #Create a new record for Wobin Moves Advances Settlements Lines
             values = {
                       'operator_id': res.operator_id.id,
                       'trip_id': res.trip_id.id,
-                      'comprobation_id': res.id,
+                      'comprobations_ids': [(4, res.id)]
                      }
-            movs = self.env['wobin.moves.adv.set.lines'].create(values)                                                                                              
+            self.env['wobin.moves.adv.set.lines'].create(values)     
+        else:
+            existing_move.comprobations_ids = [(4, res.id)]                                                                                                     
 
         return res
 

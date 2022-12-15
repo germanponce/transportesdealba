@@ -16,7 +16,7 @@ class WobinMovesAdvSetLines(models.Model):
                                                                      ('estado', '!=', 'cancelado')]).ids
         if list_comprobations:                                                                       
             res.update({
-                'comprobation_ids': [(6, 0, list_comprobations)]
+                'comprobations_ids': [(6, 0, list_comprobations)]
             })  
         
         return res      
@@ -24,21 +24,21 @@ class WobinMovesAdvSetLines(models.Model):
 
     @api.model
     def default_comprobations(self):
-        #self.comprobation_ids = [(6, 0, self.env['wobin.comprobations'].search([('mov_lns_ad_set_id', '=', self.id)]).ids)]
+        #self.comprobations_ids = [(6, 0, self.env['wobin.comprobations'].search([('mov_lns_ad_set_id', '=', self.id)]).ids)]
         list_comprobations = self.env['wobin.comprobations'].search([('operator_id', '=', self.operator_id.id),
                                                                      ('trip_id', '=', self.trip_id.id),
                                                                      ('estado', '!=', 'cancelado')]).ids                                                                                                                                            
         return list_comprobations
-        #rec.comprobation_ids = [(6, 0, list_comprobations)]                                                                  
+        #rec.comprobations_ids = [(6, 0, list_comprobations)]                                                                  
 
 
     check_selection = fields.Boolean(string=' ')
     operator_id     = fields.Many2one('res.partner',string='Operator', ondelete='cascade')
     trip_id         = fields.Many2one('wobin.logistics.trips', string='Trip', ondelete='cascade')
-    advance_ids     = fields.One2many('wobin.advances', 'mov_lns_ad_set_id', string='Related Advances', ondelete='cascade')#, compute='set_advances', store=True)
-    comprobation_ids      = fields.One2many('wobin.comprobations', 'mov_lns_ad_set_id', string='Related Comprobations', ondelete='cascade')#, compute='set_comprobations', store=True)
-    advance_sum_amnt      = fields.Float(string='Advances', digits=(15,2), compute='set_advances', store=True)
-    comprobation_sum_amnt = fields.Float(string='Comprobations', digits=(15,2), compute='set_comprobation_sum_amnt', store=True)
+    advances_ids             = fields.One2many('wobin.advances', 'mov_lns_ad_set_id', string='Related Advances', ondelete='cascade')#, compute='set_advances', store=True)
+    comprobations_ids        = fields.One2many('wobin.comprobations', 'mov_lns_ad_set_id', string='Related Comprobations', ondelete='cascade')#, compute='set_comprobations', store=True)
+    advances_sum_amount      = fields.Float(string='Advances', digits=(15,2), compute='_set_advances_sum_amnt', store=True)
+    comprobations_sum_amount = fields.Float(string='Comprobations', digits=(15,2), compute='_set_comprobations_sum_amnt', store=True)
     amount_to_settle      = fields.Float(string='Amount to Settle', digits=(15,2), compute='set_amount_to_settle', store=True)
     settled               = fields.Boolean(string='Move Settled')      
     #flag_pending_process  = fields.Boolean(string='Pending Process', compute='set_flag_pending_process')    
@@ -85,47 +85,19 @@ class WobinMovesAdvSetLines(models.Model):
 
 
 
-    #@api.one
-    @api.depends('advance_ids')
-    def set_advances(self):
+    @api.depends('advances_ids')
+    def _set_advances_sum_amnt(self):
         for rec in self:
-            #list_advances = self.env['wobin.advances'].search([('operator_id', '=', rec.operator_id.id),
-            #                                                   ('trip_id', '=', rec.trip_id.id)]).ids                                                                   
-            #rec.advance_ids = [(6, 0, list_advances)]
-
-            #if rec.advance_ids:
-            sum_amount = sum(line.amount for line in rec.advance_ids)
-            rec.advance_sum_amnt = sum_amount          
-            #self.update({'advance_sum_amnt': sum_amount})             
-        
-    
-
-    #@api.one
-    #@api.depends('operator_id')
-    def set_comprobations(self):
-        for rec in self:
-            #self.comprobation_ids = [(6, 0, self.env['wobin.comprobations'].search([('mov_lns_ad_set_id', '=', self.id)]).ids)]
-            list_comprobations = self.env['wobin.comprobations'].search([('operator_id', '=', rec.operator_id.id),
-                                                                         ('trip_id', '=', rec.trip_id.id),
-                                                                         ('estado', '!=', 'cancelado')]).ids                                                                                                                                            
-            rec.comprobation_ids = list_comprobations
-            #rec.comprobation_ids = [(6, 0, list_comprobations)]
-            #self.update({'comprobation_ids': [(6, 0, list_comprobations)]}) 
-
-            #if rec.comprobation_ids:
-            #    sum_amount = sum(line.amount for line in rec.comprobation_ids)
-            #    rec.comprobation_sum_amnt = sum_amount         
-            #    self.write({'comprobation_sum_amnt': sum_amount})         
+            sum_amount = sum(line.amount for line in rec.advances_ids)
+            rec.advances_sum_amount = sum_amount                   
 
 
 
-    #@api.one 
-    @api.depends('comprobation_ids')
-    def set_comprobation_sum_amnt(self):     
+    @api.depends('comprobations_ids')
+    def _set_comprobations_sum_amnt(self):     
         for rec in self: 
-            sum_amount = sum(line.amount for line in rec.comprobation_ids)
-            rec.comprobation_sum_amnt = sum_amount         
-            self.write({'comprobation_sum_amnt': sum_amount}) 
+            sum_amount = sum(line.amount for line in rec.comprobations_ids)
+            rec.comprobations_sum_amount = sum_amount          
               
 
 
@@ -133,23 +105,23 @@ class WobinMovesAdvSetLines(models.Model):
     @api.model 
     def read_group(self, domain, fields, groupby, offset=0, limit=None, orderby=False, lazy=True):
         res = super(WobinMovesAdvSetLines, self).read_group(domain, fields, groupby, offset=offset, limit=limit, orderby=orderby, lazy=lazy)
-        if 'advance_sum_amnt' in fields:
+        if 'advances_sum_amount' in fields:
             for line in res:
                 if '__domain' in line:
                     lines = self.search(line['__domain'])
                     total_due = 0.0
                     for record in lines:
                         if not record.settlement_aux_id:
-                            total_due += record.advance_sum_amnt
-                    line['advance_sum_amnt'] = total_due        
-        if 'comprobation_sum_amnt' in fields:
+                            total_due += record.advances_sum_amount
+                    line['advances_sum_amount'] = total_due        
+        if 'comprobations_sum_amount' in fields:
             for line in res:
                 if '__domain' in line:
                     lines = self.search(line['__domain'])
                     total_due = 0.0
                     for record in lines:
-                        total_due += record.comprobation_sum_amnt
-                    line['comprobation_sum_amnt'] = total_due
+                        total_due += record.comprobations_sum_amount
+                    line['comprobations_sum_amount'] = total_due
         if 'amount_to_settle' in fields:
             for line in res:
                 if '__domain' in line:
@@ -164,10 +136,10 @@ class WobinMovesAdvSetLines(models.Model):
     
 
     #@api.one    
-    @api.depends('advance_sum_amnt', 'comprobation_sum_amnt')
+    @api.depends('advances_sum_amount', 'comprobations_sum_amount')
     def set_amount_to_settle(self):
         for rec in self:
             if rec.settled: 
                 rec.amount_to_settle = None                      
             else:
-                rec.amount_to_settle = self.comprobation_sum_amnt - self.advance_sum_amnt 
+                rec.amount_to_settle = self.comprobations_sum_amount - self.advances_sum_amount

@@ -31,38 +31,18 @@ class WobinAdvances(models.Model):
                 values = {
                         'operator_id': res.operator_id.id,
                         'trip_id': res.trip_id.id,
-                        'advance_ids': [(4, res.id)]
+                        'advances_ids': [(4, res.id)]
                         }
                 self.env['wobin.moves.adv.set.lines'].create(values)
             
             else:
-                existing_move.advance_ids = [(4, res.id)]
+                existing_move.advances_ids = [(4, res.id)]
 
             #If a new record was created successfully and settlement related exists
             #update that settlement in order to change its state to 'settled':
             if res.settlement_id:
                 settlement_obj = self.env['wobin.settlements'].browse(res.settlement_id.id)
-                settlement_obj.update({'state': 'ready'})
-
-        #Create a new record for Wobin Moves Advances Settlements Lines
-        #values = {
-        #          'operator_id': res.operator_id.id,
-        #          'trip_id': res.trip_id.id,
-        #          'advance_id': res.id
-        #         }
-        #mov_lns_obj = self.env['wobin.moves.adv.set.lines'].create(values) 
-
-        #Set value of id for Wobin Moves Advances Settlements Lines in Advances:
-        #res.mov_lns_ad_set_id = mov_lns_obj.id 
-
-        #Create a new record for Wobin Settlements:
-        #vals_set = {
-        #            'name': self.env['ir.sequence'].next_by_code('self.settlement'),  
-        #            'operator_id': res.operator_id.id,
-        #            'trip_id': res.trip_id.id,
-        #            'state': 'pending'
-        #           }
-        #self.env['wobin.settlements'].create(vals_set)         
+                settlement_obj.update({'state': 'ready'})    
 
         return res
 
