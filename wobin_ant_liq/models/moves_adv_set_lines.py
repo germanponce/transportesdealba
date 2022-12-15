@@ -63,7 +63,7 @@ class WobinMovesAdvSetLines(models.Model):
 
 
     #@api.one
-    @api.depends('operator_id', 'trip_id', 'advance_ids', 'advance_sum_amnt', 'comprobation_ids', 'comprobation_sum_amnt')
+    @api.depends('operator_id')
     def set_advances(self):
         for rec in self:
             list_advances = self.env['wobin.advances'].search([('operator_id', '=', rec.operator_id.id),
@@ -79,7 +79,6 @@ class WobinMovesAdvSetLines(models.Model):
 
     #@api.one
     #@api.depends('operator_id', 'advance_ids')
-    @api.depends('operator_id', 'trip_id', 'advance_ids', 'advance_sum_amnt', 'comprobation_ids', 'comprobation_sum_amnt')   
     def set_comprobations(self):
         for rec in self:
             #self.comprobation_ids = [(6, 0, self.env['wobin.comprobations'].search([('mov_lns_ad_set_id', '=', self.id)]).ids)]
@@ -96,8 +95,7 @@ class WobinMovesAdvSetLines(models.Model):
 
 
     #@api.one 
-    #@api.depends('comprobation_ids')
-    @api.depends('operator_id', 'trip_id', 'advance_ids', 'advance_sum_amnt', 'comprobation_ids', 'comprobation_sum_amnt')   
+    @api.depends('comprobation_ids')
     def set_comprobation_sum_amnt(self):     
         for rec in self: 
             sum_amount = sum(line.amount for line in rec.comprobation_ids)
