@@ -13,8 +13,7 @@ class WobinAdvances(models.Model):
         """This method intends to create a sequence for a given advance"""            
         #Change of sequence (if it isn't stored is shown "New" else e.g ANT000005) 
         if vals.get('name', 'New') == 'New':
-            sequence = self.env['ir.sequence'].next_by_code(
-                'self.advance') or 'New'
+            sequence = self.env['ir.sequence'].next_by_code('self.advance') or 'New'
             vals['name'] = sequence 
           
             #Update flag to indicate employee for checking up:
@@ -25,17 +24,19 @@ class WobinAdvances(models.Model):
 
             #After record was created successfully and if considering there is a new trip 
             #with new record for operator then create a new record for Wobin Moves Advances Settlements Lines 
-            existing_movs = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', res.operator_id.id),
-                                                                          ('trip_id', '=', res.trip_id.id)]).ids                                                                       
-            if not existing_movs:
+            existing_move = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', res.operator_id.id),
+                                                                          ('trip_id', '=', res.trip_id.id)], limit=1)                                                                       
+            if not existing_move:
                 #Create a new record for Wobin Moves Advances Settlements Lines
                 values = {
                         'operator_id': res.operator_id.id,
                         'trip_id': res.trip_id.id,
-                        'advance_id': res.id,
+                        'advance_ids': [(4, res.id)]
                         }
-                self.env['wobin.moves.adv.set.lines'].create(values) 
-
+                self.env['wobin.moves.adv.set.lines'].create(values)
+            
+            else:
+                existing_move.advance_ids = [(4, res.id)]
 
             #If a new record was created successfully and settlement related exists
             #update that settlement in order to change its state to 'settled':
