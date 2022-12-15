@@ -85,7 +85,7 @@
                             <field name="operator_id"/>
                             <field name="trip_id"/>
                             <field name="advances_sum_amount" force_save="1"/>                      
-                            <field name="comprobations_sum_amountt" force_save="1"/>
+                            <field name="comprobations_sum_amount" force_save="1"/>
                             <field name="amount_to_settle" sum="Sum Amounts" force_save="1"/>
                         </tree>
                     </field>
