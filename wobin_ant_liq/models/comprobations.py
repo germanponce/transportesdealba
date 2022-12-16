@@ -32,11 +32,11 @@ class WobinComprobations(models.Model):
             values = {
                       'operator_id': res.operator_id.id,
                       'trip_id': res.trip_id.id,
-                      'comprobations_ids': [(4, res.id)]
+                      'comprobation_ids': [(4, res.id)]
                      }
             self.env['wobin.moves.adv.set.lines'].create(values)     
         else:
-            existing_move.comprobations_ids = [(4, res.id)]                                                                                                     
+            existing_move.comprobation_ids = [(4, res.id)]                                                                                                     
 
         return res
 

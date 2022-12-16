@@ -48,7 +48,7 @@ class WobinSettlements(models.Model):
                                                 ], string='State', required=True, readonly=True, copy=False, tracking=True, default='pending', track_visibility='always')    
     # Fields for analysis:
     advances_sum_amount   = fields.Float(string='Advances', digits=(15,2))
-    comprobations_sum_amount = fields.Float(string='Comprobations', digits=(15,2))
+    comprobation_sum = fields.Float(string='Comprobations', digits=(15,2))
     btn_crt_payment    = fields.Boolean(compute="set_flag_btn_crt_payment", store=True, default=False)
     btn_mark_settle    = fields.Boolean(compute="set_flag_btn_mark_settle", store=True, default=False)
     btn_debtor_new_adv = fields.Boolean(compute="set_flag_btn_debtor_new_a", store=True, default=False)
@@ -80,8 +80,8 @@ class WobinSettlements(models.Model):
         sum_advances = sum(line.advances_sum_amount for line in self.possible_adv_set_lines_ids if line.check_selection == True)
         self.advances_sum_amount = sum_advances
 
-        sum_comprobations = sum(line.comprobations_sum_amount for line in self.possible_adv_set_lines_ids if line.check_selection == True)
-        self.comprobations_sum_amount = sum_comprobations
+        sum_comprobations = sum(line.comprobation_sum for line in self.possible_adv_set_lines_ids if line.check_selection == True)
+        self.comprobation_sum = sum_comprobations
 
         list_trips = []
         for ln in self.possible_adv_set_lines_ids:

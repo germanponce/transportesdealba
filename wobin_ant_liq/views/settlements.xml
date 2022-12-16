@@ -85,7 +85,7 @@
                             <field name="operator_id"/>
                             <field name="trip_id"/>
                             <field name="advances_sum_amount" force_save="1"/>                      
-                            <field name="comprobations_sum_amount" force_save="1"/>
+                            <field name="comprobation_sum" force_save="1"/>
                             <field name="amount_to_settle" sum="Sum Amounts" force_save="1"/>
                         </tree>
                     </field>
@@ -95,7 +95,7 @@
                             <field name="operator_id"/>
                             <field name="trip_id"/>
                             <field name="advances_sum_amount" force_save="1"/>                      
-                            <field name="comprobations_sum_amount" force_save="1"/>
+                            <field name="comprobation_sum" force_save="1"/>
                             <field name="amount_to_settle" sum="Sum Amounts" force_save="1"/>
                         </tree>
                     </field>                    
@@ -106,7 +106,7 @@
                             <field name="total_settlement" readonly="True" force_save="1" attrs="{'invisible': [('state', '==', 'pending')]}"/>
                             <!--<field name="amount_to_settle" readonly="True" force_save="1" attrs="{'invisible': [('state', '==', 'pending')]}"/>-->
                             <field name="advances_sum_amount" invisible="True"/>
-                            <field name="comprobations_sum_amount" invisible="True"/>
+                            <field name="comprobation_sum" invisible="True"/>
                             <field name="trips_related_ids" invisible="True"/>
                         </group>
                     </div>                                                                                   

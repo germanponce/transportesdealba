@@ -54,7 +54,7 @@
                                 <td><span t-esc="line.operator_id.name"/></td>                            
                                 <td><span t-esc="line.trip_id.name"/></td>
                                 <td><span t-esc="line.advances_sum_amount"/></td>
-                                <td><span t-esc="line.comprobations_sum_amount"/></td>
+                                <td><span t-esc="line.comprobation_sum"/></td>
                                 <td><span t-esc="line.amount_to_settle"/></td>
                             </tr>  
                         </table>  

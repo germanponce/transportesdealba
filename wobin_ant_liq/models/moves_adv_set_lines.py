@@ -12,9 +12,9 @@ class WobinMovesAdvSetLines(models.Model):
     operator_id     = fields.Many2one('res.partner',string='Operator', ondelete='cascade')
     trip_id         = fields.Many2one('wobin.logistics.trips', string='Trip', ondelete='cascade')
     advances_ids             = fields.One2many('wobin.advances', 'mov_lns_ad_set_id', string='Related Advances', ondelete='cascade')#, compute='set_advances', store=True)
-    comprobations_ids        = fields.One2many('wobin.comprobations', 'mov_lns_ad_set_id', string='Related Comprobations', ondelete='cascade')#, compute='set_comprobations', store=True)
+    comprobation_ids        = fields.One2many('wobin.comprobations', 'mov_lns_ad_set_id', string='Related Comprobations', ondelete='cascade')#, compute='set_comprobations', store=True)
     advances_sum_amount      = fields.Float(string='Advances', digits=(15,2), compute='_set_advances_sum_amount', store=True)
-    comprobations_sum_amount = fields.Float(string='Comprobations', digits=(15,2), compute='_set_comprobations_sum_amount', store=True)
+    comprobation_sum = fields.Float(string='Comprobations', digits=(15,2), compute='set_comprobation', store=True)
     amount_to_settle      = fields.Float(string='Amount to Settle', digits=(15,2), compute='set_amount_to_settle', store=True)
     settled               = fields.Boolean(string='Move Settled')      
     #flag_pending_process  = fields.Boolean(string='Pending Process', compute='set_flag_pending_process')    
@@ -70,12 +70,12 @@ class WobinMovesAdvSetLines(models.Model):
 
 
 
-    @api.depends('operator_id', 'comprobations_ids')
-    def _set_comprobations_sum_amount(self):     
+    @api.depends('comprobation_ids')
+    def set_comprobation(self):     
         for rec in self: 
-            sum_amount = sum(line.amount for line in rec.comprobations_ids)
-            rec.comprobations_sum_amount = sum_amount
-            self.write({'comprobations_sum_amount': sum_amount})            
+            sum_amount = sum(line.amount for line in rec.comprobation_ids)
+            rec.comprobation_sum = sum_amount
+            self.write({'comprobation_sum': sum_amount})            
               
 
 
@@ -92,14 +92,14 @@ class WobinMovesAdvSetLines(models.Model):
                         if not record.settlement_aux_id:
                             total_due += record.advances_sum_amount
                     line['advances_sum_amount'] = total_due        
-        if 'comprobations_sum_amount' in fields:
+        if 'comprobation_sum' in fields:
             for line in res:
                 if '__domain' in line:
                     lines = self.search(line['__domain'])
                     total_due = 0.0
                     for record in lines:
-                        total_due += record.comprobations_sum_amount
-                    line['comprobations_sum_amount'] = total_due
+                        total_due += record.comprobation_sum
+                    line['comprobation_sum'] = total_due
         if 'amount_to_settle' in fields:
             for line in res:
                 if '__domain' in line:
@@ -114,10 +114,10 @@ class WobinMovesAdvSetLines(models.Model):
     
 
     #@api.one    
-    @api.depends('advances_sum_amount', 'comprobations_sum_amount')
+    @api.depends('advances_sum_amount', 'comprobation_sum')
     def set_amount_to_settle(self):
         for rec in self:
             if rec.settled: 
                 rec.amount_to_settle = None                      
             else:
-                rec.amount_to_settle = self.comprobations_sum_amount - self.advances_sum_amount
+                rec.amount_to_settle = self.comprobation_sum - self.advances_sum_amount
