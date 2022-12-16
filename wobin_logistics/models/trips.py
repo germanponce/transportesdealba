@@ -415,12 +415,12 @@ class WobinLogisticsTrips(models.Model):
         #°°°°°°°°°°°°°°°°°°°°°°           
         return {
             #'name':_(""),
-            'view_mode': 'form',
-            'view_id': False,
-            'view_type': 'form',
-            'res_model': 'account.move',
-            #'res_id': p_id,
             'type': 'ir.actions.act_window',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'res_model': 'account.move',
+            'view_id': False,                        
+            #'res_id': p_id,            
             'nodestroy': True,
             'target': 'new',
             'domain': '[]',

@@ -57,6 +57,7 @@
                             <field name="operator_id" readonly="True"/>
                         </h2>                        
                     </div>
+                    
                     <group>
                         <group>
                           <field name="advances_ids" readonly="True" force_save="1" nolabel="1" >
@@ -72,6 +73,7 @@
                             <field name="advances_sum_amount" readonly="True" force_save="1"/>                                                  
                         </group> 
                     </group> 
+
                     <group>
                         <group>
                           <field name="comprobations_ids" readonly="True" force_save="1" nolabel="1" >
@@ -86,7 +88,8 @@
                         <group>       
                             <field name="comprobations_sum_amount" readonly="True" force_save="1"/>                                                  
                         </group> 
-                    </group>  
+                    </group> 
+                     
                     <group>
                     </group> 
                     
