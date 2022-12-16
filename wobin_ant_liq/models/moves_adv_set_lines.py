@@ -6,31 +6,7 @@ class WobinMovesAdvSetLines(models.Model):
     _name = 'wobin.moves.adv.set.lines'
     _description = 'Wobin Moves Advances Settlements Lines'
     _inherit = ['mail.thread', 'mail.activity.mixin']     
-
-
-    @api.model
-    def default_get(self, fields):
-        res = super(WobinMovesAdvSetLines, self).default_get(fields)
-        list_comprobations = self.env['wobin.comprobations'].search([('operator_id', '=', self.operator_id.id),
-                                                                     ('trip_id', '=', self.trip_id.id),
-                                                                     ('estado', '!=', 'cancelado')]).ids
-        if list_comprobations:                                                                       
-            res.update({
-                'comprobations_ids': [(6, 0, list_comprobations)]
-            })  
-        
-        return res      
-
-
-    @api.model
-    def default_comprobations(self):
-        #self.comprobations_ids = [(6, 0, self.env['wobin.comprobations'].search([('mov_lns_ad_set_id', '=', self.id)]).ids)]
-        list_comprobations = self.env['wobin.comprobations'].search([('operator_id', '=', self.operator_id.id),
-                                                                     ('trip_id', '=', self.trip_id.id),
-                                                                     ('estado', '!=', 'cancelado')]).ids                                                                                                                                            
-        return list_comprobations
-        #rec.comprobations_ids = [(6, 0, list_comprobations)]                                                                  
-
+                                                                
 
     check_selection = fields.Boolean(string=' ')
     operator_id     = fields.Many2one('res.partner',string='Operator', ondelete='cascade')
@@ -99,7 +75,7 @@ class WobinMovesAdvSetLines(models.Model):
         for rec in self: 
             sum_amount = sum(line.amount for line in rec.comprobations_ids)
             rec.comprobations_sum_amount = sum_amount
-            rec.update({'comprobations_sum_amount': sum_amount})           
+            self.update({'comprobations_sum_amount': sum_amount})           
               
 
 
