@@ -344,7 +344,7 @@ class WobinLogisticsTrips(models.Model):
         #°°°°°°°°°°°°°°°°°°°°°°
         #    For Debit Line   |
         #°°°°°°°°°°°°°°°°°°°°°°    
-        account_id          = 2191 #2191 ID for Account of 105.01.001 "CLIENTES NACIONALES" in Transportes de Alba ['Sistema' Company]
+        account_id          = 44 #2191 ID for Account of 105.01.001 "CLIENTES NACIONALES" in Transportes de Alba ['Sistema' Company]
         enterprise_id       = self.client_id.id
         name                = self.analytic_account_id.name + '|' + self.name
         analytic_account_id = self.analytic_account_id.id
@@ -373,7 +373,7 @@ class WobinLogisticsTrips(models.Model):
         #°°°°°°°°°°°°°°°°°°°°°°
         #   For Credit Line   |
         #°°°°°°°°°°°°°°°°°°°°°°
-        account_id          = 2310 #2310 ID for Account of 401.01.001 "INGRESOS POR SERVICIOS" in Transportes de Alba ['Sistema' Company]
+        account_id          = 5 #2310 ID for Account of 401.01.001 "INGRESOS POR SERVICIOS" in Transportes de Alba ['Sistema' Company]
         enterprise_id       = self.client_id.id
         name                = self.analytic_account_id.name + '|' + self.name
         analytic_account_id = self.analytic_account_id.id
@@ -406,7 +406,7 @@ class WobinLogisticsTrips(models.Model):
         ctxt = {
                 'default_trips_acc_move_id': self.id,
                 'default_ref': 'PROVISION',                
-                'default_journal_id': 70,  #70 ID for Journal of "Contabilidad B" in Transportes de Alba ['Sistema' Company]
+                'default_journal_id': 3,  #70 ID for Journal of "Contabilidad B" in Transportes de Alba ['Sistema' Company]
                 'default_line_ids': line_ids_list,                
                }                                           
 
