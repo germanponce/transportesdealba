@@ -6,7 +6,7 @@
     <!--::::::::::::::::::::::::::::::::::::::::::::-->
     <!-- ADVANCES - GENERAL ACTION -->
     <record id="action_advances" model="ir.actions.act_window">
-      <field name="name">Advances</field>
+      <field name="name">Anticipos</field>
       <field name="res_model">wobin.advances</field>
       <field name="view_mode">tree,form,search</field>
       <field name="context">{'group_by':'trip_id'}</field>
@@ -15,7 +15,7 @@
 
     <!-- COMPROBATIONS - GENERAL ACTION -->
     <record id="action_comprobations" model="ir.actions.act_window">
-      <field name="name">Comprobations</field>
+      <field name="name">Comprobaciones</field>
       <field name="res_model">wobin.comprobations</field>
       <field name="view_mode">tree,form,search</field>
       <!--<field name="context">{'group_by':'trip_id'}</field>-->
@@ -24,7 +24,7 @@
 
     <!-- SETTLEMENTS - GENERAL ACTION -->
     <record id="action_settlements" model="ir.actions.act_window">
-      <field name="name">Settlements</field>
+      <field name="name">Liquidaciones</field>
       <field name="res_model">wobin.settlements</field>
       <field name="view_mode">tree,form,search</field>
       <field name="context">{'group_by':'operator_id'}</field>
@@ -33,7 +33,7 @@
 
     <!-- DEBTS Inform - ACTION -->  
     <record id="action_inform" model="ir.actions.act_window">
-      <field name="name">Debts Inform</field>
+      <field name="name">Informe de Adeudos</field>
       <field name="res_model">wobin.moves.adv.set.lines</field>
       <field name="view_id" ref="view_informs_list"/>
       <field name="search_view_id" ref="view_informs_search"/>
@@ -44,7 +44,7 @@
 
     <!-- SETTINGS - ACTION -->
     <record id="action_concepts" model="ir.actions.act_window">
-        <field name="name">Concepts</field>
+        <field name="name">Conceptos</field>
         <field name="res_model">wobin.concepts</field>
         <field name="view_mode">tree,form</field>        
         <field name="domain"></field>
@@ -59,12 +59,12 @@
     
     <!-- Top Menu Item {ROOT} -->
     <menuitem id="wobin_ant_liq.menu_root"
-              name="Advances and Settlements" 
+              name="Wobin Anticipos y Liquidaciones" 
               groups="wobin_ant_liq.group_wacs_general,group_wacs_administration"                             
               web_icon="wobin_ant_liq,static/description/icon.png"/>
 
     <!-- Menu Categories {SUB MENUITEMS} -->
-    <menuitem name="Advances" 
+    <menuitem name="Anticipos" 
               id="advances_menu_1" 
               parent="wobin_ant_liq.menu_root" 
               groups="wobin_ant_liq.group_wacs_administration"
@@ -74,7 +74,7 @@
     </record>  
 
 
-    <menuitem name="Comprobations" 
+    <menuitem name="Comprobaciones" 
               id="comprobations_menu_2" 
               parent="wobin_ant_liq.menu_root"
               groups="wobin_ant_liq.group_wacs_administration" 
@@ -84,7 +84,7 @@
     </record>
 
 
-    <menuitem name="Settlements" 
+    <menuitem name="Liquidaciones" 
               id="settlemens_menu_3" 
               parent="wobin_ant_liq.menu_root" 
               groups="wobin_ant_liq.group_wacs_administration"
@@ -95,12 +95,12 @@
 
 
 
-    <menuitem name="Informs" 
+    <menuitem name="Informes" 
               id="informs_menu_4" 
               parent="wobin_ant_liq.menu_root" 
               groups="wobin_ant_liq.group_wacs_general,group_wacs_administration"/>
 
-    <menuitem name="Debts Inform" 
+    <menuitem name="Informe de Adeudos" 
               id="debts_inform_menuitem" 
               parent="wobin_ant_liq.informs_menu_4" 
               groups="wobin_ant_liq.group_wacs_general,group_wacs_administration"
@@ -109,7 +109,7 @@
                                                        
 
 
-    <menuitem name="Settings" 
+    <menuitem name="Ajustes" 
               id="settings_menu_5" 
               parent="wobin_ant_liq.menu_root" 
               groups="wobin_ant_liq.group_wacs_administration"/>
@@ -117,7 +117,7 @@
         <field name="groups_id" eval="[(6,0,[ref('group_wacs_administration')])]"/>        
     </record>               
                           
-    <menuitem name="Concepts" 
+    <menuitem name="Conceptos" 
               id="concepts_menuitem" 
               parent="wobin_ant_liq.settings_menu_5" 
               groups="wobin_ant_liq.group_wacs_administration"

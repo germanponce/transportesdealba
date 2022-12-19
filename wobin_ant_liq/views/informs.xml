@@ -6,7 +6,7 @@
 
     <!-- INFORMS - SEARCH VIEW -->   
     <record id="view_informs_search" model="ir.ui.view"> 
-      <field name="name">Informs</field>
+      <field name="name">Informes</field>
       <field name="model">wobin.moves.adv.set.lines</field>
         <field name="arch" type="xml"> 
             <search> 
@@ -15,7 +15,7 @@
               <field name="operator_id"/> 
               <field name="trip_id"/> 
               <field name="advances_ids"/>                     
-              <field name="comprobation_ids"/>                 
+              <field name="comprobations_ids"/>                 
               <field name="settled"/>
               <field name="amount_to_settle"/>  
             </search> 
@@ -24,7 +24,7 @@
 
     <!-- INFORMS - LIST VIEW -->
     <record id="view_informs_list" model="ir.ui.view">
-      <field name="name">Informs</field>
+      <field name="name">Informes</field>
       <field name="model">wobin.moves.adv.set.lines</field>
       <field name="arch" type="xml">
         <tree>
@@ -32,8 +32,8 @@
             <field name="trip_id"/> 
             <field name="advances_ids" widget='many2many_tags' force_save="1"/>                     
             <field name="advances_sum_amount" force_save="1"/> 
-            <field name="comprobation_ids" widget='many2many_tags' force_save="1"/>  
-            <field name="comprobation_sum" force_save="1"/>                
+            <field name="comprobations_ids" widget='many2many_tags' force_save="1"/>  
+            <field name="comprobations_sum_amount" force_save="1"/>                
             <field name="amount_to_settle"/>
             <field name="settlement_aux_id"/> 
             <field name="total_settlement"/> 
@@ -44,11 +44,11 @@
 
     <!-- INFORMS - FORM VIEW --> 
     <record id="view_informs_form" model="ir.ui.view"> 
-        <field name="name">Informs</field> 
+        <field name="name">Informes</field> 
         <field name="model">wobin.moves.adv.set.lines</field> 
         <field name="arch" type="xml"> 
             <form duplicate="0"> 
-                <sheet> 
+                <sheet>                   
                     <div class="oe_left oe_title">
                         <h1>
                             <field name="trip_id" readonly="True"/>
@@ -76,7 +76,7 @@
 
                     <group>
                         <group>
-                          <field name="comprobation_ids" readonly="True" force_save="1" nolabel="1" >
+                          <field name="comprobations_ids" readonly="True" force_save="1" nolabel="1" >
                               <tree>
                                   <field name="name"/>
                                   <field name="date"/>
@@ -86,31 +86,30 @@
                           </field>                                 
                         </group>                                                 
                         <group>       
-                            <field name="comprobation_sum" readonly="True" force_save="1"/>                                                  
+                            <field name="comprobations_sum_amount" readonly="True" force_save="1"/>                                                  
                         </group> 
                     </group> 
                      
                     <group>
-                    </group> 
-                    
-                    <group> 
-                        <field name="amount_to_settle" readonly="True" force_save="1"/> 
-                    </group>
-
-                    <group>
+                      <group>
+                      </group>                     
+                      <group> 
+                          <field name="amount_to_settle" readonly="True" force_save="1"/> 
+                      </group>
                     </group> 
 
                     <group>                    
                       <field name="settlements_ids" readonly="True" force_save="1" nolabel="1" >
-                      <tree>
-                        <field name="name"/>
-                        <field name="date"/>
-                        <field name="payment_related_id"/>
-                        <field name="advance_related_id"/>
-                        <field name="total_settlement"/>
-                      </tree>
+                        <tree>
+                          <field name="name"/>
+                          <field name="date"/>
+                          <field name="payment_related_id"/>
+                          <field name="advance_related_id"/>
+                          <field name="total_settlement"/>
+                        </tree>
                       </field>                     
-                    </group>                                                                                                                           
+                    </group>  
+
                 </sheet>              
                 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers"/>

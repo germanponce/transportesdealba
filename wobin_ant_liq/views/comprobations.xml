@@ -6,7 +6,7 @@
 
     <!-- COMPROBATIONS - SEARCH VIEW -->    
     <record id="view_comprobations_tree" model="ir.ui.view"> 
-      <field name="name">Comprobations</field>
+      <field name="name">Comprobaciones</field>
       <field name="model">wobin.comprobations</field>
         <field name="arch" type="xml"> 
             <search> 
@@ -28,10 +28,10 @@
 
     <!-- COMPROBATIONS - LIST VIEW -->
     <record id="view_comprobations_list" model="ir.ui.view">
-      <field name="name">Comprobations</field>
+      <field name="name">Comprobaciones</field>
       <field name="model">wobin.comprobations</field>
       <field name="arch" type="xml">
-        <tree decoration-info="estado == 'borrador'" decoration-success="estado == 'comprobado'" decoration-danger="estado == 'cancelado'">
+        <tree decoration-info="estado == 'draft'" decoration-success="estado == 'checked'" decoration-danger="estado == 'cancelled'">
           <field name="name"/>
           <field name="operator_id"/>            
           <field name="date"/>                 
@@ -45,14 +45,14 @@
 
     <!-- COMPROBATIONS - FORM VIEW -->
     <record id="view_comprobations_form" model="ir.ui.view"> 
-      <field name="name">Comprobations</field> 
+      <field name="name">Comprobaciones</field> 
       <field name="model">wobin.comprobations</field> 
       <field name="arch" type="xml"> 
           <form duplicate="0">
               <header>
-                  <button name="create_acc_mov" type="object" string="Create Comprobation Entry" class="oe_highlight" attrs="{'invisible': ['|', ('name', '=', 'New'), ('estado', 'in', ['comprobado', 'cancelado'])]}"/>
-                  <button name="cancelar_comprobacion" type="object" string="Cancelar" class="oe_highlight" attrs="{'invisible': [('estado', 'in', ['borrador', 'cancelado'])]}"/>
-                  <field name="estado" widget="statusbar" statusbar_visible="borrador,comprobado,cancelado"/>
+                  <button name="create_acc_mov" type="object" string="Crear Asiento de Comprobación" class="oe_highlight" attrs="{'invisible': ['|', ('name', '=', 'New'), ('estado', 'in', ['checked', 'cancelled'])]}"/>
+                  <button name="cancelar_comprobacion" type="object" string="Cancelar" class="oe_highlight" attrs="{'invisible': [('estado', 'in', ['draft', 'cancelled'])]}"/>
+                  <field name="estado" widget="statusbar" statusbar_visible="draft,checked,cancelled"/>
               </header>
               <sheet> 
                   <div class="oe_left oe_title">
@@ -67,8 +67,7 @@
                         <field name="amount" readonly="True" force_save="1"/>  
                         <field name="trip_id" required="True"/>                                                
                       </group>                                                 
-                      <group>    
-                        <!--<field name="advance_id" required="True"/>-->                  
+                      <group>                   
                         <field name="expenses_to_refund"/>      
                         <field name="acc_mov_related_id"/>                                     
                       </group> 
@@ -86,7 +85,7 @@
                       </field>  
                       </group>
                       <group>
-                        <button name="set_invoices_to_refund_ids" type="object" string="Add Invoices to Refund" class="oe_highlight"/>
+                        <button name="set_invoices_to_refund_ids" type="object" string="Añadir Facturas por Reembolsar" class="oe_highlight"/>
                       </group>
                   </group>            
                   <field name="comprobation_lines_ids" context="{'default_comprobation_id': active_id}">

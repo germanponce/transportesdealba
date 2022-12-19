@@ -1,23 +1,10 @@
 # -*- coding: utf-8 -*-
-from datetime import datetime
 from odoo import models, fields, api
-
-
-class WobinConcepts(models.Model):
-    _name = 'wobin.concepts'
-    _description = 'Wobin Concepts'
-    _inherit = ['mail.thread', 'mail.activity.mixin'] 
-
-    name = fields.Char(string='Concept', track_visibility='always')
-    account_account_id = fields.Many2one('account.account', string='Accounting Account', track_visibility='always', ondelete='cascade')
-    credit_flag = fields.Boolean(string='Concept Set Like Credit')
-    company_id = fields.Many2one('res.company', default=lambda self: self.env['res.company']._company_default_get('your.module'))
-
 
 
 class WobinSettlements(models.Model):
     _name = 'wobin.settlements'
-    _description = 'Wobin Settlements'
+    _description = 'Wobin Liquidaciones'
     _inherit = ['mail.thread', 'mail.activity.mixin']     
 
 
@@ -33,31 +20,71 @@ class WobinSettlements(models.Model):
 
 
 
-    name        = fields.Char(string="Settlement", readonly=True, required=True, copy=False, default='New', track_visibility='always')
-    operator_id = fields.Many2one('res.partner',string='Operator', track_visibility='always', ondelete='cascade')
-    date        = fields.Date(string='Date', track_visibility='always')
-    attachments = fields.Many2many('ir.attachment', relation='settlements_attachment', string='Attachments', track_visibility='always')
-    possible_adv_set_lines_ids = fields.One2many('wobin.moves.adv.set.lines', 'settlement_id', string='Possible Moves for operator')
-    settled_adv_set_lines_ids  = fields.One2many('wobin.moves.adv.set.lines', 'settlement_aux_id', string='Settled Moves for operator', compute='_set_settled_lines', store=True)
-    total_selected   = fields.Float(string='Total of Selected Rows $', digits=(15,2))
-    total_settlement = fields.Float(string='Total of Settlement $', digits=(15,2))
-    amount_to_settle = fields.Float(string='Amount to Settle $', digits=(15,2))
-    state            = fields.Selection(selection = [('pending', 'Pending'),
-                                                     ('ready', 'Ready to settle'),
-                                                     ('settled', 'Settled'),
-                                                ], string='State', required=True, readonly=True, copy=False, tracking=True, default='pending', track_visibility='always')    
+    name        = fields.Char(string="Liquidación", 
+                              readonly=True, 
+                              required=True, 
+                              copy=False, 
+                              default='New', 
+                              track_visibility='always')
+    operator_id = fields.Many2one('res.partner',
+                                  string='Operador', 
+                                  track_visibility='always', 
+                                  ondelete='cascade')
+    date        = fields.Date(string='Date', 
+                              track_visibility='always')
+    attachments = fields.Many2many('ir.attachment', 
+                                   relation='settlements_attachment', 
+                                   string='Adjuntos', 
+                                   track_visibility='always')
+    possible_adv_set_lines_ids = fields.One2many('wobin.moves.adv.set.lines', 'settlement_id', 
+                                                 string='Posibles Movimientos por Operador')
+    settled_adv_set_lines_ids  = fields.One2many('wobin.moves.adv.set.lines', 'settlement_aux_id', 
+                                                 string='Movimientos Saldados por Operador', 
+                                                 compute='_set_settled_lines', 
+                                                 store=True)
+    total_selected   = fields.Float(string='Total de Saldos Seleccionados $', 
+                                    digits=(15,2))
+    total_settlement = fields.Float(string='Total de Liquidación', 
+                                    digits=(15,2))
+    amount_to_settle = fields.Float(string='Saldo a Liquidar $', 
+                                    digits=(15,2))
+    state            = fields.Selection(selection = [('pending', 'Pendiente'),
+                                                     ('ready', 'Preparado para saldar'),
+                                                     ('settled', 'Saldado')], 
+                                        string='Estado', 
+                                        required=True, 
+                                        readonly=True, 
+                                        copy=False, 
+                                        tracking=True, 
+                                        default='pending', 
+                                        track_visibility='always')    
     # Fields for analysis:
-    advances_sum_amount   = fields.Float(string='Advances', digits=(15,2))
-    comprobation_sum = fields.Float(string='Comprobations', digits=(15,2))
-    btn_crt_payment    = fields.Boolean(compute="set_flag_btn_crt_payment", store=True, default=False)
-    btn_mark_settle    = fields.Boolean(compute="set_flag_btn_mark_settle", store=True, default=False)
-    btn_debtor_new_adv = fields.Boolean(compute="set_flag_btn_debtor_new_a", store=True, default=False)
+    advances_sum_amount      = fields.Float(string='Anticipos', 
+                                            digits=(15,2))
+    comprobations_sum_amount = fields.Float(string='Comprobaciones', 
+                                            digits=(15,2))
+    btn_crt_payment    = fields.Boolean(compute="_set_flag_button_create_payment", 
+                                        store=True, 
+                                        default=False)
+    btn_mark_settle    = fields.Boolean(compute="_set_flag_button_mark_settle", 
+                                        store=True, 
+                                        default=False)
+    btn_debtor_new_adv = fields.Boolean(compute="_set_flag_button_debtor_new_advance", 
+                                        store=True, 
+                                        default=False)
     label_process      = fields.Text(string='')
-    payment_related_id = fields.Many2one('account.payment', string='Related Payment', compute='set_related_payment', store=True)    
-    advance_related_id = fields.Many2one('wobin.advances', string='Related Advance', compute='set_related_advance', store=True)    
+    payment_related_id = fields.Many2one('account.payment', 
+                                         string='Pago Relacionado', 
+                                         compute='_set_related_payment', 
+                                         store=True)    
+    advance_related_id = fields.Many2one('wobin.advances', 
+                                         string='Anticipo Relacionado', 
+                                         compute='_set_related_advance', 
+                                         store=True)    
     trips_related_ids  = fields.Many2many('wobin.logistics.trips')
     mov_lns_ad_set_id  = fields.Many2one('wobin.moves.adv.set.lines')
-    company_id = fields.Many2one('res.company', default=lambda self: self.env['res.company']._company_default_get('wobin_ant_liq'))
+    company_id         = fields.Many2one('res.company', 
+                                         default=lambda self: self.env['res.company']._company_default_get('wobin_ant_liq'))
 
 
     @api.onchange('operator_id')
@@ -80,8 +107,8 @@ class WobinSettlements(models.Model):
         sum_advances = sum(line.advances_sum_amount for line in self.possible_adv_set_lines_ids if line.check_selection == True)
         self.advances_sum_amount = sum_advances
 
-        sum_comprobations = sum(line.comprobation_sum for line in self.possible_adv_set_lines_ids if line.check_selection == True)
-        self.comprobation_sum = sum_comprobations
+        sum_comprobations = sum(line.comprobations_sum_amount for line in self.possible_adv_set_lines_ids if line.check_selection == True)
+        comprobations_sum_amount = sum_comprobations
 
         list_trips = []
         for ln in self.possible_adv_set_lines_ids:
@@ -90,49 +117,6 @@ class WobinSettlements(models.Model):
                          
         self.trips_related_ids = [(6, 0, list_trips)] 
         self.update({'trips_related_ids': [(6, 0, list_trips)]}) 
-
-    
-    
-    #@api.one
-    @api.depends('possible_adv_set_lines_ids')
-    def _set_settled_lines(self):
-        for rec in self:
-            rec.settled_adv_set_lines_ids = [(6, 0, rec.possible_adv_set_lines_ids.filtered(lambda o: o.check_selection).ids)]                  
-
-
-
-    #@api.one
-    def set_flag_btn_crt_payment(self):
-        for rec in self:
-            #When "amount to settle" is greater or lesser than 0 just display button for payments
-            #through its respectice flag and to aid in xml definition:
-            if rec.total_selected > 0:
-                rec.btn_crt_payment = True
-
-
-    #@api.one
-    def set_flag_btn_mark_settle(self):
-        for rec in self:
-            #When "amount to settle" is equal to 0 (and validating that
-            # at least user has some rows selected) just display button to settle
-            #through its respectice flag and to aid in xml definition:
-            flag = False
-            
-            for line in rec.possible_adv_set_lines_ids:
-                if line.check_selection == True:
-                    flag = True
-
-            if rec.total_selected == 0 and flag ==True:           
-                rec.btn_mark_settle = True
-
-
-    #@api.one
-    def set_flag_btn_debtor_new_a(self):  
-        for rec in self:        
-            #When "amount to settle" is lesser than 0 just display button for acc. move or advances
-            #through its respectice flag and to aid in xml definition:        
-            if rec.total_selected < 0:
-                rec.btn_debtor_new_adv = True    
 
 
 
@@ -159,28 +143,51 @@ class WobinSettlements(models.Model):
         #through its respectice flag and to aid in xml definition:        
         if self.total_selected < 0:
             self.btn_debtor_new_adv = True  
-                                     
+
+    
+    
+    @api.depends('possible_adv_set_lines_ids')
+    def _set_settled_lines(self):
+        for rec in self:
+            rec.settled_adv_set_lines_ids = [(6, 0, rec.possible_adv_set_lines_ids.filtered(lambda o: o.check_selection).ids)]                  
 
 
 
-    def create_payment(self):
-        #This method intends to display a Form View of Payments:
-        return {
-            #'name':_(""),
-            'view_mode': 'form',
-            'view_id': False,
-            'view_type': 'form',
-            'res_model': 'account.payment',
-            #'res_id': p_id,
-            'type': 'ir.actions.act_window',
-            'nodestroy': True,
-            'target': 'new',
-            'domain': '[]',
-            'context': {'default_settlement_id': self.id}
-        } 
+    def _set_flag_button_create_payment(self):
+        for rec in self:
+            #When "amount to settle" is greater or lesser than 0 just display button for payments
+            #through its respectice flag and to aid in xml definition:
+            if rec.total_selected > 0:
+                rec.btn_crt_payment = True
 
-    #@api.one
-    def set_related_payment(self):
+
+
+    def _set_flag_button_mark_settle(self):
+        for rec in self:
+            #When "amount to settle" is equal to 0 (and validating that
+            # at least user has some rows selected) just display button to settle
+            #through its respectice flag and to aid in xml definition:
+            flag = False
+            
+            for line in rec.possible_adv_set_lines_ids:
+                if line.check_selection == True:
+                    flag = True
+
+            if rec.total_selected == 0 and flag ==True:           
+                rec.btn_mark_settle = True
+
+
+
+    def _set_flag_button_debtor_new_advance(self):  
+        for rec in self:        
+            #When "amount to settle" is lesser than 0 just display button for acc. move or advances
+            #through its respectice flag and to aid in xml definition:        
+            if rec.total_selected < 0:
+                rec.btn_debtor_new_adv = True   
+
+
+
+    def _set_related_payment(self):
         for rec in self:
             #Retrieve related payment to this settlement:
             settlement_related = self.env['account.payment'].search([('settlement_id', '=', rec.id)], limit=1).id 
@@ -189,8 +196,15 @@ class WobinSettlements(models.Model):
 
 
 
+    def _set_related_advance(self):
+        for rec in self:
+            #Retrieve related payment to this settlement:
+            settlement_related = self.env['wobin.advances'].search([('settlement_id', '=', rec.id)], limit=1).id 
+            if settlement_related:            
+                rec.advance_related_id = settlement_related      
 
-    #@api.one
+
+
     def mark_settled(self):
         for rec in self:
             #Change state of this settlement:
@@ -201,61 +215,8 @@ class WobinSettlements(models.Model):
 
             for line in rec.possible_adv_set_lines_ids:
                 if line.check_selection == True:        
-                    line.update({'settled': True})         
+                    line.update({'settled': True})   
 
-
-
-    
-    def send_debtor(self):
-        #This method intends to display a Form View of Account Moves:
-        return {
-            #'name':_(""),
-            'view_mode': 'form',
-            'view_id': False,
-            'view_type': 'form',
-            'res_model': 'account.move',
-            #'res_id': p_id,
-            'type': 'ir.actions.act_window',
-            'nodestroy': True,
-            'target': 'new',
-            'domain': '[]',
-            'context': {'default_settlement_id': self.id}
-        } 
-
-    #@api.one
-    def set_related_acc_mov(self):
-        for rec in self:
-            #Retrieve related payment to this settlement:
-            settlement_related = self.env['account.move'].search([('settlement_id', '=', rec.id)], limit=1).id 
-            if settlement_related:
-                rec.acc_mov_related_id = settlement_related              
-
-
-
-    def create_advance(self):   
-        #This method intends to display a Form View of Advances:
-        return {
-            #'name':_(""),
-            'view_mode': 'form',
-            'view_id': False,
-            'view_type': 'form',
-            'res_model': 'wobin.advances',
-            #'res_id': p_id,
-            'type': 'ir.actions.act_window',
-            'nodestroy': True,
-            'target': 'new',
-            'domain': '[]',
-            'context': {'default_settlement_id': self.id, 'default_money_not_consider': True}
-        } 
-
-    #@api.one
-    def set_related_advance(self):
-        for rec in self:
-            #Retrieve related payment to this settlement:
-            settlement_related = self.env['wobin.advances'].search([('settlement_id', '=', rec.id)], limit=1).id 
-            if settlement_related:            
-                rec.advance_related_id = settlement_related 
-              
 
 
     def settle_operation(self):
@@ -285,3 +246,39 @@ class WobinSettlements(models.Model):
                 line.write({'settled': True})
 
         self.amount_to_settle = None
+
+
+
+    def create_payment(self):
+        #This method intends to display a Form View of Payments:
+        return {
+            #'name':_(""),
+            'type': 'ir.actions.act_window',
+            'view_mode': 'form',
+            'view_type': 'form',            
+            'res_model': 'account.payment',
+            'view_id': self.env.ref('account.view_account_payment_form').id,                        
+            #'res_id': p_id,            
+            'nodestroy': True,
+            'target': 'new',
+            'domain': '[]',
+            'context': {'default_settlement_id': self.id}
+        } 
+
+
+
+    def create_advance(self):   
+        #This method intends to display a Form View of Advances:
+        return {
+            #'name':_(""),
+            'type': 'ir.actions.act_window',
+            'view_mode': 'form',
+            'view_type': 'form',
+            'res_model': 'wobin.advances',
+            'view_id': False,                        
+            #'res_id': p_id,            
+            'nodestroy': True,
+            'target': 'new',
+            'domain': '[]',
+            'context': {'default_settlement_id': self.id, 'default_money_not_consider': True}
+        }   

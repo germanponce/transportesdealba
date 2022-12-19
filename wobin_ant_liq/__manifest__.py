@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 {
     'name': "wobin_ant_liq",
-    'summary': """Module for management of advances and settlements""",
-    'description': """This module has been intended in order to improve experience in administration
-    of payments, cycles, operators, expenses and settlements""",
+    'summary': """Módulo para la gestión de anticipos, comprobaciones y liquidaciones del área de Logística""",
+    'description': """Este módulo ha sido diseñado con el fin de mejorar la experiencia en la administración
+    de pagos, viajes, operadores, anticipos, gastos, comprobaciones y liquidaciones del rubro de Logística""",
     'author': "Wobin Simple Cloud",
-    'website': "https://fertinova.odoo.com",
+    'website': "https://transportesdealba.odoo.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/12.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -26,6 +26,7 @@
         'views/sequences.xml',        
         'views/advances.xml',
         'views/comprobations.xml',
+        'views/concepts.xml',
         'views/settlements.xml',
         'views/inheritances.xml',
         'views/informs.xml', 

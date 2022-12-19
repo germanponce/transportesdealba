@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-from datetime import datetime
 from odoo import models, fields, api
 
 
 # *******************************************************************
 #  Some inheritances made to Account Models
 # *******************************************************************
-
 class AccountPayment(models.Model):
     _inherit = 'account.payment'
 
-    advance_id    = fields.Many2one('wobin.advances', string='Advance')     
-    settlement_id = fields.Many2one('wobin.settlements', string='Settlement')
+    advance_id    = fields.Many2one('wobin.advances', 
+                                    string='Anticipo')     
+    settlement_id = fields.Many2one('wobin.settlements', 
+                                    string='Liquidación')
 
     @api.model
     def create(self, vals):
@@ -28,11 +28,16 @@ class AccountPayment(models.Model):
 
 
 
+
 class AccountMove(models.Model):
     _inherit = 'account.move'
 
-    settlement_id   = fields.Many2one('wobin.settlements', string='Settlement')
-    comprobation_id = fields.Many2one('wobin.comprobations', string='Comprobation')    
+
+    comprobation_id = fields.Many2one('wobin.comprobations', 
+                                      string='Comprobación')     
+    settlement_id   = fields.Many2one('wobin.settlements', 
+                                      string='Liquidación')
+   
 
     @api.model
     def create(self, vals):
@@ -50,18 +55,9 @@ class AccountMove(models.Model):
 
 
 
-#class AccountMoveLine(models.Model):
-    #_inherit = 'account.move.line'
-
-    #contact_deb_cred_id = fields.Many2one('res.partner', string='Contact Debtor/Creditor')
-    
-
-
-
-
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    #contact_id = fields.Many2one('res.partner', string='Contact')
-    enterprise_id = fields.Many2one('res.partner', string='Enterprise')
-    flag_employee_active  = fields.Boolean(string='Flag')
+    enterprise_id        = fields.Many2one('res.partner', 
+                                           string='Empresa')
+    flag_employee_active = fields.Boolean(string='Flag')

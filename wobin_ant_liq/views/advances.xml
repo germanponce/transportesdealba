@@ -6,7 +6,7 @@
 
     <!-- ADVANCES - SEARCH VIEW -->    
     <record id="view_advances_tree" model="ir.ui.view"> 
-      <field name="name">Advances</field>
+      <field name="name">Anticipos</field>
       <field name="model">wobin.advances</field>
         <field name="arch" type="xml"> 
             <search> 
@@ -16,7 +16,7 @@
               <field name="amount"/>
               <field name="trip_id"/>     
               <group expand="0" string="Group By">
-                  <filter string="Advance" name="name" 
+                  <filter string="Anticipo" name="name" 
                             context="{'group_by':'trip_id'}"/>
               </group>           
             </search> 
@@ -25,7 +25,7 @@
 
     <!-- ADVANCES - LIST VIEW -->
     <record id="view_advances_list" model="ir.ui.view">
-      <field name="name">Advances</field>
+      <field name="name">Anticipos</field>
       <field name="model">wobin.advances</field>
       <field name="arch" type="xml">
         <tree>
@@ -41,12 +41,12 @@
 
     <!-- ADVANCES - FORM VIEW -->
     <record id="view_advances_form" model="ir.ui.view"> 
-        <field name="name">Advances</field> 
+        <field name="name">Anticipos</field> 
         <field name="model">wobin.advances</field> 
         <field name="arch" type="xml"> 
             <form duplicate="0"> 
                 <header>
-                    <button name="create_payment" type="object" string="Create Payment" class="oe_highlight" attrs="{'invisible': ['|', ('name', '=', 'New'), ('payment_related_id', '!=', False)]}"/>
+                    <button name="create_payment" type="object" string="Crear Pago" class="oe_highlight" attrs="{'invisible': ['|', ('name', '=', 'New'), ('payment_related_id', '!=', False)]}"/>
                 </header>
                 <sheet> 
                     <div class="oe_left oe_title">

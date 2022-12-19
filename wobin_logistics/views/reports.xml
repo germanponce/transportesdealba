@@ -28,6 +28,7 @@
           <field name="contract_id"/>
           <field name="charged_flag"/>
           <field name="account_move_id"/>
+          <field name="invoiced_flag"/>
           <field name="invoice"/>                             
         </tree>
       </field>
