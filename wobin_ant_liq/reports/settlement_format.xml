@@ -8,8 +8,8 @@
         id="report_settlement_format"
         model="wobin.settlements"
         string="Imprimir Liquidación"
-        name="wobin_ant_liq.report_settlement_format"
-        file="wobin_ant_liq.report_settlement_format"
+        name="report_settlement_format"
+        file="report_settlement_format"
         report_type="qweb-pdf" />
 
     <template id="report_settlement_format">
