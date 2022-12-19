@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="advances_company_rule" model="ir.rule">
+        <field name="name">Anticipos Regla Multicompañía</field>
+        <field name="model_id" ref="model_wobin_advances"/>
+        <field eval="True" name="global"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>   
+
+    <record id="comprobations_company_rule" model="ir.rule">
+        <field name="name">Comprobaciones Regla Multicompañía</field>
+        <field name="model_id" ref="model_wobin_comprobations"/>
+        <field eval="True" name="global"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record> 
+
+    <record id="comprobation_lines_company_rule" model="ir.rule">
+        <field name="name">Líneas de Comprobaciones Regla Multicompañía</field>
+        <field name="model_id" ref="model_wobin_comprobation_lines"/>
+        <field eval="True" name="global"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record> 
+
+    <record id="moves_adv_set_lines_company_rule" model="ir.rule">
+        <field name="name">Líneas de Anticipos y Liquidaciones Regla Multicompañía</field>
+        <field name="model_id" ref="model_wobin_moves_adv_set_lines"/>
+        <field eval="True" name="global"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record> 
+
+    <record id="wobin_concepts_company_rule" model="ir.rule">
+        <field name="name">Conceptos Regla Multicompañía</field>
+        <field name="model_id" ref="model_wobin_concepts"/>
+        <field eval="True" name="global"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record> 
+
+    <record id="wobin_settlements_company_rule" model="ir.rule">
+        <field name="name">Liquidaciones Regla Multicompañía</field>
+        <field name="model_id" ref="model_wobin_settlements"/>
+        <field eval="True" name="global"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>   
+
+</odoo>

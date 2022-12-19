@@ -21,6 +21,7 @@
         #Security:
         'security/ir.model.access.csv',
         'security/adv_set_groups.xml',
+        'security/security_rules.xml',
 
         #Views:
         'views/sequences.xml',        
