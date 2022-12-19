@@ -25,6 +25,7 @@
         #security
         'security/ir.model.access.csv',
         'security/logistics_groups.xml',
+        'security/security_rules.xml',
 
         #views
         'views/sequences.xml',
@@ -35,7 +36,7 @@
         'views/inheritances.xml',
         'views/reports.xml',
         'views/views.xml',
-        #'views/privileges.xml',
+        'views/privileges.xml',
 
         #reports
         'reports/contract_conditions.xml',

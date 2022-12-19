@@ -10,6 +10,7 @@
       <field name="res_model">wobin.advances</field>
       <field name="view_mode">tree,form,search</field>
       <field name="context">{'group_by':'trip_id'}</field>
+      <field name="domain">[('company_id','=',3)]</field>
     </record>
 
 
@@ -19,6 +20,7 @@
       <field name="res_model">wobin.comprobations</field>
       <field name="view_mode">tree,form,search</field>
       <!--<field name="context">{'group_by':'trip_id'}</field>-->
+      <field name="domain">[('company_id','=',3)]</field>
     </record>     
 
 
@@ -28,6 +30,7 @@
       <field name="res_model">wobin.settlements</field>
       <field name="view_mode">tree,form,search</field>
       <field name="context">{'group_by':'operator_id'}</field>
+      <field name="domain">[('company_id','=',3)]</field>
     </record>   
 
 
@@ -38,7 +41,8 @@
       <field name="view_id" ref="view_informs_list"/>
       <field name="search_view_id" ref="view_informs_search"/>
       <field name="view_mode">tree,form,search</field>
-      <field name="context">{'group_by':'operator_id', 'form_view_ref': 'wobin_ant_liq.view_informs_form'}</field>  
+      <field name="context">{'group_by':'operator_id', 'form_view_ref': 'wobin_ant_liq.view_informs_form'}</field> 
+      <field name="domain">[('company_id','=',3)]</field> 
     </record>   
 
 
@@ -49,6 +53,7 @@
         <field name="view_mode">tree,form</field>        
         <field name="domain"></field>
         <field name="context"></field> 
+        <field name="domain">[('company_id','=',3)]</field>
     </record>              
     
     

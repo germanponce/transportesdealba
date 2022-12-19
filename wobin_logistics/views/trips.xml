@@ -145,7 +145,8 @@
                                   <button string="Crear Asiento Contable" name="creation_account_move" type="object" class="oe_highlight" 
                                           attrs="{'invisible': ['|', ('charged_flag', '=', False), ('state', '!=', 'to_invoice')]}"/>                                  
                                   <field name="account_move_id" readonly="True" attrs="{'invisible': [('state', '!=', 'charged')]}"/>
-                                  <field name="invoiced_flag"/>                                   
+                                  <field name="invoiced_flag" attrs="{'readonly':  [('state', '=', 'billed')],
+                                                                      'invisible': [('state', '!=', 'to_invoice')]}"/>                                      
                                   <field name="invoice" attrs="{'invisible': [('state', 'in', ['assigned', 'route'])]}"/>  
                               </group>
                             </div>  
