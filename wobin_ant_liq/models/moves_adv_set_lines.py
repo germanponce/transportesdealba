@@ -70,8 +70,9 @@ class WobinMovesAdvSetLines(models.Model):
 
 
 
-    #@api.depends('comprobations_ids')
-    @api.onchange('comprobations_ids')
+    
+    #api.onchange('comprobations_ids')
+    @api.depends('operator_id', 'trip_id', 'advances_ids', 'comprobations_ids')
     def _set_comprobations_sum_amount(self):     
         for rec in self: 
             sum_amount = sum(line.amount for line in rec.comprobations_ids)
