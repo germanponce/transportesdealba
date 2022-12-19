@@ -55,9 +55,14 @@ class WobinComprobations(models.Model):
                               track_visibility='always')
     amount      = fields.Float(string='Monto $', 
                                digits=(15,2), 
+                               compute='_set_amount_total',
+                               store=True,
                                track_visibility='always')
     total       = fields.Float(string='Total $', 
-                               digits=(15,2))
+                               digits=(15,2),
+                               compute='_set_amount_total',
+                               store=True,
+                               track_visibility='always')
     trip_id     = fields.Many2one('wobin.logistics.trips', 
                                   string='Viaje', 
                                   track_visibility='always', 
@@ -80,7 +85,7 @@ class WobinComprobations(models.Model):
                                          store=True)
     comprobation_lines_ids = fields.One2many('wobin.comprobation.lines', 'comprobation_id', 
                                              string='Líneas de Concepto')
-    invoices_to_refund_ids = fields.Many2many('account.move')    
+    #####invoices_to_refund_ids = fields.Many2many('account.move')    
     estado     = fields.Selection([('draft', 'Borrador'),
                                    ('checked', 'Comprobado'),                                     
                                    ('cancelled', 'Cancelado')], 
@@ -202,7 +207,7 @@ class WobinComprobations(models.Model):
                 rec.estado = 'cancelled'                 
 
 
-
+    '''
     def set_invoices_to_refund_ids(self): 
         for rec in self:
             id_fact_x_reem = self.env['wobin.concepts'].search([('name', 'ilike', 'FACTURAS POR REEMBOLSAR')], limit=1).id
@@ -220,6 +225,14 @@ class WobinComprobations(models.Model):
             # Assign to amount and total:
             rec.amount = sum_amount        
             rec.total = sum_amount
+    '''
+    @api.depends('comprobation_lines_ids')      
+    def _set_amount_total(self):
+        # Only sum up lines which are not credit concepts:
+        sum_amount = sum(line.amount for line in self.comprobation_lines_ids if line.concept_id.credit_flag != True)
+        # Assign to amount and total:
+        self.amount = sum_amount        
+        self.total = sum_amount    
 
 
        

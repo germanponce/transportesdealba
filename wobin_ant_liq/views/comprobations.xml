@@ -72,6 +72,7 @@
                         <field name="acc_mov_related_id"/>                                     
                       </group> 
                   </group> 
+                  <!-- 
                   <group>
                     <group>
                       <field name="invoices_to_refund_ids">
@@ -88,6 +89,7 @@
                         <button name="set_invoices_to_refund_ids" type="object" string="Añadir Facturas por Reembolsar" class="oe_highlight"/>
                       </group>
                   </group>            
+                  -->
                   <field name="comprobation_lines_ids" context="{'default_comprobation_id': active_id}">
                       <tree editable="bottom" decoration-info="credit_flag == True">
                           <field name="comprobation_id" invisible="True"/>
