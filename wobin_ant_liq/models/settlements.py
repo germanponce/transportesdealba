@@ -87,6 +87,7 @@ class WobinSettlements(models.Model):
                                          default=lambda self: self.env['res.company']._company_default_get('wobin_ant_liq'))
 
 
+
     @api.onchange('operator_id')
     def onchange_adv_set_lines_ids(self):
         #Fill up one2many field with data for current operator and a given trip:

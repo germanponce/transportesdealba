@@ -41,6 +41,7 @@ class WobinComprobations(models.Model):
         return res
 
 
+
     name        = fields.Char(string="Comprobación", 
                               readonly=True, 
                               required=True, 
@@ -84,8 +85,7 @@ class WobinComprobations(models.Model):
                                          compute='_set_mov_lns_aux', 
                                          store=True)
     comprobation_lines_ids = fields.One2many('wobin.comprobation.lines', 'comprobation_id', 
-                                             string='Líneas de Concepto')
-    #####invoices_to_refund_ids = fields.Many2many('account.move')    
+                                             string='Líneas de Concepto')   
     estado     = fields.Selection([('draft', 'Borrador'),
                                    ('checked', 'Comprobado'),                                     
                                    ('cancelled', 'Cancelado')], 
@@ -207,25 +207,7 @@ class WobinComprobations(models.Model):
                 rec.estado = 'cancelled'                 
 
 
-    '''
-    def set_invoices_to_refund_ids(self): 
-        for rec in self:
-            id_fact_x_reem = self.env['wobin.concepts'].search([('name', 'ilike', 'FACTURAS POR REEMBOLSAR')], limit=1).id
 
-            if id_fact_x_reem:
-                query = """DELETE FROM wobin_comprobation_lines 
-                                WHERE comprobation_id = %s AND concept_id = %s;"""
-                self.env.cr.execute(query, (rec.id, id_fact_x_reem,))
-
-                for line in rec.invoices_to_refund_ids:
-                    rec.comprobation_lines_ids = [(0, 0, {'concept_id': id_fact_x_reem, 'amount': line.amount_total})]
-
-            # Only sum up lines which are not credit concepts:
-            sum_amount = sum(line.amount for line in rec.comprobation_lines_ids if line.concept_id.credit_flag != True)            
-            # Assign to amount and total:
-            rec.amount = sum_amount        
-            rec.total = sum_amount
-    '''
     @api.depends('comprobation_lines_ids')      
     def _set_amount_total(self):
         # Only sum up lines which are not credit concepts:
