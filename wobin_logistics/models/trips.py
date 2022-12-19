@@ -357,7 +357,7 @@ class WobinLogisticsTrips(models.Model):
             'partner_id': enterprise_id,                 
             'name': name,
             'analytic_account_id': analytic_account_id,
-            'analytic_tag_ids': analytic_tag_ids,
+            #'analytic_tag_ids': analytic_tag_ids,
             'debit': debit,
             'credit': credit
         }        
@@ -386,7 +386,7 @@ class WobinLogisticsTrips(models.Model):
             'partner_id': enterprise_id,                 
             'name': name,
             'analytic_account_id': analytic_account_id,
-            'analytic_tag_ids': analytic_tag_ids,
+            #'analytic_tag_ids': analytic_tag_ids,
             'debit': debit,
             'credit': credit
         }    
