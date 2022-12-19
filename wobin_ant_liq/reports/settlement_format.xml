@@ -5,14 +5,14 @@
     <!--::::::::::::::::::::::::::::::::::::::::::::-->    
 
     <report
-        id="reporte_liquidacion_formato"
+        id="report_settlement_format"
         model="wobin.settlements"
         string="Imprimir Liquidación"
-        name="wobin_ant_liq.reporte_liquidacion_formato"
-        file="wobin_ant_liq.liquidacion_formato"
+        name="wobin_ant_liq.report_settlement_format"
+        file="wobin_ant_liq.report_settlement_format"
         report_type="qweb-pdf" />
 
-    <template id="reporte_liquidacion_formato">
+    <template id="report_settlement_format">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
                 <t t-call="web.external_layout">

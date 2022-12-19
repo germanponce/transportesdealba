@@ -30,7 +30,7 @@
         <field name="name">Contratos</field> 
         <field name="model">wobin.logistics.contracts</field> 
         <field name="arch" type="xml"> 
-            <form> 
+            <form duplicate="0"> 
                 <header>
                     <button name="create_trip" 
                             type="object" 

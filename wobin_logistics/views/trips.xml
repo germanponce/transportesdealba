@@ -70,7 +70,7 @@
         <field name="name">Viajes</field> 
         <field name="model">wobin.logistics.trips</field> 
         <field name="arch" type="xml"> 
-            <form> 
+            <form duplicate="0"> 
                 <header>
                     <field name="state" widget="statusbar" statusbar_visible="assigned,route,discharged,to_invoice,billed,charged"/>
                 </header> 
