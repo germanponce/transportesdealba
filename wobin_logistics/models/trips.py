@@ -323,6 +323,7 @@ class WobinLogisticsTrips(models.Model):
 
 
 
+    @api.depends('charged_flag')
     def _set_related_acc_mov_provision(self):
         acc_mov_related = self.env['account.move'].search([('trips_acc_move_id', '=', self.id)], limit=1).id
         
