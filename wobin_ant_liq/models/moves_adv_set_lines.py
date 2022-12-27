@@ -39,12 +39,13 @@ class WobinMovesAdvSetLines(models.Model):
                                         string='Liquidación')
     settlements_ids   = fields.One2many('wobin.settlements', 'mov_ad_set_lns_id', 
                                         compute='_set_settlements_ids', 
-                                        store=True)    
+                                        store=True,
+                                        ondelete='cascade')    
     total_settlement  = fields.Float(string='Total de Liquidación', 
                                      digits=(15,2), 
                                      compute='_set_total_settlement', 
                                      store=True)
-    state             = fields.Selection(selection = [('pending', 'Pendiente'),
+    state_settlement  = fields.Selection(selection = [('pending', 'Pendiente'),
                                                       ('ready', 'Preparado para saldar'),
                                                       ('settled', 'Saldado')], 
                                          string='Estado', 
@@ -52,8 +53,8 @@ class WobinMovesAdvSetLines(models.Model):
                                          copy=False, 
                                          tracking=True, 
                                          default='pending', 
-                                         compute='_set_state_settlement', 
-                                         store=True)        
+                                         related='settlement_aux_id.state', 
+                                         store=True)  
     company_id        = fields.Many2one('res.company', 
                                         default=lambda self: self.env['res.company']._company_default_get('wobin_ant_liq'))
 
@@ -98,11 +99,4 @@ class WobinMovesAdvSetLines(models.Model):
     @api.depends('settlement_aux_id')
     def _set_total_settlement(self):
         for rec in self:
-            rec.total_settlement = rec.settlement_aux_id.total_settlement                
-
-
-
-    @api.depends('settlement_aux_id')
-    def _set_state_settlement(self):
-        for rec in self:
-            rec.state = rec.settlement_aux_id.state
+            rec.total_settlement = rec.settlement_aux_id.total_settlement
