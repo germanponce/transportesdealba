@@ -37,7 +37,7 @@
             <field name="amount_to_settle"/>
             <field name="settlement_aux_id"/> 
             <field name="total_settlement"/> 
-            <field name="state"/> 
+            <field name="state_settlement"/> 
         </tree>
       </field>
     </record> 
