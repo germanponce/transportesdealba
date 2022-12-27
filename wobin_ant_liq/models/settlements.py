@@ -262,7 +262,7 @@ class WobinSettlements(models.Model):
             'target': 'new',
             'context': {
                         'default_payment_type': 'outbound',
-                        'default_amount': self.amount,
+                        'default_amount': self.total_selected,
                         'default_settlement_id': self.id,
                         'default_ref': self.name,
                         'default_journal_id': 74,  #74 ID for Journal of "Caja y efectivo" in Transportes de Alba ['Sistema' Company]                    
