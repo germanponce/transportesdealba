@@ -133,12 +133,7 @@ class WobinLogisticsTrips(models.Model):
                                        track_visibility='always')                                          
     conformity           = fields.Binary(string='Conformidad y Finiquito', 
                                          track_visibility='always')
-    checked              = fields.Boolean(string="Conformidad y Finiquito")
-    purchase_ids         = fields.Many2many('purchase.order', 
-                                            string='Gastos Relacionados', 
-                                            compute='_set_purchase_orders', 
-                                            store=True, 
-                                            track_visibility='always')                                         
+    checked              = fields.Boolean(string="Conformidad y Finiquito")                                      
     sale_order_id        = fields.Many2one('sale.order', 
                                            string='Orden de Venta Generada', 
                                            ondelete='set null', 
@@ -297,29 +292,6 @@ class WobinLogisticsTrips(models.Model):
                     rec.qty_to_bill = rec.real_load_qty * tariff - rec.discount_decline
                 else:
                     rec.qty_to_bill = rec.real_load_qty * tariff        
- 
-
-
-    def _set_purchase_orders(self):   
-        for rec in self:                 
-            if rec.trip_number_tag:            
-                pur_ord_set  = set() #Set in order to avoid duplicate values
-                pur_ord_list = []    #List of purchase orders
-
-                #Get IDs corresponding to Purchase Lines with the present Trip Tag ID: 
-                po_lines_ids = self.env['purchase.order.line'].search([('analytic_tag_ids', '=', rec.trip_number_tag.id)]).ids
-            
-                for line in po_lines_ids:
-                    #Iterate Purchase Lines and get their Header Purchase Order ID
-                    #and add them into a set (averting duplicate ones):
-                    pur_ord_lin_obj = self.env['purchase.order.line'].browse(line)
-                    pur_ord_set.add(pur_ord_lin_obj.order_id.id)
-
-                #Conversion from set to list in order to insert of multiple values:
-                pur_ord_list = list(pur_ord_set)
-                
-                #Now many2many field purchase_ids has various values:
-                rec.purchase_ids = [(6, 0, pur_ord_list)]
 
 
 
@@ -358,7 +330,7 @@ class WobinLogisticsTrips(models.Model):
             'partner_id': enterprise_id,                 
             'name': name,
             'analytic_account_id': analytic_account_id,
-            #'analytic_tag_ids': analytic_tag_ids,
+            'analytic_tag_ids': analytic_tag_ids,
             'debit': debit,
             'credit': credit
         }        
@@ -387,7 +359,7 @@ class WobinLogisticsTrips(models.Model):
             'partner_id': enterprise_id,                 
             'name': name,
             'analytic_account_id': analytic_account_id,
-            #'analytic_tag_ids': analytic_tag_ids,
+            'analytic_tag_ids': analytic_tag_ids,
             'debit': debit,
             'credit': credit
         }    
@@ -415,15 +387,12 @@ class WobinLogisticsTrips(models.Model):
         # Account Move Pop Up |
         #°°°°°°°°°°°°°°°°°°°°°°           
         return {
-            #'name':_(""),
+            'name': "Creación de Asiento Contable",
             'type': 'ir.actions.act_window',
             'view_type': 'form',
             'view_mode': 'form',
             'res_model': 'account.move',
-            'view_id': False,                        
-            #'res_id': p_id,            
-            'nodestroy': True,
+            'view_id': self.env.ref('account.view_move_form').id,                                
             'target': 'new',
-            'domain': '[]',
             'context': ctxt
         }

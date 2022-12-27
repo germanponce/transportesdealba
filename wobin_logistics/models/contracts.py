@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-#import operator    
 from odoo import models, fields, api
 
 
@@ -15,6 +14,7 @@ class WobinLogisticsContracts(models.Model):
         if vals.get('name', 'New') == 'New':
             vals['name'] = self.env['ir.sequence'].next_by_code('self.contract') or 'New'               
         return super(WobinLogisticsContracts, self).create(vals)  
+
 
 
     name            = fields.Char(string="Contrato", 
@@ -95,27 +95,6 @@ class WobinLogisticsContracts(models.Model):
 
 
 
-    def close_contract(self):
-        """This method sets state "close" for the contract"""
-        for rec in self:
-            rec.state = 'close'
-
-
-
-    def create_trip(self):
-        """This method displays a Form View of Trips"""         
-        return {
-            'name': "Creación de Viaje",
-            'type': 'ir.actions.act_window',
-            'view_mode': 'form',                                
-            'res_model': 'wobin.logistics.trips',
-            'view_id': self.env.ref('wobin_logistics.view_logistics_trips_form').id,
-            'target': 'new',
-            'context': {'default_contract_id': self.id}
-        }
-
-
-
     @api.depends('trips_ids')
     def _set_trip_delivered_qty(self):
         '''This method intends to sum all discharges of multiple 
@@ -151,3 +130,25 @@ class WobinLogisticsContracts(models.Model):
                     rec.trip_status = 'done'
                 else:
                     rec.trip_status = 'doing'
+
+
+
+    def close_contract(self):
+        """This method sets state "close" for the contract"""
+        for rec in self:
+            rec.state = 'close'
+
+
+
+    def create_trip(self):
+        """This method displays a Form View of Trips"""         
+        return {
+            'name': "Creación de Viaje",
+            'type': 'ir.actions.act_window',
+            'view_type': 'form',
+            'view_mode': 'form',                                
+            'res_model': 'wobin.logistics.trips',
+            'view_id': self.env.ref('wobin_logistics.view_logistics_trips_form').id,
+            'target': 'new',
+            'context': {'default_contract_id': self.id}
+        }

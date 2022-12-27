@@ -16,7 +16,6 @@
             <field name="analytic_account_id"/>
             <field name="operator_id"/>          
             <field name="route"/>
-            <field name="purchase_ids"/>
             <field name="start_date"/>
             <field name="load_date"/>
             <field name="estimated_qty"/>
@@ -46,7 +45,6 @@
           <field name="analytic_account_id"/>
           <field name="operator_id"/>          
           <field name="route"/>
-          <field name="purchase_ids" widget="many2many_tags"/>
           <field name="start_date"/>
           <field name="load_date"/>
           <field name="estimated_qty"/>
@@ -137,8 +135,7 @@
                                   <div>
                                       <field name="conformity" class="oe_inline" style="padding-right: 10px"/>
                                       <field name="checked" class="oe_inline"/>
-                                  </div>  
-                                  <field name="purchase_ids" widget="many2many_tags"/>     
+                                  </div>     
                                   <field name="sale_order_id" readonly="True"/>                                  
                                   <field name="charged_flag" attrs="{'readonly': [('state', '=', 'charged')],
                                                                     'invisible': [('state', '!=', 'to_invoice')]}"/>                                                                   
