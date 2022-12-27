@@ -167,5 +167,9 @@ class WobinAdvances(models.Model):
             'res_model': 'account.payment',
             'view_id': self.env.ref('account.view_account_payment_form').id,
             'target': 'new',
-            'context': {'default_advances_ids': [(4, self.id)]}
+            'context': {
+                        'default_advances_ids': [(4, self.id)],
+                        'default_journal_id': 74,
+                        'default_amount': self.amount
+                       }
         }
