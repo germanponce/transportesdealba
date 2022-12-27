@@ -34,12 +34,10 @@ class WobinMovesAdvSetLines(models.Model):
                                      compute='_set_amount_to_settle', 
                                      store=True)
     settled           = fields.Boolean(string='Mov. Saldado')         
-    advance_id        = fields.Many2one('wobin.advances')
-    comprobation_id   = fields.Many2one('wobin.comprobations')
-    settlement_id     = fields.Many2one('wobin.settlements')
-    settlement_aux_id = fields.Many2one('wobin.settlements', 
+    settlement_id     = fields.Many2one('wobin.settlements')#Many2one field for 'possible_adv_set_lines_ids' One2many field in Settlements
+    settlement_aux_id = fields.Many2one('wobin.settlements',#Many2one field for 'settled_adv_set_lines_ids' One2many field in Settlements 
                                         string='Liquidación')
-    settlements_ids   = fields.One2many('wobin.settlements', 'mov_lns_ad_set_id', 
+    settlements_ids   = fields.One2many('wobin.settlements', 'mov_ad_set_lns_id', 
                                         compute='_set_settlements_ids', 
                                         store=True)    
     total_settlement  = fields.Float(string='Total de Liquidación', 

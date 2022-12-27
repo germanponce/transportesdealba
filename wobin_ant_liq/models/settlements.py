@@ -82,7 +82,7 @@ class WobinSettlements(models.Model):
                                          compute='_set_related_advance', 
                                          store=True)    
     trips_related_ids  = fields.Many2many('wobin.logistics.trips')
-    mov_lns_ad_set_id  = fields.Many2one('wobin.moves.adv.set.lines')
+    mov_ad_set_lns_id  = fields.Many2one('wobin.moves.adv.set.lines')
     company_id         = fields.Many2one('res.company', 
                                          default=lambda self: self.env['res.company']._company_default_get('wobin_ant_liq'))
 
