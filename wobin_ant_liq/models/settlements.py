@@ -91,9 +91,10 @@ class WobinSettlements(models.Model):
     @api.onchange('operator_id')
     def onchange_adv_set_lines_ids(self):
         #Fill up one2many field with data for current operator and a given trip:
-        ids_gotten = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', self.operator_id.id), ('settled', '=', False)]).ids        
-        if ids_gotten:
-            for mov in ids_gotten: 
+        movs_gotten = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', self.operator_id.id), 
+                                                                    ('settled', '=', False)])       
+        if movs_gotten:
+            for mov in movs_gotten: 
                 self.possible_adv_set_lines_ids = [(4, mov.id)]                   
 
 
