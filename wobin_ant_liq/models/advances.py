@@ -69,20 +69,18 @@ class WobinAdvances(models.Model):
     expenses_to_check      = fields.Float(string='Gastos Pendientes por Comprobar', 
                                           digits=(15,2), 
                                           compute='_set_expenses_to_check', 
-                                          store=True, 
+                                          #store=True, 
                                           track_visibility='always')
     payment_related_id     = fields.Many2one('account.payment', 
                                              string='Pago Relacionado', 
-                                             compute='_set_related_payment', 
-                                             store=True, 
+                                             compute='_set_related_payment',
+                                             #store=True,  
                                              track_visibility='always')
-    payment_related_id_aux = fields.Many2one('account.payment', 
-                                             string='Pago Relacionado')
     mov_lns_ad_set_id      = fields.Many2one('wobin.moves.adv.set.lines', 
                                              ondelete='cascade')
     mov_lns_aux_id         = fields.Many2one('wobin.moves.adv.set.lines', 
-                                             compute='_set_mov_lns_aux', 
-                                             store=True)
+                                             compute='_set_mov_lns_aux') 
+                                             #store=True)
     settlement_id          = fields.Many2one('wobin.settlements', 
                                              string='Liquidación', 
                                              ondelete='cascade')
@@ -156,7 +154,7 @@ class WobinAdvances(models.Model):
                                                                   ('state', '!=', 'cancelled')], limit=1).id 
             if payment_related:
                 rec.payment_related_id = payment_related
-                self.write({'payment_related_id_aux': payment_related})
+                self.write({'payment_related_id': payment_related})
 
 
     

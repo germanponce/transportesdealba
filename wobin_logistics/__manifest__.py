@@ -36,7 +36,7 @@
         'views/inheritances.xml',
         'views/reports.xml',
         'views/views.xml',
-        'views/privileges.xml',
+        #'views/privileges.xml',
 
         #reports
         'reports/contract_conditions.xml',

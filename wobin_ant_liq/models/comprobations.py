@@ -157,6 +157,16 @@ class WobinComprobations(models.Model):
 
 
 
+    @api.depends('comprobation_lines_ids')      
+    def _set_amount_total(self):
+        # Only sum up lines which are not credit concepts:
+        sum_amount = sum(line.amount for line in self.comprobation_lines_ids if line.concept_id.credit_flag != True)
+        # Assign to amount and total:
+        self.amount = sum_amount        
+        self.total = sum_amount   
+
+
+
     def _set_expenses_to_refund(self):
         for rec in self:
             #Sum amounts from the same trip by operator
@@ -205,16 +215,6 @@ class WobinComprobations(models.Model):
                 raise UserError(msg)
             else:            
                 rec.estado = 'cancelled'                 
-
-
-
-    @api.depends('comprobation_lines_ids')      
-    def _set_amount_total(self):
-        # Only sum up lines which are not credit concepts:
-        sum_amount = sum(line.amount for line in self.comprobation_lines_ids if line.concept_id.credit_flag != True)
-        # Assign to amount and total:
-        self.amount = sum_amount        
-        self.total = sum_amount    
 
 
        
