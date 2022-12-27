@@ -274,16 +274,13 @@ class WobinComprobations(models.Model):
                }                               
          
         return {
-            #'name':_(""),
+            'name': "Creación de Asiento de Diario",
             'type': 'ir.actions.act_window',
             'view_type': 'form',
             'view_mode': 'form',
             'res_model': 'account.move',
             'view_id': self.env.ref('account.view_move_form').id,                        
-            #'res_id': p_id,            
-            'nodestroy': True,
             'target': 'new',
-            'domain': '[]',
             'context': ctxt
         }  
 

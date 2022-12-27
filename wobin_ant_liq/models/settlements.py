@@ -253,16 +253,13 @@ class WobinSettlements(models.Model):
     def create_payment(self):
         #This method intends to display a Form View of Payments:
         return {
-            #'name':_(""),
+            'name':"Creación de Pago",
             'type': 'ir.actions.act_window',
             'view_mode': 'form',
             'view_type': 'form',            
             'res_model': 'account.payment',
             'view_id': self.env.ref('account.view_account_payment_form').id,                        
-            #'res_id': p_id,            
-            'nodestroy': True,
             'target': 'new',
-            'domain': '[]',
             'context': {'default_settlement_id': self.id}
         } 
 
@@ -271,15 +268,12 @@ class WobinSettlements(models.Model):
     def create_advance(self):   
         #This method intends to display a Form View of Advances:
         return {
-            #'name':_(""),
+            'name': "Creación de Anticipo",
             'type': 'ir.actions.act_window',
             'view_mode': 'form',
             'view_type': 'form',
             'res_model': 'wobin.advances',
-            'view_id': False,                        
-            #'res_id': p_id,            
-            'nodestroy': True,
+            'view_id': self.env.ref('wobin_ant_liq.view_advances_form').id,                        
             'target': 'new',
-            'domain': '[]',
             'context': {'default_settlement_id': self.id, 'default_money_not_consider': True}
         }   

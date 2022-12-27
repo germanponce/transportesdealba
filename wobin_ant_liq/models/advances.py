@@ -172,15 +172,12 @@ class WobinAdvances(models.Model):
     def create_payment(self):
         """This method intends to display a Form View of Payments""" 
         return {
-            #'name':_(""),
+            'name':"Creación de Pago",
             'type': 'ir.actions.act_window',
             'view_type': 'form',
             'view_mode': 'form',            
             'res_model': 'account.payment',
             'view_id': self.env.ref('account.view_account_payment_form').id,
-            #'res_id': p_id,
-            'nodestroy': True,
             'target': 'new',
-            'domain': '[]',
             'context': {'default_advance_id': self.id}
         }
