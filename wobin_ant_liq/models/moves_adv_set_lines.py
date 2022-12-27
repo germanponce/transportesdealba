@@ -15,7 +15,7 @@ class WobinMovesAdvSetLines(models.Model):
     trip_id         = fields.Many2one('wobin.logistics.trips', 
                                       string='Trip', 
                                       ondelete='cascade')
-    advances_ids             = fields.One2many('wobin.advances', 'mov_lns_ad_set_id', 
+    advances_ids             = fields.One2many('wobin.advances', 'mov_ad_set_lns_id', 
                                                string='Anticipos Relacionados', 
                                                ondelete='cascade')
     comprobations_ids        = fields.One2many('wobin.comprobations', 'mov_lns_ad_set_id', 
