@@ -1,5 +1,8 @@
 <odoo>
   <data>   
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- VIEWS {LIST} -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->    
 
     <!-- ROUTES ANALYSIS from Contract Assignments - LIST VIEW -->
     <record id="view_logistics_routes_lst" model="ir.ui.view">

@@ -1,5 +1,8 @@
 <odoo>
   <data>
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- INFORMS -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
 
     <!-- ANALYSIS (TRIPS) according to Contract - LIST VIEW -->
     <record id="view_trips_analysis_contract" model="ir.ui.view">

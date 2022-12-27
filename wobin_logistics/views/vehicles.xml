@@ -1,5 +1,8 @@
 <odoo>
   <data>
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- VIEWS {LIST, FORM} -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
 
     <!-- Vehicles - LIST VIEW --> 
     <record id="view_vehicles_list" model="ir.ui.view">

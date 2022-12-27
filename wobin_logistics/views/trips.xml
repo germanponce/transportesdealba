@@ -1,36 +1,8 @@
 <odoo>
   <data>
-
     <!--::::::::::::::::::::::::::::::::::::::::::::-->
-    <!-- VIEWS {LISTS, FORMS, SEARCH} -->
+    <!-- VIEWS {LIST, FORM} -->
     <!--::::::::::::::::::::::::::::::::::::::::::::-->   
-    <!-- TRIPS - SEARCH VIEW -->    
-    <record id="view_logistics_trips_search" model="ir.ui.view"> 
-      <field name="model">wobin.logistics.trips</field> 
-      <field name="arch" type="xml"> 
-          <search> 
-            <field name="name"/> 
-            <field name="contract_id"/>          
-            <field name="client_id"/>
-            <field name="vehicle_id"/>
-            <field name="analytic_account_id"/>
-            <field name="operator_id"/>          
-            <field name="route"/>
-            <field name="start_date"/>
-            <field name="load_date"/>
-            <field name="estimated_qty"/>
-            <field name="real_load_qty"/>
-            <field name="discharge_date"/>
-            <field name="real_discharge_qty"/>
-            <field name="sale_order_id"/> 
-            <field name="charged_flag"/>
-            <field name="account_move_id"/>
-            <field name="invoiced_flag"/>                    
-            <field name="invoice"/>  
-            <field name="state"/> 
-          </search> 
-      </field> 
-    </record>
 
     <!-- TRIPS - LIST VIEW -->
     <record id="view_logistics_trips_list" model="ir.ui.view">
