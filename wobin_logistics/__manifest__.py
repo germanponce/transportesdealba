@@ -9,7 +9,7 @@
      comerciales y contables en los procesos de Transportes de Alba""",
 
     'author': "Wobin Simple Cloud",
-    'website': "https://fertinova2022.odoo.com",
+    'website': "https://transportesdealba.odoo.com/",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
