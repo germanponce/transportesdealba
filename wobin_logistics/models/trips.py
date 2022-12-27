@@ -143,7 +143,7 @@ class WobinLogisticsTrips(models.Model):
     account_move_id      = fields.Many2one('account.move', 
                                            string='Provisión', 
                                            compute='_set_related_acc_mov_provision', 
-                                           store=True, 
+                                           #store=True, 
                                            track_visibility='always') 
     invoiced_flag        = fields.Boolean(string="¿Es un Viaje Facturado?", 
                                           track_visibility='always')                                            
@@ -295,7 +295,7 @@ class WobinLogisticsTrips(models.Model):
 
 
 
-    @api.depends('charged_flag')
+    #@api.depends('charged_flag')
     def _set_related_acc_mov_provision(self):
         acc_mov_related = self.env['account.move'].search([('trips_acc_move_id', '=', self.id)], limit=1).id
         
