@@ -122,7 +122,7 @@ class WobinSettlements(models.Model):
 
 
     @api.onchange('total_selected')
-    def reaction_to_selected_total(self):
+    def _reaction_to_selected_total(self):
         flag = False
 
         #When "amount to settle" is greater or lesser than 0 just display button for payments

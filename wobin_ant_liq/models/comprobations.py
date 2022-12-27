@@ -34,7 +34,8 @@ class WobinComprobations(models.Model):
                       'trip_id': res.trip_id.id,
                       'comprobations_ids': [(4, res.id)]
                      }
-            self.env['wobin.moves.adv.set.lines'].create(values)     
+            mov_ad_set_lns_obj = self.env['wobin.moves.adv.set.lines'].create(values)            
+            vals['mov_ad_set_lns_id'] = mov_ad_set_lns_obj.id  
         else:
             existing_move.comprobations_ids = [(4, res.id)]                                                                                                     
 
@@ -75,15 +76,10 @@ class WobinComprobations(models.Model):
                                       track_visibility='always')
     acc_mov_related_id = fields.Many2one('account.move', 
                                          string='Movimiento Contable Relacionado', 
-                                         compute='_set_related_acc_mov', 
-                                         store=True, 
                                          ondelete='cascade', 
                                          track_visibility='always')
-    mov_lns_ad_set_id  = fields.Many2one('wobin.moves.adv.set.lines', 
+    mov_ad_set_lns_id  = fields.Many2one('wobin.moves.adv.set.lines', 
                                          ondelete='cascade')
-    mov_lns_aux_id     = fields.Many2one('wobin.moves.adv.set.lines', 
-                                         compute='_set_mov_lns_aux', 
-                                         store=True)
     comprobation_lines_ids = fields.One2many('wobin.comprobation.lines', 'comprobation_id', 
                                              string='Líneas de Concepto')   
     estado     = fields.Selection([('draft', 'Borrador'),
@@ -91,6 +87,8 @@ class WobinComprobations(models.Model):
                                    ('cancelled', 'Cancelado')], 
                                   string='Estado', 
                                   default='draft', 
+                                  compute='_set_checked_state', 
+                                  store=True,                                   
                                   track_visibility='always')   
     company_id = fields.Many2one('res.company', 
                                  default=lambda self: self.env['res.company']._company_default_get('wobin_ant_liq'))                                     
@@ -106,13 +104,13 @@ class WobinComprobations(models.Model):
         #If in fields changed are operator_id and trip_id update 
         #that data in its respective wobin.moves.adv.set.lines rows:
         if vals.get('operator_id', False):
-            mov_lns_obj = self.env['wobin.moves.adv.set.lines'].browse(self.mov_lns_aux_id.id)
+            mov_lns_obj = self.env['wobin.moves.adv.set.lines'].browse(self.mov_ad_set_lns_id.id)
             
             if mov_lns_obj:
                 mov_lns_obj.operator_id = vals['operator_id']
 
         if vals.get('trip_id', False):
-            mov_lns_obj = self.env['wobin.moves.adv.set.lines'].browse(self.mov_lns_aux_id.id)
+            mov_lns_obj = self.env['wobin.moves.adv.set.lines'].browse(self.mov_ad_set_lns_id.id)
             
             if mov_lns_obj:
                 mov_lns_obj.trip_id = vals['trip_id'] 
@@ -124,7 +122,7 @@ class WobinComprobations(models.Model):
                 result = self.env.cr.fetchone()
                 if result:                   
                     if result[0] > 1:
-                        self.env['wobin.moves.adv.set.lines'].browse(self.mov_lns_aux_id.id).unlink()            
+                        self.env['wobin.moves.adv.set.lines'].browse(self.mov_ad_set_lns_id.id).unlink()            
             else:                
                 #Considering there is a new trip with new record for operator 
                 #then create a new record for Wobin Moves Advances Settlements Lines 
@@ -135,7 +133,7 @@ class WobinComprobations(models.Model):
                     values = {
                               'operator_id': self.operator_id.id,
                               'trip_id': self.trip_id.id,
-                              'comprobation_id': self.id,
+                              'comprobations_ids': [(4, self.id)],
                              }
                     self.env['wobin.moves.adv.set.lines'].create(values)                                  
         return res  
@@ -181,25 +179,13 @@ class WobinComprobations(models.Model):
 
 
 
-    def _set_related_acc_mov(self):
+    @api.depends('acc_mov_related_id')
+    def _set_checked_state(self):
         for rec in self:
-            acc_mov_related = self.env['account.move'].search([('comprobation_id', '=', rec.id)], limit=1).id
-            if acc_mov_related:            
+            if rec.acc_mov_related_id:            
                 #Change estado to "checked" in order to make disappear 
                 #button "Create Comprobation Entry"
                 self.write({'estado': 'checked'})                         
-                rec.acc_mov_related_id = acc_mov_related
-
-
-
-    def _set_mov_lns_aux(self):
-        for rec in self:
-            mov_lns_id = self.env['wobin.moves.adv.set.lines'].search([('comprobation_id', '=', rec.id)]).id
-            if mov_lns_id: 
-                rec.mov_lns_aux_id = mov_lns_id 
-            else:
-                rec.mov_lns_aux_id = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', rec.operator_id.id),
-                                                                                    ('trip_id', '=', rec.trip_id.id)], limit=1).id                
                 
                 
                 
@@ -267,9 +253,10 @@ class WobinComprobations(models.Model):
 
 
         # | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |                           
-        
+        # Context to pass
+        # | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |                           
         ctxt = {
-                'default_comprobation_id': self.id,
+                'default_comprobations_ids': [(4, self.id)],
                 'default_line_ids': line_ids_list
                }                               
          

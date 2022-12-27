@@ -33,10 +33,10 @@ class AccountMove(models.Model):
     _inherit = 'account.move'
 
 
-    comprobation_id = fields.Many2one('wobin.comprobations', 
-                                      string='Comprobación')     
-    settlement_id   = fields.Many2one('wobin.settlements', 
-                                      string='Liquidación')
+    comprobations_ids = fields.One2many('wobin.comprobations', 'acc_mov_related_id',
+                                        string='Comprobación')     
+    settlement_id     = fields.Many2one('wobin.settlements', 
+                                        string='Liquidación')
    
 
     @api.model

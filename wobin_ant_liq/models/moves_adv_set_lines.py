@@ -18,7 +18,7 @@ class WobinMovesAdvSetLines(models.Model):
     advances_ids             = fields.One2many('wobin.advances', 'mov_ad_set_lns_id', 
                                                string='Anticipos Relacionados', 
                                                ondelete='cascade')
-    comprobations_ids        = fields.One2many('wobin.comprobations', 'mov_lns_ad_set_id', 
+    comprobations_ids        = fields.One2many('wobin.comprobations', 'mov_ad_set_lns_id', 
                                                string='Comprobaciones Relacionadas', 
                                                ondelete='cascade')
     advances_sum_amount      = fields.Float(string='Anticipos', 
@@ -69,16 +69,13 @@ class WobinMovesAdvSetLines(models.Model):
             rec.update({'advances_sum_amount': sum_amount})                   
 
 
-
     
-    #api.onchange('comprobations_ids')
     @api.depends('operator_id', 'trip_id', 'advances_ids', 'comprobations_ids')
     def _set_comprobations_sum_amount(self):     
         for rec in self: 
             sum_amount = sum(line.amount for line in rec.comprobations_ids)
             rec.comprobations_sum_amount = sum_amount
             rec.write({'comprobations_sum_amount': sum_amount})
-            #self.write({'comprobations_sum_amount': sum_amount})
 
 
 

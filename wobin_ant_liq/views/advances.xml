@@ -63,7 +63,7 @@
                         </group>                                                 
                         <group>                     
                           <field name="expenses_to_check"/>      
-                          <field name="payment_related_id"/>                                     
+                          <field name="payment_related_id" readonly="True"/>                                     
                         </group> 
                     </group>                                            
                 </sheet>              
