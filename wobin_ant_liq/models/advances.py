@@ -38,7 +38,7 @@ class WobinAdvances(models.Model):
                 existing_move.advances_ids = [(4, res.id)]
 
             #If a new record was created successfully and settlement related exists
-            #update that settlement in order to change its state to 'settled':
+            #update that settlement in order to change its state to 'ready':
             if res.settlement_id:
                 settlement_obj = self.env['wobin.settlements'].browse(res.settlement_id.id)
                 settlement_obj.update({'state': 'ready'})    
@@ -72,9 +72,8 @@ class WobinAdvances(models.Model):
                                           #store=True, 
                                           track_visibility='always')
     payment_related_id     = fields.Many2one('account.payment', 
-                                             string='Pago Relacionado', 
-                                             compute='_set_related_payment',
-                                             #store=True,  
+                                             string='Pago Relacionado',
+                                             ondelete='set null',  
                                              track_visibility='always')
     mov_lns_ad_set_id      = fields.Many2one('wobin.moves.adv.set.lines', 
                                              ondelete='cascade')
@@ -127,7 +126,7 @@ class WobinAdvances(models.Model):
                     values = {
                               'operator_id': self.operator_id.id,
                               'trip_id': self.trip_id.id,
-                              'advance_id': self.id,
+                              'advances_ids': [(4, self.id)],
                              }
                     self.env['wobin.moves.adv.set.lines'].create(values)   
         return res                
@@ -144,23 +143,12 @@ class WobinAdvances(models.Model):
             result = self.env.cr.fetchone()
             if result:                    
                 rec.expenses_to_check = result[0]
-    
-
-
-    def _set_related_payment(self):
-        for rec in self:
-            #Retrieve related payment to this advance
-            payment_related = self.env['account.payment'].search([('advance_id', '=', rec.id), 
-                                                                  ('state', '!=', 'cancelled')], limit=1).id 
-            if payment_related:
-                rec.payment_related_id = payment_related
-                self.write({'payment_related_id': payment_related})
 
 
     
     def _set_mov_lns_aux(self):
         for rec in self:
-            mov_lns_id = self.env['wobin.moves.adv.set.lines'].search([('advance_id', '=', rec.id)]).id
+            mov_lns_id = self.env['wobin.moves.adv.set.lines'].search([('advances_ids', 'in', rec.id)]).id
             if mov_lns_id: 
                 rec.mov_lns_aux_id = mov_lns_id 
             else:
@@ -179,5 +167,5 @@ class WobinAdvances(models.Model):
             'res_model': 'account.payment',
             'view_id': self.env.ref('account.view_account_payment_form').id,
             'target': 'new',
-            'context': {'default_advance_id': self.id}
+            'context': {'default_advances_ids': [(4, self.id)]}
         }

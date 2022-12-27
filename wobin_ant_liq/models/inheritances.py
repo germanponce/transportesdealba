@@ -8,7 +8,7 @@ from odoo import models, fields, api
 class AccountPayment(models.Model):
     _inherit = 'account.payment'
 
-    advance_id    = fields.Many2one('wobin.advances', 
+    advances_ids  = fields.One2many('wobin.advances', 'payment_related_id',
                                     string='Anticipo')     
     settlement_id = fields.Many2one('wobin.settlements', 
                                     string='Liquidación')
