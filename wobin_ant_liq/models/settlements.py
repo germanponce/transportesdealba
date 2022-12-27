@@ -91,8 +91,10 @@ class WobinSettlements(models.Model):
     @api.onchange('operator_id')
     def onchange_adv_set_lines_ids(self):
         #Fill up one2many field with data for current operator and a given trip:
-        ids_gotten = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', self.operator_id.id), ('settled', '=', False)]).ids
-        self.possible_adv_set_lines_ids = [(6, 0, ids_gotten)]                   
+        ids_gotten = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', self.operator_id.id), ('settled', '=', False)]).ids        
+        if ids_gotten:
+            for mov in ids_gotten: 
+                self.possible_adv_set_lines_ids = [(4, mov.id)]                   
 
 
 
@@ -260,7 +262,13 @@ class WobinSettlements(models.Model):
             'res_model': 'account.payment',
             'view_id': self.env.ref('account.view_account_payment_form').id,                        
             'target': 'new',
-            'context': {'default_settlement_id': self.id}
+            'context': {
+                        'default_payment_type': 'outbound',
+                        'default_amount': self.amount,
+                        'default_settlement_id': self.id,
+                        'default_ref': self.name,
+                        'default_journal_id': 74,  #74 ID for Journal of "Caja y efectivo" in Transportes de Alba ['Sistema' Company]                    
+                       }            
         } 
 
 
