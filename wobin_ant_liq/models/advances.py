@@ -14,7 +14,7 @@ class WobinAdvances(models.Model):
         #Change of sequence (if it isn't stored is shown "New" else e.g ANT000005) 
         if vals.get('name', 'New') == 'New':
             sequence = self.env['ir.sequence'].next_by_code('self.advance') or 'New'
-            vals['name'] = sequence 
+            vals['name'] = sequence             
           
             #Update flag to indicate employee for checking up:
             employee_obj = self.env['res.partner'].browse(vals['operator_id'])
@@ -33,7 +33,8 @@ class WobinAdvances(models.Model):
                           'trip_id': res.trip_id.id,
                           'advances_ids': [(4, res.id)]
                          }
-                self.env['wobin.moves.adv.set.lines'].create(values)            
+                mov_ad_set_lns_obj = self.env['wobin.moves.adv.set.lines'].create(values)            
+                vals['mov_ad_set_lns_id'] = mov_ad_set_lns_obj.id
             else:
                 existing_move.advances_ids = [(4, res.id)]
 
@@ -68,18 +69,14 @@ class WobinAdvances(models.Model):
                                   ondelete='cascade')
     expenses_to_check      = fields.Float(string='Gastos Pendientes por Comprobar', 
                                           digits=(15,2), 
-                                          compute='_set_expenses_to_check', 
-                                          #store=True, 
+                                          compute='_set_expenses_to_check',
                                           track_visibility='always')
     payment_related_id     = fields.Many2one('account.payment', 
                                              string='Pago Relacionado',
                                              ondelete='set null',  
                                              track_visibility='always')
-    mov_lns_ad_set_id      = fields.Many2one('wobin.moves.adv.set.lines', 
+    mov_ad_set_lns_id      = fields.Many2one('wobin.moves.adv.set.lines',
                                              ondelete='cascade')
-    mov_lns_aux_id         = fields.Many2one('wobin.moves.adv.set.lines', 
-                                             compute='_set_mov_lns_aux') 
-                                             #store=True)
     settlement_id          = fields.Many2one('wobin.settlements', 
                                              string='Liquidación', 
                                              ondelete='cascade')
@@ -97,14 +94,14 @@ class WobinAdvances(models.Model):
         #that data in its respective wobin.moves.adv.set.lines rows:
         if vals.get('operator_id', False):
 
-            mov_lns_obj = self.env['wobin.moves.adv.set.lines'].browse(self.mov_lns_aux_id.id)
+            mov_lns_obj = self.env['wobin.moves.adv.set.lines'].browse(self.mov_ad_set_lns_id.id)
             
             if mov_lns_obj:
                 mov_lns_obj.operator_id = vals['operator_id']
 
         if vals.get('trip_id', False):
 
-            mov_lns_obj = self.env['wobin.moves.adv.set.lines'].browse(self.mov_lns_aux_id.id)
+            mov_lns_obj = self.env['wobin.moves.adv.set.lines'].browse(self.mov_ad_set_lns_id.id)
             
             if mov_lns_obj:
                 mov_lns_obj.trip_id = vals['trip_id'] 
@@ -115,7 +112,7 @@ class WobinAdvances(models.Model):
                 result = self.env.cr.fetchone()
                 if result:                   
                     if result[0] > 1:
-                        self.env['wobin.moves.adv.set.lines'].browse(self.mov_lns_aux_id.id).unlink()            
+                        self.env['wobin.moves.adv.set.lines'].browse(self.mov_ad_set_lns_id.id).unlink()            
             else:                
                 #Considering there is a new trip with new record for operator 
                 #then create a new record for Wobin Moves Advances Settlements Lines 
@@ -145,17 +142,6 @@ class WobinAdvances(models.Model):
                 rec.expenses_to_check = result[0]
 
 
-    
-    def _set_mov_lns_aux(self):
-        for rec in self:
-            mov_lns_id = self.env['wobin.moves.adv.set.lines'].search([('advances_ids', 'in', rec.id)]).id
-            if mov_lns_id: 
-                rec.mov_lns_aux_id = mov_lns_id 
-            else:
-                rec.mov_lns_aux_id = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', rec.operator_id.id),
-                                                                                   ('trip_id', '=', rec.trip_id.id)], limit=1).id
-
-
 
     def create_payment(self):
         """This method intends to display a Form View of Payments""" 
@@ -168,8 +154,10 @@ class WobinAdvances(models.Model):
             'view_id': self.env.ref('account.view_account_payment_form').id,
             'target': 'new',
             'context': {
+                        'default_payment_type': 'outbound',
+                        'default_amount': self.amount,
                         'default_advances_ids': [(4, self.id)],
-                        'default_journal_id': 74,
-                        'default_amount': self.amount
+                        'default_ref': self.name,
+                        'default_journal_id': 74,                         
                        }
         }
