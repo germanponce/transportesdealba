@@ -40,9 +40,9 @@ class WobinAdvances(models.Model):
 
             #If a new record was created successfully and settlement related exists
             #update that settlement in order to change its state to 'ready':
-            if res.settlement_id:
-                settlement_obj = self.env['wobin.settlements'].browse(res.settlement_id.id)
-                settlement_obj.update({'state': 'ready'})    
+            if res.settlements_ids:
+                for settlement in res.settlements_ids:
+                    settlement.update({'state': 'ready'})      
 
         return res
 
@@ -77,7 +77,7 @@ class WobinAdvances(models.Model):
                                              track_visibility='always')
     mov_ad_set_lns_id      = fields.Many2one('wobin.moves.adv.set.lines',
                                              ondelete='cascade')
-    settlement_id          = fields.Many2one('wobin.settlements', 
+    settlements_ids        = fields.One2many('wobin.settlements', 'advance_related_id',
                                              string='Liquidación', 
                                              ondelete='cascade')
     money_not_consider     = fields.Boolean(string='', default=False)

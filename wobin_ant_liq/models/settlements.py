@@ -30,7 +30,7 @@ class WobinSettlements(models.Model):
                                   string='Operador', 
                                   track_visibility='always', 
                                   ondelete='cascade')
-    date        = fields.Date(string='Date', 
+    date        = fields.Date(string='Fecha', 
                               track_visibility='always')
     attachments = fields.Many2many('ir.attachment', 
                                    relation='settlements_attachment', 
@@ -74,13 +74,9 @@ class WobinSettlements(models.Model):
                                         default=False)
     label_process      = fields.Text(string='')
     payment_related_id = fields.Many2one('account.payment', 
-                                         string='Pago Relacionado', 
-                                         compute='_set_related_payment', 
-                                         store=True)    
+                                         string='Pago Relacionado')    
     advance_related_id = fields.Many2one('wobin.advances', 
-                                         string='Anticipo Relacionado', 
-                                         compute='_set_related_advance', 
-                                         store=True)    
+                                         string='Anticipo Relacionado')    
     trips_related_ids  = fields.Many2many('wobin.logistics.trips')
     mov_ad_set_lns_id  = fields.Many2one('wobin.moves.adv.set.lines')
     company_id         = fields.Many2one('res.company', 
@@ -184,25 +180,7 @@ class WobinSettlements(models.Model):
             #When "amount to settle" is lesser than 0 just display button for acc. move or advances
             #through its respectice flag and to aid in xml definition:        
             if rec.total_selected < 0:
-                rec.btn_debtor_new_adv = True   
-
-
-
-    def _set_related_payment(self):
-        for rec in self:
-            #Retrieve related payment to this settlement:
-            settlement_related = self.env['account.payment'].search([('settlement_id', '=', rec.id)], limit=1).id 
-            if settlement_related:
-                rec.payment_related_id = settlement_related 
-
-
-
-    def _set_related_advance(self):
-        for rec in self:
-            #Retrieve related payment to this settlement:
-            settlement_related = self.env['wobin.advances'].search([('settlement_id', '=', rec.id)], limit=1).id 
-            if settlement_related:            
-                rec.advance_related_id = settlement_related      
+                rec.btn_debtor_new_adv = True      
 
 
 
@@ -263,7 +241,7 @@ class WobinSettlements(models.Model):
             'context': {
                         'default_payment_type': 'outbound',
                         'default_amount': self.total_selected,
-                        'default_settlement_id': self.id,
+                        'default_settlements_ids': [(4, self.id)], 
                         'default_ref': self.name,
                         'default_journal_id': 74,  #74 ID for Journal of "Caja y efectivo" in Transportes de Alba ['Sistema' Company]                    
                        }            
@@ -281,5 +259,8 @@ class WobinSettlements(models.Model):
             'res_model': 'wobin.advances',
             'view_id': self.env.ref('wobin_ant_liq.view_advances_form').id,                        
             'target': 'new',
-            'context': {'default_settlement_id': self.id, 'default_money_not_consider': True}
+            'context': {
+                        'default_settlements_ids': [(4, self.id)], 
+                        'default_money_not_consider': True
+                       }
         }   
