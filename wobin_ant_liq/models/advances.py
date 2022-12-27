@@ -158,6 +158,6 @@ class WobinAdvances(models.Model):
                         'default_amount': self.amount,
                         'default_advances_ids': [(4, self.id)],
                         'default_ref': self.name,
-                        'default_journal_id': 74,                         
+                        'default_journal_id': 74,  #74 ID for Journal of "Caja y efectivo" in Transportes de Alba ['Sistema' Company]                    
                        }
         }

@@ -50,7 +50,7 @@
       <field name="arch" type="xml"> 
           <form duplicate="0">
               <header>
-                  <button name="create_acc_mov" type="object" string="Crear Asiento de Comprobación" class="oe_highlight" attrs="{'invisible': ['|', ('name', '=', 'New'), ('estado', 'in', ['checked', 'cancelled'])]}"/>
+                  <button name="create_account_move" type="object" string="Crear Asiento de Comprobación" class="oe_highlight" attrs="{'invisible': ['|', ('name', '=', 'New'), ('estado', 'in', ['checked', 'cancelled'])]}"/>
                   <button name="cancelar_comprobacion" type="object" string="Cancelar" class="oe_highlight" attrs="{'invisible': [('estado', 'in', ['draft', 'cancelled'])]}"/>
                   <field name="estado" widget="statusbar" statusbar_visible="draft,checked,cancelled"/>
               </header>

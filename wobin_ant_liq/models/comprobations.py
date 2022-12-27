@@ -204,7 +204,7 @@ class WobinComprobations(models.Model):
 
 
        
-    def create_acc_mov(self):
+    def create_account_move(self):
         #This method intends to display a Form View of Account Move        
         #context_modified = False
         line_ids_list    = list()
@@ -256,6 +256,7 @@ class WobinComprobations(models.Model):
         # Context to pass
         # | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |                           
         ctxt = {
+                'default_journal_id': 70,  #70 ID for Journal of "Contabilidad B" in Transportes de Alba ['Sistema' Company]
                 'default_comprobations_ids': [(4, self.id)],
                 'default_line_ids': line_ids_list
                }                               
