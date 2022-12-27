@@ -141,9 +141,8 @@ class WobinLogisticsTrips(models.Model):
     charged_flag         = fields.Boolean(string="¿Es un Viaje Cobrado?", 
                                           track_visibility='always') 
     account_move_id      = fields.Many2one('account.move', 
-                                           string='Provisión', 
-                                           compute='_set_related_acc_mov_provision', 
-                                           #store=True, 
+                                           string='Provisión',
+                                           ondelete='set null', 
                                            track_visibility='always') 
     invoiced_flag        = fields.Boolean(string="¿Es un Viaje Facturado?", 
                                           track_visibility='always')                                            
@@ -292,18 +291,8 @@ class WobinLogisticsTrips(models.Model):
                     rec.qty_to_bill = rec.real_load_qty * tariff - rec.discount_decline
                 else:
                     rec.qty_to_bill = rec.real_load_qty * tariff        
-
-
-
-    #@api.depends('charged_flag')
-    def _set_related_acc_mov_provision(self):
-        acc_mov_related = self.env['account.move'].search([('trips_acc_move_id', '=', self.id)], limit=1).id
-        
-        for rec in self:
-            if acc_mov_related:                                  
-                rec.account_move_id = acc_mov_related                 
+          
  
-
 
     def creation_account_move(self):
         #When check "charged_flag" is True must be created an account.move:
@@ -377,7 +366,7 @@ class WobinLogisticsTrips(models.Model):
         #°°°°°°°°°°°°°°°°°°°°°°                
         # Filling by default some fields for Header of Account Move
         ctxt = {
-                'default_trips_acc_move_id': self.id,
+                'default_trips_acc_move_ids': [(4, self.id)],
                 'default_ref': 'PROVISION',                
                 'default_journal_id': 70,  #70 ID for Journal of "Contabilidad B" in Transportes de Alba ['Sistema' Company]
                 'default_line_ids': line_ids_list,                

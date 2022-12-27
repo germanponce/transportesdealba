@@ -23,8 +23,8 @@ class AccountMove(models.Model):
     #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     # Aggregation of new relational fields
     #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  
-    trips_acc_move_id = fields.Many2one('wobin.logistics.trips', 
-                                        string='Viaje')                                        
+    trips_acc_move_ids = fields.One2many('wobin.logistics.trips', 'account_move_id',
+                                         string='Viaje')                                                                                
 
     
 
@@ -36,7 +36,8 @@ class SaleOrder(models.Model):
     #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     # Aggregation of a new many2one field of Trips in Sale Orders
     #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::   
-    trips_sales_ids = fields.One2many('wobin.logistics.trips', 'sale_order_id', string='Viaje')                                    
+    trips_sales_ids = fields.One2many('wobin.logistics.trips', 'sale_order_id', 
+                                      string='Viaje')                                    
     
     
     #SQL Constraint in order to avoid duplicate trips in different Order Sales:

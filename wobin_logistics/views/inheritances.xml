@@ -17,20 +17,20 @@
       </field>
     </record> 
 
-    <!--Add a new many2one field of Trips into Account Move Form View-->
+    <!--Add a new One2many field of Trips into Account Move Form View-->
     <record id="account_move_with_trips_form_inherit" model="ir.ui.view">
       <field name="name">account.move.form.inherit</field>
       <field name="model">account.move</field>
       <field name="inherit_id" ref="account.view_move_form"/>
       <field name="arch" type="xml">
         <xpath expr="//field[@name='ref']" position="after">
-          <field name="trips_acc_move_id"/>
+          <field name="trips_acc_move_ids" widget="many2many_tags"/>
         </xpath>                    
       </field>
     </record> 
     
 
-    <!--Add a new many2one field of Trips into Sale Order Form View-->
+    <!--Add a new One2many field of Trips into Sale Order Form View-->
     <record id="invoice_with_trips_form_inherit" model="ir.ui.view">
       <field name="name">sale.order.form.inherit</field>
       <field name="model">sale.order</field>
