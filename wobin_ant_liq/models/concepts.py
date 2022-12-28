@@ -8,12 +8,12 @@ class WobinConcepts(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin'] 
 
 
-    name = fields.Char(string='Concepto', 
-                       track_visibility='always')
+    name               = fields.Char(string='Concepto', 
+                                     track_visibility='always')
     account_account_id = fields.Many2one('account.account', 
                                          string='Cuenta Contable', 
                                          track_visibility='always', 
                                          ondelete='cascade')
     credit_flag = fields.Boolean(string='Concepto como Crédito/Haber')
-    company_id = fields.Many2one('res.company', 
-                                 default=lambda self: self.env['res.company']._company_default_get('wobin_ant_liq'))
+    company_id  = fields.Many2one('res.company', 
+                                  default=lambda self: self.env['res.company']._company_default_get('wobin_ant_liq'))

@@ -72,7 +72,6 @@ class WobinComprobations(models.Model):
     expenses_to_refund = fields.Float(string='Gastos Pendientes por Reembolsar', 
                                       digits=(15,2), 
                                       compute='_set_expenses_to_refund', 
-                                      store=True, 
                                       track_visibility='always')
     acc_mov_related_id = fields.Many2one('account.move', 
                                          string='Movimiento Contable Relacionado', 
@@ -232,7 +231,6 @@ class WobinComprobations(models.Model):
             else:
                 debit = line.amount            
             
-
             #Construct tuple item for each line (0, 0, dictionary_vals)
             dictionary_vals = {
                 'account_id': account_id,

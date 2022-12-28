@@ -13,17 +13,19 @@ class AccountPayment(models.Model):
     settlements_ids = fields.One2many('wobin.settlements', 'payment_related_id',
                                       string='Liquidación')
 
+    """
     @api.model
     def create(self, vals):
         #Try to modify flow in order to upate state in possible settlement related:
         res = super(AccountPayment, self).create(vals)
 
         #If a new record was created successfully and settlement related exists
-        #update that settlement in order to change its state to 'settled':
+        #update that settlement in order to change its state to 'ready':
         if res.settlements_ids:
             for settlement in res.settlements_ids:
                 settlement.update({'state': 'ready'})                
-        return res    
+        return res 
+    """   
 
 
 

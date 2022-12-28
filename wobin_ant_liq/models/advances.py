@@ -40,9 +40,9 @@ class WobinAdvances(models.Model):
 
             #If a new record was created successfully and settlement related exists
             #update that settlement in order to change its state to 'ready':
-            if res.settlements_ids:
-                for settlement in res.settlements_ids:
-                    settlement.update({'state': 'ready'})      
+            ###if res.settlements_ids:
+                ###for settlement in res.settlements_ids:
+                    ###settlement.update({'state': 'ready'})      
 
         return res
 

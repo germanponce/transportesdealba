@@ -40,8 +40,6 @@ class WobinMovesAdvSetLines(models.Model):
                                         string='Liquidación',
                                         ondelete='cascade')
     settlements_ids   = fields.One2many('wobin.settlements', 'mov_ad_set_lns_id', 
-                                        compute='_set_settlements_ids', 
-                                        store=True,
                                         ondelete='cascade')    
     total_settlement  = fields.Float(string='Total de Liquidación', 
                                      digits=(15,2), 
@@ -67,7 +65,7 @@ class WobinMovesAdvSetLines(models.Model):
         for rec in self:
             sum_amount = sum(line.amount for line in rec.advances_ids)
             rec.advances_sum_amount = sum_amount  
-            rec.update({'advances_sum_amount': sum_amount})                   
+            #rec.update({'advances_sum_amount': sum_amount})                   
 
 
     
@@ -76,7 +74,7 @@ class WobinMovesAdvSetLines(models.Model):
         for rec in self: 
             sum_amount = sum(line.amount for line in rec.comprobations_ids)
             rec.comprobations_sum_amount = sum_amount
-            rec.write({'comprobations_sum_amount': sum_amount})
+            #rec.write({'comprobations_sum_amount': sum_amount})
 
 
 
@@ -86,15 +84,7 @@ class WobinMovesAdvSetLines(models.Model):
             if rec.settled: 
                 rec.amount_to_settle = None                      
             else:
-                rec.amount_to_settle = self.comprobations_sum_amount - self.advances_sum_amount
-
-
-
-    @api.depends('settlement_aux_id')
-    def _set_settlements_ids(self):
-        for rec in self:
-            list_settlements = self.env['wobin.settlements'].search([('id', '=', rec.settlement_aux_id.id)]).ids 
-            rec.settlements_ids = [(6, 0, list_settlements)]
+                rec.amount_to_settle = rec.comprobations_sum_amount - rec.advances_sum_amount
 
 
 

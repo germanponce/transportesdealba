@@ -105,15 +105,19 @@ class WobinSettlements(models.Model):
         self.advances_sum_amount = sum_advances
 
         sum_comprobations = sum(line.comprobations_sum_amount for line in self.possible_adv_set_lines_ids if line.check_selection == True)
-        comprobations_sum_amount = sum_comprobations
+        self.comprobations_sum_amount = sum_comprobations
 
         list_trips = []
         for ln in self.possible_adv_set_lines_ids:
             if ln.check_selection == True:
+                #Fill One2many field "settlements_ids" 
+                #in model "wobin.moves.adv.set.lines":
+                ln.settlements_ids = [(4, self.id)]
+                #Fill list:
                 list_trips.append(ln.trip_id.id)
                          
         self.trips_related_ids = [(6, 0, list_trips)] 
-        self.update({'trips_related_ids': [(6, 0, list_trips)]}) 
+        ###self.update({'trips_related_ids': [(6, 0, list_trips)]}) 
 
 
     
@@ -148,6 +152,7 @@ class WobinSettlements(models.Model):
 
             if rec.total_selected == 0 and flag ==True:           
                 rec.btn_mark_settle = True
+
 
 
     @api.depends('total_selected')
@@ -236,7 +241,7 @@ class WobinSettlements(models.Model):
             'target': 'new',
             'context': {
                         'default_operator_id': self.operator_id.id, 
-                        'default_amount': self.total_selected, 
+                        'default_amount': abs(self.total_selected), 
                         'default_settlements_ids': [(4, self.id)], 
                         'default_money_not_consider': True
                        }
