@@ -28,11 +28,9 @@ class WobinMovesAdvSetLines(models.Model):
     comprobations_sum_amount = fields.Float(string='Comprobaciones', 
                                             digits=(15,2), 
                                             compute='_set_comprobations_sum_amount') 
-                                            #store=True)
     amount_to_settle  = fields.Float(string='Saldo a Liquidar', 
                                      digits=(15,2), 
-                                     compute='_set_amount_to_settle', 
-                                     store=True)
+                                     compute='_set_amount_to_settle')
     settled           = fields.Boolean(string='Mov. Saldado')         
     settlement_id     = fields.Many2one('wobin.settlements',#Many2one field for 'possible_adv_set_lines_ids' One2many field in Settlements
                                         ondelete='cascade')
@@ -62,21 +60,17 @@ class WobinMovesAdvSetLines(models.Model):
     def _set_advances_sum_amount(self):
         for rec in self:
             sum_amount = sum(line.amount for line in rec.advances_ids)
-            rec.advances_sum_amount = sum_amount  
-            #rec.update({'advances_sum_amount': sum_amount})                   
+            rec.advances_sum_amount = sum_amount                   
 
 
     
-    #@api.depends('comprobations_ids')
     def _set_comprobations_sum_amount(self):     
         for rec in self: 
             sum_amount = sum(line.amount for line in rec.comprobations_ids)
             rec.comprobations_sum_amount = sum_amount
-            #rec.write({'comprobations_sum_amount': sum_amount})
 
 
 
-    @api.depends('advances_sum_amount', 'comprobations_sum_amount')
     def _set_amount_to_settle(self):
         for rec in self:
             if rec.settled: 
