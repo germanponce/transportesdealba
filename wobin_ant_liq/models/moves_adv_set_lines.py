@@ -38,9 +38,7 @@ class WobinMovesAdvSetLines(models.Model):
                                         ondelete='cascade')
     settlement_aux_id = fields.Many2one('wobin.settlements',#Many2one field for 'settled_adv_set_lines_ids' One2many field in Settlements 
                                         string='Liquidación',
-                                        ondelete='cascade')
-    settlements_ids   = fields.One2many('wobin.settlements', 'mov_ad_set_lns_id', 
-                                        ondelete='cascade')    
+                                        ondelete='cascade')   
     total_settlement  = fields.Float(string='Total de Liquidación', 
                                      digits=(15,2), 
                                      compute='_set_total_settlement', 
@@ -65,7 +63,7 @@ class WobinMovesAdvSetLines(models.Model):
         for rec in self:
             sum_amount = sum(line.amount for line in rec.advances_ids)
             rec.advances_sum_amount = sum_amount  
-            #rec.update({'advances_sum_amount': sum_amount})                   
+            rec.update({'advances_sum_amount': sum_amount})                   
 
 
     
@@ -74,7 +72,7 @@ class WobinMovesAdvSetLines(models.Model):
         for rec in self: 
             sum_amount = sum(line.amount for line in rec.comprobations_ids)
             rec.comprobations_sum_amount = sum_amount
-            #rec.write({'comprobations_sum_amount': sum_amount})
+            rec.write({'comprobations_sum_amount': sum_amount})
 
 
 

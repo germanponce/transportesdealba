@@ -3,7 +3,7 @@ from odoo import models, fields, api
 
 
 # *******************************************************************
-#  Some inheritances made to Account Models
+#  Some inheritances made to Account & Res Partner Models
 # *******************************************************************
 class AccountPayment(models.Model):
     _inherit = 'account.payment'
@@ -12,20 +12,6 @@ class AccountPayment(models.Model):
                                       string='Anticipo')     
     settlements_ids = fields.One2many('wobin.settlements', 'payment_related_id',
                                       string='Liquidación')
-
-    """
-    @api.model
-    def create(self, vals):
-        #Try to modify flow in order to upate state in possible settlement related:
-        res = super(AccountPayment, self).create(vals)
-
-        #If a new record was created successfully and settlement related exists
-        #update that settlement in order to change its state to 'ready':
-        if res.settlements_ids:
-            for settlement in res.settlements_ids:
-                settlement.update({'state': 'ready'})                
-        return res 
-    """   
 
 
 

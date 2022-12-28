@@ -83,13 +83,13 @@
                         </group>  
                         <group>
                           <field name="attachments" widget="many2many_binary"/>
-                          <!--When total_selected to settle is greater than > 0-->
+                          <!--[Payment] When total_selected to settle is greater than > 0-->
                           <field name="btn_crt_payment" invisible="True"/>
                           <field name="payment_related_id" attrs="{'invisible': [('btn_crt_payment', '=', False)], 
                                                                    'readonly': [('state', 'in', ['ready', 'settled'])]}"/>
-                          <!--When total_selected to settle is equal to = 0-->
+                          <!--[Just Settle] When total_selected to settle is equal to = 0-->
                           <field name="btn_mark_settle" invisible="True"/>                                    
-                          <!--When total_selected to settle is lesser than < 0-->
+                          <!--[Advance] When total_selected to settle is lesser than < 0-->
                           <field name="btn_debtor_new_adv" invisible="True"/>
                           <field name="advance_related_id" attrs="{'invisible': [('btn_debtor_new_adv', '=', False)],
                                                                    'readonly': [('state', 'in', ['ready', 'settled'])]}"/>                                             
@@ -132,7 +132,6 @@
                                    attrs="{'invisible': [('state', '==', 'pending')]}"/>
                             <field name="advances_sum_amount" invisible="True"/>
                             <field name="comprobations_sum_amount" invisible="True"/>
-                            <field name="trips_related_ids" invisible="True"/>
                         </group>
                     </div>                                                                                   
                 </sheet>              

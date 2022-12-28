@@ -36,13 +36,7 @@ class WobinAdvances(models.Model):
                 mov_ad_set_lns_obj = self.env['wobin.moves.adv.set.lines'].create(values)            
                 vals['mov_ad_set_lns_id'] = mov_ad_set_lns_obj.id
             else:
-                existing_move.advances_ids = [(4, res.id)]
-
-            #If a new record was created successfully and settlement related exists
-            #update that settlement in order to change its state to 'ready':
-            ###if res.settlements_ids:
-                ###for settlement in res.settlements_ids:
-                    ###settlement.update({'state': 'ready'})      
+                existing_move.advances_ids = [(4, res.id)]     
 
         return res
 

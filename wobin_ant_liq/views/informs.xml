@@ -99,15 +99,7 @@
                     </group> 
 
                     <group>                    
-                      <field name="settlements_ids" readonly="True" force_save="1" nolabel="1" >
-                        <tree>
-                          <field name="name"/>
-                          <field name="date"/>
-                          <field name="payment_related_id"/>
-                          <field name="advance_related_id"/>
-                          <field name="total_settlement"/>
-                        </tree>
-                      </field>                     
+                      <field name="settlement_aux_id" readonly="True"/>                     
                     </group>  
 
                 </sheet>              

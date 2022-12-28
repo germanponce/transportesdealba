@@ -81,7 +81,7 @@ class WobinComprobations(models.Model):
                                          ondelete='cascade')
     comprobation_lines_ids = fields.One2many('wobin.comprobation.lines', 'comprobation_id', 
                                              string='Líneas de Concepto')   
-    estado     = fields.Selection([('draft', 'Borrador'),
+    state      = fields.Selection([('draft', 'Borrador'),
                                    ('checked', 'Comprobado'),                                     
                                    ('cancelled', 'Cancelado')], 
                                   string='Estado', 
@@ -182,9 +182,9 @@ class WobinComprobations(models.Model):
     def _set_checked_state(self):
         for rec in self:
             if rec.acc_mov_related_id:            
-                #Change estado to "checked" in order to make disappear 
+                #Change state to "checked" in order to make disappear 
                 #button "Create Comprobation Entry"
-                self.write({'estado': 'checked'})                         
+                self.write({'state': 'checked'})                         
                 
                 
                 
@@ -199,7 +199,7 @@ class WobinComprobations(models.Model):
                 msg += rec.acc_mov_related_id.name
                 raise UserError(msg)
             else:            
-                rec.estado = 'cancelled'                 
+                rec.state = 'cancelled'                 
 
 
        

@@ -31,14 +31,14 @@
       <field name="name">Comprobaciones</field>
       <field name="model">wobin.comprobations</field>
       <field name="arch" type="xml">
-        <tree decoration-info="estado == 'draft'" decoration-success="estado == 'checked'" decoration-danger="estado == 'cancelled'">
+        <tree decoration-info="state == 'draft'" decoration-success="state == 'checked'" decoration-danger="state == 'cancelled'">
           <field name="name"/>
           <field name="operator_id"/>            
           <field name="date"/>                 
           <field name="amount"/>
           <field name="trip_id"/>
           <field name="acc_mov_related_id"/> 
-          <field name="estado"/>  
+          <field name="state"/>  
         </tree>
       </field>
     </record>    
@@ -54,13 +54,13 @@
                           type="object" 
                           string="Crear Asiento de Comprobación" 
                           class="oe_highlight" 
-                          attrs="{'invisible': ['|', ('name', '=', 'New'), ('estado', 'in', ['checked', 'cancelled'])]}"/>
+                          attrs="{'invisible': ['|', ('name', '=', 'New'), ('state', 'in', ['checked', 'cancelled'])]}"/>
                   <button name="cancelar_comprobacion" 
                           type="object" 
                           string="Cancelar" 
                           class="oe_highlight" 
-                          attrs="{'invisible': [('estado', 'in', ['draft', 'cancelled'])]}"/>
-                  <field name="estado" widget="statusbar" statusbar_visible="draft,checked,cancelled"/>
+                          attrs="{'invisible': [('state', 'in', ['draft', 'cancelled'])]}"/>
+                  <field name="state" widget="statusbar" statusbar_visible="draft,checked,cancelled"/>
               </header>
               <sheet> 
                   <div class="oe_left oe_title">
@@ -80,7 +80,7 @@
                         <field name="acc_mov_related_id" readonly="True"/>                                     
                       </group> 
                   </group> 
-                  <field name="comprobation_lines_ids" context="{'default_comprobation_id': active_id}">
+                  <field name="comprobation_lines_ids" context="{'default_comprobation_id': active_id}" required="True">
                       <tree editable="bottom" decoration-info="credit_flag == True">
                           <field name="comprobation_id" invisible="True"/>
                           <field name="concept_id"/>

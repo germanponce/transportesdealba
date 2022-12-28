@@ -77,7 +77,6 @@ class WobinSettlements(models.Model):
                                          string='Pago Relacionado')    
     advance_related_id = fields.Many2one('wobin.advances', 
                                          string='Anticipo Relacionado')    
-    trips_related_ids  = fields.Many2many('wobin.logistics.trips')
     mov_ad_set_lns_id  = fields.Many2one('wobin.moves.adv.set.lines')
     company_id         = fields.Many2one('res.company', 
                                          default=lambda self: self.env['res.company']._company_default_get('wobin_ant_liq'))
@@ -110,14 +109,7 @@ class WobinSettlements(models.Model):
         list_trips = []
         for ln in self.possible_adv_set_lines_ids:
             if ln.check_selection == True:
-                #Fill One2many field "settlements_ids" 
-                #in model "wobin.moves.adv.set.lines":
-                ln.settlements_ids = [(4, self.id)]
-                #Fill list:
                 list_trips.append(ln.trip_id.id)
-                         
-        self.trips_related_ids = [(6, 0, list_trips)] 
-        ###self.update({'trips_related_ids': [(6, 0, list_trips)]}) 
 
 
     
@@ -209,6 +201,9 @@ class WobinSettlements(models.Model):
 
 
     def create_payment(self):
+        #Change state of settlement to "ready"
+        self.state = 'ready'
+
         #This method intends to display a Form View of Payments:
         return {
             'name':"Creación de Pago",
@@ -230,6 +225,9 @@ class WobinSettlements(models.Model):
 
 
     def create_advance(self):   
+        #Change state of settlement to "ready"
+        self.state = 'ready'
+
         #This method intends to display a Form View of Advances:
         return {
             'name': "Creación de Anticipo",
