@@ -95,11 +95,11 @@ class WobinSettlements(models.Model):
         #Initialize One2many field:
         self.possible_adv_set_lines_ids = [(5, )] 
         #Fill up one2many field with data for current operator and a given trip:
-        ids_gotten = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', self.operator_id.id), 
-                                                                   ('settled', '=', False)]).ids
+        lines_gotten = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', self.operator_id.id), 
+                                                                   ('settled', '=', False)])
         #self.possible_adv_set_lines_ids = [(6, 0, ids_gotten)] 
         #self.possible_adv_set_lines_ids = ids_gotten 
-        for line in ids_gotten:
+        for line in lines_gotten:
             self.possible_adv_set_lines_ids = [(4, line.id)] 
 
 
