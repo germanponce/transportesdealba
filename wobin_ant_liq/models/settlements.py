@@ -235,7 +235,7 @@ class WobinSettlements(models.Model):
             'view_id': self.env.ref('wobin_ant_liq.view_advances_form').id,                        
             'target': 'new',
             'context': {
-                        'default_operator_id': self.operator_id, 
+                        'default_operator_id': self.operator_id.id, 
                         'default_amount': self.total_selected, 
                         'default_settlements_ids': [(4, self.id)], 
                         'default_money_not_consider': True
