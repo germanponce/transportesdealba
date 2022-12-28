@@ -13,7 +13,8 @@ class WobinSettlements(models.Model):
         """This method intends to create a sequence for a given settlement"""
         #Change of sequence (if it isn't stored is shown "New" else e.g LIQ000005)  
         if vals.get('name', 'New') == 'New':
-            sequence = self.env['ir.sequence'].next_by_code('self.settlement') or 'New'
+            sequence = self.env['ir.sequence'].next_by_code(
+                'self.settlement') or 'New'
             vals['name'] = sequence                      
         return super(WobinSettlements, self).create(vals)
 
