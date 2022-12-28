@@ -36,8 +36,8 @@
                             type="object" 
                             string="Crear Viaje" 
                             class="oe_highlight" 
-                            attrs="{'invisible': ['|', ('name', '=', 'New'), ('state', '=', 'close')]}" 
-                            groups="wobin_logistics.group_wl_access_logistics"/>
+                            attrs="{'invisible': ['|', ('name', '=', 'New'), ('state', '=', 'close')]}"/>
+                            <!--groups="wobin_logistics.group_wl_access_logistics"/>-->
                     <button name="close_contract" 
                             type="object" 
                             string="Cerrar Contrato" 

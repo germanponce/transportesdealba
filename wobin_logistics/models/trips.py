@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-from ast import For
 from odoo import models, fields, api
-#from odoo.addons import decimal_precision as dp
-#from odoo.exceptions import UserError
-#from odoo.tools.translate import _  
 
 import logging
 _logger = logging.getLogger(__name__)
@@ -36,6 +32,10 @@ class WobinLogisticsTrips(models.Model):
         return super(WobinLogisticsTrips, self).create(vals)
 
 
+
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    #                                     FIELDS
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°    
     #|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|
     # FIELDS FOR GENERAL DATA OF TRIPS
     #|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|
@@ -133,7 +133,11 @@ class WobinLogisticsTrips(models.Model):
                                        track_visibility='always')                                          
     conformity           = fields.Binary(string='Conformidad y Finiquito', 
                                          track_visibility='always')
-    checked              = fields.Boolean(string="Conformidad y Finiquito")                                      
+    checked              = fields.Boolean(string="Conformidad y Finiquito") 
+
+    #|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|
+    # FIELDS FOR ANALYSIS, SALE AND ACCOUNT DATA OF TRIPS
+    #|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|                                         
     sale_order_id        = fields.Many2one('sale.order', 
                                            string='Orden de Venta Generada', 
                                            ondelete='set null', 
@@ -151,6 +155,9 @@ class WobinLogisticsTrips(models.Model):
 
 
 
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    #                                    METHODS
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     @api.onchange('contract_id')
     def _onchange_contract(self):
         '''Authomatic assignation for fields in Trips from contract_id's input'''

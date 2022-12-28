@@ -17,6 +17,9 @@ class WobinLogisticsContracts(models.Model):
 
 
 
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    #                                     FIELDS
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     name            = fields.Char(string="Contrato", 
                                   readonly=True, 
                                   required=True, 
@@ -86,8 +89,11 @@ class WobinLogisticsContracts(models.Model):
                                           compute='_set_trip_status',
                                           store=True)    
 
+
     
-    
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    #                                    METHODS
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°    
     @api.depends('covenant_qty', 'tariff')
     def _set_expected_income(self):
         for rec in self:

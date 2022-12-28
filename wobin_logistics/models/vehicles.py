@@ -8,6 +8,9 @@ class WobinLogisticsVehicles(models.Model):
     _inherit     = ['mail.thread', 'mail.activity.mixin']  
 
 
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    #                                     FIELDS
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     name                = fields.Char(track_visibility='always')
     company_id          = fields.Many2one('res.company', 
                                           default=lambda self: self.env['res.company']._company_default_get('wobin_logistics'))    
@@ -45,8 +48,11 @@ class WobinLogisticsVehicles(models.Model):
                                            store= True, 
                                            track_visibility='always')
 
-      
 
+      
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    #                                    METHODS
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     @api.depends('trips_history')
     def _set_current_trip(self):  
         for rec in self:      
