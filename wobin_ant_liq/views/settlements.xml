@@ -43,17 +43,20 @@
                             type="object" 
                             string="Pagar Liquidación" 
                             class="oe_highlight" 
-                            attrs="{'invisible': ['|', ('btn_crt_payment', '=', False), ('state', '!=', 'pending')]}"/>
+                            attrs="{'invisible': ['|', ('btn_crt_payment', '=', False), 
+                                                       ('state', '!=', 'pending')]}"/>
                     <button name="mark_settled" 
                             type="object" 
                             string="Marcar como Saldado" 
                             class="oe_highlight" 
-                            attrs="{'invisible': ['|', ('btn_mark_settle', '=', False), ('state', '!=', 'pending')]}"/>
+                            attrs="{'invisible': ['|', ('btn_mark_settle', '=', False), 
+                                                       ('state', '!=', 'pending')]}"/>
                     <button name="create_advance" 
                             type="object" 
                             string="Cargarse a Nuevo Anticipo" 
                             class="oe_highlight" 
-                            attrs="{'invisible': ['|', ('btn_debtor_new_adv', '=', False), ('state', '!=', 'pending')]}"/> 
+                            attrs="{'invisible': ['|', ('btn_debtor_new_adv', '=', False), 
+                                                       ('state', '!=', 'pending')]}"/> 
                     <button name="settle_operation" 
                             type="object" 
                             string="Saldar" 
@@ -68,8 +71,10 @@
                         </h1>
                     </div>
 
-                    <div style="margin-top: 50px; margin-bottom: 15px;" class="p-3 bg-info text-white text-center" attrs="{'invisible': [('label_process', '=', False)]}">
-                        <field name="label_process" readonly="True"/>
+                    <div style="margin-top: 50px; margin-bottom: 15px;" 
+                         class="p-3 bg-info text-white text-center" 
+                         attrs="{'invisible': [('label_process', '=', False)]}">
+                            <field name="label_process" readonly="True"/>
                     </div>
 
                     <group>
@@ -97,8 +102,8 @@
                     </group>
                     
                     <field name="possible_adv_set_lines_ids" force_save="1" 
-                           attrs="{'invisible': ['|', ('state', '!=', 'pending'),
-                                                      ('name', '=', 'New')]}">
+                           attrs="{'invisible': ['|', ('state', '!=', 'pending')],
+                                   'readonly': [('name', '=', 'New')]}">
                         <tree editable="bottom">
                             <field name="check_selection"/>
                             <field name="operator_id"/>
