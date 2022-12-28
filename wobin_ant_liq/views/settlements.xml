@@ -74,23 +74,30 @@
 
                     <group>
                         <group>
-                          <field name="operator_id" required="True" attrs="{'readonly': [('state', 'in', ['ready', 'settled'])]}"/>           
-                          <field name="date" required="True" attrs="{'readonly': [('state', 'in', ['ready', 'settled'])]}"/>                        
+                          <field name="operator_id" 
+                                 required="True" 
+                                 attrs="{'readonly': [('state', 'in', ['ready', 'settled'])]}"/>           
+                          <field name="date" 
+                                 required="True" 
+                                 attrs="{'readonly': [('state', 'in', ['ready', 'settled'])]}"/>                        
                         </group>  
                         <group>
                           <field name="attachments" widget="many2many_binary"/>
                           
                           <field name="btn_crt_payment" invisible="True"/>
-                          <field name="payment_related_id" attrs="{'invisible': [('btn_crt_payment', '=', False)], 'readonly': [('state', 'in', ['ready', 'settled'])]}"/>
+                          <field name="payment_related_id" attrs="{'invisible': [('btn_crt_payment', '=', False)], 
+                                                                   'readonly': [('state', 'in', ['ready', 'settled'])]}"/>
                           
                           <field name="btn_mark_settle" invisible="True"/>                                    
 
                           <field name="btn_debtor_new_adv" invisible="True"/>
-                          <field name="advance_related_id" attrs="{'invisible': [('btn_debtor_new_adv', '!=', False)],'readonly': [('state', 'in', ['ready', 'settled'])]}"/>                                             
+                          <field name="advance_related_id" attrs="{'invisible': [('btn_debtor_new_adv', '=', False)],
+                                                                   'readonly': [('state', 'in', ['ready', 'settled'])]}"/>                                             
                         </group>                                                
                     </group>
                     
-                    <field name="possible_adv_set_lines_ids" force_save="1" attrs="{'invisible': [('state', '!=', 'pending')]}">
+                    <field name="possible_adv_set_lines_ids" force_save="1" 
+                           attrs="{'invisible': [('state', '!=', 'pending')]}">
                         <tree editable="bottom">
                             <field name="check_selection"/>
                             <field name="operator_id"/>
@@ -100,7 +107,9 @@
                             <field name="amount_to_settle" sum="Sum Amounts" force_save="1"/>
                         </tree>
                     </field>
-                    <field name="settled_adv_set_lines_ids" force_save="1" attrs="{'invisible': [('state', '==', 'pending')], 'readonly': [('state', 'in', ['ready', 'settled'])]}">
+                    <field name="settled_adv_set_lines_ids" force_save="1" 
+                           attrs="{'invisible': [('state', '==', 'pending')], 
+                                   'readonly': [('state', 'in', ['ready', 'settled'])]}">
                         <tree editable="bottom">
                             <field name="check_selection"/>
                             <field name="operator_id"/>
@@ -113,8 +122,14 @@
                      
                     <div class="oe_subtotal_footer oe_right font-weight-bold">
                         <group>
-                            <field name="total_selected" readonly="True" force_save="1" attrs="{'invisible': [('state', '!=', 'pending')]}"/>
-                            <field name="total_settlement" readonly="True" force_save="1" attrs="{'invisible': [('state', '==', 'pending')]}"/>
+                            <field name="total_selected" 
+                                   readonly="True" 
+                                   force_save="1" 
+                                   attrs="{'invisible': [('state', '!=', 'pending')]}"/>
+                            <field name="total_settlement" 
+                                   readonly="True" 
+                                   force_save="1" 
+                                   attrs="{'invisible': [('state', '==', 'pending')]}"/>
                             <field name="advances_sum_amount" invisible="True"/>
                             <field name="comprobations_sum_amount" invisible="True"/>
                             <field name="trips_related_ids" invisible="True"/>

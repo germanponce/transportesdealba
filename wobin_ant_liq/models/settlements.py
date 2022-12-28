@@ -116,32 +116,6 @@ class WobinSettlements(models.Model):
         self.update({'trips_related_ids': [(6, 0, list_trips)]}) 
 
 
-
-    @api.depends('total_selected')
-    def _reaction_to_selected_total(self):
-        flag = False
-
-        #When "amount to settle" is greater or lesser than 0 just display button for payments
-        #through its respectice flag and to aid in xml definition:
-        if self.total_selected > 0:
-            self.btn_crt_payment = True   
-
-        #When "amount to settle" is equal to 0 (and validating that
-        # at least user has some rows selected) just display button to settle
-        #through its respectice flag and to aid in xml definition:             
-        for line in self.possible_adv_set_lines_ids:
-            if line.check_selection == True:
-                flag = True
-
-        if self.total_selected == 0 and flag ==True:           
-            self.btn_mark_settle = True  
-
-        #When "amount to settle" is lesser than 0 just display button for acc. move or advances
-        #through its respectice flag and to aid in xml definition:        
-        if self.total_selected < 0:
-            self.btn_debtor_new_adv = True  
-
-    
     
     @api.depends('possible_adv_set_lines_ids')
     def _set_settled_lines(self):
@@ -154,7 +128,7 @@ class WobinSettlements(models.Model):
     def _set_flag_button_create_payment(self):
         for rec in self:
             #When "amount to settle" is greater or lesser than 0 just display button for payments
-            #through its respectice flag and to aid in xml definition:
+            #through its respective flag and to aid in xml definition:
             if rec.total_selected > 0:
                 rec.btn_crt_payment = True
 
@@ -165,7 +139,7 @@ class WobinSettlements(models.Model):
         for rec in self:
             #When "amount to settle" is equal to 0 (and validating that
             # at least user has some rows selected) just display button to settle
-            #through its respectice flag and to aid in xml definition:
+            #through its respective flag and to aid in xml definition:
             flag = False
             
             for line in rec.possible_adv_set_lines_ids:
@@ -180,7 +154,7 @@ class WobinSettlements(models.Model):
     def _set_flag_button_debtor_new_advance(self):  
         for rec in self:        
             #When "amount to settle" is lesser than 0 just display button for acc. move or advances
-            #through its respectice flag and to aid in xml definition:        
+            #through its respective flag and to aid in xml definition:        
             if rec.total_selected < 0:
                 rec.btn_debtor_new_adv = True      
 
@@ -261,6 +235,8 @@ class WobinSettlements(models.Model):
             'view_id': self.env.ref('wobin_ant_liq.view_advances_form').id,                        
             'target': 'new',
             'context': {
+                        'default_operator_id': self.operator_id, 
+                        'default_amount': self.total_selected, 
                         'default_settlements_ids': [(4, self.id)], 
                         'default_money_not_consider': True
                        }
