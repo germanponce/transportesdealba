@@ -8,6 +8,10 @@ class WobinConcepts(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin'] 
 
 
+
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    #                                     FIELDS
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     name               = fields.Char(string='Concepto', 
                                      track_visibility='always')
     account_account_id = fields.Many2one('account.account', 

@@ -5,9 +5,46 @@ from odoo import models, fields, api
 class WobinMovesAdvSetLines(models.Model):
     _name = 'wobin.moves.adv.set.lines'
     _description = 'Wobin Líneas de Movimientos de Anticipos y Liquidaciones'
-    _inherit = ['mail.thread', 'mail.activity.mixin']     
-                                                                
+    _inherit = ['mail.thread', 'mail.activity.mixin']    
 
+
+    #Method to force the sum for not storable fields and 
+    #their quantities can be seen for the "group by" function
+    @api.model 
+    def read_group(self, domain, fields, groupby, offset=0, limit=None, orderby=False, lazy=True):
+        res = super(WobinMovesAdvSetLines, self).read_group(domain, fields, groupby, offset=offset, limit=limit, orderby=orderby, lazy=lazy)
+        if 'advances_sum_amount ' in fields:
+            for line in res:
+                if '__domain' in line:
+                    lines = self.search(line['__domain'])
+                    total_due = 0.0
+                    for record in lines:
+                        if not record.settlement_aux_id:
+                            total_due += record.advances_sum_amount
+                    line['advances_sum_amount'] = total_due        
+        if 'comprobations_sum_amount' in fields:
+            for line in res:
+                if '__domain' in line:
+                    lines = self.search(line['__domain'])
+                    total_due = 0.0
+                    for record in lines:
+                        total_due += record.comprobations_sum_amount
+                    line['comprobations_sum_amount'] = total_due
+        if 'amount_to_settle' in fields:
+            for line in res:
+                if '__domain' in line:
+                    lines = self.search(line['__domain'])
+                    total_due = 0.0
+                    for record in lines:
+                        total_due += record.amount_to_settle
+                    line['amount_to_settle'] = total_due                    
+        return res
+
+
+
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    #                                     FIELDS
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     check_selection = fields.Boolean(string=' ')
     operator_id     = fields.Many2one('res.partner',
                                       string='Operador', 
@@ -22,9 +59,8 @@ class WobinMovesAdvSetLines(models.Model):
                                                string='Comprobaciones Relacionadas', 
                                                ondelete='cascade')
     advances_sum_amount      = fields.Float(string='Anticipos', 
-                                            digits=(15,2), 
-                                            compute='_set_advances_sum_amount', 
-                                            store=True)
+                                            digits=(15,2),
+                                            compute='_set_advances_sum_amount')
     comprobations_sum_amount = fields.Float(string='Comprobaciones', 
                                             digits=(15,2), 
                                             compute='_set_comprobations_sum_amount') 
@@ -56,7 +92,9 @@ class WobinMovesAdvSetLines(models.Model):
 
 
 
-    @api.depends('advances_ids')
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    #                                    METHODS
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     def _set_advances_sum_amount(self):
         for rec in self:
             sum_amount = sum(line.amount for line in rec.advances_ids)

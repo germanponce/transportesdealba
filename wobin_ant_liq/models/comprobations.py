@@ -43,6 +43,9 @@ class WobinComprobations(models.Model):
 
 
 
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    #                                     FIELDS
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     name        = fields.Char(string="Comprobación", 
                               readonly=True, 
                               required=True, 
@@ -94,6 +97,9 @@ class WobinComprobations(models.Model):
 
 
 
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    #                                    METHODS
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     def write(self, vals):
         #Override write method in order to detect fields changed:
         res = super(WobinComprobations, self).write(vals)  
@@ -281,6 +287,9 @@ class WobinComprobationLines(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin'] 
 
 
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    #                                     FIELDS
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     comprobation_id = fields.Many2one('wobin.comprobations', 
                                       string='Referencia de Comprobación', 
                                       required=True, 
@@ -300,6 +309,9 @@ class WobinComprobationLines(models.Model):
 
 
 
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    #                                    METHODS
+    #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     def _set_flag(self):
         for rec in self:
             rec.credit_flag = self.env['wobin.concepts'].search([('id', '=', rec.concept_id.id)], limit=1).credit_flag
