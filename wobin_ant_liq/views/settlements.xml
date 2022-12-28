@@ -39,10 +39,26 @@
         <field name="arch" type="xml"> 
             <form duplicate="0"> 
                 <header>
-                    <button name="create_payment" type="object" string="Pagar Liquidación" class="oe_highlight" attrs="{'invisible': ['|', ('btn_crt_payment', '=', False), ('state', '!=', 'pending')]}"/>
-                    <button name="mark_settled" type="object" string="Marcar como Saldado" class="oe_highlight" attrs="{'invisible': ['|', ('btn_mark_settle', '=', False), ('state', '!=', 'pending')]}"/>
-                    <button name="create_advance" type="object" string="Cargarse a Nuevo Anticipo" class="oe_highlight" attrs="{'invisible': ['|', ('btn_debtor_new_adv', '=', False), ('state', '!=', 'pending')]}"/> 
-                    <button name="settle_operation" type="object" string="Saldar" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'ready')]}"/> 
+                    <button name="create_payment" 
+                            type="object" 
+                            string="Pagar Liquidación" 
+                            class="oe_highlight" 
+                            attrs="{'invisible': ['|', ('btn_crt_payment', '=', False), ('state', '!=', 'pending')]}"/>
+                    <button name="mark_settled" 
+                            type="object" 
+                            string="Marcar como Saldado" 
+                            class="oe_highlight" 
+                            attrs="{'invisible': ['|', ('btn_mark_settle', '=', False), ('state', '!=', 'pending')]}"/>
+                    <button name="create_advance" 
+                            type="object" 
+                            string="Cargarse a Nuevo Anticipo" 
+                            class="oe_highlight" 
+                            attrs="{'invisible': ['|', ('btn_debtor_new_adv', '=', False), ('state', '!=', 'pending')]}"/> 
+                    <button name="settle_operation" 
+                            type="object" 
+                            string="Saldar" 
+                            class="oe_highlight" 
+                            attrs="{'invisible': [('state', '!=', 'ready')]}"/> 
                     <field name="state" widget="statusbar" statusbar_visible="pending,ready,settled"/>
                 </header>
                 <sheet> 
@@ -70,7 +86,7 @@
                           <field name="btn_mark_settle" invisible="True"/>                                    
 
                           <field name="btn_debtor_new_adv" invisible="True"/>
-                          <field name="advance_related_id" attrs="{'invisible': [('btn_debtor_new_adv', '=', False)],'readonly': [('state', 'in', ['ready', 'settled'])]}"/>                                             
+                          <field name="advance_related_id" attrs="{'invisible': [('btn_debtor_new_adv', '!=', False)],'readonly': [('state', 'in', ['ready', 'settled'])]}"/>                                             
                         </group>                                                
                     </group>
                     
