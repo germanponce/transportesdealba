@@ -102,7 +102,7 @@
                     </group>
                     
                     <field name="possible_adv_set_lines_ids" force_save="1" 
-                           attrs="{'invisible': ['|', ('state', '!=', 'pending')],
+                           attrs="{'invisible': [('state', '!=', 'pending')],
                                    'readonly': [('name', '=', 'New')]}">
                         <tree editable="bottom">
                             <field name="check_selection"/>
