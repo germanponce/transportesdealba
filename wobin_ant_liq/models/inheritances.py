@@ -32,7 +32,6 @@ class AccountPayment(models.Model):
 class AccountMove(models.Model):
     _inherit = 'account.move'
 
-
     comprobations_ids = fields.One2many('wobin.comprobations', 'acc_mov_related_id',
                                         string='Comprobación')     
 

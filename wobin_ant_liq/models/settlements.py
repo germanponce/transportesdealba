@@ -85,7 +85,7 @@ class WobinSettlements(models.Model):
 
 
     @api.onchange('operator_id')
-    def onchange_adv_set_lines_ids(self):
+    def _onchange_adv_set_lines_ids(self):
         #Fill up one2many field with data for current operator and a given trip:
         ids_gotten = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', self.operator_id.id), ('settled', '=', False)]).ids
         self.possible_adv_set_lines_ids = [(6, 0, ids_gotten)] 
@@ -117,7 +117,7 @@ class WobinSettlements(models.Model):
 
 
 
-    @api.onchange('total_selected')
+    @api.depends('total_selected')
     def _reaction_to_selected_total(self):
         flag = False
 
@@ -150,6 +150,7 @@ class WobinSettlements(models.Model):
 
 
 
+    @api.depends('total_selected')
     def _set_flag_button_create_payment(self):
         for rec in self:
             #When "amount to settle" is greater or lesser than 0 just display button for payments
@@ -158,7 +159,8 @@ class WobinSettlements(models.Model):
                 rec.btn_crt_payment = True
 
 
-
+    
+    @api.depends('possible_adv_set_lines_ids', 'total_selected')
     def _set_flag_button_mark_settle(self):
         for rec in self:
             #When "amount to settle" is equal to 0 (and validating that
@@ -174,7 +176,7 @@ class WobinSettlements(models.Model):
                 rec.btn_mark_settle = True
 
 
-
+    @api.depends('total_selected')
     def _set_flag_button_debtor_new_advance(self):  
         for rec in self:        
             #When "amount to settle" is lesser than 0 just display button for acc. move or advances
@@ -263,4 +265,4 @@ class WobinSettlements(models.Model):
                         'default_settlements_ids': [(4, self.id)], 
                         'default_money_not_consider': True
                        }
-        }   
+        }
