@@ -27,8 +27,8 @@ class WobinMovesAdvSetLines(models.Model):
                                             store=True)
     comprobations_sum_amount = fields.Float(string='Comprobaciones', 
                                             digits=(15,2), 
-                                            compute='_set_comprobations_sum_amount', 
-                                            store=True)
+                                            compute='_set_comprobations_sum_amount') 
+                                            #store=True)
     amount_to_settle  = fields.Float(string='Saldo a Liquidar', 
                                      digits=(15,2), 
                                      compute='_set_amount_to_settle', 
@@ -67,7 +67,7 @@ class WobinMovesAdvSetLines(models.Model):
 
 
     
-    @api.depends('comprobations_ids')
+    #@api.depends('comprobations_ids')
     def _set_comprobations_sum_amount(self):     
         for rec in self: 
             sum_amount = sum(line.amount for line in rec.comprobations_ids)
