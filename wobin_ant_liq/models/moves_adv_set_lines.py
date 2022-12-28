@@ -60,10 +60,11 @@ class WobinMovesAdvSetLines(models.Model):
                                                ondelete='cascade')
     advances_sum_amount      = fields.Float(string='Anticipos', 
                                             digits=(15,2),
-                                            compute='_set_advances_sum_amount')
+                                            compute='_set_sum_amounts')
+                                            #compute='_set_advances_sum_amount')
     comprobations_sum_amount = fields.Float(string='Comprobaciones', 
                                             digits=(15,2), 
-                                            compute='_set_comprobations_sum_amount') 
+                                            compute='_set_sum_amounts') 
     amount_to_settle  = fields.Float(string='Saldo a Liquidar', 
                                      digits=(15,2), 
                                      compute='_set_amount_to_settle')
@@ -95,6 +96,16 @@ class WobinMovesAdvSetLines(models.Model):
     #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     #                                    METHODS
     #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+    def _set_sum_amounts(self):
+        for rec in self:
+            adv_sum_amount = sum(line.amount for line in rec.advances_ids)
+            rec.advances_sum_amount = adv_sum_amount  
+
+            comp_sum_amount = sum(line.amount for line in rec.comprobations_ids)
+            rec.comprobations_sum_amount = comp_sum_amount
+
+
+
     def _set_advances_sum_amount(self):
         for rec in self:
             sum_amount = sum(line.amount for line in rec.advances_ids)
