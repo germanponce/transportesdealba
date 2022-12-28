@@ -16,12 +16,10 @@
               <field name="amount"/>
               <field name="trip_id"/>   
               <field name="acc_mov_related_id"/>  
-              <!--
               <group expand="0" string="Group By">
-                  <filter string="Comprobation" name="name" 
-                            context="{'group_by':'trip_id'}"/>
-              </group>
-              -->
+                <filter string="Comprobación" name="name" 
+                        context="{'group_by':'trip_id'}"/>
+              </group> 
             </search> 
         </field> 
     </record>    
