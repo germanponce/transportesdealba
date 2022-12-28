@@ -91,7 +91,7 @@
                           <field name="btn_mark_settle" invisible="True"/>                                    
 
                           <field name="btn_debtor_new_adv" invisible="True"/>
-                          <field name="advance_related_id" attrs="{'invisible': ['|', ('btn_debtor_new_adv', '=', False)
+                          <field name="advance_related_id" attrs="{'invisible': ['|', ('btn_debtor_new_adv', '=', False),
                                                                                       ('advance_related_id', '!=', False)],
                                                                    'readonly': [('state', 'in', ['ready', 'settled'])]}"/>                                             
                         </group>                                                
