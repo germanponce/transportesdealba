@@ -61,7 +61,6 @@ class WobinMovesAdvSetLines(models.Model):
     advances_sum_amount      = fields.Float(string='Anticipos', 
                                             digits=(15,2),
                                             compute='_set_sum_amounts')
-                                            #compute='_set_advances_sum_amount')
     comprobations_sum_amount = fields.Float(string='Comprobaciones', 
                                             digits=(15,2), 
                                             compute='_set_sum_amounts') 
@@ -98,25 +97,12 @@ class WobinMovesAdvSetLines(models.Model):
     #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     def _set_sum_amounts(self):
         for rec in self:
+            #For Advances:
             adv_sum_amount = sum(line.amount for line in rec.advances_ids)
             rec.advances_sum_amount = adv_sum_amount  
-
+            #For Comprobations:
             comp_sum_amount = sum(line.amount for line in rec.comprobations_ids)
             rec.comprobations_sum_amount = comp_sum_amount
-
-
-
-    def _set_advances_sum_amount(self):
-        for rec in self:
-            sum_amount = sum(line.amount for line in rec.advances_ids)
-            rec.advances_sum_amount = sum_amount                   
-
-
-    
-    def _set_comprobations_sum_amount(self):     
-        for rec in self: 
-            sum_amount = sum(line.amount for line in rec.comprobations_ids)
-            rec.comprobations_sum_amount = sum_amount
 
 
 
