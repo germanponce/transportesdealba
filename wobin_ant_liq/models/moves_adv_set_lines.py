@@ -63,7 +63,7 @@ class WobinMovesAdvSetLines(models.Model):
         for rec in self:
             sum_amount = sum(line.amount for line in rec.advances_ids)
             rec.advances_sum_amount = sum_amount  
-            rec.update({'advances_sum_amount': sum_amount})                   
+            #rec.update({'advances_sum_amount': sum_amount})                   
 
 
     
@@ -72,7 +72,7 @@ class WobinMovesAdvSetLines(models.Model):
         for rec in self: 
             sum_amount = sum(line.amount for line in rec.comprobations_ids)
             rec.comprobations_sum_amount = sum_amount
-            rec.write({'comprobations_sum_amount': sum_amount})
+            #rec.write({'comprobations_sum_amount': sum_amount})
 
 
 

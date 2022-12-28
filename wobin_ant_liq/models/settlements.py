@@ -84,15 +84,16 @@ class WobinSettlements(models.Model):
 
 
     @api.onchange('operator_id')
-    def _onchange_adv_set_lines_ids(self):
+    def _onchange_operator(self):
         #Fill up one2many field with data for current operator and a given trip:
-        ids_gotten = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', self.operator_id.id), ('settled', '=', False)]).ids
-        self.possible_adv_set_lines_ids = [(6, 0, ids_gotten)] 
+        ids_gotten = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', self.operator_id.id), 
+                                                                   ('settled', '=', False)]).ids
+        self.possible_adv_set_lines_ids = ids_gotten
 
 
 
     @api.onchange('possible_adv_set_lines_ids')
-    def _onchange_comprobation_lines_ids(self):     
+    def _onchange_posible_adv_set_lines(self):     
         # Only sum up lines which are selected by user:
         sum_amount = sum(line.amount_to_settle for line in self.possible_adv_set_lines_ids if line.check_selection == True)
         # Assign to total selected:
@@ -106,13 +107,8 @@ class WobinSettlements(models.Model):
         sum_comprobations = sum(line.comprobations_sum_amount for line in self.possible_adv_set_lines_ids if line.check_selection == True)
         self.comprobations_sum_amount = sum_comprobations
 
-        list_trips = []
-        for ln in self.possible_adv_set_lines_ids:
-            if ln.check_selection == True:
-                list_trips.append(ln.trip_id.id)
 
 
-    
     @api.depends('possible_adv_set_lines_ids')
     def _set_settled_lines(self):
         for rec in self:

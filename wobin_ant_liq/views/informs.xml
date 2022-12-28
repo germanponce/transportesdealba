@@ -98,9 +98,14 @@
                       </group>
                     </group> 
 
-                    <group>                    
-                      <field name="settlement_aux_id" readonly="True"/>                     
-                    </group>  
+                    <group> 
+                      <group>                    
+                          <field name="settlement_aux_id" readonly="True"/>                     
+                      </group>                      
+                      <group>
+                          <field name="total_settlement"/> 
+                      </group>  
+                    </group>
 
                 </sheet>              
                 <div class="oe_chatter">
