@@ -62,10 +62,6 @@ class WobinSettlements(models.Model):
                                         track_visibility='always')    
     #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     #:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-    advances_sum_amount      = fields.Float(string='Anticipos', 
-                                            digits=(15,2))
-    comprobations_sum_amount = fields.Float(string='Comprobaciones', 
-                                            digits=(15,2))
     btn_crt_payment    = fields.Boolean(compute="_set_flag_button_create_payment", 
                                         store=True, 
                                         default=False)
@@ -106,12 +102,6 @@ class WobinSettlements(models.Model):
         self.total_selected = sum_amount  
         self.total_settlement = sum_amount
         self.amount_to_settle = sum_amount
-
-        sum_advances = sum(line.advances_sum_amount for line in self.possible_adv_set_lines_ids if line.check_selection == True)
-        self.advances_sum_amount = sum_advances
-
-        sum_comprobations = sum(line.comprobations_sum_amount for line in self.possible_adv_set_lines_ids if line.check_selection == True)
-        self.comprobations_sum_amount = sum_comprobations
 
 
 

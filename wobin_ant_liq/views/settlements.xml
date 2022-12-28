@@ -136,8 +136,6 @@
                                    readonly="True" 
                                    force_save="1" 
                                    attrs="{'invisible': [('state', '==', 'pending')]}"/>
-                            <field name="advances_sum_amount" invisible="True"/>
-                            <field name="comprobations_sum_amount" invisible="True"/>
                         </group>
                     </div>                                                                                   
                 </sheet>              
