@@ -17,8 +17,7 @@ class WobinComprobations(models.Model):
         """This method intends to create a sequence for a given comprobation"""
         #Change of sequence (if it isn't stored is shown "New" else e.g COMP000005)  
         if vals.get('name', 'New') == 'New':
-            sequence = self.env['ir.sequence'].next_by_code(
-                'self.comprobation') or 'New'
+            sequence = self.env['ir.sequence'].next_by_code('self.comprobation') or 'New'
             vals['name'] = sequence    
 
         res = super(WobinComprobations, self).create(vals)  

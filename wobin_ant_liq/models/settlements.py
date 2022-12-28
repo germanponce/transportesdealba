@@ -13,8 +13,7 @@ class WobinSettlements(models.Model):
         """This method intends to create a sequence for a given settlement"""
         #Change of sequence (if it isn't stored is shown "New" else e.g LIQ000005)  
         if vals.get('name', 'New') == 'New':
-            sequence = self.env['ir.sequence'].next_by_code(
-                'self.settlement') or 'New'
+            sequence = self.env['ir.sequence'].next_by_code('self.settlement') or 'New'
             vals['name'] = sequence                      
         return super(WobinSettlements, self).create(vals)
 
@@ -92,15 +91,10 @@ class WobinSettlements(models.Model):
     #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     @api.onchange('operator_id')
     def _onchange_operator(self):
-        #Initialize One2many field:
-        self.possible_adv_set_lines_ids = [(5, )] 
         #Fill up one2many field with data for current operator and a given trip:
         lines_gotten = self.env['wobin.moves.adv.set.lines'].search([('operator_id', '=', self.operator_id.id), 
-                                                                   ('settled', '=', False)])
-        #self.possible_adv_set_lines_ids = [(6, 0, ids_gotten)] 
-        #self.possible_adv_set_lines_ids = ids_gotten 
-        for line in lines_gotten:
-            self.possible_adv_set_lines_ids = [(4, line.id)] 
+                                                                     ('settled', '=', False)]).ids
+        self.possible_adv_set_lines_ids = [(6, 0, lines_gotten)] 
 
 
 
