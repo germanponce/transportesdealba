@@ -18,7 +18,7 @@
       <field name="name">Comprobaciones</field>
       <field name="res_model">wobin.comprobations</field>
       <field name="view_mode">tree,form,search</field>
-      <!--<field name="context">{'group_by':'trip_id'}</field>-->
+      <field name="context">{'group_by':'trip_id'}</field>
     </record>     
 
 
