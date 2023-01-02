@@ -1,0 +1,22 @@
+<odoo>
+  <data>   
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- VIEWS {LIST} -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->    
+
+    <!-- ROUTES ANALYSIS from Contract Assignments - LIST VIEW -->
+    <record id="view_logistics_routes_lst" model="ir.ui.view">
+      <field name="name">Rutas</field>
+      <field name="model">wobin.logistics.contracts</field>
+      <field name="arch" type="xml">
+        <tree>          
+          <field name="origin_id"/>
+          <field name="destination_id"/>
+          <field name="name"/>
+          <field name="write_date"/>           
+        </tree>
+      </field>
+    </record>      
+
+  </data>  
+</odoo>

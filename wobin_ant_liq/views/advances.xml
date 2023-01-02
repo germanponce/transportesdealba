@@ -1,0 +1,84 @@
+<odoo>
+  <data>
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- VIEWS {LISTS, FORMS, SEARCH} -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <!-- ADVANCES - SEARCH VIEW -->    
+    <record id="view_advances_tree" model="ir.ui.view"> 
+      <field name="name">Anticipos</field>
+      <field name="model">wobin.advances</field>
+        <field name="arch" type="xml"> 
+            <search> 
+              <field name="name"/>
+              <field name="operator_id"/>            
+              <field name="date"/>                 
+              <field name="amount"/>
+              <field name="trip_id"/>     
+              <group expand="0" string="Group By">
+                  <filter string="Anticipo" name="name" 
+                            context="{'group_by':'trip_id'}"/>
+              </group>           
+            </search> 
+        </field> 
+    </record>    
+
+    <!-- ADVANCES - LIST VIEW -->
+    <record id="view_advances_list" model="ir.ui.view">
+      <field name="name">Anticipos</field>
+      <field name="model">wobin.advances</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="operator_id"/>            
+          <field name="date"/>                 
+          <field name="amount"/>
+          <field name="trip_id"/>
+          <field name="payment_related_id" force_save="1"/>   
+        </tree>
+      </field>
+    </record>    
+
+    <!-- ADVANCES - FORM VIEW -->
+    <record id="view_advances_form" model="ir.ui.view"> 
+        <field name="name">Anticipos</field> 
+        <field name="model">wobin.advances</field> 
+        <field name="arch" type="xml"> 
+            <form duplicate="0"> 
+                <header>
+                    <button name="create_payment" 
+                            type="object"
+                            string="Crear Pago" 
+                            class="oe_highlight" 
+                            attrs="{'invisible': ['|', ('name', '=', 'New'), ('payment_related_id', '!=', False)]}"/>
+                </header>
+                <sheet> 
+                    <div class="oe_left oe_title">
+                        <h1>
+                            <field name="name" readonly="True"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                          <field name="operator_id" required="True"/>          
+                          <field name="date" required="True"/>
+                          <field name="amount" required="True"/>  
+                          <field name="trip_id" required="True"/>                           
+                        </group>                                                 
+                        <group>                     
+                          <field name="expenses_to_check"/>      
+                          <field name="payment_related_id" readonly="True"/>                                     
+                        </group> 
+                    </group>                                            
+                </sheet>              
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>               
+            </form> 
+        </field> 
+    </record>
+
+  </data>  
+</odoo> 

@@ -1,0 +1,84 @@
+<odoo>
+  <data>
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- VIEWS {LIST, FORM} -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <!-- TRIPS - LIST VIEW -->
+    <record id="view_logistics_contracts_list" model="ir.ui.view">
+      <field name="name">Contratos</field>
+      <field name="model">wobin.logistics.contracts</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="client_id"/>          
+          <field name="product_id"/>
+          <field name="covenant_qty"/>
+          <field name="tariff"/>
+          <field name="expected_income"/>
+          <field name="origin_id"/>
+          <field name="destination_id"/>
+          <field name="remitter"/>
+          <field name="recipient"/>
+          <field name="shipping"/>                   
+        </tree>
+      </field>
+    </record>    
+
+    <!-- CONTRACTS - FORM VIEW -->
+    <record id="view_logistics_contracts_form" model="ir.ui.view"> 
+        <field name="name">Contratos</field> 
+        <field name="model">wobin.logistics.contracts</field> 
+        <field name="arch" type="xml"> 
+            <form duplicate="0"> 
+                <header>
+                    <button name="create_trip" 
+                            type="object" 
+                            string="Crear Viaje" 
+                            class="oe_highlight" 
+                            attrs="{'invisible': ['|', ('name', '=', 'New'), ('state', '=', 'close')]}"/>
+                            <!--groups="wobin_logistics.group_wl_access_logistics"/>-->
+                    <button name="close_contract" 
+                            type="object" 
+                            string="Cerrar Contrato" 
+                            class="oe_highlight" 
+                            attrs="{'invisible': ['|', ('name', '=', 'New'), ('state', '=', 'close')]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="active,close"/>
+                </header>
+                <sheet> 
+                    <div class="oe_left oe_title">
+                        <h1>
+                            <field name="name" readonly="True"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="client_id" required="True"/>
+                            <field name="product_id" required="True"/>
+                            <field name="covenant_qty" required="True"/>
+                            <field name="tariff" required="True"/>  
+                            <field name="expected_income" required="True"/>                  
+                        </group>                                                 
+                        <group>                     
+                            <field name="origin_id" required="True"/>
+                            <field name="destination_id" required="True"/>
+                            <field name="remitter" required="True"/>
+                            <field name="recipient" required="True"/>
+                            <field name="shipping" required="True"/>                                         
+                      </group> 
+                  </group> 
+                  <group>
+                      <field name="observations" required="True"/>
+                  </group>                                            
+                </sheet>              
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>               
+            </form> 
+        </field> 
+    </record>
+
+  </data>  
+</odoo>

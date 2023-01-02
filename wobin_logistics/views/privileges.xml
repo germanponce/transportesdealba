@@ -1,0 +1,277 @@
+<odoo>
+    <data>        
+        <!--/////////////////////////////////-->
+        <!-- PERMISSIONS FOR SALE ROLE GROUP -->
+        <!--/////////////////////////////////-->
+
+        <!--Avoid Creation of Trips for Sale Group in FORM & TREE views-->
+        <record id="hide_buttons_form_view_trip_sale_group" model="ir.ui.view">
+        <field name="name">Viajes</field>
+        <field name="model">wobin.logistics.trips</field>
+        <field name="inherit_id" ref="wobin_logistics.view_logistics_trips_form"/>
+        <field name="groups_id" eval="[(4,ref('wobin_logistics.group_wl_access_sales'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record> 
+
+        <record id="hide_buttons_tree_view_trip_sale_group" model="ir.ui.view">
+        <field name="name">Viajes</field>
+        <field name="model">wobin.logistics.trips</field>
+        <field name="inherit_id" ref="wobin_logistics.view_logistics_trips_list"/>
+        <field name="groups_id" eval="[(4,ref('wobin_logistics.group_wl_access_sales'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="/tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record>             
+
+
+
+        <!--///////////////////////////////////////-->
+        <!-- PERMISSIONS FOR LOGISTICS ROLE GROUP  -->
+        <!--///////////////////////////////////////-->
+
+        <!--Avoid Creation of Contracts for Logistics Group in FORM & TREE views-->
+        <record id="hide_buttons_form_view_contract_logistic_group" model="ir.ui.view">
+        <field name="name">Contratos</field>
+        <field name="model">wobin.logistics.contracts</field>
+        <field name="inherit_id" ref="wobin_logistics.view_logistics_contracts_form"/>
+        <field name="groups_id" eval="[(4,ref('wobin_logistics.group_wl_access_logistics'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record> 
+
+        <record id="hide_buttons_tree_view_contract_logistic_group" model="ir.ui.view">
+        <field name="name">Contratos</field>
+        <field name="model">wobin.logistics.contracts</field>
+        <field name="inherit_id" ref="wobin_logistics.view_logistics_contracts_list"/>
+        <field name="groups_id" eval="[(4,ref('wobin_logistics.group_wl_access_logistics'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="/tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record>  
+
+
+
+        <!--/////////////////////////////////////-->
+        <!-- PERMISSIONS FOR ANALYSIS ROLE GROUP -->
+        <!--/////////////////////////////////////-->
+
+        <!--Avoid Creation of Trips for Analysis Group in FORM & TREE views-->
+        <record id="hide_buttons_form_view_trip_analysis_group" model="ir.ui.view">
+        <field name="name">Viajes</field>
+        <field name="model">wobin.logistics.trips</field>
+        <field name="inherit_id" ref="wobin_logistics.view_logistics_trips_form"/>
+        <field name="groups_id" eval="[(4,ref('wobin_logistics.group_wl_access_analysis'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record> 
+
+        <record id="hide_buttons_tree_view_trip_analysis_group" model="ir.ui.view">
+        <field name="name">Viajes</field>
+        <field name="model">wobin.logistics.trips</field>
+        <field name="inherit_id" ref="wobin_logistics.view_logistics_trips_list"/>
+        <field name="groups_id" eval="[(4,ref('wobin_logistics.group_wl_access_analysis'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="/tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record>       
+
+        <!--Avoid Creation of Contracts for Analysis Group in FORM & TREE views-->
+        <record id="hide_buttons_form_view_contract_analysis_group" model="ir.ui.view">
+        <field name="name">Contratos</field>
+        <field name="model">wobin.logistics.contracts</field>
+        <field name="inherit_id" ref="wobin_logistics.view_logistics_contracts_form"/>
+        <field name="groups_id" eval="[(4,ref('wobin_logistics.group_wl_access_analysis'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record> 
+
+        <record id="hide_buttons_tree_view_contract_analysis_group" model="ir.ui.view">
+        <field name="name">Contratos</field>
+        <field name="model">wobin.logistics.contracts</field>
+        <field name="inherit_id" ref="wobin_logistics.view_logistics_contracts_list"/>
+        <field name="groups_id" eval="[(4,ref('wobin_logistics.group_wl_access_analysis'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="/tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record>          
+
+
+
+        <!--/////////////////////////////////////-->
+        <!-- PERMISSIONS FOR VIEW ROLE GROUP -->
+        <!--/////////////////////////////////////-->
+
+        <!--Avoid Creation of Trips for View Group in FORM & TREE views-->
+        <record id="hide_buttons_form_view_trip_view_group" model="ir.ui.view">
+        <field name="name">Viajes</field>
+        <field name="model">wobin.logistics.trips</field>
+        <field name="inherit_id" ref="wobin_logistics.view_logistics_trips_form"/>
+        <field name="groups_id" eval="[(4,ref('wobin_logistics.group_wl_access_view'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record> 
+
+        <record id="hide_buttons_tree_view_trip_view_group" model="ir.ui.view">
+        <field name="name">Viajes</field>
+        <field name="model">wobin.logistics.trips</field>
+        <field name="inherit_id" ref="wobin_logistics.view_logistics_trips_list"/>
+        <field name="groups_id" eval="[(4,ref('wobin_logistics.group_wl_access_view'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="/tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record>       
+
+        <!--Avoid Creation of Contracts for View Group in FORM & TREE views-->
+        <record id="hide_buttons_form_view_contract_view_group" model="ir.ui.view">
+        <field name="name">Contratos</field>
+        <field name="model">wobin.logistics.contracts</field>
+        <field name="inherit_id" ref="wobin_logistics.view_logistics_contracts_form"/>
+        <field name="groups_id" eval="[(4,ref('wobin_logistics.group_wl_access_view'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record> 
+
+        <record id="hide_buttons_tree_view_contract_view_group" model="ir.ui.view">
+        <field name="name">Contratos</field>
+        <field name="model">wobin.logistics.contracts</field>
+        <field name="inherit_id" ref="wobin_logistics.view_logistics_contracts_list"/>
+        <field name="groups_id" eval="[(4,ref('wobin_logistics.group_wl_access_view'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="/tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record>          
+
+
+
+
+        <!--///////////////////////////////////////////////////////////////////-->
+        <!-- REMOVE (-) 'CREATE, EDIT & DELETE' BUTTONS FROM ALL ANALYSIS VIEWS-->
+        <!--///////////////////////////////////////////////////////////////////-->
+        
+        <!--Tree View Routes-->
+        <record id="hide_buttons_tree_view_routes" model="ir.ui.view">
+        <field name="name">Rutas</field>
+        <field name="model">wobin.logistics.contracts</field>
+        <field name="inherit_id" ref="wobin_logistics.view_logistics_routes_lst"/>
+            <field name="arch" type="xml">
+                <xpath expr="/tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record> 
+
+        <!--Tree View Trips Analysis according Contracts-->
+        <record id="hide_buttons_tree_view_trips_analysis_contracts" model="ir.ui.view">
+        <field name="name">Análisis de Viajes según los Contratos</field>
+        <field name="model">wobin.logistics.contracts</field>
+        <field name="inherit_id" ref="wobin_logistics.view_trips_analysis_contract"/>
+            <field name="arch" type="xml">
+                <xpath expr="/tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!--Tree View Trips Analysis-->
+        <record id="hide_buttons_tree_view_trips_analysis" model="ir.ui.view">
+        <field name="name">Análisis de Viajes</field>
+        <field name="model">wobin.logistics.trips</field>
+        <field name="inherit_id" ref="wobin_logistics.view_trips_analysis"/>
+            <field name="arch" type="xml">
+                <xpath expr="/tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record> 
+
+        <!--Tree View Contracts Status-->
+        <record id="hide_buttons_tree_view_contract_status" model="ir.ui.view">
+        <field name="name">Status de los Contratos</field>
+        <field name="model">wobin.logistics.contracts</field>
+        <field name="inherit_id" ref="wobin_logistics.view_contracts_status"/>
+            <field name="arch" type="xml">
+                <xpath expr="/tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record> 
+
+        <!--Tree View Discharged Trips and Sale Orders to Process-->
+        <record id="hide_buttons_tree_view_discharged_trips" model="ir.ui.view">
+        <field name="name">Viajes Descargados y Ordenes de Venta por Procesar</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="wobin_logistics.view_discharged_trips"/>
+            <field name="arch" type="xml">
+                <xpath expr="/tree" position="attributes">
+                    <attribute name="create">false</attribute>
+                    <attribute name="edit">false</attribute>
+                    <attribute name="delete">false</attribute>
+                </xpath>
+            </field>
+        </record>                                                  
+
+    </data>
+</odoo>

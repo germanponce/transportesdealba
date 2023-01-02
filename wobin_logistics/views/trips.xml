@@ -1,0 +1,137 @@
+<odoo>
+  <data>
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- VIEWS {LIST, FORM} -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->   
+
+    <!-- TRIPS - LIST VIEW -->
+    <record id="view_logistics_trips_list" model="ir.ui.view">
+      <field name="name">Viajes</field>
+      <field name="model">wobin.logistics.trips</field>
+      <field name="arch" type="xml">
+        <tree decoration-danger="state == 'assigned'" decoration-warning="state == 'route'" decoration-success="state == 'discharged'" decoration-info="state == 'to_invoice'" decoration-bf="state in ('billed', 'charged')">
+          <field name="name"/>
+          <field name="contract_id"/>          
+          <field name="client_id"/>
+          <field name="vehicle_id"/>
+          <field name="analytic_account_id"/>
+          <field name="operator_id"/>          
+          <field name="route"/>
+          <field name="start_date"/>
+          <field name="load_date"/>
+          <field name="estimated_qty"/>
+          <field name="real_load_qty"/>
+          <field name="discharge_date"/>
+          <field name="real_discharge_qty"/>                    
+          <field name="discharged_flag"/> 
+          <field name="checked"/> 
+          <field name="sale_order_id"/>
+          <field name="charged_flag"/>
+          <field name="account_move_id"/>
+          <field name="invoiced_flag"/>
+          <field name="invoice"/>  
+          <field name="state"/>          
+        </tree>
+      </field>
+    </record>
+
+    <!-- TRIPS - FORM VIEW -->
+    <record id="view_logistics_trips_form" model="ir.ui.view"> 
+        <field name="name">Viajes</field> 
+        <field name="model">wobin.logistics.trips</field> 
+        <field name="arch" type="xml"> 
+            <form duplicate="0"> 
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="assigned,route,discharged,to_invoice,billed,charged"/>
+                </header> 
+                <sheet>
+                    <div class="oe_left oe_title">
+                        <h1>
+                            <field name="name" readonly="True"/>
+                        </h1>
+                    </div>                
+                    <group>
+                        <div class="container border border-info m-2" style="border-radius: 10px;">
+                          <div style="margin-top: 27px !important;">
+                            <div style="padding-top: 30px !important;">
+                              <h3 style="background: #fff none repeat scroll 0 0; height: auto; margin-left: 20px; padding: 3px 5px; position: absolute; margin-top: -47px; border: 1px solid #337ab7; border-radius: 8px;"><strong>Datos Generales</strong></h3>                                
+                              <group>                         
+                                <field name="contract_id"/>  
+                                <field name="sucursal_id"/>                              
+                                <field name="client_id"/>
+                                <field name="vehicle_id"/> 
+                                <field name="analytic_account_id"/>                           
+                                <field name="operator_id"/>
+                                <field name="route"/>                                  
+                              </group>
+                            </div>  
+                          </div> 
+                        </div> 
+
+                        <div class="container" style="text-align: center;">
+                          <group>
+                            <img src='/wobin_logistics/static/description/icon.png' alt="WOBIN Logistics" style="width:200px; height:200px;"/>
+                          </group>
+                        </div>                        
+                          
+                        <div class="container border border-info m-2" style="border-radius: 10px;">
+                          <div style="margin-top: 27px !important;">
+                            <div style="padding-top: 30px !important;">
+                              <h3 style="background: #fff none repeat scroll 0 0; height: auto; margin-left: 20px; padding: 3px 5px; position: absolute; margin-top: -47px; border: 1px solid #337ab7; border-radius: 8px;"><strong>Carga</strong></h3>                          
+                              <group>
+                                  <field name="start_date"/>
+                                  <field name="load_date"/>
+                                  <field name="estimated_qty"/>
+                                  <field name="real_load_qty"/>
+                                  <field name="decline_qty"/>
+                                  <field name="attachment_load" widget="many2many_binary"/>
+                                  <field name="load_location"/>
+                              </group> 
+                            </div>  
+                          </div> 
+                        </div> 
+
+                        <div class="container border border-info m-2" style="border-radius: 10px;">
+                          <div style="margin-top: 27px !important;">
+                            <div style="padding-top: 30px !important;">
+                              <h3 style="background: #fff none repeat scroll 0 0; height: auto; margin-left: 20px; padding: 3px 5px; position: absolute; margin-top: -47px; border: 1px solid #337ab7; border-radius: 8px;"><strong>Descarga</strong></h3>                                
+                              <group>                           
+                                  <field name="discharge_date"/>
+                                  <field name="real_discharge_qty"/>
+                                  <field name="attachment_discharge" widget="many2many_binary"/>
+                                  <field name="discount_decline"/>
+                                  <field name="qty_to_bill"/>
+                                  <field name="discharged_flag"/>
+                                  <field name="discharge_location"/>                               
+                                  <label for="conformity"/>
+                                  <div>
+                                      <field name="conformity" class="oe_inline" style="padding-right: 10px"/>
+                                      <field name="checked" class="oe_inline"/>
+                                  </div>     
+                                  <field name="sale_order_id" readonly="True"/>                                  
+                                  <field name="charged_flag" attrs="{'readonly': [('state', '=', 'charged')],
+                                                                    'invisible': [('state', '!=', 'to_invoice')]}"/>                                                                   
+                                  <button string="Crear Asiento Contable" name="creation_account_move" type="object" class="oe_highlight" 
+                                          attrs="{'invisible': ['|', ('charged_flag', '=', False), ('state', '!=', 'to_invoice')]}"/>                                  
+                                  <field name="account_move_id" readonly="True" attrs="{'invisible': [('state', '!=', 'charged')]}"/>
+                                  <field name="invoiced_flag" attrs="{'readonly':  [('state', '=', 'billed')],
+                                                                      'invisible': [('state', '!=', 'to_invoice')]}"/>                                      
+                                  <field name="invoice" attrs="{'invisible': [('state', 'in', ['assigned', 'route'])]}"/>  
+                              </group>
+                            </div>  
+                          </div> 
+                        </div> 
+
+                    </group>
+                </sheet>              
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>               
+            </form> 
+        </field> 
+    </record>         
+
+  </data>  
+</odoo>

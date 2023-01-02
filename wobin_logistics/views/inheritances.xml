@@ -1,0 +1,45 @@
+<odoo>
+  <data>
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- INHERITANCES -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <!--Add a new selection field type into Analytic Tag Form View-->
+    <record id="analytic_tag_form_inherit" model="ir.ui.view">
+      <field name="name">account.analytic.tag.form.inherit</field>
+      <field name="model">account.analytic.tag</field>
+      <field name="inherit_id" ref="analytic.account_analytic_tag_form_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='name']" position="after">
+          <field name="analytic_tag_type"/>
+        </xpath>        
+      </field>
+    </record> 
+
+    <!--Add a new One2many field of Trips into Account Move Form View-->
+    <record id="account_move_with_trips_form_inherit" model="ir.ui.view">
+      <field name="name">account.move.form.inherit</field>
+      <field name="model">account.move</field>
+      <field name="inherit_id" ref="account.view_move_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='ref']" position="after">
+          <field name="trips_acc_move_ids" widget="many2many_tags"/>
+        </xpath>                    
+      </field>
+    </record> 
+    
+
+    <!--Add a new One2many field of Trips into Sale Order Form View-->
+    <record id="invoice_with_trips_form_inherit" model="ir.ui.view">
+      <field name="name">sale.order.form.inherit</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='payment_term_id']" position="after">
+          <field name="trips_sales_ids" widget="many2many_tags"/>
+        </xpath>        
+      </field>
+    </record>                            
+
+  </data>  
+</odoo>

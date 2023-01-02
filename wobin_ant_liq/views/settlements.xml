@@ -1,0 +1,152 @@
+<odoo>
+  <data>
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- VIEWS {LISTS, FORMS, SEARCH} -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <!-- SETTLEMENTS - SEARCH VIEW -->    
+    <record id="view_settlements_tree" model="ir.ui.view"> 
+      <field name="name">Liquidaciones</field>
+      <field name="model">wobin.settlements</field>
+        <field name="arch" type="xml"> 
+            <search> 
+              <field name="name"/>
+              <field name="operator_id"/>            
+              <field name="date"/>                 
+              <field name="state"/>
+            </search> 
+        </field> 
+    </record>    
+
+    <!-- SETTLEMENTS - LIST VIEW -->
+    <record id="view_settlements_list" model="ir.ui.view">
+      <field name="name">Liquidaciones</field>
+      <field name="model">wobin.settlements</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="operator_id"/>            
+          <field name="date"/>                 
+          <field name="state"/>
+        </tree>
+      </field>
+    </record>    
+
+    <!-- SETTLEMENTS - FORM VIEW -->
+    <record id="view_settlements_form" model="ir.ui.view"> 
+        <field name="name">Liquidaciones</field> 
+        <field name="model">wobin.settlements</field> 
+        <field name="arch" type="xml"> 
+            <form duplicate="0"> 
+                <header>
+                    <button name="create_payment" 
+                            type="object" 
+                            string="Pagar Liquidación" 
+                            class="oe_highlight" 
+                            attrs="{'invisible': ['|', ('btn_crt_payment', '=', False), 
+                                                       ('state', '!=', 'pending')]}"/>
+                    <button name="mark_settled" 
+                            type="object" 
+                            string="Marcar como Saldado" 
+                            class="oe_highlight" 
+                            attrs="{'invisible': ['|', ('btn_mark_settle', '=', False), 
+                                                       ('state', '!=', 'pending')]}"/>
+                    <button name="create_advance" 
+                            type="object" 
+                            string="Cargarse a Nuevo Anticipo" 
+                            class="oe_highlight" 
+                            attrs="{'invisible': ['|', ('btn_debtor_new_adv', '=', False), 
+                                                       ('state', '!=', 'pending')]}"/> 
+                    <button name="settle_operation" 
+                            type="object" 
+                            string="Saldar" 
+                            class="oe_highlight" 
+                            attrs="{'invisible': [('state', '!=', 'ready')]}"/> 
+                    <field name="state" widget="statusbar" statusbar_visible="pending,ready,settled"/>
+                </header>
+                <sheet> 
+                    <div class="oe_left oe_title">
+                        <h1>
+                            <field name="name" readonly="True"/>
+                        </h1>
+                    </div>
+
+                    <div style="margin-top: 50px; margin-bottom: 15px;" 
+                         class="p-3 bg-info text-white text-center" 
+                         attrs="{'invisible': [('label_process', '=', False)]}">
+                            <field name="label_process" readonly="True"/>
+                    </div>
+
+                    <group>
+                        <group>
+                          <field name="operator_id" 
+                                 required="True" 
+                                 attrs="{'readonly': [('state', 'in', ['ready', 'settled'])]}"/>           
+                          <field name="date" 
+                                 required="True" 
+                                 attrs="{'readonly': [('state', 'in', ['ready', 'settled'])]}"/>                        
+                        </group>  
+                        <group>
+                          <field name="attachments" widget="many2many_binary"/>
+                          <!--[Payment] When total_selected to settle is greater than > 0-->
+                          <field name="btn_crt_payment" invisible="True"/>
+                          <field name="payment_related_id" attrs="{'invisible': [('btn_crt_payment', '=', False)], 
+                                                                   'readonly': [('state', 'in', ['ready', 'settled'])]}"/>
+                          <!--[Just Settle] When total_selected to settle is equal to = 0-->
+                          <field name="btn_mark_settle" invisible="True"/>                                    
+                          <!--[Advance] When total_selected to settle is lesser than < 0-->
+                          <field name="btn_debtor_new_adv" invisible="True"/>
+                          <field name="advance_related_id" attrs="{'invisible': [('btn_debtor_new_adv', '=', False)],
+                                                                   'readonly': [('state', 'in', ['ready', 'settled'])]}"/>                                             
+                        </group>                                                
+                    </group>
+                    
+                    <field name="possible_adv_set_lines_ids" force_save="1" 
+                           attrs="{'invisible': [('state', '!=', 'pending')],
+                                   'readonly': [('name', '=', 'New')]}">
+                        <tree editable="bottom">
+                            <field name="check_selection"/>
+                            <field name="operator_id"/>
+                            <field name="trip_id"/>
+                            <field name="advances_sum_amount" force_save="1"/>                      
+                            <field name="comprobations_sum_amount" force_save="1"/>
+                            <field name="amount_to_settle" sum="Sum Amounts" force_save="1"/>
+                        </tree>
+                    </field>
+                    <field name="settled_adv_set_lines_ids" force_save="1" 
+                           attrs="{'invisible': [('state', '==', 'pending')], 
+                                   'readonly': [('state', 'in', ['ready', 'settled'])]}">
+                        <tree editable="bottom">
+                            <field name="check_selection"/>
+                            <field name="operator_id"/>
+                            <field name="trip_id"/>
+                            <field name="advances_sum_amount" force_save="1"/>                      
+                            <field name="comprobations_sum_amount" force_save="1"/>
+                            <field name="amount_to_settle" sum="Sum Amounts" force_save="1"/>
+                        </tree>
+                    </field>                    
+                     
+                    <div class="oe_subtotal_footer oe_right font-weight-bold">
+                        <group>
+                            <field name="total_selected" 
+                                   readonly="True" 
+                                   force_save="1" 
+                                   attrs="{'invisible': [('state', '!=', 'pending')]}"/>
+                            <field name="total_settlement" 
+                                   readonly="True" 
+                                   force_save="1" 
+                                   attrs="{'invisible': [('state', '==', 'pending')]}"/>
+                        </group>
+                    </div>                                                                                   
+                </sheet>              
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>               
+            </form> 
+        </field> 
+    </record>
+
+  </data>  
+</odoo> 

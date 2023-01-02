@@ -1,0 +1,81 @@
+<odoo>
+  <data>
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- INFORMS -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <!-- ANALYSIS (TRIPS) according to Contract - LIST VIEW -->
+    <record id="view_trips_analysis_contract" model="ir.ui.view">
+      <field name="name">Análisis de Viajes según los Contratos</field>
+      <field name="model">wobin.logistics.contracts</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>          
+          <field name="trips_ids" widget='many2many_tags'/>
+          <field name="covenant_qty"/>
+          <field name="trip_delivered_qty"/>
+          <field name="difference_qty"/>       
+        </tree>
+      </field>
+    </record>
+
+    <!-- ANALYSIS (TRIPS) in accordance to trips - LIST VIEW --> 
+    <record id="view_trips_analysis" model="ir.ui.view">
+      <field name="name">Análisis de Viajes</field>
+      <field name="model">wobin.logistics.trips</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>  
+          <field name="client_id"/>
+          <field name="state"/> 
+          <field name="contract_id"/>
+          <field name="charged_flag"/>
+          <field name="account_move_id"/>
+          <field name="invoiced_flag"/>
+          <field name="invoice"/>                             
+        </tree>
+      </field>
+    </record>  
+
+    <!-- ANALYSIS Contracts Status- LIST VIEW --> 
+    <record id="view_contracts_status" model="ir.ui.view">
+      <field name="name">Status de los Contratos</field>
+      <field name="model">wobin.logistics.contracts</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>  
+          <field name="state"/>
+          <field name="trip_status"/>        
+        </tree>
+      </field>
+    </record>
+    
+    <!-- Discharged Trips - SEARCH VIEW --> 
+    <record id="view_search_discharged_trips" model="ir.ui.view"> 
+        <field name="model">sale.order</field> 
+        <field name="arch" type="xml"> 
+            <search> 
+              <field name="name" /> 
+              <field name="trips_sales_ids"/>
+              <field name="name"/> 
+              <field name="state"/>                 
+              <filter name="pending" string="Sale Orders w/ trips" 
+                      domain="[('trips_sales_ids', '!=', False)]"/>
+            </search> 
+        </field> 
+    </record>
+    <!-- Discharged Trips - LIST VIEW --> 
+    <record id="view_discharged_trips" model="ir.ui.view">
+      <field name="name">Viajes Descargados y Ordenes de Venta por Procesar</field>
+      <field name="model">sale.order</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="trips_sales_ids" widget="many2many_tags"/>
+          <field name="name"/> 
+          <field name="state"/>          
+        </tree>
+      </field>
+    </record>
+
+  </data>  
+</odoo>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="wobin_routes_company_rule" model="ir.rule">
+        <field name="name">Rutas Regla Multicompañía</field>
+        <field name="model_id" ref="model_wobin_logistics_routes"/>
+        <field eval="True" name="global"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>   
+
+    <record id="wobin_contracts_company_rule" model="ir.rule">
+        <field name="name">Contratos Regla Multicompañía</field>
+        <field name="model_id" ref="model_wobin_logistics_contracts"/>
+        <field eval="True" name="global"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record> 
+
+    <record id="wobin_trips_company_rule" model="ir.rule">
+        <field name="name">Viajes Regla Multicompañía</field>
+        <field name="model_id" ref="model_wobin_logistics_trips"/>
+        <field eval="True" name="global"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record> 
+
+    <record id="wobin_vehicles_company_rule" model="ir.rule">
+        <field name="name">Vehículos Regla Multicompañía</field>
+        <field name="model_id" ref="model_wobin_logistics_vehicles"/>
+        <field eval="True" name="global"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record> 
+
+</odoo>

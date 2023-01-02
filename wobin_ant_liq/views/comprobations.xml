@@ -1,0 +1,103 @@
+<odoo>
+  <data>
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- VIEWS {LISTS, FORMS, SEARCH} -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <!-- COMPROBATIONS - SEARCH VIEW -->    
+    <record id="view_comprobations_tree" model="ir.ui.view"> 
+      <field name="name">Comprobaciones</field>
+      <field name="model">wobin.comprobations</field>
+        <field name="arch" type="xml"> 
+            <search> 
+              <field name="name"/>
+              <field name="operator_id"/>            
+              <field name="date"/>                 
+              <field name="amount"/>
+              <field name="trip_id"/>   
+              <field name="acc_mov_related_id"/>  
+              <group expand="0" string="Group By">
+                <filter string="Comprobación" name="name" 
+                        context="{'group_by':'trip_id'}"/>
+              </group> 
+            </search> 
+        </field> 
+    </record>    
+
+    <!-- COMPROBATIONS - LIST VIEW -->
+    <record id="view_comprobations_list" model="ir.ui.view">
+      <field name="name">Comprobaciones</field>
+      <field name="model">wobin.comprobations</field>
+      <field name="arch" type="xml">
+        <tree decoration-info="state == 'draft'" decoration-success="state == 'checked'" decoration-danger="state == 'cancelled'">
+          <field name="name"/>
+          <field name="operator_id"/>            
+          <field name="date"/>                 
+          <field name="amount"/>
+          <field name="trip_id"/>
+          <field name="acc_mov_related_id"/> 
+          <field name="state"/>  
+        </tree>
+      </field>
+    </record>    
+
+    <!-- COMPROBATIONS - FORM VIEW -->
+    <record id="view_comprobations_form" model="ir.ui.view"> 
+      <field name="name">Comprobaciones</field> 
+      <field name="model">wobin.comprobations</field> 
+      <field name="arch" type="xml"> 
+          <form duplicate="0">
+              <header>
+                  <button name="create_account_move" 
+                          type="object" 
+                          string="Crear Asiento de Comprobación" 
+                          class="oe_highlight" 
+                          attrs="{'invisible': ['|', ('name', '=', 'New'), ('state', 'in', ['checked', 'cancelled'])]}"/>
+                  <button name="cancelar_comprobacion" 
+                          type="object" 
+                          string="Cancelar" 
+                          class="oe_highlight" 
+                          attrs="{'invisible': [('state', 'in', ['draft', 'cancelled'])]}"/>
+                  <field name="state" widget="statusbar" statusbar_visible="draft,checked,cancelled"/>
+              </header>
+              <sheet> 
+                  <div class="oe_left oe_title">
+                      <h1>
+                          <field name="name" readonly="True"/>
+                      </h1>
+                  </div>
+                  <group>
+                      <group>
+                        <field name="operator_id" required="True"/>          
+                        <field name="date" required="True"/>
+                        <field name="amount" readonly="True" force_save="1"/>  
+                        <field name="trip_id" required="True"/>                                                
+                      </group>                                                 
+                      <group>                   
+                        <field name="expenses_to_refund"/>      
+                        <field name="acc_mov_related_id" readonly="True"/>                                     
+                      </group> 
+                  </group> 
+                  <field name="comprobation_lines_ids" context="{'default_comprobation_id': active_id}" required="True">
+                      <tree editable="bottom" decoration-info="credit_flag == True">
+                          <field name="comprobation_id" invisible="True"/>
+                          <field name="concept_id"/>
+                          <field name="amount"/>
+                          <field name="credit_flag" invisible="True"/>
+                      </tree>
+                  </field> 
+                  <div class="oe_subtotal_footer oe_right font-weight-bold">
+                      <field name="total" readonly="True" force_save="1"/>
+                  </div>                                                                                                                        
+              </sheet>              
+              <div class="oe_chatter">
+                  <field name="message_follower_ids" widget="mail_followers"/>
+                  <field name="activity_ids" widget="mail_activity"/>
+                  <field name="message_ids" widget="mail_thread"/>
+              </div>               
+          </form> 
+      </field> 
+    </record>
+
+  </data>  
+</odoo> 

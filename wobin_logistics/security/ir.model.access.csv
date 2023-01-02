@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wobin_logistics_routes,wobin_logistics.wobin_logistics_routes,model_wobin_logistics_routes,,1,1,1,1
+access_wobin_logistics_contracts,wobin_logistics.wobin_logistis_contracts,model_wobin_logistics_contracts,,1,1,1,1
+access_wobin_logistics_trips,wobin_logistics.wobin_logistics_trips,model_wobin_logistics_trips,,1,1,1,1
+access_wobin_logistics_vehicles,wobin_logistics.wobin_logistics_vehicles,model_wobin_logistics_vehicles,,1,1,1,1

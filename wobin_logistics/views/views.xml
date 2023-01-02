@@ -1,0 +1,162 @@
+<odoo>
+  <data>
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--   ACTIONS                                  -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <!--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+    <!--  Actions for menu of Contracts   -->
+    <!--//////////////////////////////////-->
+
+    <!-- CONTRACTS - GENERAL ACTION -->
+    <record id="action_logistics_contracts" model="ir.actions.act_window">
+      <field name="name">Contratos</field>
+      <field name="res_model">wobin.logistics.contracts</field>
+      <field name="view_mode">tree,form</field>
+    </record>   
+
+
+    <!--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+    <!--  Actions for menu of Trips       -->
+    <!--//////////////////////////////////-->
+
+    <!-- TRIPS - GENERAL ACTION -->
+    <record id="action_logistics_trips" model="ir.actions.act_window">
+      <field name="name">Viajes</field>
+      <field name="res_model">wobin.logistics.trips</field>    
+      <field name="view_mode">tree,form</field> 
+      <field name="context">{'tree_view_ref': 'wobin_logistics.view_logistics_trips_list', 
+                             'form_view_ref': 'wobin_logistics.view_logistics_trips_form'}</field>                             
+    </record>
+    <!-- ROUTES ANALYSIS {from Contract Assignments} - ACTION -->
+    <record id="action_logistics_routes" model="ir.actions.act_window">
+        <field name="name">Rutas</field>
+        <field name="res_model">wobin.logistics.contracts</field>
+        <field name="view_mode">tree</field>        
+        <field name="view_id" ref="view_logistics_routes_lst"/>
+        <field name="domain"></field> 
+    </record>      
+
+
+    <!--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+    <!--  Actions for menu of Reports     -->
+    <!--//////////////////////////////////-->    
+
+    <!-- TRIPS ANALYSIS according to Contracts - ACTION -->
+    <record id="action_logistics_contracts_analysis" model="ir.actions.act_window">
+        <field name="name">Análisis (Contratos)</field>
+        <field name="res_model">wobin.logistics.contracts</field>
+        <field name="view_mode">tree</field>        
+        <field name="view_id" ref="view_trips_analysis_contract"/>
+        <field name="domain"></field> 
+    </record>
+
+    <!-- TRIPS ANALYSIS - ACTION -->
+    <record id="action_logistics_trips_analysis" model="ir.actions.act_window">
+        <field name="name">Análisis (Viajes)</field>
+        <field name="res_model">wobin.logistics.trips</field>
+        <field name="view_mode">tree</field>        
+        <field name="view_id" ref="view_trips_analysis"/>
+        <field name="domain"></field> 
+    </record>           
+
+    <!-- CONTRACT STATUS ANALYSIS Report - ACTION -->
+    <record id="action_logistics_contracts_status" model="ir.actions.act_window">
+        <field name="name">Reporte de Status de Contratos</field>
+        <field name="res_model">wobin.logistics.contracts</field>
+        <field name="view_mode">tree</field>        
+        <field name="view_id" ref="view_contracts_status"/>
+        <field name="domain"></field> 
+    </record>   
+
+    <!-- DISCHARGED TRIPS ANALYSIS Report - ACTION -->
+    <record id="action_logistics_discharged_trips" model="ir.actions.act_window">
+        <field name="name">Viajes Descargados y Ordenes de Venta por Procesar</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">tree</field>        
+        <field name="view_id" ref="wobin_logistics.view_discharged_trips"/>
+        <field name="search_view_id" ref="wobin_logistics.view_search_discharged_trips"/>
+        <field name="domain">[('state', '=', 'draft'), ('trips_sales_ids', '!=', False)]</field> 
+        <field name="context">{'search_default_pending': 1}</field> 
+    </record> 
+
+    <!-- Vehicles - ACTION -->
+    <record id="action_logistics_vehicles" model="ir.actions.act_window">
+        <field name="name">Vehículos</field>
+        <field name="res_model">wobin.logistics.vehicles</field>
+        <field name="view_mode">tree,form</field> 
+        <field name="domain"></field>       
+        <field name="context">{}</field>                        
+      </record>                     
+
+    
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--     MENUITEMS                              -->    
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    
+    <!-- Top Menu Item {ROOT} -->
+    <menuitem name="Wobin Logística" 
+              id="wobin_logistics.menu_root" 
+              groups="wobin_logistics.group_wl_access_general"
+              web_icon="wobin_logistics,static/description/icon.png"/>
+
+    <!-- Menu Categories {SUB MENUITEMS} -->
+    <menuitem name="Contratos" 
+              id="contracts_menu_1" 
+              parent="wobin_logistics.menu_root"/>
+    <menuitem name="Viajes" 
+              id="trips_menu_2" 
+              parent="wobin_logistics.menu_root"/>
+    <menuitem name="Informes" 
+              id="reports_menu_3" 
+              parent="wobin_logistics.menu_root"/>
+  
+    <!-- Actions for Sub Menu Items {DISPLAY OF GENERAL VIEWS} -->                            
+    <!-- CONTRACTS -->    
+    <menuitem name="Contratos" 
+              id="wobin_logistics.sub_menuitem_contracts" 
+              parent="wobin_logistics.contracts_menu_1"
+              action="wobin_logistics.action_logistics_contracts" 
+              sequence="1"/>
+
+    <!-- TRIPS -->    
+    <menuitem name="Viajes" 
+              id="wobin_logistics.sub_menuitem_trips" 
+              parent="wobin_logistics.trips_menu_2"
+              action="wobin_logistics.action_logistics_trips" 
+              sequence="1"/>             
+    <menuitem name="Rutas" 
+              id="wobin_logistics.sub_menuitem_routes" 
+              parent="wobin_logistics.trips_menu_2"
+              action="wobin_logistics.action_logistics_routes" 
+              sequence="2"/>    
+
+    <!-- REPORTS -->   
+    <menuitem name="Análisis (Contratos)" 
+              id="wobin_logistics.sub_menuitem_contract_analysis" 
+              parent="wobin_logistics.reports_menu_3"
+              action="wobin_logistics.action_logistics_contracts_analysis" 
+              sequence="1"/>
+    <menuitem name="Análisis (Viajes)" 
+              id="wobin_logistics.sub_menuitem_analysis" 
+              parent="wobin_logistics.reports_menu_3"
+              action="wobin_logistics.action_logistics_trips_analysis" 
+              sequence="2"/>                                           
+    <menuitem name="Status del Contrato" 
+              id="wobin_logistics.sub_menuitem_cont_status" 
+              parent="wobin_logistics.reports_menu_3"
+              action="wobin_logistics.action_logistics_contracts_status" 
+              sequence="3"/>
+    <menuitem name="Viajes Descargados" 
+              id="wobin_logistics.sub_menuitem_discharged_trips" 
+              parent="wobin_logistics.reports_menu_3"
+              action="wobin_logistics.action_logistics_discharged_trips" 
+              sequence="4"/>   
+    <menuitem name="Vehículos" 
+              id="wobin_logistics.sub_menuitem_vehicles" 
+              parent="wobin_logistics.reports_menu_3"
+              action="wobin_logistics.action_logistics_vehicles" 
+              sequence="5"/>                                                                 
+
+  </data>
+</odoo>

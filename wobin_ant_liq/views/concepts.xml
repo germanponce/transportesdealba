@@ -1,0 +1,58 @@
+<odoo>
+  <data>
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- VIEWS FOR CONCEPTS MODEL {LISTS, FORMS, SEARCH} -->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <!-- SETTINGS / CONCEPTS - SEARCH VIEW -->    
+    <record id="view_concepts_tree" model="ir.ui.view"> 
+      <field name="name">Conceptos</field>
+      <field name="model">wobin.concepts</field>
+        <field name="arch" type="xml"> 
+            <search> 
+              <field name="name"/>
+              <field name="account_account_id"/> 
+              <field name="credit_flag"/>           
+            </search> 
+        </field> 
+    </record>    
+
+    <!-- SETTINGS / CONCEPTS - LIST VIEW -->
+    <record id="view_concepts_list" model="ir.ui.view">
+      <field name="name">Conceptos</field>
+      <field name="model">wobin.concepts</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="account_account_id"/>
+            <field name="credit_flag"/>
+        </tree>
+      </field>
+    </record>    
+
+    <!-- SETTINGS / CONCEPTS - FORM VIEW -->
+    <record id="view_concepts_form" model="ir.ui.view"> 
+        <field name="name">Conceptos</field> 
+        <field name="model">wobin.concepts</field> 
+        <field name="arch" type="xml"> 
+            <form> 
+                <sheet> 
+                    <group>
+                        <group>
+                            <field name="name" required="True"/>
+                            <field name="account_account_id" required="True"/>       
+                            <field name="credit_flag"/>                  
+                        </group>                                                  
+                    </group>                                                                                   
+                </sheet> 
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>                                     
+            </form> 
+        </field> 
+    </record>
+
+  </data>  
+</odoo> 

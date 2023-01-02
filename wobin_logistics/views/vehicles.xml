@@ -1,0 +1,77 @@
+<odoo>
+  <data>
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+    <!-- VIEWS {LIST, FORM} -->
+    <!--::::::::::::::::::::::::::::::::::::::::::::-->
+
+    <!-- Vehicles - LIST VIEW --> 
+    <record id="view_vehicles_list" model="ir.ui.view">
+      <field name="name">Vehículos</field>
+      <field name="model">wobin.logistics.vehicles</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/> 
+          <field name="mark"/> 
+          <field name="model"/> 
+          <field name="year"/>
+          <field name="description"/> 
+          <field name="series"/> 
+          <field name="license_plate"/>
+          <field name="current_trip"/>           
+          <field name="analytic_account_id"/>
+          <field name="state"/> 
+        </tree>
+      </field>
+    </record>  
+
+    <!-- Vehicles - FORM VIEW -->
+    <record id="view_vehicles_form" model="ir.ui.view"> 
+        <field name="name">Vehículos</field> 
+        <field name="model">wobin.logistics.vehicles</field> 
+        <field name="arch" type="xml"> 
+            <form> 
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="in_use,without_charge"/>
+                </header>
+                <sheet> 
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="mark"/> 
+                            <field name="model"/> 
+                            <field name="year"/>
+                            <field name="description"/> 
+                            <field name="series"/> 
+                            <field name="license_plate"/>
+                            <field name="current_trip"/>           
+                            <field name="analytic_account_id"/>               
+                        </group>                                                 
+                        <group>                     
+                                        
+                        </group> 
+                    </group> 
+                    <group>
+                      <field name="trips_history">
+                          <tree>
+                              <field name="name"/>
+                              <field name="contract_id"/>          
+                              <field name="operator_id"/>          
+                              <field name="route"/>
+                              <field name="state"/>
+                          </tree>
+                      </field>                      
+                    </group>                                            
+                </sheet>              
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>               
+            </form> 
+        </field> 
+    </record>          
+
+  </data>  
+</odoo>

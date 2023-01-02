@@ -1,0 +1,29 @@
+<odoo>
+    <data noupdate="1">
+
+        <!--::::::::::::::::::::::::::::::::::::::::::::-->
+        <!-- SEQUENCE for name of Logistics Contracts -->
+        <!--::::::::::::::::::::::::::::::::::::::::::::-->
+        <record id="sequence_logistics_contracts" model="ir.sequence">
+        <field name="name">Wobin Logística Contratos</field>
+        <field name="code">self.contract</field>
+        <field name="active">TRUE</field>
+        <field name="prefix">CONTR</field>
+        <field name="padding">6</field>
+        <field name="number_increment">1</field>
+        </record>
+
+        <!--::::::::::::::::::::::::::::::::::::::::::::-->
+        <!-- SEQUENCE for name of Logistics Trips -->
+        <!--::::::::::::::::::::::::::::::::::::::::::::-->
+        <record id="sequence_logistics_trips" model="ir.sequence">
+        <field name="name">Wobin Logística Viajes</field>
+        <field name="code">self.trip</field>
+        <field name="active">TRUE</field>
+        <field name="prefix">VJ</field>
+        <field name="padding">6</field>
+        <field name="number_increment">1</field>
+        </record> 
+    
+    </data>  
+</odoo>      
