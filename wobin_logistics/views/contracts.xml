@@ -68,7 +68,7 @@
                       </group> 
                   </group> 
                   <group>
-                      <field name="observations" required="True"/>
+                      <field name="observations"/>
                   </group>                                            
                 </sheet>              
                 <div class="oe_chatter">

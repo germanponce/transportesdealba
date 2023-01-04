@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
+from odoo import Command
 from odoo.exceptions import UserError
-
-import logging
-_logger = logging.getLogger(__name__)
 
 
 class WobinComprobations(models.Model):
@@ -214,22 +212,20 @@ class WobinComprobations(models.Model):
         line_ids_list    = list()
         item             = tuple()
         dictionary_vals  = dict()
-
         # | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
         # Subprocess:
-        #Consult different models in order to fill up by default some fields in 
-        #pop up window of account move lines
-        
-        #   For Debit Lines
+        #Consult different models in order to fill by default some fields in 
+        #pop up window of account move lines:
+        # | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |  
+        #   For Debit and Credit Lines:
         for line in self.comprobation_lines_ids:  
             credit = None; debit = None           
             account_id          = line.concept_id.account_account_id.id
             enterprise_id       = self.operator_id.enterprise_id.id
-            #contact_id          = self.env['res.partner'].search([('id', '=', self.operator_id.id)], limit=1).contact_id.id
             analytic_account_id = self.trip_id.analytic_account_id.id
             analytic_tag_ids    = self.env['account.analytic.tag'].search([('name', '=', self.trip_id.name)], limit=1).ids          
             
-            # Determine Concepts Set like Credit:
+            # Determine Concept set like Credit:
             credit_flag = line.concept_id.credit_flag
             if credit_flag == True:
                 credit = line.amount
@@ -240,21 +236,14 @@ class WobinComprobations(models.Model):
             dictionary_vals = {
                 'account_id': account_id,
                 'partner_id': enterprise_id,                 
-                'analytic_account_id': analytic_account_id,
-                'analytic_tag_ids': analytic_tag_ids,
+                'analytic_account_id': Command.link(analytic_account_id),
+                'analytic_tag_ids': Command.link(analytic_tag_ids[0]),                
                 'debit': debit,
                 'credit': credit
             }
             item = (0, 0, dictionary_vals)
-
-            _logger.error("\n\n\n\n dictionary_vals: %s", dictionary_vals)
-
             #Append into list which it will be used later in context:
             line_ids_list.append(item)
-
-            _logger.error("\n\n\n\n line_ids_list: %s", line_ids_list)
-
-
         # | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |                           
         # Context to pass
         # | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |                           
@@ -264,7 +253,9 @@ class WobinComprobations(models.Model):
                 'default_comprobations_ids': [(4, self.id)],
                 'default_line_ids': line_ids_list
                }                               
-         
+        # | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |                           
+        # Return of Form View of Account Move
+        # | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |           
         return {
             'name': "Creación de Asiento de Diario",
             'type': 'ir.actions.act_window',

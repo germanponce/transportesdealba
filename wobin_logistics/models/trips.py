@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
-
-import logging
-_logger = logging.getLogger(__name__)
+from odoo import Command
 
 
 class WobinLogisticsTrips(models.Model):
@@ -326,18 +324,14 @@ class WobinLogisticsTrips(models.Model):
             'partner_id': enterprise_id,                 
             'name': name,
             'analytic_account_id': Command.link(analytic_account_id),
-            #'analytic_tag_ids': analytic_tag_ids,
+            'analytic_tag_ids': Command.link(analytic_tag_ids[0]),
             'debit': debit,
             'credit': credit
-        }        
-        
-        _logger.error("\n\n\n\n\n dictionary_vals: %s", dictionary_vals)
-        
+        }                        
         item = (0, 0, dictionary_vals)
         #Append debit info into the list which it will be used later in context:
         line_ids_list.append(item)   
         
-        _logger.error("\n\n\n\n\n line_ids_list: %s", line_ids_list)
 
         #°°°°°°°°°°°°°°°°°°°°°°
         #   For Credit Line   |
@@ -355,18 +349,13 @@ class WobinLogisticsTrips(models.Model):
             'partner_id': enterprise_id,                 
             'name': name,
             'analytic_account_id': Command.link(analytic_account_id),
-            #'analytic_tag_ids': analytic_tag_ids,
+            'analytic_tag_ids': Command.link(analytic_tag_ids[0]),
             'debit': debit,
             'credit': credit
         }    
-
-        _logger.error("\n\n\n\n\n dictionary_vals: %s", dictionary_vals)
-
         item = (0, 0, dictionary_vals)
         #Append credit info into the list which it will be used later in context:
         line_ids_list.append(item)      
-
-        _logger.error("\n\n\n\n\n line_ids_list: %s", line_ids_list)                                   
         
         #°°°°°°°°°°°°°°°°°°°°°°
         # Account Move Header |
