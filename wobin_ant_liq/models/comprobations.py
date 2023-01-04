@@ -234,9 +234,9 @@ class WobinComprobations(models.Model):
             
             #Construct tuple item for each line (0, 0, dictionary_vals)
             dictionary_vals = {
-                'account_id': account_id,
+                #'account_id': account_id,
                 'partner_id': enterprise_id,                 
-                'analytic_account_id': Command.link(analytic_account_id),
+                #'analytic_account_id': Command.link(analytic_account_id),
                 #'analytic_tag_ids': Command.set(analytic_tag_ids[0]),                
                 'debit': debit,
                 'credit': credit
