@@ -324,7 +324,7 @@ class WobinLogisticsTrips(models.Model):
             'partner_id': enterprise_id,                 
             'name': name,
             'analytic_account_id': Command.set(analytic_account_id),
-            'analytic_tag_ids': [Command.set(analytic_tag_ids[0])],                
+            #'analytic_tag_ids': [Command.set(analytic_tag_ids[0])],                
             'debit': debit,
             'credit': credit
         }                        
@@ -349,7 +349,7 @@ class WobinLogisticsTrips(models.Model):
             'partner_id': enterprise_id,                 
             'name': name,
             'analytic_account_id': Command.set(analytic_account_id),
-            'analytic_tag_ids': [Command.set(analytic_tag_ids[0])],                
+            #'analytic_tag_ids': [Command.set(analytic_tag_ids[0])],                
             'debit': debit,
             'credit': credit
         }    
