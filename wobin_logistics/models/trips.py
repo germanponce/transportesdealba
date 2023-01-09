@@ -2,6 +2,9 @@
 from odoo import models, fields, api
 from odoo import Command
 
+import logging
+_logger = logging.getLogger(__name__)
+
 
 class WobinLogisticsTrips(models.Model):
     _name        = 'wobin.logistics.trips'
@@ -320,18 +323,22 @@ class WobinLogisticsTrips(models.Model):
         credit              = 0.0
         #Construct tuple "item" from data of line of Debit (0, 0, dictionary_vals)
         dictionary_vals = {
-            #'account_id': account_id,
+            'account_id': account_id,
             'partner_id': enterprise_id,                 
             'name': name,
-            #'analytic_account_id': Command.link(analytic_account_id),
-            #'analytic_tag_ids': [Command.set(analytic_tag_ids[0])],                
+            'analytic_account_id': Command.link(analytic_account_id),
+            #'analytic_tag_ids': analytic_tag_ids,
             'debit': debit,
             'credit': credit
-        }                        
+        }        
+        
+        _logger.error("\n\n\n\n\n dictionary_vals: %s", dictionary_vals)
+        
         item = (0, 0, dictionary_vals)
         #Append debit info into the list which it will be used later in context:
         line_ids_list.append(item)   
         
+        _logger.error("\n\n\n\n\n line_ids_list: %s", line_ids_list)
 
         #°°°°°°°°°°°°°°°°°°°°°°
         #   For Credit Line   |
@@ -345,17 +352,22 @@ class WobinLogisticsTrips(models.Model):
         credit              = self.qty_to_bill     
         #Construct tuple "item" from data of line of Credit (0, 0, dictionary_vals)
         dictionary_vals = {
-            #'account_id': account_id,
+            'account_id': account_id,
             'partner_id': enterprise_id,                 
             'name': name,
-            #'analytic_account_id': Command.link(analytic_account_id),
-            #'analytic_tag_ids': [Command.set(analytic_tag_ids[0])],                
+            'analytic_account_id': Command.link(analytic_account_id),
+            #'analytic_tag_ids': analytic_tag_ids,
             'debit': debit,
             'credit': credit
         }    
+
+        _logger.error("\n\n\n\n\n dictionary_vals: %s", dictionary_vals)
+
         item = (0, 0, dictionary_vals)
         #Append credit info into the list which it will be used later in context:
         line_ids_list.append(item)      
+
+        _logger.error("\n\n\n\n\n line_ids_list: %s", line_ids_list)                                   
         
         #°°°°°°°°°°°°°°°°°°°°°°
         # Account Move Header |
