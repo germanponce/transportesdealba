@@ -334,9 +334,9 @@ class WobinLogisticsTrips(models.Model):
         
         _logger.error("\n\n\n\n\n dictionary_vals: %s", dictionary_vals)
         
-        item = (0, 0, dictionary_vals)
+        #item = (0, 0, dictionary_vals)
         #Append debit info into the list which it will be used later in context:
-        line_ids_list.append(item)   
+        line_ids_list.append(dictionary_vals)   
         
         _logger.error("\n\n\n\n\n line_ids_list: %s", line_ids_list)
 
@@ -363,11 +363,13 @@ class WobinLogisticsTrips(models.Model):
 
         _logger.error("\n\n\n\n\n dictionary_vals: %s", dictionary_vals)
 
-        item = (0, 0, dictionary_vals)
+        #item = (0, 0, dictionary_vals)
         #Append credit info into the list which it will be used later in context:
-        line_ids_list.append(item)      
+        line_ids_list.append(dictionary_vals)      
 
-        _logger.error("\n\n\n\n\n line_ids_list: %s", line_ids_list)                                   
+        _logger.error("\n\n\n\n\n line_ids_list: %s", line_ids_list)  
+
+        acc_mov_lin_obj = self.env['account.move.line'].create(line_ids_list)
         
         #°°°°°°°°°°°°°°°°°°°°°°
         # Account Move Header |
@@ -377,7 +379,7 @@ class WobinLogisticsTrips(models.Model):
                 'default_trips_acc_move_ids': [(4, self.id)],
                 'default_ref': 'PROVISION',                
                 'default_journal_id': 70,  #70 ID for Journal of "Contabilidad B" in Transportes de Alba ['Sistema' Company]
-                'default_line_ids': line_ids_list,                
+                'default_line_ids': [(4, item.id) for item in acc_mov_lin_obj],                
                }    
 
         _logger.error("\n\n\n\n\n ctxt: %s", ctxt)                                                       
