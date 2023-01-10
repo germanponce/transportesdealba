@@ -307,6 +307,13 @@ class WobinLogisticsTrips(models.Model):
         line_ids_list    = list()
         item             = tuple()
         dictionary_vals  = dict()
+
+        account_move = {
+                'trips_acc_move_ids': [(4, self.id)],
+                'ref': 'PROVISION',                
+                'journal_id': 70,  #70 ID for Journal of "Contabilidad B" in Transportes de Alba ['Sistema' Company]             
+               } 
+        acc_mov_obj = self.env['account.move'].create(account_move )
         
         #Consult different info in order to fill up by default some fields in 
         #pop up window of account move lines
@@ -323,6 +330,7 @@ class WobinLogisticsTrips(models.Model):
         credit              = 0.0
         #Construct tuple "item" from data of line of Debit (0, 0, dictionary_vals)
         dictionary_vals = {
+            'move_id': acc_mov_obj.id,
             'account_id': account_id,
             'partner_id': enterprise_id,                 
             'name': name,
@@ -352,6 +360,7 @@ class WobinLogisticsTrips(models.Model):
         credit              = self.qty_to_bill     
         #Construct tuple "item" from data of line of Credit (0, 0, dictionary_vals)
         dictionary_vals = {
+            'move_id': acc_mov_obj.id,
             'account_id': account_id,
             'partner_id': enterprise_id,                 
             'name': name,
@@ -375,6 +384,7 @@ class WobinLogisticsTrips(models.Model):
         # Account Move Header |
         #°°°°°°°°°°°°°°°°°°°°°°                
         # Filling by default some fields for Header of Account Move
+        """
         ctxt = {
                 'default_trips_acc_move_ids': [(4, self.id)],
                 'default_ref': 'PROVISION',                
@@ -382,7 +392,8 @@ class WobinLogisticsTrips(models.Model):
                 'default_line_ids': [(4, item.id) for item in acc_mov_lin_obj],                
                }    
 
-        _logger.error("\n\n\n\n\n ctxt: %s", ctxt)                                                       
+        _logger.error("\n\n\n\n\n ctxt: %s", ctxt)   
+        """                                                    
 
         #°°°°°°°°°°°°°°°°°°°°°°
         # Account Move Pop Up |
@@ -393,7 +404,7 @@ class WobinLogisticsTrips(models.Model):
             'view_type': 'form',
             'view_mode': 'form',
             'res_model': 'account.move',
+            'res_id': acc_mov_obj.id,
             'view_id': self.env.ref('account.view_move_form').id,                                
             'target': 'new',
-            'context': ctxt
         }
