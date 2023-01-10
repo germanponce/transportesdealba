@@ -2,9 +2,6 @@
 from odoo import models, fields, api
 from odoo.exceptions import UserError
 
-import logging
-_logger = logging.getLogger(__name__)
-
 
 class WobinComprobations(models.Model):
     _name = 'wobin.comprobations'
@@ -210,70 +207,71 @@ class WobinComprobations(models.Model):
        
     def create_account_move(self):
         #This method intends to display a Form View of Account Move        
-        #context_modified = False
         line_ids_list    = list()
         item             = tuple()
         dictionary_vals  = dict()
 
+        #°°°°°°°°°°°°°°°°°°°°°°°°°°°
+        # Creation of Account Move |
+        #°°°°°°°°°°°°°°°°°°°°°°°°°°°          
+        account_move = {
+                'trips_acc_move_ids': [(4, self.trip_id.id)],
+                'comprobations_ids': [(4, self.id)],
+                'ref': self.name,                
+                'journal_id': 70,  #70 ID for Journal of "Contabilidad B" in Transportes de Alba ['Sistema' Company]             
+               } 
+        acc_mov_obj = self.env['account.move'].create(account_move )        
         # | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
         # Subprocess:
-        #Consult different models in order to fill up by default some fields in 
-        #pop up window of account move lines
+        # Consult different models in order to fill up by default some fields in 
+        # pop up window of account move lines
         
         #   For Debit Lines
         for line in self.comprobation_lines_ids:  
-            credit = None; debit = None           
+            credit = 0.00; debit = 0.00           
             account_id          = line.concept_id.account_account_id.id
             enterprise_id       = self.operator_id.enterprise_id.id
-            #contact_id          = self.env['res.partner'].search([('id', '=', self.operator_id.id)], limit=1).contact_id.id
+            name                = line.concept_id.name + '|' + self.trip_id.analytic_account_id.name + '|' + self.trip_id.name
             analytic_account_id = self.trip_id.analytic_account_id.id
             analytic_tag_ids    = self.env['account.analytic.tag'].search([('name', '=', self.trip_id.name)], limit=1).ids          
             
-            # Determine Concepts Set like Credit:
+            # Determine concepts set like credit:
             credit_flag = line.concept_id.credit_flag
             if credit_flag == True:
                 credit = line.amount
             else:
                 debit = line.amount            
             
-            #Construct tuple item for each line (0, 0, dictionary_vals)
+            # Dictionary of account move line to be created:
             dictionary_vals = {
+                'move_id': acc_mov_obj.id,
                 'account_id': account_id,
-                'partner_id': enterprise_id,                 
+                'partner_id': enterprise_id, 
+                'name': name,                
                 'analytic_account_id': analytic_account_id,
                 'analytic_tag_ids': analytic_tag_ids,
                 'debit': debit,
                 'credit': credit
             }
-            item = (0, 0, dictionary_vals)
+            # Append debit & credit info into the list which it will be used later
+            # in creation of account move lines:
+            line_ids_list.append(dictionary_vals)        
 
-            _logger.error("\n\n\n\n dictionary_vals: %s", dictionary_vals)
+        # Creation of account move lines:
+        self.env['account.move.line'].create(line_ids_list)
 
-            #Append into list which it will be used later in context:
-            line_ids_list.append(item)
-
-            _logger.error("\n\n\n\n line_ids_list: %s", line_ids_list)
-
-
-        # | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |                           
-        # Context to pass
-        # | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |                           
-        ctxt = {
-                'default_ref': self.name,
-                'default_journal_id': 70,  #70 ID for Journal of "Contabilidad B" in Transportes de Alba ['Sistema' Company]
-                'default_comprobations_ids': [(4, self.id)],
-                'default_line_ids': line_ids_list
-               }                               
-         
+        #°°°°°°°°°°°°°°°°°°°°°°
+        # Account Move Pop Up |
+        #°°°°°°°°°°°°°°°°°°°°°°           
         return {
             'name': "Creación de Asiento de Diario",
             'type': 'ir.actions.act_window',
             'view_type': 'form',
             'view_mode': 'form',
             'res_model': 'account.move',
+            'res_id': acc_mov_obj.id, #Account Move Previously Created
             'view_id': self.env.ref('account.view_move_form').id,                        
-            'target': 'new',
-            'context': ctxt
+            'target': 'new'
         }  
 
 

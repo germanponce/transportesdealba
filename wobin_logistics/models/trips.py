@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
 
-import logging
-_logger = logging.getLogger(__name__)
-
 
 class WobinLogisticsTrips(models.Model):
     _name        = 'wobin.logistics.trips'
@@ -306,10 +303,18 @@ class WobinLogisticsTrips(models.Model):
         line_ids_list    = list()
         item             = tuple()
         dictionary_vals  = dict()
+
+        #°°°°°°°°°°°°°°°°°°°°°°°°°°°
+        # Creation of Account Move |
+        #°°°°°°°°°°°°°°°°°°°°°°°°°°°          
+        account_move = {
+                'trips_acc_move_ids': [(4, self.id)],
+                'ref': 'PROVISION',                
+                'journal_id': 70,  #70 ID for Journal of "Contabilidad B" in Transportes de Alba ['Sistema' Company]             
+               } 
+        acc_mov_obj = self.env['account.move'].create(account_move )
         
-        #Consult different info in order to fill up by default some fields in 
-        #pop up window of account move lines
-        
+        #Consult different info in order to fill up by default some fields in pop up window of account move        
         #°°°°°°°°°°°°°°°°°°°°°°
         #    For Debit Line   |
         #°°°°°°°°°°°°°°°°°°°°°°    
@@ -320,8 +325,9 @@ class WobinLogisticsTrips(models.Model):
         analytic_tag_ids    = self.env['account.analytic.tag'].search([('name', '=', self.name)], limit=1).ids          
         debit               = self.qty_to_bill                    
         credit              = 0.0
-        #Construct tuple "item" from data of line of Debit (0, 0, dictionary_vals)
+        # Dictionary of account move line to be created:
         dictionary_vals = {
+            'move_id': acc_mov_obj.id,
             'account_id': account_id,
             'partner_id': enterprise_id,                 
             'name': name,
@@ -330,15 +336,10 @@ class WobinLogisticsTrips(models.Model):
             'debit': debit,
             'credit': credit
         }        
+        #Append debit info into the list which it will be used later
+        #in creation of account move lines:
+        line_ids_list.append(dictionary_vals)   
         
-        _logger.error("\n\n\n\n\n dictionary_vals: %s", dictionary_vals)
-        
-        item = (0, 0, dictionary_vals)
-        #Append debit info into the list which it will be used later in context:
-        line_ids_list.append(item)   
-        
-        _logger.error("\n\n\n\n\n line_ids_list: %s", line_ids_list)
-
         #°°°°°°°°°°°°°°°°°°°°°°
         #   For Credit Line   |
         #°°°°°°°°°°°°°°°°°°°°°°
@@ -349,8 +350,9 @@ class WobinLogisticsTrips(models.Model):
         analytic_tag_ids    = self.env['account.analytic.tag'].search([('name', '=', self.name)], limit=1).ids          
         debit               = 0.0
         credit              = self.qty_to_bill     
-        #Construct tuple "item" from data of line of Credit (0, 0, dictionary_vals)
+        # Dictionary of account move line to be created:
         dictionary_vals = {
+            'move_id': acc_mov_obj.id,
             'account_id': account_id,
             'partner_id': enterprise_id,                 
             'name': name,
@@ -359,26 +361,13 @@ class WobinLogisticsTrips(models.Model):
             'debit': debit,
             'credit': credit
         }    
+        #Append crebit info into the list which it will be used later
+        #in creation of account move lines:
+        line_ids_list.append(dictionary_vals)   
 
-        _logger.error("\n\n\n\n\n dictionary_vals: %s", dictionary_vals)
-
-        item = (0, 0, dictionary_vals)
-        #Append credit info into the list which it will be used later in context:
-        line_ids_list.append(item)      
-
-        _logger.error("\n\n\n\n\n line_ids_list: %s", line_ids_list)                                   
-        
-        #°°°°°°°°°°°°°°°°°°°°°°
-        # Account Move Header |
-        #°°°°°°°°°°°°°°°°°°°°°°                
-        # Filling by default some fields for Header of Account Move
-        ctxt = {
-                'default_trips_acc_move_ids': [(4, self.id)],
-                'default_ref': 'PROVISION',                
-                'default_journal_id': 70,  #70 ID for Journal of "Contabilidad B" in Transportes de Alba ['Sistema' Company]
-                'default_line_ids': line_ids_list,                
-               }                                           
-
+        #Creation of account move lines:
+        self.env['account.move.line'].create(line_ids_list)
+                                                                      
         #°°°°°°°°°°°°°°°°°°°°°°
         # Account Move Pop Up |
         #°°°°°°°°°°°°°°°°°°°°°°           
@@ -388,7 +377,7 @@ class WobinLogisticsTrips(models.Model):
             'view_type': 'form',
             'view_mode': 'form',
             'res_model': 'account.move',
+            'res_id': acc_mov_obj.id, #Account Move Previously Created
             'view_id': self.env.ref('account.view_move_form').id,                                
-            'target': 'new',
-            'context': ctxt
+            'target': 'new'
         }
