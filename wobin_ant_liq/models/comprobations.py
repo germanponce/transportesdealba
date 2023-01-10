@@ -231,7 +231,7 @@ class WobinComprobations(models.Model):
             credit = 0.00; debit = 0.00           
             account_id          = line.concept_id.account_account_id.id
             enterprise_id       = self.operator_id.enterprise_id.id
-            name                = self.trip_id.analytic_account_id.name + '|' + self.trip_id.name
+            name                = line.concept_id.name + '|' + self.trip_id.analytic_account_id.name + '|' + self.trip_id.name
             analytic_account_id = self.trip_id.analytic_account_id.id
             analytic_tag_ids    = self.env['account.analytic.tag'].search([('name', '=', self.trip_id.name)], limit=1).ids          
             
