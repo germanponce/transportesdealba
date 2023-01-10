@@ -10,7 +10,7 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-           <xpath expr="//field[@name='type']" position="after">
+           <xpath expr="//field[@name='l10n_mx_edi_curp']" position="after">
                <group>
                   <group> 
                       <field name="enterprise_id"/>
