@@ -217,7 +217,7 @@ class WobinComprobations(models.Model):
         account_move = {
                 'trips_acc_move_ids': [(4, self.trip_id.id)],
                 'comprobations_ids': [(4, self.id)],
-                'ref': 'PROVISION',                
+                'ref': self.name,                
                 'journal_id': 70,  #70 ID for Journal of "Contabilidad B" in Transportes de Alba ['Sistema' Company]             
                } 
         acc_mov_obj = self.env['account.move'].create(account_move )        
