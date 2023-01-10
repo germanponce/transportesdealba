@@ -227,7 +227,7 @@ class WobinComprobations(models.Model):
         
         #   For Debit Lines
         for line in self.comprobation_lines_ids:  
-            credit = None; debit = None           
+            credit = 0.00; debit = 0.00           
             account_id          = line.concept_id.account_account_id.id
             enterprise_id       = self.operator_id.enterprise_id.id
             analytic_account_id = self.trip_id.analytic_account_id.id
