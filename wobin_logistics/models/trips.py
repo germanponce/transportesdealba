@@ -378,7 +378,9 @@ class WobinLogisticsTrips(models.Model):
                 'default_ref': 'PROVISION',                
                 'default_journal_id': 70,  #70 ID for Journal of "Contabilidad B" in Transportes de Alba ['Sistema' Company]
                 'default_line_ids': line_ids_list,                
-               }                                           
+               }    
+
+        _logger.error("\n\n\n\n\n ctxt: %s", ctxt)                                                       
 
         #°°°°°°°°°°°°°°°°°°°°°°
         # Account Move Pop Up |
