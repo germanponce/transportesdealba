@@ -215,7 +215,7 @@ class WobinComprobations(models.Model):
         # Creation of Account Move |
         #°°°°°°°°°°°°°°°°°°°°°°°°°°°          
         account_move = {
-                'trips_acc_move_ids': [(4, self.id)],
+                'comprobations_ids': [(4, self.id)],
                 'ref': 'PROVISION',                
                 'journal_id': 70,  #70 ID for Journal of "Contabilidad B" in Transportes de Alba ['Sistema' Company]             
                } 
