@@ -111,11 +111,13 @@
                                   <field name="sale_order_id" readonly="True"/>                                  
                                   <field name="charged_flag" attrs="{'readonly': [('state', '=', 'charged')],
                                                                     'invisible': [('state', '!=', 'to_invoice')]}"/>                                                                   
-                                  <button string="Crear Asiento Contable" name="creation_account_move" type="object" class="oe_highlight" 
+                                  <button string="Crear Asiento Contable" 
+                                          name="creation_account_move" type="object" class="oe_highlight" 
                                           attrs="{'invisible': ['|', ('charged_flag', '=', False), ('state', '!=', 'to_invoice')]}"/>                                  
                                   <field name="account_move_id" readonly="True" attrs="{'invisible': [('state', '!=', 'charged')]}"/>
-                                  <field name="invoiced_flag" attrs="{'readonly':  [('state', '=', 'billed')],
-                                                                      'invisible': [('state', '!=', 'to_invoice')]}"/>                                      
+                                  <field name="invoiced_flag" force_save="1"
+                                         attrs="{'readonly':  [('state', '=', 'billed')],
+                                                 'invisible': [('state', '!=', 'to_invoice')]}"/>                                      
                                   <field name="invoice" attrs="{'invisible': [('state', 'in', ['assigned', 'route'])]}"/>  
                               </group>
                             </div>  
