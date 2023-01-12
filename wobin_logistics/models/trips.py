@@ -169,6 +169,24 @@ class WobinLogisticsTrips(models.Model):
         #Authomatic assignation for analytic account from vehicle_id's input
         if self.vehicle_id:
             self.analytic_account_id = self.vehicle_id.analytic_account_id.id
+
+
+
+    @api.onchange('attachment_load')
+    def _onchange_attachment_load(self):
+        #Avoid that model "ir.attachment" generates records without res_id
+        if self.attachment_load:
+            for attachment in self.attachment_load:
+                attachment.res_id = self.id
+
+
+
+    @api.onchange('attachment_discharge')
+    def _onchange_attachment_discharge(self):
+        #Avoid that model "ir.attachment" generates records without res_id
+        if self.attachment_discharge:
+            for attachment in self.attachment_discharge:
+                attachment.res_id = self.id
     
 
 
