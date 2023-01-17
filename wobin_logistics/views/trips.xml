@@ -56,13 +56,13 @@
                             <div style="padding-top: 30px !important;">
                               <h3 style="background: #fff none repeat scroll 0 0; height: auto; margin-left: 20px; padding: 3px 5px; position: absolute; margin-top: -47px; border: 1px solid #337ab7; border-radius: 8px;"><strong>Datos Generales</strong></h3>                                
                               <group>                         
-                                <field name="contract_id"/>  
-                                <field name="sucursal_id"/>                              
-                                <field name="client_id"/>
-                                <field name="vehicle_id"/> 
-                                <field name="analytic_account_id"/>                           
-                                <field name="operator_id"/>
-                                <field name="route"/>                                  
+                                <field name="contract_id" force_save="1"/>  
+                                <field name="sucursal_id" force_save="1"/>                              
+                                <field name="client_id" force_save="1"/>
+                                <field name="vehicle_id" force_save="1"/> 
+                                <field name="analytic_account_id" force_save="1"/>                           
+                                <field name="operator_id" force_save="1"/>
+                                <field name="route" force_save="1"/>                                  
                               </group>
                             </div>  
                           </div> 
@@ -79,13 +79,13 @@
                             <div style="padding-top: 30px !important;">
                               <h3 style="background: #fff none repeat scroll 0 0; height: auto; margin-left: 20px; padding: 3px 5px; position: absolute; margin-top: -47px; border: 1px solid #337ab7; border-radius: 8px;"><strong>Carga</strong></h3>                          
                               <group>
-                                  <field name="start_date"/>
-                                  <field name="load_date"/>
-                                  <field name="estimated_qty"/>
-                                  <field name="real_load_qty"/>
-                                  <field name="decline_qty"/>
-                                  <field name="attachment_load" widget="many2many_binary"/>
-                                  <field name="load_location"/>
+                                  <field name="start_date" force_save="1"/>
+                                  <field name="load_date" force_save="1"/>
+                                  <field name="estimated_qty" force_save="1"/>
+                                  <field name="real_load_qty" force_save="1"/>
+                                  <field name="decline_qty" force_save="1"/>
+                                  <field name="attachment_load" force_save="1" widget="many2many_binary"/>
+                                  <field name="load_location" force_save="1"/>
                               </group> 
                             </div>  
                           </div> 
@@ -96,25 +96,27 @@
                             <div style="padding-top: 30px !important;">
                               <h3 style="background: #fff none repeat scroll 0 0; height: auto; margin-left: 20px; padding: 3px 5px; position: absolute; margin-top: -47px; border: 1px solid #337ab7; border-radius: 8px;"><strong>Descarga</strong></h3>                                
                               <group>                           
-                                  <field name="discharge_date"/>
-                                  <field name="real_discharge_qty"/>
-                                  <field name="attachment_discharge" widget="many2many_binary"/>
-                                  <field name="discount_decline"/>
-                                  <field name="qty_to_bill"/>
-                                  <field name="discharged_flag"/>
-                                  <field name="discharge_location"/>                               
-                                  <label for="conformity"/>
+                                  <field name="discharge_date" force_save="1"/>
+                                  <field name="real_discharge_qty" force_save="1"/>
+                                  <field name="attachment_discharge" force_save="1" widget="many2many_binary"/>
+                                  <field name="discount_decline" force_save="1"/>
+                                  <field name="qty_to_bill" force_save="1"/>
+                                  <field name="discharged_flag" force_save="1"/>
+                                  <field name="discharge_location" force_save="1"/>                               
+                                  <label for="conformity" force_save="1"/>
                                   <div>
-                                      <field name="conformity" class="oe_inline" style="padding-right: 10px"/>
-                                      <field name="checked" class="oe_inline"/>
+                                      <field name="conformity" force_save="1" class="oe_inline" style="padding-right: 10px"/>
+                                      <field name="checked" force_save="1" class="oe_inline"/>
                                   </div>     
-                                  <field name="sale_order_id" readonly="True"/>                                  
-                                  <field name="charged_flag" attrs="{'readonly': [('state', '=', 'charged')],
-                                                                    'invisible': [('state', '!=', 'to_invoice')]}"/>                                                                   
+                                  <field name="sale_order_id" force_save="1" readonly="True"/>                                  
+                                  <field name="charged_flag" force_save="1"
+                                         attrs="{'readonly':  [('state', '=', 'charged')],
+                                                 'invisible': [('state', '!=', 'to_invoice')]}"/>                                                                   
                                   <button string="Crear Asiento Contable" 
                                           name="creation_account_move" type="object" class="oe_highlight" 
                                           attrs="{'invisible': ['|', ('charged_flag', '=', False), ('state', '!=', 'to_invoice')]}"/>                                  
-                                  <field name="account_move_id" readonly="True" attrs="{'invisible': [('state', '!=', 'charged')]}"/>
+                                  <field name="account_move_id" force_save="1" readonly="True" 
+                                         attrs="{'invisible': [('state', '!=', 'charged')]}"/>
                                   <field name="invoiced_flag" force_save="1"
                                          attrs="{'readonly':  [('state', '=', 'billed')],
                                                  'invisible': [('state', '!=', 'to_invoice')]}"/>                                      
