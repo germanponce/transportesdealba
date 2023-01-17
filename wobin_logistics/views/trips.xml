@@ -118,7 +118,8 @@
                                   <field name="invoiced_flag" force_save="1"
                                          attrs="{'readonly':  [('state', '=', 'billed')],
                                                  'invisible': [('state', '!=', 'to_invoice')]}"/>                                      
-                                  <field name="invoice" attrs="{'invisible': [('state', 'in', ['assigned', 'route'])]}"/>  
+                                  <field name="invoice" force_save="1"
+                                         attrs="{'invisible': [('state', 'in', ['assigned', 'route'])]}"/>   
                               </group>
                             </div>  
                           </div> 
