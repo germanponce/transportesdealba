@@ -1,18 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!--::::::::::::::::::::::::::::::::::::::::::::-->
-    <!-- REPORT & TEMPLATE -->
-    <!--::::::::::::::::::::::::::::::::::::::::::::-->    
+    <!--  Record of Type Record  -->
+    <record id="action_report_settlement_format" model="ir.actions.report">
+        <field name="name">Liquidación</field>
+        <field name="model">wobin.settlements</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">wobin_ant_liq.report_settlement_format</field>
+        <field name="report_file">wobin_ant_liq.report_settlement_format</field>
+        <field name="attachment_use" eval="True"/>
+        <field name="attachment">'Liquidación %s' % (object.operator_id.name)</field>
+        <field name="print_report_name">'Liquidación %s' % (object.operator_id.name)</field>
+        <field name="binding_model_id" ref="model_wobin_settlements"/>
+        <field name="binding_type">report</field>
+    </record> 
 
-    <report
-        id="report_settlement_format"
-        model="wobin.settlements"
-        string="Imprimir Liquidación"
-        name="report_settlement_format"
-        file="report_settlement_format"
-        report_type="qweb-pdf" />
-
-    <template id="report_settlement_format">
+    <!--  Template  -->
+    <template id="wobin_ant_liq.report_settlement_format">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
                 <t t-call="web.external_layout">
@@ -36,6 +40,14 @@
                                     <td><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y %H:%M')"/></td>
                                 </tr> 
                                 <tr>
+                                    <td class="table-secondary font-weight-bold">Número de Semana</td>
+                                    <td><span t-field="doc.week_number"/></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-secondary font-weight-bold">Depósito</td>
+                                    <td><span t-field="doc.deposit"/></td>
+                                </tr>                                                                 
+                                <tr>
                                     <td class="table-secondary font-weight-bold">Anticipo o Pago Relacionado</td>
                                     <td><span t-field="doc.advance_related_id.name"/><span t-field="doc.payment_related_id.name"/></td>
                                 </tr>                                                                                                                              
@@ -48,6 +60,7 @@
                                 <th class="table-secondary">Viaje</th>
                                 <th class="table-secondary">Anticipos</th>                            
                                 <th class="table-secondary">Comprobaciones</th>
+                                <th class="table-secondary">Comisioness</th>   
                                 <th class="table-secondary">Saldo a Liquidar</th>
                             </tr>                             
                             <tr t-foreach='doc.settled_adv_set_lines_ids' t-as='line'>
@@ -55,6 +68,7 @@
                                 <td><span t-esc="line.trip_id.name"/></td>
                                 <td><span t-esc="line.advances_sum_amount"/></td>
                                 <td><span t-esc="line.comprobations_sum_amount"/></td>
+                                <td><span t-esc="line.commissions_sum_amount"/></td>
                                 <td><span t-esc="line.amount_to_settle"/></td>
                             </tr>  
                         </table>  

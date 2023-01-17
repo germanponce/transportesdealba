@@ -34,7 +34,7 @@
         'views/views.xml',        
 
         #reports
-        #'reports/settlement_format.xml',                       
+        'reports/settlement_format.xml',                       
     ],
     # only loaded in demonstration mode
     'demo': [
