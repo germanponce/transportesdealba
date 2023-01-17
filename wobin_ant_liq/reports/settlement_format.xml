@@ -38,14 +38,6 @@
                                 <tr>
                                     <td class="table-secondary font-weight-bold">Fecha</td>
                                     <td><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y %H:%M')"/></td>
-                                </tr> 
-                                <tr>
-                                    <td class="table-secondary font-weight-bold">Número de Semana</td>
-                                    <td><span t-field="doc.week_number"/></td>
-                                </tr>
-                                <tr>
-                                    <td class="table-secondary font-weight-bold">Depósito</td>
-                                    <td><span t-field="doc.deposit"/></td>
                                 </tr>                                                                 
                                 <tr>
                                     <td class="table-secondary font-weight-bold">Anticipo o Pago Relacionado</td>
@@ -59,8 +51,7 @@
                                 <th class="table-secondary">Operador</th>
                                 <th class="table-secondary">Viaje</th>
                                 <th class="table-secondary">Anticipos</th>                            
-                                <th class="table-secondary">Comprobaciones</th>
-                                <th class="table-secondary">Comisioness</th>   
+                                <th class="table-secondary">Comprobaciones</th>  
                                 <th class="table-secondary">Saldo a Liquidar</th>
                             </tr>                             
                             <tr t-foreach='doc.settled_adv_set_lines_ids' t-as='line'>
@@ -68,7 +59,6 @@
                                 <td><span t-esc="line.trip_id.name"/></td>
                                 <td><span t-esc="line.advances_sum_amount"/></td>
                                 <td><span t-esc="line.comprobations_sum_amount"/></td>
-                                <td><span t-esc="line.commissions_sum_amount"/></td>
                                 <td><span t-esc="line.amount_to_settle"/></td>
                             </tr>  
                         </table>  
