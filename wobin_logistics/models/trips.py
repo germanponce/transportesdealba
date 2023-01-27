@@ -244,6 +244,17 @@ class WobinLogisticsTrips(models.Model):
 
                 self.state = 'charged'  
 
+        # This new case was added to permit state "billed" because it can't be avoided 
+        # 'account_move_id' field from module wobin_ant_liq
+        elif self.contract_id        and self.sucursal_id        and self.client_id           and self.vehicle_id and \
+            self.analytic_account_id and self.operator_id        and self.route               and self.start_date and \
+            self.load_date           and self.estimated_qty      and self.real_load_qty       and self.load_location and \
+            self.discharge_date      and self.real_discharge_qty and self.discharged_flag     and self.discharge_location and \
+            self.checked             and not self.charged_flag   and self.account_move_id     and self.invoiced_flag and \
+            self.invoice:                
+
+                self.state = 'billed'                  
+
         elif self.contract_id        and self.sucursal_id        and self.client_id           and self.vehicle_id and \
             self.analytic_account_id and self.operator_id        and self.route               and self.start_date and \
             self.load_date           and self.estimated_qty      and self.real_load_qty       and self.load_location and \
