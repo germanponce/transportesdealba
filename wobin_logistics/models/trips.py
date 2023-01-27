@@ -177,7 +177,7 @@ class WobinLogisticsTrips(models.Model):
         #Avoid that model "ir.attachment" generates records without res_id
         if self.attachment_load:
             for attachment in self.attachment_load:
-                attachment.res_id = self.id
+                attachment.res_id = self._origin.id
 
 
 
@@ -186,7 +186,7 @@ class WobinLogisticsTrips(models.Model):
         #Avoid that model "ir.attachment" generates records without res_id
         if self.attachment_discharge:
             for attachment in self.attachment_discharge:
-                attachment.res_id = self.id
+                attachment.res_id = self._origin.id
     
 
 
