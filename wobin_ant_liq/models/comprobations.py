@@ -168,15 +168,18 @@ class WobinComprobations(models.Model):
 
     def _set_expenses_to_refund(self):
         for rec in self:
-            #Sum amounts from the same trip by operator
-            sql_query = """SELECT SUM(amount) 
-                            FROM wobin_comprobations 
-                            WHERE trip_id = %s AND operator_id = %s;"""
-            self.env.cr.execute(sql_query, (rec.trip_id.id, rec.operator_id.id,))
-            result = self.env.cr.fetchone()
+            if rec.trip_id.id and rec.operator_id.id and not isinstance(rec.id, models.NewId):
+                #Sum amounts from the same trip by operator
+                sql_query = """SELECT SUM(amount) 
+                                FROM wobin_comprobations 
+                                WHERE trip_id = %s AND operator_id = %s;"""
+                self.env.cr.execute(sql_query, (rec.trip_id.id, rec.operator_id.id,))
+                result = self.env.cr.fetchone()
 
-            if result:                    
-                rec.expenses_to_refund = result[0] 
+                if result:                    
+                    rec.expenses_to_refund = result[0]
+            else:
+                rec.expenses_to_refund = 0           
 
 
 
