@@ -132,7 +132,7 @@ class WobinAdvances(models.Model):
 
     def _set_expenses_to_check(self):
         for rec in self:
-            if rec.trip_id.id and rec.operator_id.id:
+            if rec.trip_id.id and rec.operator_id.id and not isinstance(rec.id, models.NewId):
                 #Sum amounts from the same trip by operator
                 sql_query = """SELECT sum(amount) 
                                 FROM wobin_advances 
@@ -141,6 +141,8 @@ class WobinAdvances(models.Model):
                 result = self.env.cr.fetchone()
                 if result:                    
                     rec.expenses_to_check = result[0]
+            else:
+                rec.expenses_to_check = 0 
 
 
 
