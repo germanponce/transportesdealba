@@ -132,14 +132,15 @@ class WobinAdvances(models.Model):
 
     def _set_expenses_to_check(self):
         for rec in self:
-            #Sum amounts from the same trip by operator
-            sql_query = """SELECT sum(amount) 
-                            FROM wobin_advances 
-                            WHERE trip_id = %s AND operator_id = %s"""
-            self.env.cr.execute(sql_query, (rec.trip_id.id, rec.operator_id.id,))
-            result = self.env.cr.fetchone()
-            if result:                    
-                rec.expenses_to_check = result[0]
+            if rec.trip_id.id and rec.operator_id.id:
+                #Sum amounts from the same trip by operator
+                sql_query = """SELECT sum(amount) 
+                                FROM wobin_advances 
+                                WHERE trip_id = %s AND operator_id = %s"""
+                self.env.cr.execute(sql_query, (rec.trip_id.id, rec.operator_id.id,))
+                result = self.env.cr.fetchone()
+                if result:                    
+                    rec.expenses_to_check = result[0]
 
 
 
