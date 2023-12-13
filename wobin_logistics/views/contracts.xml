@@ -4,7 +4,7 @@
     <!-- VIEWS {LIST, FORM} -->
     <!--::::::::::::::::::::::::::::::::::::::::::::-->
 
-    <!-- TRIPS - LIST VIEW -->
+    <!-- CONTRACTS - LIST VIEW -->
     <record id="view_logistics_contracts_list" model="ir.ui.view">
       <field name="name">Contratos</field>
       <field name="model">wobin.logistics.contracts</field>
@@ -32,12 +32,13 @@
         <field name="arch" type="xml"> 
             <form duplicate="0"> 
                 <header>
+                    <!--
                     <button name="create_trip" 
                             type="object" 
                             string="Crear Viaje" 
                             class="oe_highlight" 
                             attrs="{'invisible': ['|', ('name', '=', 'New'), ('state', '=', 'close')]}"/>
-                            <!--groups="wobin_logistics.group_wl_access_logistics"/>-->
+                    -->
                     <button name="close_contract" 
                             type="object" 
                             string="Cerrar Contrato" 

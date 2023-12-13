@@ -11,7 +11,8 @@
       <field name="arch" type="xml">
         <tree decoration-danger="state == 'assigned'" decoration-warning="state == 'route'" decoration-success="state == 'discharged'" decoration-info="state == 'to_invoice'" decoration-bf="state in ('billed', 'charged')">
           <field name="name"/>
-          <field name="contract_id"/>          
+          <field name="contract_id" invisible="True"/>
+          <field name="circuit_id"/>           
           <field name="client_id"/>
           <field name="vehicle_id"/>
           <field name="analytic_account_id"/>
@@ -56,7 +57,8 @@
                             <div style="padding-top: 30px !important;">
                               <h3 style="background: #fff none repeat scroll 0 0; height: auto; margin-left: 20px; padding: 3px 5px; position: absolute; margin-top: -47px; border: 1px solid #337ab7; border-radius: 8px;"><strong>Datos Generales</strong></h3>                                
                               <group>                         
-                                <field name="contract_id" force_save="1"/>  
+                                <field name="contract_id" invisible="True"/>
+                                <field name="circuit_id" required="True" domain="[('state_circuit', '=', 'activo')]"/> 
                                 <field name="sucursal_id" force_save="1"/>                              
                                 <field name="client_id" force_save="1"/>
                                 <field name="vehicle_id" force_save="1"/> 

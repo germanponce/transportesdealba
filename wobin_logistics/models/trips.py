@@ -51,6 +51,10 @@ class WobinLogisticsTrips(models.Model):
                                           domain=[('state', '=', 'active')], 
                                           ondelete='set null',                                         
                                           track_visibility='always')
+    circuit_id          = fields.Many2one('wobin.logistics.circuits', 
+                                          string='Circuito',
+                                          ondelete='set null',                                         
+                                          track_visibility='always')    
     sucursal_id         = fields.Many2one('stock.warehouse', 
                                           string='Sucursal', 
                                           track_visibility='always')
@@ -235,7 +239,7 @@ class WobinLogisticsTrips(models.Model):
         # 'charged'     --> With all General, Load and Discharge fields filled (including checks "discharged_flag", "conformity" and
         #                   charged_flag with field "account_move_id" filled too) at Trips View Form. It doesn't have an invoice related
         #                   that's why check of "invoiced_flag" and "invoice" must be empty
-        if self.contract_id          and self.sucursal_id        and self.client_id          and self.vehicle_id and \
+        if self.sucursal_id          and self.client_id          and self.vehicle_id         and \
             self.analytic_account_id and self.operator_id        and self.route              and self.start_date and \
             self.load_date           and self.estimated_qty      and self.real_load_qty      and self.load_location and \
             self.discharge_date      and self.real_discharge_qty and self.discharged_flag    and self.discharge_location and \
@@ -246,7 +250,7 @@ class WobinLogisticsTrips(models.Model):
 
         # This new case was added to permit state "billed" because it can't be avoided 
         # 'account_move_id' field from module wobin_ant_liq
-        elif self.contract_id        and self.sucursal_id        and self.client_id           and self.vehicle_id and \
+        elif self.sucursal_id        and self.client_id          and self.vehicle_id          and \
             self.analytic_account_id and self.operator_id        and self.route               and self.start_date and \
             self.load_date           and self.estimated_qty      and self.real_load_qty       and self.load_location and \
             self.discharge_date      and self.real_discharge_qty and self.discharged_flag     and self.discharge_location and \
@@ -255,7 +259,7 @@ class WobinLogisticsTrips(models.Model):
 
                 self.state = 'billed'                  
 
-        elif self.contract_id        and self.sucursal_id        and self.client_id           and self.vehicle_id and \
+        elif self.sucursal_id        and self.client_id          and self.vehicle_id          and \
             self.analytic_account_id and self.operator_id        and self.route               and self.start_date and \
             self.load_date           and self.estimated_qty      and self.real_load_qty       and self.load_location and \
             self.discharge_date      and self.real_discharge_qty and self.discharged_flag     and self.discharge_location and \
@@ -264,7 +268,7 @@ class WobinLogisticsTrips(models.Model):
 
                 self.state = 'billed'    
 
-        elif self.contract_id        and self.sucursal_id        and self.client_id           and self.vehicle_id and \
+        elif self.sucursal_id        and self.client_id          and self.vehicle_id          and \
             self.analytic_account_id and self.operator_id        and self.route               and self.start_date and \
             self.load_date           and self.estimated_qty      and self.real_load_qty       and self.load_location and \
             self.discharge_date      and self.real_discharge_qty and self.discharged_flag     and self.discharge_location and \
@@ -273,7 +277,7 @@ class WobinLogisticsTrips(models.Model):
 
                 self.state = 'to_invoice'   
 
-        elif self.contract_id        and self.sucursal_id        and self.client_id           and self.vehicle_id and \
+        elif self.sucursal_id        and self.client_id          and self.vehicle_id          and \
             self.analytic_account_id and self.operator_id        and self.route               and self.start_date and \
             self.load_date           and self.estimated_qty      and self.real_load_qty       and self.load_location and \
             self.discharge_date      and self.real_discharge_qty and self.discharged_flag     and self.discharge_location and \
@@ -282,7 +286,7 @@ class WobinLogisticsTrips(models.Model):
 
                 self.state = 'discharged'  
 
-        elif self.contract_id        and self.sucursal_id            and self.client_id           and self.vehicle_id and \
+        elif self.sucursal_id        and self.client_id              and self.vehicle_id          and \
             self.analytic_account_id and self.operator_id            and self.route               and self.start_date and \
             self.load_date           and self.estimated_qty          and self.real_load_qty       and self.load_location and \
             not self.discharge_date  and not self.real_discharge_qty and not self.discharged_flag and not self.discharge_location and \
@@ -291,7 +295,7 @@ class WobinLogisticsTrips(models.Model):
 
                 self.state = 'route'
 
-        elif self.contract_id        and self.sucursal_id            and self.client_id           and self.vehicle_id and \
+        elif self.sucursal_id        and self.client_id              and self.vehicle_id          and \
             self.analytic_account_id and self.operator_id            and self.route               and not self.start_date and \
             not self.load_date       and not self.estimated_qty      and not self.real_load_qty   and not self.load_location and \
             not self.discharge_date  and not self.real_discharge_qty and not self.discharged_flag and not self.discharge_location and \

@@ -14,6 +14,18 @@
         </record>
 
         <!--::::::::::::::::::::::::::::::::::::::::::::-->
+        <!-- SEQUENCE for name of Logistics Circuits -->
+        <!--::::::::::::::::::::::::::::::::::::::::::::-->
+        <record id="sequence_logistics_circuits" model="ir.sequence">
+        <field name="name">Wobin Logística Circuitos</field>
+        <field name="code">self.circuit</field>
+        <field name="active">TRUE</field>
+        <field name="prefix">C</field>
+        <field name="padding">0</field>
+        <field name="number_increment">1</field>
+        </record>        
+
+        <!--::::::::::::::::::::::::::::::::::::::::::::-->
         <!-- SEQUENCE for name of Logistics Trips -->
         <!--::::::::::::::::::::::::::::::::::::::::::::-->
         <record id="sequence_logistics_trips" model="ir.sequence">

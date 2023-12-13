@@ -31,6 +31,7 @@
         'views/sequences.xml',
         'views/routes.xml',        
         'views/contracts.xml',
+        'views/circuits.xml',
         'views/trips.xml',
         'views/vehicles.xml',
         'views/inheritances.xml',

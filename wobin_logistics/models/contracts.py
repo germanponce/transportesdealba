@@ -146,15 +146,15 @@ class WobinLogisticsContracts(models.Model):
 
 
 
-    def create_trip(self):
-        """This method displays a Form View of Trips"""         
-        return {
-            'name': "Creación de Viaje",
-            'type': 'ir.actions.act_window',
-            'view_type': 'form',
-            'view_mode': 'form',                                
-            'res_model': 'wobin.logistics.trips',
-            'view_id': self.env.ref('wobin_logistics.view_logistics_trips_form').id,
-            'target': 'new',
-            'context': {'default_contract_id': self.id}
-        }
+    #def create_trip(self):
+    #    """This method displays a Form View of Trips"""         
+    #    return {
+    #        'name': "Creación de Viaje",
+    #        'type': 'ir.actions.act_window',
+    #        'view_type': 'form',
+    #        'view_mode': 'form',                                
+    #        'res_model': 'wobin.logistics.trips',
+    #        'view_id': self.env.ref('wobin_logistics.view_logistics_trips_form').id,
+    #        'target': 'new',
+    #        'context': {'default_contract_id': self.id}
+    #    }

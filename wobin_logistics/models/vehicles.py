@@ -11,7 +11,8 @@ class WobinLogisticsVehicles(models.Model):
     #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     #                                     FIELDS
     #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-    name                = fields.Char(track_visibility='always')
+    name                = fields.Char(string='Nombre',
+                                      track_visibility='always')
     company_id          = fields.Many2one('res.company', 
                                           default=lambda self: self.env['res.company']._company_default_get('wobin_logistics'))    
     mark                = fields.Char(string='Marca', 

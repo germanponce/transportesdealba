@@ -13,7 +13,19 @@
       <field name="name">Contratos</field>
       <field name="res_model">wobin.logistics.contracts</field>
       <field name="view_mode">tree,form</field>
-    </record>   
+    </record>
+
+
+    <!--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+    <!--  Actions for menu of Circuits    -->
+    <!--//////////////////////////////////-->
+
+    <!-- CIRCUITS - GENERAL ACTION -->
+    <record id="action_logistics_circuits" model="ir.actions.act_window">
+      <field name="name">Circuitos</field>
+      <field name="res_model">wobin.logistics.circuits</field>
+      <field name="view_mode">tree,form</field>
+    </record>          
 
 
     <!--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
@@ -103,13 +115,20 @@
     <!-- Menu Categories {SUB MENUITEMS} -->
     <menuitem name="Contratos" 
               id="contracts_menu_1" 
-              parent="wobin_logistics.menu_root"/>
+              parent="wobin_logistics.menu_root"
+              sequence="1"/>
+    <menuitem name="Circuitos" 
+              id="circuits_menu_2" 
+              parent="wobin_logistics.menu_root"
+              sequence="2"/>              
     <menuitem name="Viajes" 
-              id="trips_menu_2" 
-              parent="wobin_logistics.menu_root"/>
+              id="trips_menu_3" 
+              parent="wobin_logistics.menu_root"
+              sequence="3"/>
     <menuitem name="Informes" 
-              id="reports_menu_3" 
-              parent="wobin_logistics.menu_root"/>
+              id="reports_menu_4" 
+              parent="wobin_logistics.menu_root"
+              sequence="4"/>
   
     <!-- Actions for Sub Menu Items {DISPLAY OF GENERAL VIEWS} -->                            
     <!-- CONTRACTS -->    
@@ -119,42 +138,50 @@
               action="wobin_logistics.action_logistics_contracts" 
               sequence="1"/>
 
+    <!-- Actions for Sub Menu Items {DISPLAY OF GENERAL VIEWS} -->                            
+    <!-- CIRCUITS -->    
+    <menuitem name="Circuitos" 
+              id="wobin_logistics.sub_menuitem_circuits" 
+              parent="wobin_logistics.circuits_menu_2"
+              action="wobin_logistics.action_logistics_circuits" 
+              sequence="1"/>              
+
     <!-- TRIPS -->    
     <menuitem name="Viajes" 
               id="wobin_logistics.sub_menuitem_trips" 
-              parent="wobin_logistics.trips_menu_2"
+              parent="wobin_logistics.trips_menu_3"
               action="wobin_logistics.action_logistics_trips" 
               sequence="1"/>             
     <menuitem name="Rutas" 
               id="wobin_logistics.sub_menuitem_routes" 
-              parent="wobin_logistics.trips_menu_2"
+              parent="wobin_logistics.trips_menu_3"
               action="wobin_logistics.action_logistics_routes" 
               sequence="2"/>    
 
     <!-- REPORTS -->   
     <menuitem name="Análisis (Contratos)" 
               id="wobin_logistics.sub_menuitem_contract_analysis" 
-              parent="wobin_logistics.reports_menu_3"
+              parent="wobin_logistics.reports_menu_4"
               action="wobin_logistics.action_logistics_contracts_analysis" 
               sequence="1"/>
     <menuitem name="Análisis (Viajes)" 
               id="wobin_logistics.sub_menuitem_analysis" 
-              parent="wobin_logistics.reports_menu_3"
+              parent="wobin_logistics.reports_menu_4"
               action="wobin_logistics.action_logistics_trips_analysis" 
               sequence="2"/>                                           
     <menuitem name="Status del Contrato" 
               id="wobin_logistics.sub_menuitem_cont_status" 
-              parent="wobin_logistics.reports_menu_3"
+              parent="wobin_logistics.reports_menu_4"
               action="wobin_logistics.action_logistics_contracts_status" 
               sequence="3"/>
     <menuitem name="Viajes Descargados" 
               id="wobin_logistics.sub_menuitem_discharged_trips" 
-              parent="wobin_logistics.reports_menu_3"
+              parent="wobin_logistics.reports_menu_4"
               action="wobin_logistics.action_logistics_discharged_trips" 
               sequence="4"/>   
     <menuitem name="Vehículos" 
               id="wobin_logistics.sub_menuitem_vehicles" 
-              parent="wobin_logistics.reports_menu_3"
+              parent="wobin_logistics.reports_menu_4"
               action="wobin_logistics.action_logistics_vehicles" 
               sequence="5"/>                                                                 
 
