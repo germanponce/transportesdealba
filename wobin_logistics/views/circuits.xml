@@ -44,7 +44,8 @@
             </div>        
             <div class="oe_left oe_title">
               <h1>
-                <field name="name" readonly="True"/>
+                <!--<field name="name" readonly="True"/>-->
+                <field name="name"/>
               </h1>
             </div>             
             <group>
