@@ -21,7 +21,7 @@ class WobinLogisticsCircuits(models.Model):
     #                                     FIELDS
     #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     name        = fields.Char(string="Circuito", 
-                              readonly=True, 
+                              #readonly=True, 
                               required=True, 
                               copy=False, 
                               #default='New',
