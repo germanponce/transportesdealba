@@ -9,12 +9,12 @@ class WobinLogisticsCircuits(models.Model):
     _inherit     = ['mail.thread', 'mail.activity.mixin']
     
 
-    @api.model
-    def create(self, vals):                        
-        #Creation of sequence (if it isn't stored is shown "New" else e.g CRCT000005)  
-        if vals.get('name', 'New') == 'New':
-            vals['name'] = self.env['ir.sequence'].next_by_code('self.circuit') or 'New'               
-        return super(WobinLogisticsCircuits, self).create(vals)  
+    #@api.model
+    #def create(self, vals):                        
+    #    #Creation of sequence (if it isn't stored is shown "New" else e.g CRCT000005)  
+    #    if vals.get('name', 'New') == 'New':
+    #        vals['name'] = self.env['ir.sequence'].next_by_code('self.circuit') or 'New'               
+    #    return super(WobinLogisticsCircuits, self).create(vals)  
 
 
     #°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
@@ -24,8 +24,8 @@ class WobinLogisticsCircuits(models.Model):
                               readonly=True, 
                               required=True, 
                               copy=False, 
-                              default='New',
-                              track_visibility='always')    
+                              #default='New',
+                              track_visibility='always')   
     unit_id     = fields.Many2one('wobin.logistics.vehicles',
                                   string='Unidad', 
                                   required=True,
