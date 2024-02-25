@@ -61,7 +61,7 @@
                   <strong>Datos Generales   </strong> 
                   <i class="fa fa-truck"/>
                 </h3>
-                <span class="badge badge-danger">Asignado</span>                           
+                                          
                 <field name="contract_id" invisible="True"/>
                 <field name="circuit_id" required="True" domain="[('state_circuit', '=', 'activo')]"/>                             
                 <field name="start_date" force_save="1"/>
@@ -79,7 +79,7 @@
                   <strong>Carga   </strong>
                   <i class="fa fa-arrow-up"/>
                 </h3>
-                <span class="badge badge-warning">En Ruta</span>                               
+                
                 <field name="load_date" force_save="1"/>
                 <field name="real_load_qty" force_save="1"/>                                  
                 <field name="attachment_load" widget="many2many_binary" class="custom_binary_field"/>
@@ -95,7 +95,7 @@
                   <strong>Descarga   </strong>
                   <i class="fa fa-arrow-down"/>
                 </h3>
-                <span class="badge badge-success">Descargado</span>                          
+                                         
                 <field name="discharge_date" force_save="1"/>
                 <field name="real_discharge_qty" force_save="1"/>
                 <field name="attachment_discharge" widget="many2many_binary" class="custom_binary_field"/>
@@ -107,7 +107,7 @@
                   <strong>En Proceso   </strong>
                   <i class="fa fa-line-chart"/>
                 </h3>
-                <span class="badge badge-primary">Por Facturar</span>                                                
+                                                              
                 <field name="decline_qty" force_save="1"/>
                 <field name="price_kg_discount" force_save="1"/>
                 <field name="discount_decline" force_save="1"/>
@@ -121,7 +121,7 @@
                   <strong>Facturación / Cobro   </strong>
                   <i class="fa fa-file-text-o"/>
                 </h3>
-                <span class="badge badge-dark">Facturado / Cobrado</span>                                  
+                                                
                 <field name="sale_order_id" force_save="1" readonly="True"/>                                  
                 <field name="charged_flag" force_save="1"
                         attrs="{'readonly':  [('state', '=', 'charged')],
