@@ -69,7 +69,9 @@
                 <field name="analytic_account_id" readonly="1"/>                           
                 <field name="operator_id" force_save="1"/>                              
                 
-                <h3><strong>Carga</strong></h3>                                
+                <h3 style="background-color: #f0e68c; border-radius: 10px; padding: 10px; margin: 10px">
+                  <strong>Carga</strong>
+                </h3>                               
                 <field name="load_date" force_save="1"/>
                 <field name="real_load_qty" force_save="1"/>                                  
                 <field name="attachment_load" force_save="1" widget="many2many_binary"/>
@@ -77,14 +79,18 @@
               </group> 
               
               <group>
-                <h3><strong>Descarga</strong></h3>                           
+                <h3 style="background-color: #8fbc8f; border-radius: 10px; padding: 10px; margin: 10px">
+                  <strong>Descarga</strong>
+                </h3>                          
                 <field name="discharge_date" force_save="1"/>
                 <field name="real_discharge_qty" force_save="1"/>
                 <field name="attachment_discharge" force_save="1" widget="many2many_binary"/>
                 <field name="discharge_location" force_save="1"/>
                 <field name="discharged_flag" force_save="1"/>
                 
-                <h3><strong>POR FACTURAR</strong></h3>                                                
+                <h3 style="background-color: #add8e6; border-radius: 10px; padding: 10px; margin: 10px">
+                  <strong>Por Facturar</strong>
+                </h3>                                                
                 <field name="decline_qty" force_save="1"/>
                 <field name="price_kg_discount" force_save="1"/>
                 <field name="discount_decline" force_save="1"/>
@@ -92,7 +98,9 @@
                 <field name="checked" force_save="1"
                         attrs="{'readonly': ['|', ('attachment_load', '=', None), ('attachment_discharge', '=', None)]}"/>   
 
-                <h3><strong>FACTURADO O COBRADO</strong></h3>                                 
+                <h3 style="background-color: #d3d3d3; border-radius: 10px; padding: 10px; margin: 10px">
+                  <strong>Facturación / Cobro</strong>
+                </h3>                                  
                 <field name="sale_order_id" force_save="1" readonly="True"/>                                  
                 <field name="charged_flag" force_save="1"
                         attrs="{'readonly':  [('state', '=', 'charged')],
