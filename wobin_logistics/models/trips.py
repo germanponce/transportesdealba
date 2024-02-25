@@ -152,7 +152,8 @@ class WobinLogisticsTrips(models.Model):
                                            track_visibility='always')
     conformity           = fields.Binary(string='Conformidad y Finiquito', 
                                          track_visibility='always')    
-    checked              = fields.Boolean(string="Conformidad y Finiquito") 
+    checked              = fields.Boolean(string="Conformidad y Finiquito",
+                                          track_visibility='always')                                           
 
     #|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|
     # FIELDS FOR ANALYSIS, SALE AND ACCOUNT DATA OF TRIPS
@@ -351,10 +352,10 @@ class WobinLogisticsTrips(models.Model):
                 if rec.discount_decline:
                     rec.qty_to_bill = rec.real_load_qty * tariff - rec.discount_decline
                 else:
-                    rec.qty_to_bill = rec.real_load_qty * tariff        
-          
- 
-
+                    rec.qty_to_bill = rec.real_load_qty * tariff
+                    
+    
+    
     def creation_account_move(self):
         #When check "charged_flag" is True must be created an account.move:
         line_ids_list    = list()

@@ -107,7 +107,8 @@
                                   <field name="qty_to_bill" force_save="1"/>
                                   <field name="discharged_flag" force_save="1"/>
                                   <field name="discharge_location" force_save="1"/>
-                                  <field name="checked" force_save="1"/>   
+                                  <field name="checked" force_save="1"
+                                         attrs="{'readonly': ['|', ('attachment_load', '=', False), ('attachment_discharge', '=', False)]}"/>   
                                   <field name="sale_order_id" force_save="1" readonly="True"/>                                  
                                   <field name="charged_flag" force_save="1"
                                          attrs="{'readonly':  [('state', '=', 'charged')],
