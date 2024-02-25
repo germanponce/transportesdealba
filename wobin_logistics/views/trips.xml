@@ -54,7 +54,7 @@
             </div>                
             <group>                                                            
               <group>
-                <h3 style="background-color: #f8f9fa; border-radius: 5px; padding: 10px; margin: 10px">
+                <h3 style="background-color: #f08080; border-radius: 10px; padding: 10px; margin: 10px">
                   <strong>Datos Generales</strong>
                 </h3>                           
                 <field name="contract_id" invisible="True"/>
