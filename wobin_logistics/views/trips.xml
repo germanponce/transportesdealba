@@ -106,8 +106,9 @@
                 <field name="price_kg_discount" force_save="1"/>
                 <field name="discount_decline" force_save="1"/>
                 <field name="qty_to_bill" force_save="1"/>
-                <field name="checked" force_save="1"
-                        attrs="{'readonly': ['|', ('attachment_load', '=', None), ('attachment_discharge', '=', None)]}"/>
+                <field name="qty_to_bill" force_save="1"/>
+                <field name="attach_filled" force_save="1"
+                       attrs="{'readonly': [('attach_filled', '=', False)]}"/>
                 <separator colspan="4" style="margin-bottom: 20px;"/>
 
                 <h3 style="background-color: #d3d3d3; border-radius: 10px; padding: 10px; margin: 10px">

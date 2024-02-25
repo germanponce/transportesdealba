@@ -140,42 +140,43 @@ class WobinLogisticsTrips(models.Model):
     #|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|
     # FIELDS FOR PROCESS "TO INVOICE" OF TRIPS
     #|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|              
-    decline_qty          = fields.Float(string='Merma', 
-                                        compute='_set_decline_qty', 
-                                        store=True, 
-                                        track_visibility='always')
-    price_kg_discount    = fields.Float(string='Precio por kg de Descuento por Merma $',                                        
-                                        track_visibility='always')    
-    discount_decline     = fields.Float(string='Descuento por Merma', 
-                                        compute='_set_discount_decline', 
-                                        store=True,                                          
-                                        track_visibility='always')        
-    qty_to_bill          = fields.Float(string='Importe a Facturar $', 
-                                        compute='_set_qty_to_bill', 
-                                        store=True, 
-                                        track_visibility='always') 
-    conformity           = fields.Binary(string='Conformidad y Finiquito', 
-                                         track_visibility='always')    
-    checked              = fields.Boolean(string="Conformidad y Finiquito",
-                                          track_visibility='always')                                           
+    decline_qty       = fields.Float(string='Merma', 
+                                     compute='_set_decline_qty', 
+                                     store=True, 
+                                     track_visibility='always')
+    price_kg_discount = fields.Float(string='Precio por kg de Descuento por Merma $',                                        
+                                     track_visibility='always')    
+    discount_decline  = fields.Float(string='Descuento por Merma', 
+                                     compute='_set_discount_decline', 
+                                     store=True,                                          
+                                     track_visibility='always')        
+    qty_to_bill       = fields.Float(string='Importe a Facturar $', 
+                                     compute='_set_qty_to_bill', 
+                                     store=True, 
+                                     track_visibility='always')
+    attach_filled     = fields.Boolean(compute='_compute_adjuntos_llenos')     
+    conformity        = fields.Binary(string='Conformidad y Finiquito', 
+                                      track_visibility='always')    
+    checked           = fields.Boolean(string="Conformidad y Finiquito",
+                                       track_visibility='always')                                           
 
     #|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|
     # FIELDS FOR ANALYSIS, SALE AND ACCOUNT DATA OF TRIPS
     #|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|                                         
-    sale_order_id        = fields.Many2one('sale.order', 
-                                           string='Orden de Venta Generada', 
-                                           ondelete='set null', 
-                                           track_visibility='always')                                                                                   
-    charged_flag         = fields.Boolean(string="¿Es un Viaje Cobrado?", 
-                                          track_visibility='always') 
-    account_move_id      = fields.Many2one('account.move', 
-                                           string='Provisión',
-                                           ondelete='set null', 
-                                           track_visibility='always') 
-    invoiced_flag        = fields.Boolean(string="¿Es un Viaje Facturado?", 
-                                          track_visibility='always')                                            
-    invoice              = fields.Char(string='Factura', 
-                                       track_visibility='always')                                                                                                                                                                                                           
+    sale_order_id   = fields.Many2one('sale.order', 
+                                      string='Orden de Venta Generada', 
+                                      ondelete='set null', 
+                                      track_visibility='always')                                                                                   
+    charged_flag    = fields.Boolean(string="¿Es un Viaje Cobrado?", 
+                                     track_visibility='always') 
+    account_move_id = fields.Many2one('account.move', 
+                                      string='Provisión',
+                                      ondelete='set null', 
+                                      track_visibility='always') 
+    invoiced_flag   = fields.Boolean(string="¿Es un Viaje Facturado?", 
+                                     track_visibility='always')                                            
+    invoice         = fields.Char(string='Factura', 
+                                  track_visibility='always')                                                                                                                                                                                                           
 
 
 
@@ -357,6 +358,13 @@ class WobinLogisticsTrips(models.Model):
                     rec.qty_to_bill = rec.real_load_qty * tariff - rec.discount_decline
                 else:
                     rec.qty_to_bill = rec.real_load_qty * tariff
+
+
+
+    @api.depends('attachment_load', 'attachment_discharge')
+    def _compute_adjuntos_llenos(self):
+        for record in self:
+            record.attach_filled = bool(record.attachment_load and record.attachment_discharge)
                     
     
     
