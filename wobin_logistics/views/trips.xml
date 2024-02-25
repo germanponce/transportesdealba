@@ -46,7 +46,7 @@
             <field name="state" widget="statusbar" 
                    statusbar_visible="assigned,route,discharged,to_invoice,billed,charged"/>
           </header> 
-          <sheet>
+
             <div class="oe_left oe_title">
               <h1>
                 <field name="name" readonly="True"/>
@@ -134,7 +134,7 @@
                         attrs="{'invisible': [('state', 'in', ['assigned', 'route'])]}"/> 
               </group>      
             </group>
-          </sheet>              
+            
           <div class="oe_chatter">
               <field name="message_follower_ids" widget="mail_followers"/>
               <field name="activity_ids" widget="mail_activity"/>
