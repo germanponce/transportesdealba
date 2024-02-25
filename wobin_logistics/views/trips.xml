@@ -55,7 +55,7 @@
             <group>                                                            
               <group>
                 <h3 style="background-color: #f08080; border-radius: 10px; padding: 10px; margin: 10px">
-                  <strong>Datos Generales  </strong> 
+                  <strong>Datos Generales   </strong> 
                   <i class="fa fa-truck"/>
                 </h3>
                 <span class="badge badge-danger">Asignado</span>                           
@@ -70,10 +70,10 @@
                 <field name="trailer_2" readonly="1"/>                                 
                 <field name="analytic_account_id" readonly="1"/>                           
                 <field name="operator_id" force_save="1"/>
-                <separator colspan="4" style="margin-bottom: 15px;"/>                              
+                <separator colspan="4" style="margin-bottom: 20px;"/>                              
                 
                 <h3 style="background-color: #f0e68c; border-radius: 10px; padding: 10px; margin: 10px">
-                  <strong>Carga  </strong>
+                  <strong>Carga   </strong>
                   <i class="fa fa-arrow-up"/>
                 </h3>
                 <span class="badge badge-warning">En Ruta</span>                               
@@ -81,12 +81,12 @@
                 <field name="real_load_qty" force_save="1"/>                                  
                 <field name="attachment_load" force_save="1" widget="many2many_binary"/>
                 <field name="load_location" force_save="1"/>
-                <separator colspan="4" style="margin-bottom: 15px;"/>
+                <separator colspan="4" style="margin-bottom: 20px;"/>
               </group> 
               
               <group>
                 <h3 style="background-color: #8fbc8f; border-radius: 10px; padding: 10px; margin: 10px">
-                  <strong>Descarga  </strong>
+                  <strong>Descarga   </strong>
                   <i class="fa fa-arrow-down"/>
                 </h3>
                 <span class="badge badge-success">Descargado</span>                          
@@ -95,10 +95,10 @@
                 <field name="attachment_discharge" force_save="1" widget="many2many_binary"/>
                 <field name="discharge_location" force_save="1"/>
                 <field name="discharged_flag" force_save="1"/>
-                <separator colspan="4" style="margin-bottom: 15px;"/>
+                <separator colspan="4" style="margin-bottom: 20px;"/>
                 
                 <h3 style="background-color: #add8e6; border-radius: 10px; padding: 10px; margin: 10px">
-                  <strong>En Proceso  </strong>
+                  <strong>En Proceso   </strong>
                   <i class="fa fa-line-chart"/>
                 </h3>
                 <span class="badge badge-primary">Por Facturar</span>                                                
@@ -108,10 +108,10 @@
                 <field name="qty_to_bill" force_save="1"/>
                 <field name="checked" force_save="1"
                         attrs="{'readonly': ['|', ('attachment_load', '=', None), ('attachment_discharge', '=', None)]}"/>
-                <separator colspan="4" style="margin-bottom: 15px;"/>
+                <separator colspan="4" style="margin-bottom: 20px;"/>
 
                 <h3 style="background-color: #d3d3d3; border-radius: 10px; padding: 10px; margin: 10px">
-                  <strong>Facturación / Cobro  </strong>
+                  <strong>Facturación / Cobro   </strong>
                   <i class="fa fa-file-text-o"/>
                 </h3>
                 <span class="badge badge-dark">Facturado / Cobrado</span>                                  
