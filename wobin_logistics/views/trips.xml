@@ -102,6 +102,7 @@
                                   <field name="real_discharge_qty" force_save="1"/>
                                   <field name="attachment_discharge" force_save="1" widget="many2many_binary"/>
                                   <field name="decline_qty" force_save="1"/>
+                                  <field name="price_kg_discount" force_save="1"/>
                                   <field name="discount_decline" force_save="1"/>
                                   <field name="qty_to_bill" force_save="1"/>
                                   <field name="discharged_flag" force_save="1"/>

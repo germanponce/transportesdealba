@@ -130,12 +130,16 @@ class WobinLogisticsTrips(models.Model):
                                             relation='second_discharge_att_relation', 
                                             string='Adjuntos de Descarga', 
                                             track_visibility='always')
-    decline_qty     = fields.Float(string='Merma', 
-                                   compute='_set_decline_qty', 
-                                   store=True, 
-                                   track_visibility='always')    
-    discount_decline     = fields.Float(string='Descuento por Merma', 
+    decline_qty          = fields.Float(string='Merma', 
+                                        compute='_set_decline_qty', 
+                                        store=True, 
                                         track_visibility='always')
+    price_kg_discount    = fields.Float(string='Precio por kg de Descuento por Merma $',                                        
+                                        track_visibility='always')    
+    discount_decline     = fields.Float(string='Descuento por Merma', 
+                                        compute='_set_discount_decline', 
+                                        store=True,                                          
+                                        track_visibility='always')        
     qty_to_bill          = fields.Float(string='Importe a Facturar $', 
                                         compute='_set_qty_to_bill', 
                                         store=True, 
@@ -326,6 +330,13 @@ class WobinLogisticsTrips(models.Model):
     def _set_decline_qty(self):
         for rec in self:
             rec.decline_qty = rec.real_load_qty - rec.real_discharge_qty
+
+
+
+    @api.depends('decline_qty', 'price_kg_discount')
+    def _set_discount_decline(self):
+        for rec in self:
+            rec.discount_decline = rec.decline_qty * rec.price_kg_discount         
 
 
 
