@@ -221,19 +221,11 @@ class WobinLogisticsTrips(models.Model):
 
 
     @api.depends(
-        'contract_id',
-        'client_id',
         'vehicle_id',
-        'analytic_account_id',  
         'operator_id',                  
-        'start_date',
         'load_date',         
         'real_load_qty',      
-        'load_location',
-        'discharge_date',     
-        'real_discharge_qty', 
         'discharged_flag',   
-        'discharge_location',
         'checked',        
         'charged_flag',
         'account_move_id',
@@ -247,83 +239,79 @@ class WobinLogisticsTrips(models.Model):
 
         # Dertemination of States:
         #
-        # 'assigned'    --> without, few or empty fields in Trips Form
+        # 'assigned'    --> if fields 'vehicle_id' & 'operator_id' are filled.
         #
-        # 'route'       --> just with General and Load fields filled in Trips Form
+        # 'route'       --> if fields for assigned state ('vehicle_id' & 'operator_id') and fields
+        #                   'load_date' & 'real_load_qty' are filled.
         #
-        # 'discharged'  --> just with General, Load and Discharge fields filled until "discharged_flag" in Trips Form
+        # 'discharged'  --> if fields for assigned state ('vehicle_id' & 'operator_id'); 
+        #                   route state fields ('load_date' & 'real_load_qty')
+        #                   and flag 'discharged_flag' are filled.
         #
-        # 'to_invoice'  --> Only with General, Load and Discharge fields filled until "conformity" in Trips Form              
+        # 'to_invoice'  --> if fields for assigned state ('vehicle_id' & 'operator_id'); 
+        #                   route state fields ('load_date' & 'real_load_qty');
+        #                   discharged state flag 'discharged_flag'; 
+        #                   and flag 'checked' of conformiy are filled.
         #
-        # 'billed'      --> With all General, Load and Discharge fields filled (including checks "discharged_flag"  and "conformity")
-        #                   and with check of "invoiced_flag" and "invoice" also filled at Trips Form. The fields of "charged_flag" 
-        #                   and "account_move_id" must be empty
+        # 'billed'      --> if fields for states of assigned, route, discharged, to_invoice are filled
+        #                   with check of "invoiced_flag" and "invoice" also filled at Trips Form. 
+        #                   The fields of "charged_flag" & "account_move_id" must be empty.
         #
-        # 'charged'     --> With all General, Load and Discharge fields filled (including checks "discharged_flag", "conformity" and
-        #                   charged_flag with field "account_move_id" filled too) at Trips View Form. It doesn't have an invoice related
-        #                   that's why check of "invoiced_flag" and "invoice" must be empty
-        if self.client_id          and self.vehicle_id         and \
-            self.analytic_account_id and self.operator_id       and self.start_date and \
-            self.load_date           and self.real_load_qty      and self.load_location and \
-            self.discharge_date      and self.real_discharge_qty and self.discharged_flag    and self.discharge_location and \
-            self.checked             and self.charged_flag       and self.account_move_id    and not self.invoiced_flag and \
-            not self.invoice:
-
+        # 'charged'     --> if fields for states of assigned, route, discharged, to_invoice are filled
+        #                   with check 'charged_flag' and 'account_move_id' also filled at Trips Form.
+        #                   It doesn't have an invoice related that's why check of "invoiced_flag" &
+        #                   "invoice" must be empty.
+        if self.vehicle_id and self.operator_id and \
+            self.load_date and self.real_load_qty and \
+            self.discharged_flag and \
+            self.checked and \
+            not self.invoiced_flag and not self.invoice and \
+            self.charged_flag and self.account_move_id:
+            
                 self.state = 'charged'  
 
-        # This new case was added to permit state "billed" because it can't be avoided 
-        # 'account_move_id' field from module wobin_ant_liq
-        elif self.client_id          and self.vehicle_id          and \
-            self.analytic_account_id and self.operator_id         and self.start_date and \
-            self.load_date           and self.real_load_qty       and self.load_location and \
-            self.discharge_date      and self.real_discharge_qty and self.discharged_flag     and self.discharge_location and \
-            self.checked             and not self.charged_flag   and self.account_move_id     and self.invoiced_flag and \
-            self.invoice:                
+        elif self.vehicle_id and self.operator_id and \
+            self.load_date and self.real_load_qty and \
+            self.discharged_flag and \
+            self.checked and \
+            self.invoiced_flag and self.invoice and \
+            not self.charged_flag and not self.account_move_id:              
 
                 self.state = 'billed'                  
 
-        elif self.client_id          and self.vehicle_id          and \
-            self.analytic_account_id and self.operator_id         and self.start_date and \
-            self.load_date           and self.real_load_qty       and self.load_location and \
-            self.discharge_date      and self.real_discharge_qty and self.discharged_flag     and self.discharge_location and \
-            self.checked             and not self.charged_flag   and not self.account_move_id and self.invoiced_flag and \
-            self.invoice:                
-
-                self.state = 'billed'    
-
-        elif self.client_id          and self.vehicle_id          and \
-            self.analytic_account_id and self.operator_id         and self.start_date and \
-            self.load_date           and self.real_load_qty       and self.load_location and \
-            self.discharge_date      and self.real_discharge_qty and self.discharged_flag     and self.discharge_location and \
-            self.checked             and not self.charged_flag   and not self.account_move_id and not self.invoiced_flag and \
-            not self.invoice:                 
+        elif self.vehicle_id and self.operator_id and \
+            self.load_date and self.real_load_qty and \
+            self.discharged_flag and \
+            self.checked and \
+            not self.invoiced_flag and not self.invoice and \
+            not self.charged_flag and not self.account_move_id:                
 
                 self.state = 'to_invoice'   
 
-        elif self.client_id          and self.vehicle_id          and \
-            self.analytic_account_id and self.operator_id         and self.start_date and \
-            self.load_date           and self.real_load_qty       and self.load_location and \
-            self.discharge_date      and self.real_discharge_qty  and self.discharged_flag     and self.discharge_location and \
-            not self.checked         and not self.charged_flag    and not self.account_move_id and not self.invoiced_flag and \
-            not self.invoice:  
+        elif self.vehicle_id and self.operator_id and \
+            self.load_date and self.real_load_qty and \
+            self.discharged_flag and \
+            not self.checked and \
+            not self.invoiced_flag and not self.invoice and \
+            not self.charged_flag and not self.account_move_id:   
 
                 self.state = 'discharged'  
 
-        elif self.client_id              and self.vehicle_id         and \
-            self.analytic_account_id and self.operator_id            and self.start_date and \
-            self.load_date           and self.real_load_qty          and self.load_location and \
-            not self.discharge_date  and not self.real_discharge_qty and not self.discharged_flag and not self.discharge_location and \
-            not self.checked         and not self.charged_flag       and not self.account_move_id and not self.invoiced_flag and \
-            not self.invoice: 
+        elif self.vehicle_id and self.operator_id and \
+            self.load_date and self.real_load_qty and \
+            not self.discharged_flag and \
+            not self.checked and \
+            not self.invoiced_flag and not self.invoice and \
+            not self.charged_flag and not self.account_move_id:  
 
                 self.state = 'route'
 
-        elif self.client_id              and self.vehicle_id          and \
-            self.analytic_account_id and self.operator_id             and not self.start_date and \
-            not self.load_date       and not self.real_load_qty       and not self.load_location and \
-            not self.discharge_date  and not self.real_discharge_qty  and not self.discharged_flag and not self.discharge_location and \
-            not self.checked         and not self.charged_flag        and not self.account_move_id and not self.invoiced_flag and \
-            not self.invoice:
+        elif self.vehicle_id and self.operator_id and \
+            not self.load_date and not self.real_load_qty and \
+            not self.discharged_flag and \
+            not self.checked and \
+            not self.invoiced_flag and not self.invoice and \
+            not self.charged_flag and not self.account_move_id: 
 
                 self.state = 'assigned'             
 
