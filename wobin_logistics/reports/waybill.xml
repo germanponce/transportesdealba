@@ -32,10 +32,6 @@
                                     <td><span t-field="doc.state"/></td>
                                 </tr>
                                 <tr>
-                                    <td class="table-info font-weight-bold">SUCURSAL</td>
-                                    <td><span t-field="doc.sucursal_id.name"/></td>
-                                </tr>
-                                <tr>
                                     <td class="table-info font-weight-bold">CANTIDAD DE CARGA</td>
                                     <td><span t-field="doc.real_load_qty"/> kg</td>
                                 </tr>

@@ -54,16 +54,23 @@ class WobinLogisticsTrips(models.Model):
     circuit_id          = fields.Many2one('wobin.logistics.circuits', 
                                           string='Circuito',
                                           ondelete='set null',                                         
-                                          track_visibility='always')    
+                                          track_visibility='always')
     sucursal_id         = fields.Many2one('stock.warehouse', 
                                           string='Sucursal', 
-                                          track_visibility='always')
+                                          track_visibility='always')    
+    start_date          = fields.Date(string='Fecha de inicio', 
+                                      track_visibility='always')        
     client_id           = fields.Many2one('res.partner', 
-                                          string='Cliente', 
+                                          string='Cliente',
+                                          domain="[('parent_id', '=', False)]", 
                                           track_visibility='always')
     vehicle_id          = fields.Many2one('wobin.logistics.vehicles', 
                                           string='Vehículo', 
-                                          track_visibility='always')     
+                                          track_visibility='always')
+    trailer_1           = fields.Char(string='Remolque 1',
+                                      track_visibility='always')
+    trailer_2           = fields.Char(string='Remolque 2',
+                                      track_visibility='always')           
     analytic_account_id = fields.Many2one('account.analytic.account', 
                                           string='Cuenta Analítica', 
                                           track_visibility='always')
@@ -71,7 +78,7 @@ class WobinLogisticsTrips(models.Model):
                                           string='Operador', 
                                           track_visibility='always')
     route               = fields.Char(string='Ruta', 
-                                      track_visibility='always')
+                                      track_visibility='always')    
     # ----- State of the trip --------------------------------------------------------#                                         
     state               = fields.Selection(selection=[('assigned', 'Asignado'), 
                                                       ('route', 'En Ruta'), 
@@ -92,24 +99,25 @@ class WobinLogisticsTrips(models.Model):
     #|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|
     # FIELDS FOR LOAD DATA OF TRIPS
     #|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|
-    start_date      = fields.Date(string='Fecha de inicio', 
-                                  track_visibility='always')
+    tariff          = fields.Float(string='Tarifa $', 
+                                   track_visibility='always')
+    product_id      = fields.Many2one('product.template', 
+                                      string='Producto',    
+                                      track_visibility='always')
     load_date       = fields.Date(string='Fecha de Carga', 
                                   track_visibility='always')
     estimated_qty   = fields.Float(string='Cantidad Estimada (kg)', 
-                                   track_visibility='always')
+                                   track_visibility='always')    
     real_load_qty   = fields.Float(string='Cantidad Real de Carga (kg)', 
-                                   track_visibility='always')
-    decline_qty     = fields.Float(string='Merma', 
-                                   compute='_set_decline_qty', 
-                                   store=True, 
                                    track_visibility='always')
     attachment_load = fields.Many2many('ir.attachment', 
                                        relation='first_load_att_relation', 
                                        string='Adjuntos de Carga', 
                                        track_visibility='always')
-    load_location   = fields.Char(string='Ubicación de Carga', 
-                                  track_visibility='always')
+    load_location   = fields.Many2one('res.partner',
+                                      string='Ubicación de Carga',
+                                      domain="[('parent_id', '=', client_id)]", 
+                                      track_visibility='always')
    
     #|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|
     # FIELDS FOR DISCHARGE DATA OF TRIPS
@@ -122,6 +130,10 @@ class WobinLogisticsTrips(models.Model):
                                             relation='second_discharge_att_relation', 
                                             string='Adjuntos de Descarga', 
                                             track_visibility='always')
+    decline_qty     = fields.Float(string='Merma', 
+                                   compute='_set_decline_qty', 
+                                   store=True, 
+                                   track_visibility='always')    
     discount_decline     = fields.Float(string='Descuento por Merma', 
                                         track_visibility='always')
     qty_to_bill          = fields.Float(string='Importe a Facturar $', 
@@ -130,10 +142,12 @@ class WobinLogisticsTrips(models.Model):
                                         track_visibility='always') 
     discharged_flag      = fields.Boolean(string="¿Viaje Descargado?",
                                           track_visibility='always')  
-    discharge_location   = fields.Char(string='Ubicación de Descarga', 
-                                       track_visibility='always')                                          
+    discharge_location   = fields.Many2one('res.partner',
+                                           string='Ubicación de Descarga',
+                                           domain="[('parent_id', '=', client_id)]", 
+                                           track_visibility='always')
     conformity           = fields.Binary(string='Conformidad y Finiquito', 
-                                         track_visibility='always')
+                                         track_visibility='always')    
     checked              = fields.Boolean(string="Conformidad y Finiquito") 
 
     #|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|
@@ -164,7 +178,7 @@ class WobinLogisticsTrips(models.Model):
         '''Authomatic assignation for fields in Trips from contract_id's input'''
         if self.contract_id:
             self.client_id = self.contract_id.client_id.id 
-            self.route     = self.contract_id.origin_id.name + ', ' + self.contract_id.destination_id.name            
+            #self.route     = self.contract_id.origin_id.name + ', ' + self.contract_id.destination_id.name            
 
 
 
@@ -173,6 +187,8 @@ class WobinLogisticsTrips(models.Model):
         #Authomatic assignation for analytic account from vehicle_id's input
         if self.vehicle_id:
             self.analytic_account_id = self.vehicle_id.analytic_account_id.id
+            self.trailer_1           = self.vehicle_id.trailer_1
+            self.trailer_2           = self.vehicle_id.trailer_2             
 
 
 
@@ -196,15 +212,12 @@ class WobinLogisticsTrips(models.Model):
 
     @api.depends(
         'contract_id',
-        'sucursal_id',
         'client_id',
         'vehicle_id',
         'analytic_account_id',  
-        'operator_id',        
-        'route',              
+        'operator_id',                  
         'start_date',
-        'load_date',       
-        'estimated_qty',      
+        'load_date',         
         'real_load_qty',      
         'load_location',
         'discharge_date',     
@@ -239,9 +252,9 @@ class WobinLogisticsTrips(models.Model):
         # 'charged'     --> With all General, Load and Discharge fields filled (including checks "discharged_flag", "conformity" and
         #                   charged_flag with field "account_move_id" filled too) at Trips View Form. It doesn't have an invoice related
         #                   that's why check of "invoiced_flag" and "invoice" must be empty
-        if self.sucursal_id          and self.client_id          and self.vehicle_id         and \
-            self.analytic_account_id and self.operator_id        and self.route              and self.start_date and \
-            self.load_date           and self.estimated_qty      and self.real_load_qty      and self.load_location and \
+        if self.client_id          and self.vehicle_id         and \
+            self.analytic_account_id and self.operator_id       and self.start_date and \
+            self.load_date           and self.real_load_qty      and self.load_location and \
             self.discharge_date      and self.real_discharge_qty and self.discharged_flag    and self.discharge_location and \
             self.checked             and self.charged_flag       and self.account_move_id    and not self.invoiced_flag and \
             not self.invoice:
@@ -250,56 +263,56 @@ class WobinLogisticsTrips(models.Model):
 
         # This new case was added to permit state "billed" because it can't be avoided 
         # 'account_move_id' field from module wobin_ant_liq
-        elif self.sucursal_id        and self.client_id          and self.vehicle_id          and \
-            self.analytic_account_id and self.operator_id        and self.route               and self.start_date and \
-            self.load_date           and self.estimated_qty      and self.real_load_qty       and self.load_location and \
+        elif self.client_id          and self.vehicle_id          and \
+            self.analytic_account_id and self.operator_id         and self.start_date and \
+            self.load_date           and self.real_load_qty       and self.load_location and \
             self.discharge_date      and self.real_discharge_qty and self.discharged_flag     and self.discharge_location and \
             self.checked             and not self.charged_flag   and self.account_move_id     and self.invoiced_flag and \
             self.invoice:                
 
                 self.state = 'billed'                  
 
-        elif self.sucursal_id        and self.client_id          and self.vehicle_id          and \
-            self.analytic_account_id and self.operator_id        and self.route               and self.start_date and \
-            self.load_date           and self.estimated_qty      and self.real_load_qty       and self.load_location and \
+        elif self.client_id          and self.vehicle_id          and \
+            self.analytic_account_id and self.operator_id         and self.start_date and \
+            self.load_date           and self.real_load_qty       and self.load_location and \
             self.discharge_date      and self.real_discharge_qty and self.discharged_flag     and self.discharge_location and \
             self.checked             and not self.charged_flag   and not self.account_move_id and self.invoiced_flag and \
             self.invoice:                
 
                 self.state = 'billed'    
 
-        elif self.sucursal_id        and self.client_id          and self.vehicle_id          and \
-            self.analytic_account_id and self.operator_id        and self.route               and self.start_date and \
-            self.load_date           and self.estimated_qty      and self.real_load_qty       and self.load_location and \
+        elif self.client_id          and self.vehicle_id          and \
+            self.analytic_account_id and self.operator_id         and self.start_date and \
+            self.load_date           and self.real_load_qty       and self.load_location and \
             self.discharge_date      and self.real_discharge_qty and self.discharged_flag     and self.discharge_location and \
             self.checked             and not self.charged_flag   and not self.account_move_id and not self.invoiced_flag and \
             not self.invoice:                 
 
                 self.state = 'to_invoice'   
 
-        elif self.sucursal_id        and self.client_id          and self.vehicle_id          and \
-            self.analytic_account_id and self.operator_id        and self.route               and self.start_date and \
-            self.load_date           and self.estimated_qty      and self.real_load_qty       and self.load_location and \
-            self.discharge_date      and self.real_discharge_qty and self.discharged_flag     and self.discharge_location and \
-            not self.checked         and not self.charged_flag   and not self.account_move_id and not self.invoiced_flag and \
+        elif self.client_id          and self.vehicle_id          and \
+            self.analytic_account_id and self.operator_id         and self.start_date and \
+            self.load_date           and self.real_load_qty       and self.load_location and \
+            self.discharge_date      and self.real_discharge_qty  and self.discharged_flag     and self.discharge_location and \
+            not self.checked         and not self.charged_flag    and not self.account_move_id and not self.invoiced_flag and \
             not self.invoice:  
 
                 self.state = 'discharged'  
 
-        elif self.sucursal_id        and self.client_id              and self.vehicle_id          and \
-            self.analytic_account_id and self.operator_id            and self.route               and self.start_date and \
-            self.load_date           and self.estimated_qty          and self.real_load_qty       and self.load_location and \
+        elif self.client_id              and self.vehicle_id         and \
+            self.analytic_account_id and self.operator_id            and self.start_date and \
+            self.load_date           and self.real_load_qty          and self.load_location and \
             not self.discharge_date  and not self.real_discharge_qty and not self.discharged_flag and not self.discharge_location and \
             not self.checked         and not self.charged_flag       and not self.account_move_id and not self.invoiced_flag and \
             not self.invoice: 
 
                 self.state = 'route'
 
-        elif self.sucursal_id        and self.client_id              and self.vehicle_id          and \
-            self.analytic_account_id and self.operator_id            and self.route               and not self.start_date and \
-            not self.load_date       and not self.estimated_qty      and not self.real_load_qty   and not self.load_location and \
-            not self.discharge_date  and not self.real_discharge_qty and not self.discharged_flag and not self.discharge_location and \
-            not self.checked         and not self.charged_flag       and not self.account_move_id and not self.invoiced_flag and \
+        elif self.client_id              and self.vehicle_id          and \
+            self.analytic_account_id and self.operator_id             and not self.start_date and \
+            not self.load_date       and not self.real_load_qty       and not self.load_location and \
+            not self.discharge_date  and not self.real_discharge_qty  and not self.discharged_flag and not self.discharge_location and \
+            not self.checked         and not self.charged_flag        and not self.account_move_id and not self.invoiced_flag and \
             not self.invoice:
 
                 self.state = 'assigned'             

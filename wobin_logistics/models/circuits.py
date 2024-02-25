@@ -25,7 +25,7 @@ class WobinLogisticsCircuits(models.Model):
                               required=True, 
                               copy=False, 
                               #default='New',
-                              track_visibility='always')   
+                              track_visibility='always')
     unit_id     = fields.Many2one('wobin.logistics.vehicles',
                                   string='Unidad', 
                                   required=True,

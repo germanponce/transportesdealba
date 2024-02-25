@@ -26,7 +26,11 @@ class WobinLogisticsVehicles(models.Model):
     series              = fields.Char(string='Serie', 
                                       track_visibility='always')
     license_plate       = fields.Char(string='Placa', 
-                                      track_visibility='always') 
+                                      track_visibility='always')
+    trailer_1           = fields.Char(string='Remolque 1',
+                                      track_visibility='always')
+    trailer_2           = fields.Char(string='Remolque 2',
+                                      track_visibility='always')             
     current_trip        = fields.Many2one('wobin.logistics.trips', 
                                           string='Viaje Actual', 
                                           compute="_set_current_trip", 
