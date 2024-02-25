@@ -38,82 +38,85 @@
 
     <!-- TRIPS - FORM VIEW -->
     <record id="view_logistics_trips_form" model="ir.ui.view"> 
-        <field name="name">Viajes</field> 
-        <field name="model">wobin.logistics.trips</field> 
-        <field name="arch" type="xml"> 
-            <form duplicate="0"> 
-                <header>
-                    <field name="state" widget="statusbar" statusbar_visible="assigned,route,discharged,to_invoice,billed,charged"/>
-                </header> 
-                <sheet>
-                    <div class="oe_left oe_title">
-                        <h1>
-                            <field name="name" readonly="True"/>
-                        </h1>
-                    </div>                
-                    <group>                                                            
-                      <group>
-                        <h3><strong>Datos Generales</strong></h3>                           
-                        <field name="contract_id" invisible="True"/>
-                        <field name="circuit_id" required="True" domain="[('state_circuit', '=', 'activo')]"/>                             
-                        <field name="start_date" force_save="1"/>
-                        <field name="client_id" force_save="1"/>
-                        <field name="tariff"/>
-                        <field name="product_id"/>                                 
-                        <field name="vehicle_id" force_save="1"/>
-                        <field name="trailer_1" readonly="1"/>
-                        <field name="trailer_2" readonly="1"/>                                 
-                        <field name="analytic_account_id" readonly="1"/>                           
-                        <field name="operator_id" force_save="1"/>                              
-                        
-                        <h3><strong>Carga</strong></h3>                                
-                        <field name="load_date" force_save="1"/>
-                        <field name="real_load_qty" force_save="1"/>                                  
-                        <field name="attachment_load" force_save="1" widget="many2many_binary"/>
-                        <field name="load_location" force_save="1"/>
-                      </group> 
-                      
-                      <group>
-                        <h3><strong>Descarga</strong></h3>                           
-                        <field name="discharge_date" force_save="1"/>
-                        <field name="real_discharge_qty" force_save="1"/>
-                        <field name="attachment_discharge" force_save="1" widget="many2many_binary"/>
-                        <field name="discharge_location" force_save="1"/>
-                        <field name="discharged_flag" force_save="1"/>
-                        
-                        <h3><strong>POR FACTURAR</strong></h3>                                                
-                        <field name="decline_qty" force_save="1"/>
-                        <field name="price_kg_discount" force_save="1"/>
-                        <field name="discount_decline" force_save="1"/>
-                        <field name="qty_to_bill" force_save="1"/>
-                        <field name="checked" force_save="1"
-                                attrs="{'readonly': ['|', ('attachment_load', '=', None), ('attachment_discharge', '=', None)]}"/>   
+      <field name="name">Viajes</field> 
+      <field name="model">wobin.logistics.trips</field> 
+      <field name="arch" type="xml"> 
+        <form duplicate="0"> 
+          <header>
+            <field name="state" widget="statusbar" 
+                   statusbar_visible="assigned,route,discharged,to_invoice,billed,charged"/>
+          </header> 
+          <sheet>
+            <div class="oe_left oe_title">
+              <h1>
+                <field name="name" readonly="True"/>
+              </h1>
+            </div>                
+            <group>                                                            
+              <group>
+                <h3 style="background-color: #f8f9fa; border-radius: 5px; padding: 10px; margin: 10px">
+                  <strong>Datos Generales</strong>
+                </h3>                           
+                <field name="contract_id" invisible="True"/>
+                <field name="circuit_id" required="True" domain="[('state_circuit', '=', 'activo')]"/>                             
+                <field name="start_date" force_save="1"/>
+                <field name="client_id" force_save="1"/>
+                <field name="tariff"/>
+                <field name="product_id"/>                                 
+                <field name="vehicle_id" force_save="1"/>
+                <field name="trailer_1" readonly="1"/>
+                <field name="trailer_2" readonly="1"/>                                 
+                <field name="analytic_account_id" readonly="1"/>                           
+                <field name="operator_id" force_save="1"/>                              
+                
+                <h3><strong>Carga</strong></h3>                                
+                <field name="load_date" force_save="1"/>
+                <field name="real_load_qty" force_save="1"/>                                  
+                <field name="attachment_load" force_save="1" widget="many2many_binary"/>
+                <field name="load_location" force_save="1"/>
+              </group> 
+              
+              <group>
+                <h3><strong>Descarga</strong></h3>                           
+                <field name="discharge_date" force_save="1"/>
+                <field name="real_discharge_qty" force_save="1"/>
+                <field name="attachment_discharge" force_save="1" widget="many2many_binary"/>
+                <field name="discharge_location" force_save="1"/>
+                <field name="discharged_flag" force_save="1"/>
+                
+                <h3><strong>POR FACTURAR</strong></h3>                                                
+                <field name="decline_qty" force_save="1"/>
+                <field name="price_kg_discount" force_save="1"/>
+                <field name="discount_decline" force_save="1"/>
+                <field name="qty_to_bill" force_save="1"/>
+                <field name="checked" force_save="1"
+                        attrs="{'readonly': ['|', ('attachment_load', '=', None), ('attachment_discharge', '=', None)]}"/>   
 
-                        <h3><strong>FACTURADO O COBRADO</strong></h3>                                 
-                        <field name="sale_order_id" force_save="1" readonly="True"/>                                  
-                        <field name="charged_flag" force_save="1"
-                                attrs="{'readonly':  [('state', '=', 'charged')],
-                                        'invisible': [('state', '!=', 'to_invoice')]}"/>                                                                   
-                        <button string="Crear Asiento Contable" 
-                                name="creation_account_move" type="object" class="oe_highlight" 
-                                attrs="{'invisible': ['|', ('charged_flag', '=', False), ('state', '!=', 'to_invoice')]}"/>                                  
-                        <field name="account_move_id" force_save="1" readonly="True" 
-                                attrs="{'invisible': [('state', '!=', 'charged')]}"/>
-                        <field name="invoiced_flag" force_save="1"
-                                attrs="{'readonly':  [('state', '=', 'billed')],
-                                        'invisible': [('state', '!=', 'to_invoice')]}"/>                                      
-                        <field name="invoice" force_save="1"
-                                attrs="{'invisible': [('state', 'in', ['assigned', 'route'])]}"/>   
-                      </group>      
-                    </group>
-                </sheet>              
-                <div class="oe_chatter">
-                    <field name="message_follower_ids" widget="mail_followers"/>
-                    <field name="activity_ids" widget="mail_activity"/>
-                    <field name="message_ids" widget="mail_thread"/>
-                </div>               
-            </form> 
-        </field> 
+                <h3><strong>FACTURADO O COBRADO</strong></h3>                                 
+                <field name="sale_order_id" force_save="1" readonly="True"/>                                  
+                <field name="charged_flag" force_save="1"
+                        attrs="{'readonly':  [('state', '=', 'charged')],
+                                'invisible': [('state', '!=', 'to_invoice')]}"/>                                                                   
+                <button string="Crear Asiento Contable" 
+                        name="creation_account_move" type="object" class="oe_highlight" 
+                        attrs="{'invisible': ['|', ('charged_flag', '=', False), ('state', '!=', 'to_invoice')]}"/>                                  
+                <field name="account_move_id" force_save="1" readonly="True" 
+                        attrs="{'invisible': [('state', '!=', 'charged')]}"/>
+                <field name="invoiced_flag" force_save="1"
+                        attrs="{'readonly':  [('state', '=', 'billed')],
+                                'invisible': [('state', '!=', 'to_invoice')]}"/>                                      
+                <field name="invoice" force_save="1"
+                        attrs="{'invisible': [('state', 'in', ['assigned', 'route'])]}"/>   
+              </group>      
+            </group>
+          </sheet>              
+          <div class="oe_chatter">
+              <field name="message_follower_ids" widget="mail_followers"/>
+              <field name="activity_ids" widget="mail_activity"/>
+              <field name="message_ids" widget="mail_thread"/>
+          </div>               
+        </form> 
+      </field> 
     </record>         
 
   </data>  
