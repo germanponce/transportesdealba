@@ -71,7 +71,7 @@
                 <field name="vehicle_id" force_save="1"/>
                 <field name="trailer_1" readonly="1" force_save="1"/>
                 <field name="trailer_2" readonly="1" force_save="1"/>                                 
-                <field name="analytic_account_id" readonly="1"/>                           
+                <field name="analytic_account_id" readonly="1" force_save="1"/>                           
                 <field name="operator_id" force_save="1"/>
                 <separator colspan="4" style="margin-bottom: 20px;"/>                              
                 
