@@ -1,4 +1,4 @@
 .custom_binary_field {
-    max-height: 50px;
+    max-height: 20px;
     overflow-y: auto;
 }
