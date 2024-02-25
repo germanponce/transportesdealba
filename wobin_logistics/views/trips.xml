@@ -106,8 +106,8 @@
                 <field name="price_kg_discount" force_save="1"/>
                 <field name="discount_decline" force_save="1"/>
                 <field name="qty_to_bill" force_save="1"/>
-                <field name="qty_to_bill" force_save="1"/>
-                <field name="attach_filled" force_save="1"
+                <field name="attach_filled" force_save="1" invisible="1"/>
+                <field name="conformity" force_save="1"
                        attrs="{'readonly': [('attach_filled', '=', False)]}"/>
                 <separator colspan="4" style="margin-bottom: 20px;"/>
 
