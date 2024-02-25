@@ -58,7 +58,7 @@
               <!-- 1° Grupo con datos generales y de carga -->                                                             
               <group>
                 <h3 style="background-color: #f08080; border-radius: 10px; padding: 10px; margin: 10px">
-                  <strong>Datos Generales   </strong> 
+                  <strong>1. Datos Generales   </strong> 
                   <i class="fa fa-truck"/>
                 </h3>
                 <span class="badge badge-danger">Asignado</span>                                             
@@ -69,14 +69,14 @@
                 <field name="tariff"/>
                 <field name="product_id"/>                                 
                 <field name="vehicle_id" force_save="1"/>
-                <field name="trailer_1" readonly="1"/>
-                <field name="trailer_2" readonly="1"/>                                 
+                <field name="trailer_1" readonly="1" force_save="1"/>
+                <field name="trailer_2" readonly="1" force_save="1"/>                                 
                 <field name="analytic_account_id" readonly="1"/>                           
                 <field name="operator_id" force_save="1"/>
                 <separator colspan="4" style="margin-bottom: 20px;"/>                              
                 
                 <h3 style="background-color: #f0e68c; border-radius: 10px; padding: 10px; margin: 10px">
-                  <strong>Carga   </strong>
+                  <strong>2. Carga   </strong>
                   <i class="fa fa-arrow-up"/>
                 </h3>
                 <span class="badge badge-warning">En Ruta</span>
@@ -90,7 +90,7 @@
               <!-- 2° Grupo con datos de descarga, por facturar, facturación / cobro --> 
               <group>
                 <h3 style="background-color: #8fbc8f; border-radius: 10px; padding: 10px; margin: 10px">
-                  <strong>Descarga   </strong>
+                  <strong>3. Descarga   </strong>
                   <i class="fa fa-arrow-down"/>
                 </h3>
                 <span class="badge badge-success">Descargado</span>                                          
@@ -102,7 +102,7 @@
                 <separator colspan="4" style="margin-bottom: 20px;"/>
                 
                 <h3 style="background-color: #add8e6; border-radius: 10px; padding: 10px; margin: 10px">
-                  <strong>En Proceso   </strong>
+                  <strong>4. En Proceso   </strong>
                   <i class="fa fa-line-chart"/>
                 </h3>
                 <span class="badge badge-primary">Por Facturar</span>                                               
@@ -116,7 +116,7 @@
                 <separator colspan="4" style="margin-bottom: 20px;"/>
 
                 <h3 style="background-color: #d3d3d3; border-radius: 10px; padding: 10px; margin: 10px">
-                  <strong>Facturación / Cobro   </strong>
+                  <strong>5. Facturación / Cobro   </strong>
                   <i class="fa fa-file-text-o"/>
                 </h3>
                 <span class="badge badge-dark">Facturado / Cobrado</span>                                                  
@@ -133,7 +133,11 @@
                        attrs="{'readonly':  [('state', '=', 'billed')],
                                'invisible': [('state', '!=', 'to_invoice')]}"/>                                      
                 <field name="invoice" force_save="1"
+                       attrs="{'invisible': [('state', 'in', ['assigned', 'route'])]}"/>
+                <field name="credit_note" force_save="1"
                        attrs="{'invisible': [('state', 'in', ['assigned', 'route'])]}"/> 
+                <field name="invoiced_qty" force_save="1"
+                       attrs="{'invisible': [('state', 'in', ['assigned', 'route'])]}"/>                                                
               </group>      
             </group>
           </sheet>

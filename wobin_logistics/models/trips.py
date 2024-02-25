@@ -176,7 +176,11 @@ class WobinLogisticsTrips(models.Model):
     invoiced_flag   = fields.Boolean(string="¿Es un Viaje Facturado?", 
                                      track_visibility='always')                                            
     invoice         = fields.Char(string='Factura', 
-                                  track_visibility='always')                                                                                                                                                                                                           
+                                  track_visibility='always')
+    credit_note     = fields.Char(string='Nota de Crédito', 
+                                  track_visibility='always')
+    invoiced_qty    = fields.Float(string='Importe Facturado $',                                        
+                                   track_visibility='always')                                                                                                                                                                                                                     
 
 
 
@@ -188,7 +192,7 @@ class WobinLogisticsTrips(models.Model):
         '''Authomatic assignation for fields in Trips from contract_id's input'''
         if self.contract_id:
             self.client_id = self.contract_id.client_id.id 
-            #self.route     = self.contract_id.origin_id.name + ', ' + self.contract_id.destination_id.name            
+            self.route     = self.contract_id.origin_id.name + ', ' + self.contract_id.destination_id.name            
 
 
 
