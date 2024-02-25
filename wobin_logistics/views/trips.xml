@@ -55,8 +55,10 @@
             <group>                                                            
               <group>
                 <h3 style="background-color: #f08080; border-radius: 10px; padding: 10px; margin: 10px">
-                  <strong>Datos Generales</strong>
-                </h3>                           
+                  <strong>Datos Generales</strong> 
+                  <i class="fa fa-truck"/>
+                </h3>
+                <span class="badge badge-danger">Asignado</span>                           
                 <field name="contract_id" invisible="True"/>
                 <field name="circuit_id" required="True" domain="[('state_circuit', '=', 'activo')]"/>                             
                 <field name="start_date" force_save="1"/>
@@ -71,7 +73,9 @@
                 
                 <h3 style="background-color: #f0e68c; border-radius: 10px; padding: 10px; margin: 10px">
                   <strong>Carga</strong>
-                </h3>                               
+                  <i class="fa fa-upload"/>
+                </h3>
+                <span class="badge badge-warning">En Ruta</span>                               
                 <field name="load_date" force_save="1"/>
                 <field name="real_load_qty" force_save="1"/>                                  
                 <field name="attachment_load" force_save="1" widget="many2many_binary"/>
@@ -81,7 +85,9 @@
               <group>
                 <h3 style="background-color: #8fbc8f; border-radius: 10px; padding: 10px; margin: 10px">
                   <strong>Descarga</strong>
-                </h3>                          
+                  <i class="fa fa-download"/>
+                </h3>
+                <span class="badge badge-success">Descargado</span>                          
                 <field name="discharge_date" force_save="1"/>
                 <field name="real_discharge_qty" force_save="1"/>
                 <field name="attachment_discharge" force_save="1" widget="many2many_binary"/>
@@ -89,8 +95,10 @@
                 <field name="discharged_flag" force_save="1"/>
                 
                 <h3 style="background-color: #add8e6; border-radius: 10px; padding: 10px; margin: 10px">
-                  <strong>Por Facturar</strong>
-                </h3>                                                
+                  <strong>EN PROCESO</strong>
+                  <i class="fa fa-line-chart"/>
+                </h3>
+                <span class="badge badge-primary">Por Facturar</span>                                                
                 <field name="decline_qty" force_save="1"/>
                 <field name="price_kg_discount" force_save="1"/>
                 <field name="discount_decline" force_save="1"/>
@@ -100,7 +108,9 @@
 
                 <h3 style="background-color: #d3d3d3; border-radius: 10px; padding: 10px; margin: 10px">
                   <strong>Facturación / Cobro</strong>
-                </h3>                                  
+                  <i class="fa fa-file-text-o"/>
+                </h3>
+                <span class="badge badge-dark">Facturado / Cobrado</span>                                  
                 <field name="sale_order_id" force_save="1" readonly="True"/>                                  
                 <field name="charged_flag" force_save="1"
                         attrs="{'readonly':  [('state', '=', 'charged')],
