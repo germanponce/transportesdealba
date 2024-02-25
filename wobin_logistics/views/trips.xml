@@ -82,7 +82,7 @@
                 <span class="badge badge-warning">En Ruta</span>                               
                 <field name="load_date" force_save="1"/>
                 <field name="real_load_qty" force_save="1"/>                                  
-                <field name="attachment_load" widget="image" class="oe_avatar" options="{'size': [50, 50]}"/>
+                <field name="attachment_load" widget="many2many_binary" class="custom_binary_field"/>
                 <field name="load_location" force_save="1"/>
                 <separator colspan="4" style="margin-bottom: 20px;"/>
               </group>
@@ -98,7 +98,7 @@
                 <span class="badge badge-success">Descargado</span>                          
                 <field name="discharge_date" force_save="1"/>
                 <field name="real_discharge_qty" force_save="1"/>
-                <field name="attachment_discharge" widget="image" class="oe_avatar" options="{'size': [50, 50]}"/>
+                <field name="attachment_discharge" widget="many2many_binary" class="custom_binary_field"/>
                 <field name="discharge_location" force_save="1"/>
                 <field name="discharged_flag" force_save="1"/>
                 <separator colspan="4" style="margin-bottom: 20px;"/>

@@ -1,4 +1,4 @@
-.oe_avatar img {
-    max-width: 100%;
-    height: auto;
+.custom_binary_field {
+    max-height: 50px;
+    overflow-y: auto;
 }
