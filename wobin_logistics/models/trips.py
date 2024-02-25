@@ -154,7 +154,7 @@ class WobinLogisticsTrips(models.Model):
                                      compute='_set_qty_to_bill', 
                                      store=True, 
                                      track_visibility='always')
-    attach_filled     = fields.Boolean(compute='_compute_adjuntos_llenos')     
+    attach_filled     = fields.Boolean(compute='_compute_attachtments_filled')     
     conformity        = fields.Binary(string='Conformidad y Finiquito', 
                                       track_visibility='always')    
     checked           = fields.Boolean(string="Conformidad y Finiquito",
@@ -351,6 +351,7 @@ class WobinLogisticsTrips(models.Model):
         #Get Tariff from Contract data belonging to this Trip:
         tariff = 0.0
         for rec in self:
+            #Lógica para cuando se manejaban contratos anteriormente:
             if rec.contract_id:
                 tariff = rec.contract_id.tariff
 
@@ -358,11 +359,17 @@ class WobinLogisticsTrips(models.Model):
                     rec.qty_to_bill = rec.real_load_qty * tariff - rec.discount_decline
                 else:
                     rec.qty_to_bill = rec.real_load_qty * tariff
+            #Nueva Lógica donde la tarifa ya está dentro de los Viajes:
+            if rec.tariff:
+                if rec.discount_decline:
+                    rec.qty_to_bill = rec.real_load_qty * rec.tariff - rec.discount_decline
+                else:
+                    rec.qty_to_bill = rec.real_load_qty * rec.tariff                 
 
 
 
     @api.depends('attachment_load', 'attachment_discharge')
-    def _compute_adjuntos_llenos(self):
+    def _compute_attachtments_filled(self):
         for record in self:
             record.attach_filled = bool(record.attachment_load and record.attachment_discharge)
                     

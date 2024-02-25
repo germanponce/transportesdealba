@@ -41,18 +41,21 @@
       <field name="name">Viajes</field> 
       <field name="model">wobin.logistics.trips</field> 
       <field name="arch" type="xml"> 
-        <form duplicate="0"> 
+        <form duplicate="0">
+          <!-- Barra de estado --> 
           <header>
             <field name="state" widget="statusbar" 
                    statusbar_visible="assigned,route,discharged,to_invoice,billed,charged"/>
           </header> 
-
+          <sheet>
+            <!-- Folio de viaje --> 
             <div class="oe_left oe_title">
               <h1>
                 <field name="name" readonly="True"/>
               </h1>
             </div>                
-            <group>                                                            
+            <group>
+              <!-- 1° Grupo con datos generales y de carga -->                                                             
               <group>
                 <h3 style="background-color: #f08080; border-radius: 10px; padding: 10px; margin: 10px">
                   <strong>Datos Generales   </strong> 
@@ -79,13 +82,14 @@
                 <span class="badge badge-warning">En Ruta</span>                               
                 <field name="load_date" force_save="1"/>
                 <field name="real_load_qty" force_save="1"/>                                  
-                <field name="attachment_load" force_save="1" widget="many2many_binary"/>
+                <field name="attachment_load" widget="image" class="oe_avatar" options="{'size': [50, 50]}"/>
                 <field name="load_location" force_save="1"/>
                 <separator colspan="4" style="margin-bottom: 20px;"/>
               </group>
 
               <div class="oe_clear"/> 
-              
+
+              <!-- 2° Grupo con datos de descarga, por facturar, facturación / cobro --> 
               <group>
                 <h3 style="background-color: #8fbc8f; border-radius: 10px; padding: 10px; margin: 10px">
                   <strong>Descarga   </strong>
@@ -94,7 +98,7 @@
                 <span class="badge badge-success">Descargado</span>                          
                 <field name="discharge_date" force_save="1"/>
                 <field name="real_discharge_qty" force_save="1"/>
-                <field name="attachment_discharge" force_save="1" widget="many2many_binary"/>
+                <field name="attachment_discharge" widget="image" class="oe_avatar" options="{'size': [50, 50]}"/>
                 <field name="discharge_location" force_save="1"/>
                 <field name="discharged_flag" force_save="1"/>
                 <separator colspan="4" style="margin-bottom: 20px;"/>
@@ -134,7 +138,8 @@
                         attrs="{'invisible': [('state', 'in', ['assigned', 'route'])]}"/> 
               </group>      
             </group>
-            
+          </sheet>
+          <!-- Actividades, seguimiento, mensajes -->              
           <div class="oe_chatter">
               <field name="message_follower_ids" widget="mail_followers"/>
               <field name="activity_ids" widget="mail_activity"/>

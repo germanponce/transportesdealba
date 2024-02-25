@@ -43,6 +43,12 @@
         'reports/contract_conditions.xml',
         'reports/waybill.xml',
     ],
+    #CSS styles
+    'assets': {
+        'web.assets_backend': [
+            'wobin_logistics/static/src/css/styles.css'
+        ],
+    },       
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
