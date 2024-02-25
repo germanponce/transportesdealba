@@ -64,6 +64,11 @@ class WobinLogisticsTrips(models.Model):
                                           string='Cliente',
                                           domain="[('parent_id', '=', False)]", 
                                           track_visibility='always')
+    tariff              = fields.Float(string='Tarifa $', 
+                                       track_visibility='always')
+    product_id          = fields.Many2one('product.template', 
+                                          string='Producto',    
+                                          track_visibility='always')    
     vehicle_id          = fields.Many2one('wobin.logistics.vehicles', 
                                           string='Vehículo', 
                                           track_visibility='always')
@@ -99,11 +104,6 @@ class WobinLogisticsTrips(models.Model):
     #|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|
     # FIELDS FOR LOAD DATA OF TRIPS
     #|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|
-    tariff          = fields.Float(string='Tarifa $', 
-                                   track_visibility='always')
-    product_id      = fields.Many2one('product.template', 
-                                      string='Producto',    
-                                      track_visibility='always')
     load_date       = fields.Date(string='Fecha de Carga', 
                                   track_visibility='always')
     estimated_qty   = fields.Float(string='Cantidad Estimada (kg)', 
@@ -130,6 +130,16 @@ class WobinLogisticsTrips(models.Model):
                                             relation='second_discharge_att_relation', 
                                             string='Adjuntos de Descarga', 
                                             track_visibility='always')
+    discharge_location   = fields.Many2one('res.partner',
+                                           string='Ubicación de Descarga',
+                                           domain="[('parent_id', '=', client_id)]", 
+                                           track_visibility='always')
+    discharged_flag      = fields.Boolean(string="¿Viaje Descargado?",
+                                          track_visibility='always')
+    
+    #|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|
+    # FIELDS FOR PROCESS "TO INVOICE" OF TRIPS
+    #|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|              
     decline_qty          = fields.Float(string='Merma', 
                                         compute='_set_decline_qty', 
                                         store=True, 
@@ -144,12 +154,6 @@ class WobinLogisticsTrips(models.Model):
                                         compute='_set_qty_to_bill', 
                                         store=True, 
                                         track_visibility='always') 
-    discharged_flag      = fields.Boolean(string="¿Viaje Descargado?",
-                                          track_visibility='always')  
-    discharge_location   = fields.Many2one('res.partner',
-                                           string='Ubicación de Descarga',
-                                           domain="[('parent_id', '=', client_id)]", 
-                                           track_visibility='always')
     conformity           = fields.Binary(string='Conformidad y Finiquito', 
                                          track_visibility='always')    
     checked              = fields.Boolean(string="Conformidad y Finiquito",
