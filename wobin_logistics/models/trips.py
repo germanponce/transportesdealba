@@ -62,7 +62,7 @@ class WobinLogisticsTrips(models.Model):
                                       track_visibility='always')        
     client_id           = fields.Many2one('res.partner', 
                                           string='Cliente',
-                                          domain="[('parent_id', '=', False)]", 
+                                          #domain="[('parent_id', '=', False)]", 
                                           track_visibility='always')
     tariff              = fields.Float(string='Tarifa $', 
                                        track_visibility='always')
@@ -116,7 +116,7 @@ class WobinLogisticsTrips(models.Model):
                                        track_visibility='always')
     load_location   = fields.Many2one('res.partner',
                                       string='Ubicación de Carga',
-                                      domain="[('parent_id', '=', client_id)]", 
+                                      #domain="[('parent_id', '=', client_id)]", 
                                       track_visibility='always')
    
     #|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|
@@ -132,7 +132,7 @@ class WobinLogisticsTrips(models.Model):
                                             track_visibility='always')
     discharge_location   = fields.Many2one('res.partner',
                                            string='Ubicación de Descarga',
-                                           domain="[('parent_id', '=', client_id)]", 
+                                           #domain="[('parent_id', '=', client_id)]", 
                                            track_visibility='always')
     discharged_flag      = fields.Boolean(string="¿Viaje Descargado?",
                                           track_visibility='always')
@@ -140,10 +140,16 @@ class WobinLogisticsTrips(models.Model):
     #|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|
     # FIELDS FOR PROCESS "TO INVOICE" OF TRIPS
     #|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|*|              
-    decline_qty       = fields.Float(string='Merma', 
+    decline_qty       = fields.Float(string='Merma Total', 
                                      compute='_set_decline_qty', 
                                      store=True, 
                                      track_visibility='always')
+    allowed_decline   = fields.Float(string='Merma Permitida', 
+                                     track_visibility='always')
+    exceeded_decline  = fields.Float(string='Merma Excedida', 
+                                     compute='_set_exceeded_decline', 
+                                     store=True, 
+                                     track_visibility='always')        
     price_kg_discount = fields.Float(string='Precio por kg de Descuento por Merma $',                                        
                                      track_visibility='always')    
     discount_decline  = fields.Float(string='Descuento por Merma', 
@@ -167,7 +173,7 @@ class WobinLogisticsTrips(models.Model):
                                       string='Orden de Venta Generada', 
                                       ondelete='set null', 
                                       track_visibility='always')                                                                                   
-    charged_flag    = fields.Boolean(string="¿Es un Viaje Cobrado?", 
+    charged_flag    = fields.Boolean(string="¿Es un Viaje En Efectivo?", 
                                      track_visibility='always') 
     account_move_id = fields.Many2one('account.move', 
                                       string='Provisión',
@@ -331,10 +337,17 @@ class WobinLogisticsTrips(models.Model):
 
 
 
+    @api.depends('decline_qty', 'allowed_decline')
+    def _set_exceeded_decline(self):
+        for rec in self:
+            rec.exceeded_decline = rec.decline_qty - rec.allowed_decline         
+
+
+
     @api.depends('decline_qty', 'price_kg_discount')
     def _set_discount_decline(self):
         for rec in self:
-            rec.discount_decline = rec.decline_qty * rec.price_kg_discount         
+            rec.discount_decline = rec.exceeded_decline * rec.price_kg_discount         
 
 
 

@@ -107,6 +107,8 @@
                 </h3>
                 <span class="badge badge-primary">Por Facturar</span>                                               
                 <field name="decline_qty" force_save="1"/>
+                <field name="allowed_decline" force_save="1"/>
+                <field name="exceeded_decline" force_save="1"/>
                 <field name="price_kg_discount" force_save="1"/>
                 <field name="discount_decline" force_save="1"/>
                 <field name="qty_to_bill" force_save="1"/>
