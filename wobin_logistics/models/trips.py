@@ -340,7 +340,10 @@ class WobinLogisticsTrips(models.Model):
     @api.depends('decline_qty', 'allowed_decline')
     def _set_exceeded_decline(self):
         for rec in self:
-            rec.exceeded_decline = rec.decline_qty - rec.allowed_decline         
+            if rec.decline_qty > rec.allowed_decline: 
+                rec.exceeded_decline = rec.decline_qty - rec.allowed_decline
+            else:
+                rec.exceeded_decline = 0                          
 
 
 
