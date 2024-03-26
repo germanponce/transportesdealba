@@ -12,15 +12,15 @@
         <tree decoration-danger="state == 'assigned'" decoration-warning="state == 'route'" decoration-success="state == 'discharged'" decoration-info="state == 'to_invoice'" decoration-bf="state in ('billed', 'charged')">
           <field name="name"/>
           <field name="contract_id" invisible="True"/>
-          <field name="circuit_id"/>           
+          <field name="circuit_id"/>
+          <field name="start_date"/>           
           <field name="client_id"/>
           <field name="vehicle_id"/>
           <field name="analytic_account_id"/>
-          <field name="operator_id"/>          
-          <field name="route"/>
-          <field name="start_date"/>
+          <field name="operator_id"/>
+          <field name="tariff"/>
+          <field name="product_id"/>               
           <field name="load_date"/>
-          <field name="estimated_qty"/>
           <field name="real_load_qty"/>
           <field name="discharge_date"/>
           <field name="real_discharge_qty"/>                    
@@ -38,106 +38,119 @@
 
     <!-- TRIPS - FORM VIEW -->
     <record id="view_logistics_trips_form" model="ir.ui.view"> 
-        <field name="name">Viajes</field> 
-        <field name="model">wobin.logistics.trips</field> 
-        <field name="arch" type="xml"> 
-            <form duplicate="0"> 
-                <header>
-                    <field name="state" widget="statusbar" statusbar_visible="assigned,route,discharged,to_invoice,billed,charged"/>
-                </header> 
-                <sheet>
-                    <div class="oe_left oe_title">
-                        <h1>
-                            <field name="name" readonly="True"/>
-                        </h1>
-                    </div>                
-                    <group>
-                        <div class="container border border-info m-2" style="border-radius: 10px;">
-                          <div style="margin-top: 27px !important;">
-                            <div style="padding-top: 30px !important;">
-                              <h3 style="background: #fff none repeat scroll 0 0; height: auto; margin-left: 20px; padding: 3px 5px; position: absolute; margin-top: -47px; border: 1px solid #337ab7; border-radius: 8px;"><strong>Datos Generales</strong></h3>                                
-                              <group>                         
-                                <field name="contract_id" invisible="True"/>
-                                <field name="circuit_id" required="True" domain="[('state_circuit', '=', 'activo')]"/> 
-                                <field name="sucursal_id" force_save="1"/>                              
-                                <field name="client_id" force_save="1"/>
-                                <field name="vehicle_id" force_save="1"/> 
-                                <field name="analytic_account_id" force_save="1"/>                           
-                                <field name="operator_id" force_save="1"/>
-                                <field name="route" force_save="1"/>                                  
-                              </group>
-                            </div>  
-                          </div> 
-                        </div> 
+      <field name="name">Viajes</field> 
+      <field name="model">wobin.logistics.trips</field> 
+      <field name="arch" type="xml"> 
+        <form duplicate="0">
+          <!-- Barra de estado --> 
+          <header>
+            <field name="state" widget="statusbar" 
+                   statusbar_visible="assigned,route,discharged,to_invoice,billed,charged"/>
+          </header> 
+          <sheet>
+            <!-- Folio de viaje --> 
+            <div class="oe_left oe_title">
+              <h1>
+                <field name="name" readonly="True"/>
+              </h1>
+            </div>                
+            <group>
+              <!-- 1° Grupo con datos generales y de carga -->                                                             
+              <group>
+                <h3 style="background-color: #f08080; border-radius: 10px; padding: 10px; margin: 10px">
+                  <strong>1. Datos Generales   </strong> 
+                  <i class="fa fa-truck"/>
+                </h3>
+                <span class="badge badge-danger">Asignado</span>                                             
+                <field name="contract_id" invisible="True"/>
+                <field name="circuit_id" required="True" domain="[('state_circuit', '=', 'activo')]"/>                             
+                <field name="start_date" force_save="1"/>
+                <field name="client_id" force_save="1"/>
+                <field name="tariff"/>
+                <field name="product_id"/>                                 
+                <field name="vehicle_id" force_save="1"/>
+                <field name="trailer_1" readonly="1" force_save="1"/>
+                <field name="trailer_2" readonly="1" force_save="1"/>                                 
+                <field name="analytic_account_id" readonly="1" force_save="1"/>                           
+                <field name="operator_id" force_save="1"/>
+                <separator colspan="4" style="margin-bottom: 20px;"/>                              
+                
+                <h3 style="background-color: #f0e68c; border-radius: 10px; padding: 10px; margin: 10px">
+                  <strong>2. Carga   </strong>
+                  <i class="fa fa-arrow-up"/>
+                </h3>
+                <span class="badge badge-warning">En Ruta</span>
+                <field name="load_date" force_save="1"/>
+                <field name="real_load_qty" force_save="1"/>                                  
+                <field name="attachment_load" widget="many2many_binary" class="custom_binary_field"/>
+                <field name="load_location" force_save="1"/>
+                <separator colspan="4" style="margin-bottom: 20px;"/>
+              </group>
 
-                        <div class="container" style="text-align: center;">
-                          <group>
-                            <img src='/wobin_logistics/static/description/icon.png' alt="WOBIN Logistics" style="width:200px; height:200px;"/>
-                          </group>
-                        </div>                        
-                          
-                        <div class="container border border-info m-2" style="border-radius: 10px;">
-                          <div style="margin-top: 27px !important;">
-                            <div style="padding-top: 30px !important;">
-                              <h3 style="background: #fff none repeat scroll 0 0; height: auto; margin-left: 20px; padding: 3px 5px; position: absolute; margin-top: -47px; border: 1px solid #337ab7; border-radius: 8px;"><strong>Carga</strong></h3>                          
-                              <group>
-                                  <field name="start_date" force_save="1"/>
-                                  <field name="load_date" force_save="1"/>
-                                  <field name="estimated_qty" force_save="1"/>
-                                  <field name="real_load_qty" force_save="1"/>
-                                  <field name="decline_qty" force_save="1"/>
-                                  <field name="attachment_load" force_save="1" widget="many2many_binary"/>
-                                  <field name="load_location" force_save="1"/>
-                              </group> 
-                            </div>  
-                          </div> 
-                        </div> 
+              <!-- 2° Grupo con datos de descarga, por facturar, facturación / cobro --> 
+              <group>
+                <h3 style="background-color: #8fbc8f; border-radius: 10px; padding: 10px; margin: 10px">
+                  <strong>3. Descarga   </strong>
+                  <i class="fa fa-arrow-down"/>
+                </h3>
+                <span class="badge badge-success">Descargado</span>                                          
+                <field name="discharge_date" force_save="1"/>
+                <field name="real_discharge_qty" force_save="1"/>
+                <field name="attachment_discharge" widget="many2many_binary" class="custom_binary_field"/>
+                <field name="discharge_location" force_save="1"/>
+                <field name="discharged_flag" force_save="1"/>
+                <separator colspan="4" style="margin-bottom: 20px;"/>
+                
+                <h3 style="background-color: #add8e6; border-radius: 10px; padding: 10px; margin: 10px">
+                  <strong>4. En Proceso   </strong>
+                  <i class="fa fa-line-chart"/>
+                </h3>
+                <span class="badge badge-primary">Por Facturar</span>                                               
+                <field name="decline_qty" force_save="1"/>
+                <field name="allowed_decline" force_save="1"/>
+                <field name="exceeded_decline" force_save="1"/>
+                <field name="price_kg_discount" force_save="1"/>
+                <field name="discount_decline" force_save="1"/>
+                <field name="qty_to_bill" force_save="1"/>
+                <field name="attach_filled" force_save="1" invisible="1"/>
+                <field name="checked" force_save="1"
+                       attrs="{'readonly': [('attach_filled', '=', False)]}"/>
+                <separator colspan="4" style="margin-bottom: 20px;"/>
 
-                        <div class="container border border-info m-2" style="border-radius: 10px;">
-                          <div style="margin-top: 27px !important;">
-                            <div style="padding-top: 30px !important;">
-                              <h3 style="background: #fff none repeat scroll 0 0; height: auto; margin-left: 20px; padding: 3px 5px; position: absolute; margin-top: -47px; border: 1px solid #337ab7; border-radius: 8px;"><strong>Descarga</strong></h3>                                
-                              <group>                           
-                                  <field name="discharge_date" force_save="1"/>
-                                  <field name="real_discharge_qty" force_save="1"/>
-                                  <field name="attachment_discharge" force_save="1" widget="many2many_binary"/>
-                                  <field name="discount_decline" force_save="1"/>
-                                  <field name="qty_to_bill" force_save="1"/>
-                                  <field name="discharged_flag" force_save="1"/>
-                                  <field name="discharge_location" force_save="1"/>                               
-                                  <label for="conformity" force_save="1"/>
-                                  <div>
-                                      <field name="conformity" force_save="1" class="oe_inline" style="padding-right: 10px"/>
-                                      <field name="checked" force_save="1" class="oe_inline"/>
-                                  </div>     
-                                  <field name="sale_order_id" force_save="1" readonly="True"/>                                  
-                                  <field name="charged_flag" force_save="1"
-                                         attrs="{'readonly':  [('state', '=', 'charged')],
-                                                 'invisible': [('state', '!=', 'to_invoice')]}"/>                                                                   
-                                  <button string="Crear Asiento Contable" 
-                                          name="creation_account_move" type="object" class="oe_highlight" 
-                                          attrs="{'invisible': ['|', ('charged_flag', '=', False), ('state', '!=', 'to_invoice')]}"/>                                  
-                                  <field name="account_move_id" force_save="1" readonly="True" 
-                                         attrs="{'invisible': [('state', '!=', 'charged')]}"/>
-                                  <field name="invoiced_flag" force_save="1"
-                                         attrs="{'readonly':  [('state', '=', 'billed')],
-                                                 'invisible': [('state', '!=', 'to_invoice')]}"/>                                      
-                                  <field name="invoice" force_save="1"
-                                         attrs="{'invisible': [('state', 'in', ['assigned', 'route'])]}"/>   
-                              </group>
-                            </div>  
-                          </div> 
-                        </div> 
-
-                    </group>
-                </sheet>              
-                <div class="oe_chatter">
-                    <field name="message_follower_ids" widget="mail_followers"/>
-                    <field name="activity_ids" widget="mail_activity"/>
-                    <field name="message_ids" widget="mail_thread"/>
-                </div>               
-            </form> 
-        </field> 
+                <h3 style="background-color: #d3d3d3; border-radius: 10px; padding: 10px; margin: 10px">
+                  <strong>5. Facturación / Cobro   </strong>
+                  <i class="fa fa-file-text-o"/>
+                </h3>
+                <span class="badge badge-dark">Facturado / Cobrado</span>                                                  
+                <field name="sale_order_id" force_save="1" readonly="True"/>                                  
+                <field name="charged_flag" force_save="1"
+                       attrs="{'readonly':  [('state', '=', 'charged')],
+                               'invisible': [('state', '!=', 'to_invoice')]}"/>                                                                   
+                <button string="Crear Asiento Contable" 
+                        name="creation_account_move" type="object" class="oe_highlight" 
+                        attrs="{'invisible': ['|', ('charged_flag', '=', False), ('state', '!=', 'to_invoice')]}"/>                                  
+                <field name="account_move_id" force_save="1" readonly="True" 
+                       attrs="{'invisible': [('state', '!=', 'charged')]}"/>
+                <field name="invoiced_flag" force_save="1"
+                       attrs="{'readonly':  [('state', '=', 'billed')],
+                               'invisible': [('state', '!=', 'to_invoice')]}"/>                                      
+                <field name="invoice" force_save="1"
+                       attrs="{'invisible': [('state', 'in', ['assigned', 'route'])]}"/>
+                <field name="credit_note" force_save="1"
+                       attrs="{'invisible': [('state', 'in', ['assigned', 'route'])]}"/> 
+                <field name="invoiced_qty" force_save="1"
+                       attrs="{'invisible': [('state', 'in', ['assigned', 'route'])]}"/>                                                
+              </group>      
+            </group>
+          </sheet>
+          <!-- Actividades, seguimiento, mensajes -->              
+          <div class="oe_chatter">
+              <field name="message_follower_ids" widget="mail_followers"/>
+              <field name="activity_ids" widget="mail_activity"/>
+              <field name="message_ids" widget="mail_thread"/>
+          </div>               
+        </form> 
+      </field> 
     </record>         
 
   </data>  
